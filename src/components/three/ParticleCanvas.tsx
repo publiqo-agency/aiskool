@@ -141,6 +141,7 @@ const fragment = /* glsl */ `
 
 function Points({ shape, color = "#e8e8e4", count = 2600, size = 3, opacity = 1, progress }: ParticleCanvasProps & { progress: RefObject<number> }) {
   const group = useRef<THREE.Group>(null);
+  const points = useRef<THREE.Points>(null);
   const { gl, camera, pointer } = useThree();
   const { pos, target, rnd } = useMemo(() => build(shape, count), [shape, count]);
 
@@ -174,7 +175,10 @@ function Points({ shape, color = "#e8e8e4", count = 2600, size = 3, opacity = 1,
   }, [shape, camera]);
 
   useFrame((_, delta) => {
-    const u = material.uniforms;
+    // Se accede al material por el ref del objeto (mutable) y no por el valor memoizado
+    const mat = points.current?.material as THREE.ShaderMaterial | undefined;
+    if (!mat) return;
+    const u = mat.uniforms;
     u.uTime.value += delta;
     const p = progress.current ?? 0;
     u.uMorph.value += (p - u.uMorph.value) * Math.min(1, delta * 4);
@@ -201,7 +205,7 @@ function Points({ shape, color = "#e8e8e4", count = 2600, size = 3, opacity = 1,
 
   return (
     <group ref={group}>
-      <points material={material}>
+      <points ref={points} material={material}>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[pos, 3]} />
           <bufferAttribute attach="attributes-aTarget" args={[target, 3]} />

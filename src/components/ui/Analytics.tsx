@@ -47,10 +47,14 @@ export function Analytics() {
   useEffect(() => {
     const c = readConsent();
     if (c) applyConsent(c);
-    else setShow(true);
+    // Se muestra en el siguiente frame (localStorage solo existe en cliente)
+    const raf = c ? 0 : requestAnimationFrame(() => setShow(true));
     const open = () => setShow(true);
     window.addEventListener("open-cookie-settings", open);
-    return () => window.removeEventListener("open-cookie-settings", open);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("open-cookie-settings", open);
+    };
   }, []);
 
   const choose = (value: Consent) => {

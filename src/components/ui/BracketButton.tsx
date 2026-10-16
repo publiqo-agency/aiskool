@@ -50,23 +50,22 @@ function Inner({ children, tone = "light", size = "md" }: Common) {
 }
 
 /** Botón con esquinas, punto desenfocado, texto que rueda y glitch breve al pasar el ratón. */
-export function BracketButton(props: AsLink | AsButton) {
-  const { children, tone = "light", className = "", size = "md" } = props;
+export function BracketButton({ children, tone = "light", className = "", size = "md", ...rest }: AsLink | AsButton) {
   const base = `group/btn relative isolate inline-flex eyebrow select-none whitespace-nowrap hover:animate-glitch motion-reduce:hover:animate-none ${toneClasses[tone].root} ${className}`;
 
-  if (props.href !== undefined) {
-    const { href, tone: _t, className: _c, size: _s, children: _ch, ...rest } = props;
+  if (rest.href !== undefined) {
+    const linkProps = rest as Omit<AsLink, keyof Common>;
     return (
-      <Link href={href} className={base} {...rest}>
+      <Link className={base} {...linkProps}>
         <Inner tone={tone} size={size}>
           {children}
         </Inner>
       </Link>
     );
   }
-  const { tone: _t, className: _c, size: _s, children: _ch, ...rest } = props as AsButton;
+  const buttonProps = rest as Omit<AsButton, keyof Common>;
   return (
-    <button className={base} type={rest.type ?? "button"} {...rest}>
+    <button className={base} {...buttonProps} type={buttonProps.type ?? "button"}>
       <Inner tone={tone} size={size}>
         {children}
       </Inner>

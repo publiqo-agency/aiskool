@@ -18,7 +18,7 @@ export function FormacionesCarousel() {
   const onSelect = useCallback(() => embla && setSelected(embla.selectedScrollSnap()), [embla]);
   useEffect(() => {
     if (!embla) return;
-    onSelect();
+    // El carrusel arranca en el índice 0 (estado inicial); solo nos suscribimos a los cambios
     embla.on("select", onSelect);
     embla.on("reInit", onSelect);
     return () => {

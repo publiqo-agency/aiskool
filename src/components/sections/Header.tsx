@@ -32,7 +32,12 @@ export function Header() {
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
+  // Cierra el menú móvil al cambiar de ruta (ajuste de estado durante el render, sin efecto)
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setOpen(false);
+  }
 
   return (
     <header
@@ -80,9 +85,11 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <BracketButton href="/diagnostico" tone="accent" className="hidden sm:inline-flex">
-            Diagnóstico gratuito
-          </BracketButton>
+          <span className="hidden sm:block">
+            <BracketButton href="/diagnostico" tone="accent">
+              Diagnóstico gratuito
+            </BracketButton>
+          </span>
           <button
             type="button"
             className={`grid size-[42px] place-items-center rounded-[8px] lg:hidden ${onDark && !open ? "text-white" : "text-ink"}`}

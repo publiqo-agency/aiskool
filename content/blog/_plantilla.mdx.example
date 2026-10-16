@@ -1,0 +1,23 @@
+---
+title: "Título con la keyword principal"
+description: "Meta description de 140–160 caracteres con la keyword y un beneficio claro."
+date: "2026-10-16"
+updated: "2026-10-16"
+category: "ai-act" # ai-act | gobernanza | herramientas | departamentos | agentes | formacion-empresas | conceptos
+author: "Nombre Apellido, rol"
+tldr: "Respuesta directa en 2–3 frases. Es lo que citarán Google y los asistentes de IA."
+draft: true
+faqs:
+  - q: "Pregunta frecuente 1"
+    a: "Respuesta breve."
+---
+
+## Primer apartado
+
+Texto…
+
+<CtaInline />
+
+## Segundo apartado
+
+Texto…

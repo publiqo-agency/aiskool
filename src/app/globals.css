@@ -90,6 +90,12 @@ html.lenis body {
   text-transform: uppercase;
   letter-spacing: -0.01em;
   line-height: 0.95;
+  overflow-wrap: break-word;
+  /* Palabras largas (AUTOMATIZACIÓN, ALFABETIZACIÓN) en pantallas estrechas */
+  @media (width < 48rem) {
+    hyphens: auto;
+    overflow-wrap: anywhere;
+  }
 }
 
 @utility eyebrow {
