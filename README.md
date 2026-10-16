@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web de formación en IA para empresas
 
-## Getting Started
+Web de una empresa de formación en inteligencia artificial para empresas: alfabetización en IA (art. 4 del AI Act), herramientas (ChatGPT, Claude, Copilot, Gemini), formación por departamento, agentes y automatización.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, Cache Components) + TypeScript + Tailwind v4
+- GSAP (ScrollTrigger, SplitText) + Lenis para el movimiento
+- three.js + @react-three/fiber para los campos de partículas
+- Embla para los carruseles
+- MDX para el blog
+- Resend para el email, Cal.com para las reservas, GTM/GA4 con Consent Mode
+- Despliegue en Vercel
+
+## Desarrollo
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Las variables de entorno están en `.env.example`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Dónde se cambia cada cosa
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Qué | Dónde |
+|---|---|
+| Marca, precios, cifras, testimonios, FAQ | `src/lib/site.ts` |
+| Catálogo de formaciones | `src/lib/formaciones.ts` |
+| Blog (MDX) y roadmap de contenidos | `content/blog/` |
+| Logos de clientes | `public/logos/` |
+| Tokens de diseño | `src/app/globals.css` |
+| Pendientes (FUNDAE, contenido, configuración) | `PENDING.md` |
 
-## Learn More
+## Movimiento
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Componentes de movimiento** (`src/components/motion/`):
+  - `SplitReveal`: titulares línea a línea.
+  - `DotIllustration`: dibujos de puntos en canvas 2D.
+  - `CountUp`: contadores.
+  - `SmoothScroll`: scroll suave con Lenis sincronizado con GSAP.
+- **Partículas** (`src/components/three/`): un solo `ParticleCanvas` con varias formas (`sphere`, `tunnel`, `terrain`, `torus`, `cloud`). Se carga en diferido y se pausa fuera de pantalla.
+- **Reducir movimiento:** todo respeta `prefers-reduced-motion`.
