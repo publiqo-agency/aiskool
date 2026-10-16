@@ -47,8 +47,8 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
         <div className="container-x grid gap-12 md:grid-cols-12">
           <article className="md:col-span-8">
             {meta.tldr && (
-              <div className="mb-10 rounded-[16px] border-l-2 border-accent bg-surface p-6">
-                <p className="eyebrow text-muted">En resumen</p>
+              <div className="mb-10 rounded-[16px] border border-line bg-surface p-6">
+                <p className="eyebrow text-accent">En resumen</p>
                 <p className="mt-2 text-[1.1rem] leading-[1.6]">{meta.tldr}</p>
               </div>
             )}
