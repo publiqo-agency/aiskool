@@ -1,0 +1,262 @@
+---
+title: "GPTs personalizados: ejemplos y qué hacer tras su retirada"
+description: "Los GPTs personalizados se retiran el 11 de diciembre de 2026. Qué pasa con los tuyos, cómo migrarlos a plugins y 10 ejemplos de instrucciones para empresa."
+date: "2026-10-18"
+category: "herramientas"
+tldr: "OpenAI tiene previsto retirar los GPTs personalizados el 11 de diciembre de 2026 en todos los planes de ChatGPT y sustituirlos por plugins, que agrupan skills y apps. Las instrucciones y los archivos se migran; las acciones personalizadas, no. Lo que no caduca es saber escribir buenas instrucciones: sirven igual en plugins, Claude, Gemini o Copilot."
+faqs:
+  - q: "¿Puedo seguir creando GPTs personalizados en octubre de 2026?"
+    a: "Depende del plan. En los espacios ChatGPT Enterprise afectados, OpenAI tenía prevista la creación de nuevos GPTs hasta el 26 de octubre de 2026. Para el resto de planes, el aviso dentro de tu cuenta manda. Aunque puedas crearlo, no tiene sentido empezar hoy un GPT nuevo: dejará de funcionar el 11 de diciembre de 2026. Mejor construirlo directamente como plugin o skill."
+  - q: "¿Pierdo las conversaciones que tuve con un GPT cuando se retire?"
+    a: "No. Según la FAQ de OpenAI sobre la retirada, las conversaciones que tuviste con GPTs personalizados siguen accesibles después de la fecha de retirada y no tienes que hacer nada para conservarlas. Lo que desaparece es el GPT en sí y su página: ya no podrás seguir usándolo para tareas nuevas."
+  - q: "¿Qué pasa con los GPTs de la GPT Store que usa mi equipo?"
+    a: "Si el GPT lo creó otra persona o empresa, no puedes migrarlo tú: solo su creador puede. Revisa el aviso que aparece en el propio GPT y si su autor ofrece un plugin de sustitución. Tener acceso al GPT original no te da acceso automático a su plugin, así que comprueba que existe y que tu plan permite instalarlo."
+  - q: "¿Un plugin de ChatGPT es lo mismo que un agente?"
+    a: "No exactamente. Un plugin es un paquete reutilizable que junta instrucciones (skills) y conexiones con otras aplicaciones (apps). Puede ejecutar acciones y tareas programadas, lo que lo acerca a un agente, pero muchos plugins solo contienen instrucciones y archivos de referencia. La diferencia está en cuánto decide y actúa por su cuenta, no en el nombre."
+  - q: "¿Puedo usar las instrucciones de mi GPT en Claude o Gemini?"
+    a: "Sí. Las instrucciones son texto y se pueden reutilizar casi tal cual. En Claude encajan en las instrucciones de un Project o en una skill escrita en Markdown; en Gemini, en un Gem o en una skill; en Microsoft 365 Copilot, en un agente de Agent Builder. Revisa las referencias a herramientas concretas y prueba con tus casos habituales."
+---
+
+Los GPTs personalizados, los asistentes con instrucciones y archivos propios que cualquier usuario podía crear en ChatGPT, tienen fecha de retirada: OpenAI prevé que dejen de funcionar el **11 de diciembre de 2026** y los sustituye por **plugins**. Si tu empresa tiene GPTs en uso, aquí tienes qué pasa con ellos, cómo migrarlos, qué alternativas hay en Claude, Gemini y Copilot y diez ejemplos de instrucciones por departamento que puedes copiar en cualquiera de ellas.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- La retirada afecta a **todos los planes de ChatGPT**. Fecha prevista: 11 de diciembre de 2026 (11 de febrero de 2027 solo para espacios Enterprise con prórroga aprobada).
+- La migración convierte las instrucciones en una **skill** y copia los archivos de conocimiento. Las **acciones personalizadas no se migran**.
+- Lo valioso de un GPT nunca fue el formato, sino sus instrucciones y sus documentos. Eso se reutiliza en cualquier herramienta.
+
+</Callout>
+
+## Qué está pasando con los GPTs personalizados a octubre de 2026
+
+OpenAI ha anunciado que retirará los GPTs personalizados en todos los planes de ChatGPT y que su sustituto son los plugins. La [FAQ oficial de retirada y migración](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq) fija la retirada estándar el 11 de diciembre de 2026 y avisa de que las fechas pueden cambiar. Hasta entonces, los GPTs existentes siguen funcionando.
+
+La propia FAQ responde a la pregunta de si afecta a todos: «The transition affects all ChatGPT plans». Lo que cambia según el plan es cuándo aparece la opción de migrar y qué permisos hay. Para los espacios ChatGPT Enterprise, OpenAI publica un calendario detallado:
+
+<Timeline>
+  <Hito fecha="11 sep 2026" titulo="Aviso a administradores">OpenAI comunica la retirada a los espacios Enterprise para que se preparen.</Hito>
+  <Hito fecha="22 sep 2026" titulo="Herramienta de migración (objetivo)">Fecha objetivo para el botón «Migrate to plugin» y el aviso a usuarios. No garantiza que esté disponible en todos los espacios ese día.</Hito>
+  <Hito fecha="26 oct 2026" titulo="Fin de la creación de GPTs (previsto)">En Enterprise ya no se pueden crear GPTs nuevos. Los existentes se pueden seguir editando hasta migrarlos.</Hito>
+  <Hito fecha="11 dic 2026" titulo="Retirada estándar">Los GPTs personalizados y sus páginas dejan de estar accesibles.</Hito>
+  <Hito fecha="11 feb 2027" titulo="Retirada con prórroga">Solo para espacios Enterprise con una prórroga aprobada.</Hito>
+</Timeline>
+
+### Qué es un plugin y en qué se diferencia de un GPT
+
+Un plugin es, según la [documentación de OpenAI](https://learn.chatgpt.com/docs/migrate-custom-gpts), «a reusable package for a workflow that can include skills, apps, or both». Las **skills** son las instrucciones de una tarea (por ejemplo, resumir documentos siempre con el mismo formato) y las **apps** conectan ChatGPT con otros servicios, como Slack o tu CRM. La [página de ayuda sobre plugins](https://help.openai.com/en/articles/20001256) añade que ChatGPT usa automáticamente los plugins instalados cuando son relevantes, que se pueden invocar con una mención @ y que algunos permiten programar tareas o reaccionar a eventos.
+
+La diferencia práctica con un GPT: ya no abres «el asistente de contratos» en una pestaña aparte, sino que la skill de contratos se activa dentro de tu conversación normal cuando la necesitas, y puede combinarse con otras.
+
+## Qué hacer con los GPTs que ya usa tu empresa
+
+Lo primero con los GPTs actuales es hacer inventario: cuáles se usan de verdad, quién los creó y cuáles dependen de acciones personalizadas. Solo el creador del GPT (o un administrador, en Enterprise) puede migrarlo, y solo se migra la última versión publicada, así que conviene ordenar esto antes de que llegue diciembre.
+
+Esto es lo que pasa con cada pieza de un GPT al migrarlo, según la [FAQ de OpenAI](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq):
+
+| Parte del GPT | Qué pasa al migrar | Qué tienes que hacer |
+|---|---|---|
+| Instrucciones | Se convierten en una skill dentro del plugin | Revisarlas y probarlas con tus casos habituales |
+| Archivos de conocimiento | Se copian como archivos de referencia | Comprobar que son la versión vigente |
+| Apps conectadas | Se añaden al plugin como apps | Cada usuario vuelve a autorizar su cuenta |
+| Acciones personalizadas | **No se migran** | Sustituirlas por una app compatible o un servidor MCP propio |
+| Modelo elegido | No se conserva | Comprobar el resultado con el modelo por defecto |
+| Permisos para compartir | No se conservan: el plugin nace privado | Volver a compartirlo con las personas o grupos |
+| Conversaciones antiguas | Siguen accesibles tras la retirada | Nada |
+| GPT original | Pasa a solo lectura tras migrar | Hacer los cambios ya en el plugin |
+
+<Steps>
+
+1. **Inventario**: lista los GPTs que usa cada equipo, su creador y si tienen acciones personalizadas. Los que nadie abre en el último mes, no los migres.
+2. **Publica los borradores**: la migración usa la última versión publicada. Publicar no obliga a compartirlo en público.
+3. **Guarda tres o cuatro peticiones de prueba** por GPT, incluida una difícil, para comparar el antes y el después.
+4. **Migra** desde «My GPTs» con la opción «Migrate to plugin» cuando aparezca en tu cuenta.
+5. **Prueba el plugin**: que elija la skill correcta, use los archivos esperados y entregue el formato pedido.
+6. **Rehaz las integraciones**: las acciones personalizadas necesitan una app o un servidor MCP. Aquí suele hacer falta alguien técnico.
+7. **Comparte y avisa**: el plugin empieza privado. Compártelo y pide a un usuario real que lo instale y lo pruebe.
+
+</Steps>
+
+<Callout tipo="aviso" titulo="Si usas GPTs de terceros">
+
+Los GPTs de la tienda pública que creó otra persona no los puedes migrar tú. Revisa el aviso del propio GPT y si su autor publica un plugin de sustitución. OpenAI aclara que tener acceso al GPT no te da acceso automático a su reemplazo.
+
+</Callout>
+
+## Alternativas a los GPTs en Claude, Gemini y Copilot
+
+Todas las grandes herramientas corporativas tienen ya su propia versión de «asistente con instrucciones y documentos», y varias están convergiendo en el mismo concepto: la skill. Si tu empresa no trabaja solo con ChatGPT, la retirada de los GPTs es un buen momento para decidir dónde vive cada asistente.
+
+| Herramienta | Equivalente a un GPT | Cómo se comparte en la empresa | Estado a 18/10/2026 |
+|---|---|---|---|
+| ChatGPT | Plugin (skills + apps) | Permisos de compartir y de publicar en el directorio del espacio de trabajo | Sustituye a los GPTs |
+| Claude | Project (conocimiento fijo) y skill (procedimiento que se carga cuando hace falta) | En Team y Enterprise, el propietario puede dar una skill a toda la organización | Disponible |
+| Gemini | Gem y, desde ahora, skill | Un Gem se puede compartir; Google anuncia que las skills también se podrán compartir | Gems pasan a skills: cuentas personales desde noviembre de 2026, cuentas de empresa de Workspace en marzo de 2027 y de educación en junio de 2027 |
+| Microsoft 365 Copilot | Agente creado con Agent Builder | Se prueba antes de compartir; el administrador decide si Agent Builder está disponible | Disponible según licencias |
+
+Detalles que conviene saber de cada uno:
+
+- **Claude.** Los [Projects](https://support.claude.com/en/articles/9517075-what-are-projects) son espacios con su propio historial y base de conocimiento. Las [skills](https://support.claude.com/en/articles/12512176-what-are-skills) son carpetas de instrucciones, scripts y recursos que Claude carga solo cuando la tarea lo pide; se escriben en Markdown y las sencillas no requieren programar. Anthropic publica el formato como estándar abierto, de modo que una skill no queda atada a Claude. En Team y Enterprise, el propietario puede [distribuir skills a toda la organización](https://support.claude.com/en/articles/13119606) y, en Enterprise, solo a grupos concretos.
+- **Gemini.** Google [ha anunciado](https://support.google.com/gemini/answer/18560919?hl=en) que los Gems se transformarán en skills: «Starting in November 2026, Gems will transition to skills in Gemini Apps for personal Google Accounts, and in 2027, for work and school accounts». Según el calendario de esa misma página, las cuentas de empresa de Workspace pasan en marzo de 2027; hasta entonces tus Gems siguen funcionando y Google los recreará automáticamente como skills.
+- **Microsoft 365 Copilot.** [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder) crea agentes con instrucciones y fuentes de conocimiento como SharePoint. Microsoft pone como ejemplos un agente que asesora en redacción o presentaciones según las normas de la organización y otro de acogida para un equipo. Lo que puedes añadir depende de las licencias de tu empresa.
+
+Si la duda es qué herramienta elegir para toda la empresa, la tienes resuelta en nuestra [comparativa de ChatGPT, Copilot, Claude y Gemini para empresas](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini).
+
+<CtaInline />
+
+## 10 ejemplos de instrucciones para empresa, listos para copiar
+
+Las instrucciones de un buen asistente son lo único que sobrevive a cualquier cambio de formato: valen para una skill de ChatGPT, un Project o una skill de Claude, un Gem o un agente de Copilot. Estas diez cubren las tareas que más se repiten en una empresa; sustituye lo que va entre corchetes por los datos de la tuya.
+
+Un dato para dimensionar: según la guía [AI in the Enterprise de OpenAI](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf), en cinco meses la plantilla de BBVA creó más de 2.900 GPTs personalizados. La mayoría de empresas no necesita tantos; con cinco o seis bien hechos se cubre lo que más tiempo consume.
+
+### 1. Atención al cliente: respuestas con el tono de la marca
+
+```text
+Eres el asistente de redacción del equipo de atención al cliente de [empresa].
+Tarea: a partir del mensaje de un cliente y de la información que te dé el agente, redacta una respuesta lista para enviar.
+Reglas:
+- Tutea al cliente, frases cortas, sin tecnicismos.
+- Usa solo la información del documento "Políticas de devolución y garantía". Si la respuesta no está ahí, dilo y propón escalar el caso.
+- No prometas plazos ni compensaciones que no figuren en el documento.
+Formato: saludo, respuesta en 3-5 frases, siguiente paso claro y despedida.
+```
+
+### 2. Recursos humanos: dudas sobre políticas internas
+
+```text
+Respondes dudas de la plantilla sobre el convenio y las políticas internas de [empresa] (vacaciones, permisos, teletrabajo, gastos).
+Usa exclusivamente los documentos adjuntos y cita el apartado de donde sale cada respuesta.
+Si la pregunta trata de un caso personal (salud, sanciones, salario de una persona), no respondas: indica que escriba a [correo de RR. HH.].
+Si dos documentos se contradicen, señálalo y no elijas tú.
+```
+
+### 3. Ventas: preparar una reunión
+
+```text
+Ayudas a preparar reuniones comerciales.
+Te daré el nombre de la empresa cliente, su web y mis notas.
+Devuelve: 1) a qué se dedica y qué noticias recientes tiene, con enlace; 2) tres necesidades probables relacionadas con [producto o servicio]; 3) cinco preguntas abiertas para la reunión; 4) dos objeciones probables y cómo responderlas.
+Si no encuentras un dato, escribe "sin confirmar" en lugar de suponerlo.
+```
+
+### 4. Marketing: revisor de estilo
+
+```text
+Revisas textos de marketing según la guía de estilo adjunta.
+Para cada texto que te pase: señala en una tabla cada frase que incumple la guía, la regla que incumple y una propuesta corregida.
+No reescribas el texto entero salvo que te lo pida.
+Al final, da una nota del 1 al 10 de ajuste a la guía y las tres correcciones más importantes.
+```
+
+### 5. Legal: primer filtro de contratos
+
+```text
+Haces una primera lectura de contratos de proveedor para el equipo jurídico de [empresa]. No sustituyes su revisión.
+Compara el contrato con la lista de cláusulas estándar adjunta y devuelve una tabla: cláusula, qué dice el contrato (con cita literal), si se aparta del estándar y por qué.
+Marca en especial: duración y renovación automática, limitación de responsabilidad, penalizaciones, jurisdicción y tratamiento de datos personales.
+Nunca des una conclusión del tipo "se puede firmar".
+```
+
+### 6. Finanzas: explicar desviaciones
+
+```text
+Analizas la desviación entre presupuesto y real que te pase en una tabla.
+Calcula la desviación absoluta y en porcentaje de cada partida y ordénalas de mayor a menor impacto.
+Para las cinco primeras, propón posibles causas a confirmar, sin darlas por ciertas.
+Redacta al final un párrafo de 80 palabras para el comité de dirección, sin jerga contable.
+```
+
+### 7. Operaciones: procedimientos paso a paso
+
+```text
+Conviertes explicaciones informales (notas, transcripciones de una reunión, audios transcritos) en procedimientos de trabajo.
+Formato fijo: objetivo, responsable, cuándo se aplica, material necesario, pasos numerados (un verbo al principio de cada paso), errores frecuentes y a quién avisar si algo falla.
+Si falta información para un paso, escribe [PENDIENTE: qué falta] en lugar de inventarlo.
+```
+
+### 8. Dirección: resumen ejecutivo
+
+```text
+Resumes documentos largos (informes, propuestas, actas) para la dirección.
+Devuelve como máximo una página: la conclusión en una frase, tres cifras clave con la página donde aparecen, riesgos, decisiones que se piden y fecha límite si la hay.
+Si el documento no pide ninguna decisión, dilo.
+```
+
+### 9. Soporte informático: primer nivel
+
+```text
+Atiendes dudas informáticas de primer nivel de la plantilla de [empresa] con la guía interna adjunta (contraseñas, VPN, impresoras, correo).
+Da los pasos de uno en uno y pregunta si han funcionado antes de seguir.
+Nunca pidas contraseñas ni códigos de verificación.
+Si el problema no está en la guía o afecta a varias personas, indica cómo abrir una incidencia en [herramienta].
+```
+
+### 10. Compras: comparar ofertas
+
+```text
+Comparas ofertas de proveedores para una misma necesidad.
+Crea una tabla con: precio total, qué incluye y qué no, plazo de entrega, condiciones de pago, garantía y penalizaciones.
+Señala las diferencias que hacen que las ofertas no sean comparables (por ejemplo, una incluye instalación y otra no).
+No recomiendes un proveedor: termina con las tres preguntas que convendría hacer a cada uno antes de decidir.
+```
+
+Si quieres afinar la técnica para escribir instrucciones como estas, la explicamos con más ejemplos en la [guía de prompts para ChatGPT por puesto](/blog/como-hacer-prompts-guia-empleados).
+
+## Cuándo no necesitas un GPT, un plugin ni un agente
+
+Un asistente personalizado solo compensa cuando la tarea se repite, varias personas la hacen igual y hay instrucciones o documentos que explicar cada vez. Si una persona hace algo dos veces al mes, una buena petición guardada en un documento es suficiente, y mantener un plugin para eso cuesta más de lo que ahorra.
+
+<Columnas>
+<Pros titulo="Compensa crear un asistente si">
+
+- La tarea se repite cada semana en varios puestos.
+- Siempre hay que pegar el mismo contexto o el mismo documento.
+- El resultado tiene un formato fijo (informe, tabla, respuesta tipo).
+- Alguien se encarga de mantener las instrucciones y los archivos al día.
+
+</Pros>
+<Contras titulo="No compensa si">
+
+- Es una tarea puntual o de una sola persona.
+- Los documentos cambian cada día y nadie los actualiza en el asistente.
+- Necesitas que responda sobre miles de documentos con permisos distintos por persona.
+- La tarea toca datos que no deben salir de tus sistemas.
+
+</Contras>
+</Columnas>
+
+El tercer caso merece una nota: un GPT o un plugin con archivos subidos no respeta los permisos de cada documento de tu intranet. Cuando lo que necesitas es un asistente que responda con toda tu documentación y sepa quién puede ver qué, la decisión es otra: la explicamos en el artículo sobre el [chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa). Y antes de subir nada, repasa [qué datos no meter nunca en ChatGPT](/blog/que-datos-no-meter-en-chatgpt). En las cuentas de empresa, OpenAI permite además controlar [quién puede crear y compartir asistentes](https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing) («Control who can create GPTs and whether they can be shared with specific people, groups, or the entire workspace»).
+
+## Qué hacer ahora
+
+La retirada de los GPTs es una buena excusa para ordenar los asistentes de la empresa en lugar de trasladar el desorden al formato nuevo. Con un par de horas de trabajo de cada equipo se hace el inventario, se descartan los que nadie usa y se migran o rehacen los que importan.
+
+<Checklist titulo="Antes del 11 de diciembre de 2026">
+
+- Haz la lista de GPTs en uso, su creador y si tienen acciones personalizadas.
+- Decide cuáles se migran, cuáles se rehacen en otra herramienta y cuáles se dejan morir.
+- Publica los borradores que vayas a migrar.
+- Guarda peticiones de prueba para comparar resultados.
+- Reserva tiempo técnico para las acciones personalizadas.
+- Define quién mantiene cada plugin o skill y cada cuánto se revisan sus archivos.
+- Avisa a los usuarios de los GPTs de terceros de que comprueben si habrá sustituto.
+
+</Checklist>
+
+Si tu equipo puede hacerlo solo, no necesitas contratar a nadie: la FAQ de OpenAI y esta guía bastan. Si prefieres que alguien enseñe al equipo a diseñar asistentes que funcionen en cualquier herramienta, nuestra formación de ChatGPT para empresas trabaja con casos reales de cada puesto; y si tienes integraciones que rehacer, en un [diagnóstico gratuito de 30 minutos](/diagnostico) vemos qué conviene migrar y qué no. El resto de herramientas que formamos está en el [catálogo de formaciones](/formaciones).
+
+<FormacionCard slug="chatgpt-empresas" />
+
+<Fuentes>
+
+- [Custom GPT retirement and migration FAQ — OpenAI Help Center](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq), consultado el 18/10/2026.
+- [Plugins in ChatGPT — OpenAI Help Center](https://help.openai.com/en/articles/20001256), consultado el 18/10/2026.
+- [Migrate custom GPTs to plugins — OpenAI (documentación de ChatGPT)](https://learn.chatgpt.com/docs/migrate-custom-gpts), consultado el 18/10/2026.
+- [GPTs and sharing — OpenAI (ChatGPT Enterprise)](https://learn.chatgpt.com/docs/enterprise/gpts-and-sharing), consultado el 18/10/2026.
+- [AI in the Enterprise — OpenAI](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf), abril de 2025.
+- [What are skills? y Provision and manage skills for your organization — Anthropic](https://support.claude.com/en/articles/12512176-what-are-skills), consultado el 18/10/2026.
+- [What are projects? — Anthropic](https://support.claude.com/en/articles/9517075-what-are-projects), consultado el 18/10/2026.
+- [About the transition from Gems to skills — Google](https://support.google.com/gemini/answer/18560919?hl=en), consultado el 18/10/2026.
+- [Agent Builder overview — Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder), consultado el 18/10/2026.
+
+</Fuentes>

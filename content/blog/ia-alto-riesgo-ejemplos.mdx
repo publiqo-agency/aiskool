@@ -1,0 +1,144 @@
+---
+title: "Sistemas de alto riesgo del AI Act: ejemplos en empresas"
+description: "Qué sistemas de IA son de alto riesgo según el AI Act: el anexo III traducido a software real, ejemplos que sí y que no, test de 5 preguntas y fechas de 2027."
+date: "2026-10-18"
+category: "ai-act"
+tldr: "Un sistema de IA es de alto riesgo en el AI Act si es componente de seguridad de un producto regulado (anexo I) o se usa en uno de los ocho ámbitos del anexo III, como selección de personal o crédito. Sus obligaciones se aplican desde el 2 de diciembre de 2027 (anexo III) y el 2 de agosto de 2028 (anexo I)."
+faqs:
+  - q: "¿Usar ChatGPT o Copilot en mi empresa es de alto riesgo?"
+    a: "No por el hecho de usarlos. Lo que decide si un sistema es de alto riesgo es la finalidad del uso, no la herramienta. Redactar textos, resumir reuniones o traducir no entra en el anexo III. Otra cosa sería montar sobre esos modelos un flujo que puntúe candidatos o decida sobre créditos: ahí habría que analizarlo, y podrías pasar incluso a ser proveedor."
+  - q: "¿La detección de fraude bancario es un sistema de alto riesgo?"
+    a: "No por el punto 5 b) del anexo III. Ese punto incluye la evaluación de la solvencia y la calificación crediticia de personas físicas, pero excluye expresamente los sistemas usados para detectar fraude financiero. Es un error que aparece en algunos blogs. Eso sí, el tratamiento de datos personales sigue sujeto al RGPD."
+  - q: "¿Un control de acceso con huella dactilar es de alto riesgo?"
+    a: "En principio no por el punto 1 a) del anexo III, que excluye los sistemas biométricos destinados solo a verificar que una persona es quien dice ser. Sí lo son la identificación biométrica remota, la categorización biométrica por atributos sensibles y el reconocimiento de emociones. La huella es un dato biométrico, así que el art. 9 del RGPD se aplica igualmente."
+  - q: "¿Quién decide si un sistema es de alto riesgo: el proveedor o mi empresa?"
+    a: "La clasificación parte del proveedor, que debe documentar su evaluación si considera que un uso del anexo III no es de alto riesgo. Pero tu empresa decide para qué usa el sistema, y si cambia su finalidad o lo modifica sustancialmente puede convertirse en proveedor según el art. 25.1. Por eso conviene revisar cada uso, no solo la ficha del producto."
+  - q: "¿Hay ya directrices oficiales con ejemplos de alto riesgo?"
+    a: "Solo en borrador. El art. 6.5 pedía a la Comisión publicarlas antes del 2 de febrero de 2026, pero a 18 de octubre de 2026 solo existe el borrador del 19 de mayo de 2026, con la página actualizada el 23 de julio. Sus ejemplos son útiles para orientarse, pero no son vinculantes y pueden cambiar en la versión final."
+---
+
+Un sistema de IA es de alto riesgo según el AI Act (Reglamento (UE) 2024/1689) por dos vías: porque es componente de seguridad de un producto regulado del anexo I o porque se usa para una de las finalidades del **anexo III**, como cribar CV, evaluar el rendimiento de la plantilla, calcular la solvencia de una persona o fijar el precio de un seguro de salud. Lo que cuenta es el uso, no la herramienta. Aquí tienes el anexo III traducido a software que usan las empresas, ejemplos que sí y que no, y un test de cinco preguntas.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- Tras el Digital Omnibus, las obligaciones de alto riesgo se aplican desde el **2 de diciembre de 2027** (anexo III) y el **2 de agosto de 2028** (anexo I).
+- Un uso del anexo III puede quedar fuera si es una tarea limitada o preparatoria, pero **nunca** si elabora perfiles de personas.
+- Inferir emociones de empleados no es alto riesgo: está **prohibido** desde el 2 de febrero de 2025.
+
+</Callout>
+
+<Stats>
+  <Stat valor="8" etiqueta="ámbitos de alto riesgo en el anexo III" fuente="AI Act Service Desk, Comisión Europea" href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3" />
+  <Stat valor="2/12/2027" etiqueta="obligaciones del anexo III" fuente="Reglamento (UE) 2026/1744" href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744" />
+  <Stat valor="2/8/2028" etiqueta="obligaciones del anexo I" fuente="Reglamento (UE) 2026/1744" href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744" />
+</Stats>
+
+## ¿Qué hace que un sistema de IA sea de alto riesgo?
+
+Un sistema de IA es de alto riesgo cuando cumple una de las dos condiciones del art. 6 del AI Act: ser componente de seguridad de un producto del anexo I (o ser en sí mismo ese producto) que necesita evaluación de conformidad por un tercero, o estar destinado a alguno de los usos del anexo III. La segunda vía es la que afecta a la mayoría de empresas usuarias.
+
+La primera vía, la del **anexo I**, cubre productos que ya tienen normativa europea de seguridad, como máquinas, juguetes o productos sanitarios. Si tu empresa fabrica uno de esos productos e integra IA en una función de seguridad, el caso es de ingeniería y conformidad, no de uso de oficina.
+
+La segunda vía, la del **anexo III**, no mira el producto sino la **finalidad prevista**: para qué se usa el sistema. Por eso el mismo modelo de lenguaje puede no tener obligaciones específicas cuando redacta correos y entrar en el anexo III cuando ordena candidaturas.
+
+## El anexo III traducido a software real
+
+El anexo III del AI Act enumera ocho ámbitos de alto riesgo. La tabla los resume a partir del [texto publicado por el AI Act Service Desk de la Comisión](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3) y del [Reglamento en EUR-Lex](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689), y añade el tipo de software donde suele aparecer en una empresa.
+
+| Ámbito del anexo III | Qué cubre | Dónde puede aparecer en una empresa | Matiz importante |
+|---|---|---|---|
+| 1. Biometría | Identificación biométrica remota, categorización por atributos sensibles, reconocimiento de emociones | Cámaras que identifican a personas a distancia en un local | Excluye la verificación de que alguien es quien dice ser, como un control de acceso con huella |
+| 2. Infraestructuras críticas | Componentes de seguridad en infraestructura digital crítica, tráfico, agua, gas, calefacción y electricidad | Distribuidoras, operadores de redes, gestión de tráfico | Solo cuando el sistema es componente de seguridad |
+| 3. Educación y formación profesional | Admisión, evaluación de resultados, nivel educativo asignado, vigilancia en exámenes | Academias y plataformas que corrigen o deciden aprobados con IA; supervisión automática de exámenes | Aplica a cualquier nivel educativo y formativo |
+| 4. Empleo y gestión de trabajadores | Anuncios dirigidos, filtrado de solicitudes, evaluación de candidatos, decisiones sobre condiciones, ascensos o despidos, asignación de tareas por comportamiento, evaluación del rendimiento | ATS con puntuación de CV, plataformas de búsqueda de candidatos, planificadores de turnos, software de evaluación del desempeño | El ámbito que pueden tocar empresas de cualquier sector |
+| 5. Servicios esenciales | Prestaciones públicas, solvencia y calificación crediticia, riesgo y precio de seguros de vida y salud, clasificación de llamadas de emergencia y triaje | Scoring de clientes en financieras, tarificación en aseguradoras de salud | La detección de fraude financiero está excluida del 5 b) |
+| 6. Aplicación de la ley | Riesgo de victimización, polígrafos, fiabilidad de pruebas, riesgo de reincidencia, perfiles en investigaciones | Proveedores de software para fuerzas de seguridad | Afecta sobre todo a autoridades y a quien les presta servicio |
+| 7. Migración, asilo y fronteras | Polígrafos, evaluación de riesgos, examen de solicitudes de asilo y visados, identificación de personas | Proveedores de las administraciones competentes | Excluye la verificación de documentos de viaje |
+| 8. Justicia y procesos democráticos | Asistencia a autoridades judiciales y a la resolución alternativa de litigios; influir en elecciones o en el voto | Herramientas para tribunales o mediación; microsegmentación electoral | Excluye las herramientas de organización logística de campañas |
+
+### Ejemplos concretos del borrador de la Comisión
+
+La Comisión publicó el 19 de mayo de 2026 un [borrador de directrices de clasificación](https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems) con ejemplos. No es vinculante y puede cambiar, pero es la mejor pista oficial. En el ámbito del empleo, considera de alto riesgo una herramienta que puntúa y ordena CV («top 5 candidates») cuando esas puntuaciones son el elemento principal de la decisión, la búsqueda de candidatos en redes y bolsas de empleo que genera listas cortas, y un planificador que clasifica a los trabajadores según su rendimiento y comportamiento para asignar turnos y paga variable.
+
+## El mapa de riesgo por uso: qué sí y qué no
+
+El mapa de riesgo por uso clasifica cada caso en cuatro niveles: prohibido, alto riesgo, exento por el filtro del art. 6.3 y fuera del anexo III. Sirve para ver de un vistazo que la misma área, por ejemplo RR. HH., tiene usos en los cuatro niveles. Los ejemplos de empleo salen del borrador de directrices de la Comisión; el resto, del texto del Reglamento.
+
+| Uso | Nivel | Por qué |
+|---|---|---|
+| Inferir las emociones de empleados en videollamadas | Prohibido | Art. 5.1 f), salvo motivos médicos o de seguridad |
+| ATS que puntúa CV y propone los 5 mejores | Alto riesgo | Anexo III 4 a); ejemplo del borrador |
+| Planificador de turnos y paga variable según rendimiento | Alto riesgo | Anexo III 4 b); ejemplo del borrador |
+| Scoring de solvencia para conceder un préstamo a particulares | Alto riesgo | Anexo III 5 b) |
+| Agendar entrevistas con IA | Exento por el art. 6.3 | Tarea de procedimiento limitada; ejemplo del borrador |
+| Extraer datos de CV y ordenarlos en una base de datos | Exento por el art. 6.3 | Ejemplo del borrador |
+| Auditar sesgos de contrataciones pasadas con datos anonimizados | Exento por el art. 6.3 | Ejemplo del borrador |
+| Asistente de bienvenida para nuevas incorporaciones | Fuera del anexo III | Salvo que afecte a condiciones laborales o evaluaciones |
+| Redactar el texto de una oferta de empleo con ChatGPT | En principio fuera | Distinto es un sistema que decide a quién se muestra el anuncio (4 a) |
+| Detectar fraude en pagos | Fuera del 5 b) | Exclusión expresa del anexo III |
+| Chatbot de atención al cliente | Fuera del anexo III | Tiene deber de transparencia (art. 50.1) |
+
+### El filtro del art. 6.3 y la excepción que lo anula
+
+Un uso del anexo III **no** es de alto riesgo si no plantea un riesgo importante y cumple alguna de estas condiciones: realiza una tarea de procedimiento limitada, mejora el resultado de una actividad humana ya hecha, detecta patrones de decisión sin sustituir la valoración humana, o es una tarea preparatoria. El proveedor que aplica el filtro debe documentarlo (art. 6.4). Pero hay una regla que lo anula todo: según el art. 6.3, los sistemas del anexo III «siempre se considerarán de alto riesgo cuando el sistema de IA efectúe la elaboración de perfiles de personas físicas».
+
+<Callout tipo="aviso" titulo="Que firme una persona no basta">
+
+Un error frecuente es pensar que, si la decisión final la toma una persona, el sistema deja de ser problemático. La [guía de la AEPD del 7 de octubre de 2026](https://www.aepd.es/recurso-multimedia/sistemas-algoritmicos-en-el-ambito-laboral.-transparencia-y-garantias-de) lo dice así: «La presencia formal de una persona no excluye el artículo 22: quien revise debe poder valorar críticamente la puntuación y apartarse de ella sin quedar condicionado de hecho por el resultado automatizado».
+
+</Callout>
+
+## Un caso real en España: la advertencia AI-00009-2026
+
+Un caso real publicado en España sobre IA en selección de personal es la advertencia AI-00009-2026 de la AEPD, dictada con base en el RGPD. Examina una herramienta, todavía no implantada, que analizaría currículums, asignaría puntuaciones según la adecuación al puesto y priorizaría candidaturas en selección y movilidad interna. No es una sanción: es una advertencia preventiva.
+
+Según el resumen de la AEPD en su [guía sobre sistemas algorítmicos en el ámbito laboral](https://www.aepd.es/recurso-multimedia/sistemas-algoritmicos-en-el-ambito-laboral.-transparencia-y-garantias-de), la empresa ya había informado a la representación de los trabajadores, aseguraba que la decisión final sería humana y que no se analizarían atributos sensibles. Aun así, la AEPD pidió evaluar los riesgos, hacer una evaluación de impacto si procede, dar información comprensible y comprobar que la intervención humana sea efectiva. También recordó que decir que una herramienta no usa atributos sensibles no basta: hay que comprobar si otras variables permiten inferirlos, y que unas auditorías periódicas no acreditan por sí solas el cumplimiento.
+
+La lección para cualquier empresa: el análisis empieza **antes** de implantar, y combina AI Act, RGPD y normativa laboral. Desde el 5 de octubre de 2026, además, el [Real Decreto 723/2026](https://www.boe.es/eli/es/rd/2026/09/09/723) obliga a informar por escrito a cada trabajador de los sistemas algorítmicos de decisión (a la plantilla contratada antes de esa fecha, cuando lo solicite). El detalle por usos de personas está en [IA en recursos humanos: usos permitidos y alto riesgo](/blog/ia-recursos-humanos-alto-riesgo).
+
+<CtaInline />
+
+## Test rápido: ¿usa tu empresa algún sistema de alto riesgo?
+
+Este test de cinco preguntas sirve para hacer una primera criba de cada uso de IA de tu empresa. No sustituye el análisis de tu asesoría, pero te dice qué casos merecen revisión y cuáles puedes dejar en el nivel general de alfabetización y transparencia.
+
+<Steps>
+
+1. **¿El sistema es componente de seguridad de un producto regulado** (máquinas, juguetes, productos sanitarios) que necesita evaluación de un tercero? Si es así, vía del anexo I.
+2. **¿Su finalidad encaja en alguna fila del anexo III?** Personas candidatas o empleadas, crédito, seguros de vida y salud, educación, biometría, servicios públicos. Si no, no es de alto riesgo.
+3. **¿Elabora perfiles de personas?** Si la respuesta es sí, es de alto riesgo aunque se cumpla el filtro del art. 6.3.
+4. **¿Es solo una tarea limitada, preparatoria o de apoyo** a una valoración humana previa, sin sustituirla? Si es así, puede quedar fuera, y el proveedor debe documentarlo.
+5. **¿Has puesto tu marca, lo has modificado sustancialmente o has cambiado su finalidad?** Entonces puedes ser proveedor (art. 25.1), con obligaciones mucho más amplias.
+
+</Steps>
+
+## Si tienes uno, qué te toca y cuándo
+
+Si tu empresa usa un sistema de alto riesgo del anexo III como responsable del despliegue, sus obligaciones del [art. 26 del AI Act](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689) se aplican desde el 2 de diciembre de 2027, según el nuevo art. 113 c) del [Reglamento (UE) 2026/1744](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744). La razón del aplazamiento, según su considerando 40, es el retraso en las normas técnicas, las orientaciones y las autoridades nacionales.
+
+En resumen, tendrás que usar el sistema según las instrucciones del proveedor, encomendar la supervisión humana a personas con «la competencia, la formación y la autoridad necesarias», vigilar su funcionamiento, conservar los registros al menos seis meses, e informar a los representantes de los trabajadores, a la plantilla afectada y a las personas sobre las que se decide. La lista completa, con qué hacer en cada punto, está en el [checklist de cumplimiento del AI Act](/blog/checklist-ai-act-empresas), y las demás fechas en el [calendario del AI Act](/blog/calendario-ai-act-fechas).
+
+### Lo que no cambia con el aplazamiento
+
+Que el alto riesgo llegue en 2027 no aplaza lo demás. El art. 4 de alfabetización y las prohibiciones se aplican desde el 2 de febrero de 2025, y el RGPD y el RD 723/2026 ya están en vigor. La formación de las personas que supervisarán un sistema de alto riesgo es una obligación propia (art. 26.2), más exigente que la alfabetización general: deben conocer los límites de ese sistema concreto y tener autoridad para apartarse de su resultado. Cómo dejar constancia de ello está en [Evidencias de formación en IA](/blog/evidencias-formacion-ia).
+
+Cuándo no necesitas a nadie: si tras el test ningún uso pasa de la pregunta 2, tu empresa no tiene sistemas de alto riesgo y te basta con la [alfabetización general del art. 4](/formaciones/alfabetizacion-ia) y la transparencia del art. 50. Si alguno la pasa, empieza por el [test AI Act de 3 minutos](/test-ai-act), repasa el resto de obligaciones en nuestra [guía del AI Act para empresas](/ai-act) y lleva el caso a tu asesoría; si el uso está en RR. HH., la formación específica para el equipo es esta:
+
+<FormacionCard slug="ia-rrhh" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico. La clasificación de un sistema como de alto riesgo depende de su finalidad concreta y de la versión final de las directrices de la Comisión. En usos de alto riesgo, de RR. HH. o con datos sensibles, consulta con tu asesoría legal.
+
+</Callout>
+
+<Fuentes>
+
+- [Reglamento (UE) 2024/1689 de Inteligencia Artificial (arts. 5, 6, 25, 26 y anexo III) — EUR-Lex, DOUE 12/7/2024](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689)
+- [Reglamento (UE) 2026/1744, Ómnibus digital sobre IA (art. 113 c y considerando 40) — EUR-Lex, DOUE 24/7/2026](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744)
+- [Annex III: High-risk AI systems referred to in Article 6(2) — AI Act Service Desk, Comisión Europea](https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3)
+- [Draft Commission guidelines on the classification of high-risk AI systems — Comisión Europea, 19/5/2026](https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems)
+- [Sistemas algorítmicos en el ámbito laboral. Transparencia y garantías de protección de datos (advertencia AI-00009-2026) — AEPD, 7/10/2026](https://www.aepd.es/recurso-multimedia/sistemas-algoritmicos-en-el-ambito-laboral.-transparencia-y-garantias-de)
+- [Real Decreto 723/2026 — BOE núm. 228, 15/9/2026](https://www.boe.es/eli/es/rd/2026/09/09/723)
+
+</Fuentes>

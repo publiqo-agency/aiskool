@@ -1,0 +1,188 @@
+---
+title: "Estrategia de IA: hoja de ruta para la dirección"
+description: "Estrategia de IA para la dirección de una pyme: hoja de ruta a 12 meses con fases, responsables, presupuesto, KPIs y gobierno del AI Act, con datos de BCG e INE"
+date: "2026-10-18"
+category: "departamentos"
+tldr: "Una estrategia de IA es un plan a 12 meses que decide qué casos de uso abordar, con qué reglas, quién responde y cómo se mide. Según BCG (2025), solo el 5 % de las empresas obtiene valor de la IA a escala y el 60 % no obtiene valor material. La diferencia está en las personas y los procesos."
+faqs:
+  - q: "¿Una pyme necesita una estrategia de IA o basta con comprar licencias?"
+    a: "Necesita una versión ligera. Comprar licencias sin decidir para qué se usan, con qué datos y cómo se mide suele acabar en uso disperso y sin retorno. Para una pyme basta con una página: tres o cuatro casos de uso, una política de uso, un responsable, un plan de formación y dos o tres indicadores revisados cada trimestre."
+  - q: "¿Quién debe liderar la estrategia de IA en la empresa?"
+    a: "Alguien de la dirección con capacidad de decidir sobre procesos y presupuesto, no solo el área de tecnología. TI aporta la seguridad y la integración, pero los casos de uso y el cambio en la forma de trabajar son de negocio. Lo habitual es un patrocinador en dirección y un comité pequeño con TI, un área piloto y quien lleve protección de datos."
+  - q: "¿Cuánto presupuesto hay que reservar para IA?"
+    a: "No hay una cifra estándar. Lo útil es el reparto: BCG recomienda dedicar el 10 % del esfuerzo a algoritmos, el 20 % a tecnología y datos y el 70 % a personas y procesos. En la práctica, si casi todo el presupuesto se va en licencias y nada en formación y rediseño del trabajo, el plan está desequilibrado."
+  - q: "¿El AI Act obliga a tener una estrategia de IA?"
+    a: "No. El AI Act no exige un documento de estrategia. Sí obliga a adoptar medidas para apoyar la alfabetización en IA del personal (art. 4, aplicable desde el 2 de febrero de 2025 y reformulado en julio de 2026) y, en usos concretos, a cumplir obligaciones de transparencia o de alto riesgo. Una hoja de ruta es la forma ordenada de organizar esas medidas."
+  - q: "¿Qué diferencia hay entre una hoja de ruta de IA y un plan de implantación?"
+    a: "La hoja de ruta es el documento de dirección: prioridades, gobierno, presupuesto e indicadores para un año. El plan de implantación es operativo: cómo lanzar el primer caso de uso en unas semanas. Primero decides el rumbo y después ejecutas cada caso con su propio plan."
+---
+
+Una estrategia de IA para una empresa es un plan de 12 meses que responde a cinco preguntas: qué casos de uso abordar, con qué reglas, quién responde, cuánto se invierte y cómo se mide. Es una cuestión de dirección y no de herramientas: según [BCG (septiembre de 2025)](https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings), solo el 5 % de las empresas obtiene valor de la IA a escala. Aquí tienes la hoja de ruta por fases, con responsables, presupuesto, indicadores y el encaje con el AI Act.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- La adopción ya es mayoritaria entre las organizaciones encuestadas, pero el valor no: el 60 % de las empresas no obtiene valor material, según BCG.
+- El 70 % del esfuerzo debe ir a personas y procesos, el 20 % a tecnología y datos y el 10 % a algoritmos (regla 10-20-70 de BCG).
+- Una pyme no necesita un documento de 40 páginas: necesita una página con prioridades, reglas, responsables y tres indicadores.
+
+</Callout>
+
+## ¿Por qué la dirección necesita una estrategia de IA?
+
+La dirección necesita una estrategia de IA porque el uso ya está dentro de la empresa, con o sin plan, y sin dirección no produce resultados medibles. Las encuestas internacionales coinciden: casi todas las organizaciones usan IA en alguna función, pero muy pocas consiguen valor a escala y muchas no saben cómo medirlo.
+
+Según la encuesta de McKinsey recogida en el [AI Index 2026 de Stanford](https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf), el 88 % de los encuestados afirma que su organización usa IA en al menos una función (78 % en 2024). Es un dato declarado por 1.993 encuestados de 105 países, no un porcentaje de empresas, y el propio informe pide leerlo como orientativo. En España, con la definición oficial, el [INE (primer trimestre de 2025)](https://www.ine.es/dyngs/Prensa/ETICCE20241T2025.htm) sitúa en el 21,1 % las empresas de 10 o más empleados que usan IA.
+
+El problema es el valor. El estudio de BCG con 1.250 empresas de 2025 lo cuantifica:
+
+<Barras titulo="Valor obtenido de la IA (% de empresas, 2025)" datos="Valor a escala|5;Escalando y con algún retorno|35;Sin valor material|60" unidad=" %" fuente="BCG, The Widening AI Value Gap, 2025" href="https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf" />
+
+Y la dirección lo sabe. En el [Work Trend Index 2024 de Microsoft y LinkedIn](https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part), con 31.000 trabajadores de 31 mercados, España incluida, el 60 % de los directivos temía que su dirección no tuviera «a plan and vision to implement AI», y el 59 % le preocupaba cuantificar las ganancias de productividad.
+
+<Stats>
+  <Stat valor="5 %" etiqueta="Empresas que obtienen valor de la IA a escala" fuente="BCG, 2025" href="https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf" />
+  <Stat valor="60 %" etiqueta="Directivos que temen que su dirección no tenga plan ni visión para la IA" fuente="Microsoft y LinkedIn, 2024" href="https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part" />
+  <Stat valor="81,3 %" etiqueta="De las empresas españolas que se plantearon la IA y no la usan, las que alegan falta de conocimientos" fuente="INE, 1T 2025" href="https://ine.es/jaxi/Tabla.htm?tpx=76387" />
+</Stats>
+
+El último dato tiene una base concreta: son las empresas que alguna vez se plantearon usar IA y no la usan, no el total. Aun así, señala dónde está el cuello de botella en España: el conocimiento, más que la tecnología. Más cifras en [la IA en las empresas españolas: datos y estadísticas](/blog/ia-empresas-espanolas-estadisticas).
+
+## La hoja de ruta de IA a 12 meses, fase a fase
+
+La hoja de ruta de IA para una pyme cabe en cinco fases a lo largo de un año: diagnóstico, cartera de casos de uso, gobierno, formación con pilotos y escalado con revisión. Cada fase tiene un responsable y un entregable concreto, y la siguiente no empieza hasta que la anterior deja algo por escrito.
+
+<Flujo titulo="Hoja de ruta de IA a 12 meses" pasos="Diagnóstico|Cartera de casos de uso|Gobierno y reglas|Formación y pilotos|Escalado y revisión" />
+
+| Fase | Plazo orientativo | Responsable | Entregable |
+|---|---|---|---|
+| 1. Diagnóstico | Mes 1 | Patrocinador en dirección + TI | Inventario de herramientas y usos actuales (incluidas cuentas personales), encuesta breve a la plantilla, mapa de procesos candidatos |
+| 2. Cartera de casos de uso | Meses 1–2 | Comité de IA (dirección, TI, área piloto) | Lista priorizada por valor, facilidad y riesgo; 2 o 3 casos elegidos para pilotar |
+| 3. Gobierno y reglas | Meses 2–3 | Comité + quien lleve protección de datos | Política de uso, herramientas corporativas aprobadas, qué datos pueden entrar, roles y registro de medidas de alfabetización |
+| 4. Formación y pilotos | Meses 3–6 | Responsables de cada área piloto | Formación por perfiles, pilotos con métrica de partida y resultado medido |
+| 5. Escalado y revisión | Meses 6–12 | Comité de IA | Decisión de escalar, ajustar o cerrar cada piloto; indicadores trimestrales; presupuesto del año siguiente |
+
+Los plazos son orientativos y dependen del tamaño de la empresa. El orden sí importa: la experiencia de las empresas que van por delante, según BCG, es que el valor está en los procesos principales del negocio. En su informe de 2025, el 70 % del valor potencial de la IA se concentra en funciones como ventas y marketing, fabricación, cadena de suministro y precios, no en las funciones de soporte.
+
+### Cómo priorizar los casos de uso
+
+<Steps>
+
+1. **Valor**: cuánto tiempo, coste o ingreso mueve el caso, con una cifra de partida medible hoy.
+2. **Facilidad**: si se resuelve con herramientas listas para usar o exige integración. En España, el 51,6 % de las empresas que usan IA la compra como software comercial listo para usar ([INE, 1T 2025](https://ine.es/jaxi/Tabla.htm?tpx=76387)).
+3. **Riesgo**: si afecta a clientes, a decisiones sobre personas o a datos sensibles. Los usos en selección o evaluación de personal pueden ser de alto riesgo en el AI Act ([IA en RR. HH.: qué se puede hacer](/blog/ia-recursos-humanos-alto-riesgo)).
+4. **Patrocinador**: si hay una persona en el área dispuesta a cambiar su forma de trabajar y medir el resultado.
+
+</Steps>
+
+Ejemplos de casos por área, con prompts y controles, en [IA en contabilidad y finanzas](/blog/ia-finanzas-contabilidad) y [IA en atención al cliente](/blog/ia-atencion-al-cliente).
+
+<CtaInline />
+
+## Gobierno: reglas, riesgos y AI Act
+
+El gobierno de la IA es el conjunto de reglas que dicen qué herramientas se usan, con qué datos, quién aprueba un nuevo uso y cómo se documenta. Sin él, la hoja de ruta convive con el uso no controlado: según [BCG (2025)](https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf), el 72 % de las empresas ya declara riesgos de seguridad de IA no gestionados.
+
+Para estructurarlo, un marco útil y gratuito es el AI RMF del [NIST](https://www.nist.gov/itl/ai-risk-management-framework), de uso voluntario, con cuatro funciones: GOVERN (gobernar), MAP (identificar usos y riesgos), MEASURE (medir) y MANAGE (gestionar). Traducido a una pyme: una política de uso, un inventario de usos, unos indicadores y un responsable que decide.
+
+En cuanto al AI Act (Reglamento europeo de IA, Reglamento (UE) 2024/1689), lo que afecta hoy a casi cualquier empresa que usa IA es el art. 4, en la redacción dada por el [Reglamento (UE) 2026/1744](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744) en vigor desde el 27 de julio de 2026: los responsables del despliegue «adoptarán medidas para apoyar la promoción de la alfabetización en materia de IA de su personal», sin obligación de garantizar un nivel específico por persona. No exige certificado ni horas mínimas.
+
+<Timeline>
+  <Hito fecha="2 feb 2025" titulo="Art. 4 y prácticas prohibidas">Aplicables la obligación de alfabetización y las prohibiciones del art. 5.</Hito>
+  <Hito fecha="27 jul 2026" titulo="Entra en vigor el Digital Omnibus">El Reglamento (UE) 2026/1744 reescribe el art. 4 y aplaza el alto riesgo.</Hito>
+  <Hito fecha="2 ago 2026" titulo="Transparencia (art. 50)">Los sistemas que interactúan con personas deben informar de que son una IA.</Hito>
+  <Hito fecha="2 dic 2027" titulo="Alto riesgo del anexo III">Obligaciones para usos como selección de personal o evaluación de trabajadores.</Hito>
+</Timeline>
+
+En España, el proyecto de ley orgánica de IA que el Gobierno presentó en el Congreso el 28 de mayo de 2026 caducó con la disolución de las Cortes, según [la ficha del Congreso](https://www.congreso.es/es/proyectos-de-ley?p_p_id=iniciativas&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_iniciativas_mode=mostrarDetalle&_iniciativas_legislatura=XV&_iniciativas_id=121%2F000096) (concluido el 6 de octubre de 2026). Para el detalle de fechas, consulta [el calendario del AI Act](/blog/calendario-ai-act-fechas); para la política interna, [la plantilla de política de uso de IA](/blog/politica-uso-ia-empresa).
+
+<Checklist titulo="Gobierno mínimo para el primer trimestre">
+
+- Herramientas corporativas aprobadas y cuentas personales fuera del trabajo ([Shadow AI: el riesgo de las cuentas personales](/blog/shadow-ai-riesgos))
+- Política de uso orientativa, adaptada y revisada con tu asesoría
+- Lista de datos que no pueden entrar en ninguna IA
+- Inventario de usos con su nivel de riesgo
+- Registro de las medidas de alfabetización: quién se ha formado, en qué y cuándo
+- Un responsable que aprueba nuevos usos
+
+</Checklist>
+
+## Presupuesto e indicadores: cómo medir si funciona
+
+El presupuesto de una estrategia de IA debe repartirse sobre todo en personas y procesos, y los indicadores deben fijarse antes de empezar cada piloto. Las empresas que van por delante miden más: según BCG (2025), más del 60 % de las empresas «future-built» hace un seguimiento riguroso del valor de la IA, frente al 17 % de las estancadas.
+
+La regla 10-20-70 de BCG sirve como prueba de equilibrio: «70% of a business's strategic focus should be on the people and processes, 20% on the tech, and 10% on algorithms». Si casi todo el presupuesto se va en licencias, faltan formación, tiempo para rediseñar tareas y alguien que mida.
+
+Lo confirma el [Work Trend Index 2026 de Microsoft](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization): los factores de organización (cultura, apoyo de los mandos, prácticas de talento) pesan más del doble que los individuales en el impacto declarado de la IA (67 % frente a 32 %). Es una asociación estadística, no una causa, y la muestra (20.000 usuarios de IA en 10 países) no incluye España.
+
+| Indicador | Qué mide | Cuándo revisarlo |
+|---|---|---|
+| Uso activo | Porcentaje de personas con licencia que usan la herramienta cada semana | Mensual |
+| Tiempo por tarea | Minutos que lleva la tarea piloto antes y después | Al cerrar cada piloto |
+| Calidad o errores | Errores detectados en revisión, reclamaciones, retrabajos | Mensual |
+| Formación | Personas formadas por perfil y evidencias registradas | Trimestral |
+| Incidencias de gobierno | Usos no autorizados detectados, datos que no debían entrar | Trimestral |
+
+Para traducir estos indicadores a euros sin inflarlos, tienes [cómo medir el ROI de la formación en IA](/blog/roi-formacion-ia).
+
+## Errores frecuentes y cuándo no necesitas ayuda externa
+
+El error más común en una estrategia de IA es empezar por la herramienta en lugar de por el problema; el segundo, lanzar agentes antes de que la plantilla sepa usar un asistente. El AI Index 2026 recoge que el despliegue de agentes estaba en 2025 «in the single digits across nearly all business functions»: no hace falta correr.
+
+<Columnas>
+<Pros titulo="Lo que funciona">
+
+- Dos o tres pilotos con métrica de partida
+- Un patrocinador de dirección con tiempo asignado
+- Reglas sencillas antes de abrir las herramientas
+- Formación por perfiles, con práctica sobre tareas reales
+
+</Pros>
+<Contras titulo="Lo que no">
+
+- Comprar licencias para todos sin casos de uso
+- Diez pilotos a la vez sin responsable
+- Prohibir la IA y empujar el uso a cuentas personales
+- Medir solo cuántas licencias se han activado
+
+</Contras>
+</Columnas>
+
+No necesitas contratar a nadie si en la dirección hay alguien con tiempo y criterio para hacer el diagnóstico, escribir las reglas y seguir los pilotos. Con la tabla de fases de este artículo y una reunión al mes es suficiente para empezar. La ayuda externa compensa cuando nadie puede dedicarle horas, cuando hay que formar a muchos perfiles distintos o cuando un caso exige integrar sistemas. La parte operativa de lanzar el primer caso la tienes en [cómo implantar la IA en una empresa](/blog/como-implantar-ia-empresa).
+
+## Siguiente paso: tu hoja de ruta en una página
+
+La forma más rápida de pasar de la idea al plan es rellenar un lienzo de una página en una reunión de dirección de dos horas. Copia esta estructura y complétala con tu equipo:
+
+<Steps>
+
+1. **Objetivo**: qué quieres conseguir con la IA este año, en una frase y con una cifra.
+2. **Casos de uso**: los tres elegidos, con su responsable y su métrica de partida.
+3. **Reglas**: herramientas aprobadas, datos prohibidos y quién aprueba nuevos usos.
+4. **Personas**: qué perfiles se forman, en qué y antes de qué fecha.
+5. **Presupuesto**: licencias, formación y horas internas, con el reparto 10-20-70 como referencia.
+6. **Revisión**: fecha de la primera revisión trimestral y los indicadores que se mirarán.
+
+</Steps>
+
+Si quieres hacerlo acompañado, nuestra [sesión ejecutiva de IA para dirección](/formaciones/ia-para-directivos) termina con una hoja de ruta priorizada, criterios para evaluar proveedores y casos de uso y las responsabilidades del AI Act para la empresa. Si ya tienes los casos claros y necesitas construirlos, lo hacemos en [consultoría](/consultoria), empezando por un diagnóstico de madurez. Y si no sabes por dónde empezar, el [diagnóstico gratuito de 30 minutos](/diagnostico) es el primer paso.
+
+<FormacionCard slug="ia-para-directivos" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico. Para valorar si algún uso de IA de tu empresa es de alto riesgo o afecta a datos personales, consulta con tu asesoría legal.
+
+</Callout>
+
+<Fuentes>
+
+- [The Widening AI Value Gap (Build for the Future 2025)](https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf) y [nota de prensa](https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings) — BCG, 30 de septiembre de 2025.
+- [AI Index Report 2026, cap. 4.3](https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf) — Stanford HAI, 2026 (datos de McKinsey, State of AI 2025).
+- [Work Trend Index 2024: AI at Work Is Here. Now Comes the Hard Part](https://www.microsoft.com/en-us/worklab/work-trend-index/ai-at-work-is-here-now-comes-the-hard-part) — Microsoft y LinkedIn, 8 de mayo de 2024.
+- [Work Trend Index 2026](https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization) — Microsoft, 5 de mayo de 2026.
+- [Encuesta TIC en empresas 2024–1T 2025](https://www.ine.es/dyngs/Prensa/ETICCE20241T2025.htm) y [tabla de inteligencia artificial](https://ine.es/jaxi/Tabla.htm?tpx=76387) — INE, 22 de octubre de 2025.
+- [AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) — NIST, 26 de enero de 2023.
+- [Reglamento (UE) 2026/1744 (Ómnibus digital sobre IA)](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744) — DOUE, 24 de julio de 2026.
+- [Proyecto de Ley Orgánica para el buen uso y la gobernanza de la IA (121/000096)](https://www.congreso.es/es/proyectos-de-ley?p_p_id=iniciativas&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_iniciativas_mode=mostrarDetalle&_iniciativas_legislatura=XV&_iniciativas_id=121%2F000096) — Congreso de los Diputados, consultado el 18 de octubre de 2026.
+
+</Fuentes>

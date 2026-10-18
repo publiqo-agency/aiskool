@@ -1,0 +1,165 @@
+---
+title: "IA para abogados: usos, riesgos y herramientas"
+description: "IA para abogados y asesorías jurídicas: qué tareas acelera, cómo proteger el secreto profesional y un protocolo para no citar jurisprudencia inventada."
+date: "2026-10-18"
+category: "departamentos"
+tldr: "La IA para abogados ahorra tiempo en revisar y comparar documentos, resumir expedientes y preparar borradores, pero no sirve como buscador de jurisprudencia sin verificación. A 16 de octubre de 2026, la base de datos de Damien Charlotin recoge 2.199 resoluciones judiciales con contenido inventado por IA en el mundo, 8 de ellas en España. Secreto profesional y verificación de citas son innegociables."
+faqs:
+  - q: "¿Puede un abogado usar ChatGPT para redactar escritos?"
+    a: "Puede usarlo como apoyo, pero responde de todo lo que firma. El Tribunal Constitucional recordó en 2024 que el letrado es siempre responsable de revisar el contenido de sus escritos, fuera cual fuese la causa de una cita irreal. Y el ICAM insiste en que la IA no reemplaza el criterio profesional. Úsalo en una cuenta de empresa, sin datos identificables y verificando cada cita."
+  - q: "¿Qué pasa si presento una sentencia inventada por la IA?"
+    a: "Depende del tribunal, pero ya hay consecuencias en España. El TC impuso un apercibimiento en 2024 por 19 citas falsas, y el TSJ de Galicia fijó en julio de 2026 una multa de 1.800 € calculada sobre el coste de una herramienta jurídica verificada. En EE. UU., el caso Mata v. Avianca acabó en 5.000 dólares de sanción. La rectificación a tiempo cuenta a tu favor."
+  - q: "¿Las herramientas de IA de las editoriales jurídicas no se equivocan?"
+    a: "Se equivocan menos, pero también se equivocan. Un estudio de Stanford de 2024 encontró que herramientas jurídicas con RAG de LexisNexis y Thomson Reuters alucinaban entre el 17 % y el 33 % de las veces en consultas sobre derecho estadounidense, frente a tasas mucho mayores de los chatbots generalistas. Una base de datos verificada reduce el riesgo; no elimina la revisión."
+  - q: "¿Puedo subir un contrato de un cliente a una herramienta de IA?"
+    a: "Solo a una herramienta contratada en modalidad empresa, que no entrene con tus datos, con acuerdo de tratamiento y, si es posible, con los datos identificativos eliminados. Las comunicaciones entre abogado y cliente son confidenciales según el art. 16 de la Ley Orgánica 5/2024. Una cuenta personal gratuita no es el lugar para documentos de clientes."
+  - q: "¿El AI Act prohíbe usar IA en un despacho?"
+    a: "No. Usar asistentes de IA para redactar, resumir o revisar documentos no está prohibido ni es, por sí mismo, de alto riesgo. Sí te afecta el art. 4: como responsable del despliegue debes adoptar medidas para apoyar la alfabetización en IA de quienes la usan. El anexo III incluye la IA destinada a ayudar a autoridades judiciales, que es otro supuesto."
+---
+
+La IA para abogados es útil hoy en tareas de lectura y redacción: revisar y comparar contratos, resumir expedientes largos, preparar borradores y ordenar documentación. Donde falla, y con consecuencias, es como buscador de jurisprudencia: a 16 de octubre de 2026, la [base de datos de Damien Charlotin](https://www.damiencharlotin.com/hallucinations/) recoge 2.199 resoluciones judiciales en las que se usó contenido inventado por IA, 8 de ellas en España. Esta guía es para despachos y asesorías jurídicas de empresa (si eres asesoría fiscal o contable, te encaja mejor [IA en finanzas y contabilidad](/blog/ia-finanzas-contabilidad)): qué usos funcionan, qué herramientas elegir con criterios claros, cómo proteger el secreto profesional y un protocolo de verificación.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- La IA acelera la lectura, la comparación y los borradores. No sustituye la búsqueda en fuentes oficiales ni el criterio del profesional.
+- En España ya hay sanciones por citas falsas en escritos; entre las más recientes, la del TSJ de Galicia (julio de 2026, 1.800 €).
+- El secreto profesional (art. 16 de la LO 5/2024) exige cuentas de empresa, minimización de datos y herramientas que no entrenen con lo que subes.
+
+</Callout>
+
+## ¿Para qué sirve la IA en un despacho o una asesoría jurídica?
+
+La IA en un despacho o en una asesoría jurídica de empresa sirve sobre todo para cuatro tareas: leer y resumir documentación extensa, comparar versiones de contratos, preparar primeros borradores y responder consultas internas repetitivas a partir de documentos propios. En todas, la IA propone y el profesional revisa y firma.
+
+Hay casos públicos con cifras, todos publicados por los fabricantes, así que tómalos como ejemplos de uso y no como promedios:
+
+- **ILUNION** creó con agentes de Microsoft 365 Copilot un agente para su asesoría jurídica que redujo el análisis inicial de cada expediente a unos 40 segundos, con un ahorro «superior a las 7.000 horas anuales», según [Microsoft (julio de 2025)](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/).
+- **BBVA**: su equipo legal usa ChatGPT para responder 40.000 preguntas al año sobre políticas, cumplimiento y otros asuntos, según [OpenAI (2025)](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf).
+- **Vodafone**: los usuarios de Microsoft 365 Copilot de su departamento legal ahorran de media cuatro horas por persona y semana, según [Microsoft](https://www.microsoft.com/en/customers/story/19346-vodafone-microsoft-365-copilot).
+- **Indra** redujo «en algunos casos» hasta un 90 % el tiempo de tareas repetitivas como la comparación de documentos (dato del conjunto de la compañía, no solo de su área jurídica), según [Microsoft (julio de 2025)](https://news.microsoft.com/source/emea/2025/07/indra-group-acelera-sus-procesos-con-ia-mas-de-3-000-profesionales-mejoran-su-productividad-y-eficiencia-gracias-al-uso-de-microsoft-365-copilot/?lang=es).
+
+| Tarea | Encaje de la IA | Qué revisa el profesional |
+|---|---|---|
+| Resumir un expediente o un contrato largo | Alto | Que el resumen no omita cláusulas relevantes |
+| Comparar dos versiones de un contrato | Alto | Cada diferencia señalada, contra el original |
+| Primer borrador de un contrato tipo o una carta | Alto, con plantilla propia | Fondo jurídico, datos y adaptación al caso |
+| Responder consultas internas sobre políticas de la empresa | Alto, con documentos propios | Que la respuesta cite el documento correcto y vigente |
+| Buscar jurisprudencia o doctrina | Bajo con IA generalista; medio con bases verificadas | Cada cita, en la fuente oficial |
+| Valorar la estrategia de un asunto | Bajo | Todo: es criterio profesional |
+
+## Alucinaciones en escritos judiciales: los casos documentados
+
+Una alucinación en un escrito judicial es una cita de sentencia, norma o doctrina que la IA genera con apariencia verosímil pero que no existe o no dice lo que se le atribuye. Es el riesgo más grave para un profesional del derecho porque llega al tribunal con su firma, y ya hay resoluciones en España que lo sancionan.
+
+<Stats>
+  <Stat valor="2.199" etiqueta="Resoluciones judiciales con contenido alucinado por IA en el mundo, a 16 de octubre de 2026" fuente="Base de Damien Charlotin" href="https://www.damiencharlotin.com/hallucinations/" />
+  <Stat valor="8" etiqueta="Casos registrados en España" fuente="Base de Damien Charlotin, 16 oct 2026" href="https://www.damiencharlotin.com/hallucinations/?states=Spain" />
+  <Stat valor="17 a 33 %" etiqueta="Tasa de alucinación de herramientas jurídicas con RAG (derecho de EE. UU.)" fuente="Magesh et al., Stanford, 2024" href="https://arxiv.org/abs/2405.20362" />
+</Stats>
+
+La base de Charlotin solo recoge casos en los que el tribunal constató, o dio a entender, que una parte se apoyó en contenido alucinado. Es el trabajo de un investigador de HEC Paris, no un registro oficial. Los casos españoles más citados:
+
+<Timeline>
+  <Hito fecha="4 sep 2024" titulo="TSJ de Navarra: Código Penal de Colombia en una querella">El abogado reconoció un error por usar ChatGPT; el tribunal archivó sin sanción tras la rectificación, pero advirtió de la mala fe procesal.</Hito>
+  <Hito fecha="9 sep 2024" titulo="Tribunal Constitucional: apercibimiento por 19 citas inexistentes">El TC no afirma que se usara IA: considera irrelevante la causa y recuerda que el letrado siempre es responsable de revisar.</Hito>
+  <Hito fecha="10 feb 2026" titulo="TSJ de Canarias (Las Palmas): multa de 420 €">Citas generadas por IA que no aparecen en las sentencias invocadas, con remisión al Colegio, según la base de Charlotin.</Hito>
+  <Hito fecha="7 jul 2026" titulo="TSJ de Galicia: multa de 1.800 €">Cuantía fijada por referencia al coste anual de una IA jurídica con bases verificadas.</Hito>
+</Timeline>
+
+El [Auto 61/2026 del TSJ de Galicia](https://www.damiencharlotin.com/documents/2614/Galicia_7_July_2026.pdf) es el más ilustrativo para un despacho. El tribunal explica que las editoriales jurídicas españolas, «Aranzadi, Tirant lo Blanch o Lefebvre», ofrecen IA integrada con bases jurisprudenciales verificadas con planes anuales básicos de «entre 1500 y 3000 euros», y que contratar una de ellas, «o, en su defecto, la simple comprobación de las citas a través del CENDOJ, de acceso gratuito y muy intuitivo», habría evitado el problema.
+
+Fuera de España, el caso de referencia es [Mata v. Avianca (Nueva York, 2023)](https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0.pdf): dos abogados presentaron sentencias inexistentes generadas por ChatGPT y las defendieron cuando el juez las cuestionó. La sanción fue de 5.000 dólares. El juez dejó una frase que resume el problema: no hay nada «inherently improper» en usar una herramienta fiable de IA, pero las normas imponen al abogado un papel de control sobre la exactitud de lo que presenta.
+
+## ¿Qué herramienta de IA elegir? Criterios y comparativa
+
+La herramienta de IA adecuada para un despacho depende de tres criterios: de dónde saca la información (tu documentación, la web o una base jurídica verificada), qué garantiza sobre la confidencialidad de lo que subes y cuánto cuesta por usuario. Ninguna sirve para todo, y muchas firmas combinan un asistente generalista corporativo con una base jurídica.
+
+| Tipo de herramienta | Fuentes | Privacidad (planes de empresa) | Precio de referencia | Mejor para |
+|---|---|---|---|---|
+| Microsoft 365 Copilot | Tus documentos y correo en Microsoft 365, más web | No entrena con tus datos; tráfico de la UE dentro del EU Data Boundary, salvo búsquedas web y modelos de Anthropic | 15,60 €/usuario/mes sin IVA, anual, en promoción hasta el 31/12/2026 (18,20 € normal), más licencia de Microsoft 365 | Despachos que ya trabajan en Word, Outlook y Teams |
+| ChatGPT Business | Lo que subes, conectores y web | No entrena por defecto; acuerdo de tratamiento disponible | 20 $/usuario/mes, anual (USD) | Redacción, análisis de documentos y asistentes reutilizables |
+| Claude Team | Lo que subes, proyectos, conectores y web | No entrena por defecto | 20 $/puesto/mes, anual (USD, sin impuestos) | Documentos largos y trabajo en proyectos compartidos |
+| Gemini en Google Workspace y Gemini Notebook | Tus documentos de Workspace; el cuaderno responde con citas a tus fuentes | Workspace no entrena sin permiso; las regiones de datos no cubren Gemini Notebook | 13,60 €/usuario/mes sin impuestos (Business Standard, anual) | Despachos en Google Workspace y trabajo con citas a documentos propios |
+| IA de editoriales jurídicas | Bases jurisprudenciales y doctrinales verificadas | Según contrato de cada editorial | Planes anuales básicos de 1.500 a 3.000 €, según el TSJ de Galicia | Investigación jurídica con citas comprobables |
+
+Precios y condiciones consultados el 18 de octubre de 2026 en las webs oficiales de [Microsoft](https://www.microsoft.com/es-es/copilot/pricing/business), [OpenAI](https://learn.chatgpt.com/docs/pricing), [Anthropic](https://claude.com/pricing) y [Google](https://workspace.google.com/intl/es/pricing.html); privacidad según [Microsoft Learn](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy), [OpenAI](https://openai.com/enterprise-privacy/) y el [centro de privacidad de Anthropic](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training-for-commercial-products). OpenAI y Anthropic publican sus precios en dólares. Si dudas entre asistentes generalistas, la comparativa de [ChatGPT, Copilot, Claude y Gemini para empresas](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini) entra en detalle.
+
+<CtaInline />
+
+## Secreto profesional y confidencialidad: qué cambia al usar IA
+
+El secreto profesional no impide usar IA, pero condiciona dónde y cómo: la información de un cliente solo debe entrar en herramientas contratadas en modalidad empresa, que no usen los datos para entrenar, con acuerdo de tratamiento y con la mínima información identificativa posible. Una cuenta personal gratuita no cumple ninguna de esas condiciones.
+
+El [art. 16.1 de la Ley Orgánica 5/2024, del Derecho de Defensa](https://www.boe.es/eli/es/lo/2024/11/11/5/con), establece que todas las comunicaciones entre un profesional de la abogacía y su cliente «tienen carácter confidencial», y el art. 16.5 incluye en el secreto profesional «la inviolabilidad y el secreto de todos los documentos y comunicaciones» relacionados con la defensa. A eso se suma el RGPD cuando hay datos personales.
+
+En la práctica, la diferencia entre planes es grande. En ChatGPT Free, Plus y Pro el contenido puede usarse para entrenar modelos salvo que lo desactives, según el [centro de ayuda de OpenAI](https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance); en Business y Enterprise, no por defecto. Incluso en planes de empresa, los chats borrados pueden conservarse hasta 30 días. Tienes el detalle por plan en [¿es seguro ChatGPT para empresas?](/blog/chatgpt-seguro-empresas-privacidad).
+
+<Checklist titulo="Confidencialidad mínima antes de usar IA con asuntos de clientes">
+
+- Solo cuentas corporativas, nunca personales, y prohibido por escrito usar cuentas propias con documentos de clientes.
+- Herramienta que no entrena con tus datos por defecto y con acuerdo de tratamiento firmado.
+- Eliminar o seudonimizar nombres, DNI, cuentas y datos de salud antes de subir un documento cuando la tarea lo permita.
+- Revisar dónde se tratan los datos: en Copilot, los modelos de Anthropic y las búsquedas web quedan fuera del EU Data Boundary; en Workspace, las regiones de datos no cubren Gemini Notebook.
+- Registrar qué asunto se trabajó con IA y para qué, como recomienda la abogacía institucional.
+
+</Checklist>
+
+## Protocolo de verificación para no citar lo que no existe
+
+Un protocolo de verificación de IA en un despacho es una regla interna que obliga a comprobar en fuente oficial cada cita que llega a un escrito y a dejar rastro de cómo se usó la herramienta. Es barato, cabe en una página y es lo que separa un uso profesional de los casos sancionados.
+
+<Steps>
+
+1. **No uses un chatbot generalista como buscador de jurisprudencia.** El estudio de Stanford de [Dahl et al. (2024)](https://arxiv.org/abs/2401.01301) midió alucinaciones de entre el 58 % y el 88 % en preguntas verificables sobre casos federales de EE. UU. con modelos generalistas.
+2. **Pide citas literales y permite que la IA diga «no lo sé».** La [documentación de Anthropic](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations) recomienda pedir citas textuales del documento y retirar cualquier afirmación sin cita. Funciona igual con otros asistentes.
+3. **Comprueba cada referencia en la fuente oficial:** CENDOJ para jurisprudencia española, el BOE o EUR-Lex para normas, o la base verificada de tu editorial. Abre la resolución y lee el pasaje: que exista no basta, tiene que decir lo que citas.
+4. **Deja constancia del uso.** La circular del Consejo General de la Abogacía Española de abril de 2026, según [El Derecho](https://elderecho.com/la-abogacia-espanola-advierte-de-los-riesgos-de-usar-la-ia-generativa-en-textos-profesionales), recomienda documentar cuándo y para qué se ha usado la IA, y considera que la rectificación a tiempo del documento erróneo puede evitar la infracción.
+5. **Revisión final por quien firma.** Como recordó el [Tribunal Constitucional](https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2024_090/NOTA%20INFORMATIVA%20N%C2%BA%2090-2024.pdf), el letrado es «siempre responsable de revisar exhaustivamente» el contenido de cualquier escrito.
+
+</Steps>
+
+<Callout tipo="aviso" titulo="Error frecuente">
+
+Creer que una herramienta jurídica con IA no necesita revisión. Según [Magesh et al. (Stanford, 2024)](https://arxiv.org/abs/2405.20362), Lexis+ AI y las herramientas de Thomson Reuters alucinaban entre el 17 % y el 33 % de las veces en su prueba. Menos que un chatbot generalista, pero no cero.
+
+</Callout>
+
+La [Guía de Buenas Prácticas del ICAM](https://web.icam.es/el-icam-lanza-la-primera-guia-practica-para-un-uso-responsable-de-la-ia-en-la-abogacia/) lo resume así: la tecnología «no reemplaza ni debe reemplazar al abogado ni a su criterio profesional». Si quieres entender por qué los modelos inventan con tanta seguridad, lo explicamos en [alucinaciones de la IA: por qué ocurren y cómo evitarlas](/blog/alucinaciones-ia).
+
+## Qué no hacemos y cuándo no necesitas formación externa
+
+Nosotros somos una empresa de formación en IA: no damos asesoramiento jurídico ni revisamos escritos. Enseñamos a los equipos jurídicos a usar las herramientas con verificación y confidencialidad; el criterio jurídico es siempre vuestro. Con esa premisa, no todos los despachos necesitan una formación externa.
+
+Puede que no la necesites si sois pocas personas, ya trabajáis con una base jurídica verificada que incluye IA, tenéis cuentas corporativas y una regla escrita de verificación como la de esta guía. En ese caso, lo más rentable es dedicar una tarde a probar los usos de la tabla con documentos anonimizados.
+
+Compensa formar al equipo cuando hay cuentas personales con documentos de clientes, cuando cada persona verifica a su manera o cuando la asesoría jurídica de la empresa tiene además que organizar el inventario de IA y la [alfabetización del art. 4 del AI Act](/blog/articulo-4-ai-act-pymes) para el resto de la plantilla. Nuestra [formación de IA para Legal y Compliance](/formaciones/ia-legal) trabaja revisión asistida de contratos, investigación con fuentes contrastadas, secreto profesional, alucinaciones y gobierno de la IA. Si quieres valorar antes si os hace falta, el [diagnóstico gratuito de 30 minutos](/diagnostico) sirve para eso.
+
+<FormacionCard slug="ia-legal" />
+
+## Qué hacer esta semana
+
+<Checklist titulo="Primeros pasos para un despacho o una asesoría jurídica">
+
+- Comprueba qué herramientas de IA usa cada persona y con qué tipo de cuenta.
+- Aprueba una regla escrita: ninguna cita llega a un escrito sin comprobarla en fuente oficial.
+- Elige un uso de bajo riesgo (resumir o comparar contratos anonimizados) y pruébalo dos semanas.
+- Revisa el acuerdo de tratamiento y la política de entrenamiento de tu herramienta.
+- Añade una casilla en tu gestor de expedientes para registrar el uso de IA.
+- Si eres la asesoría jurídica de una empresa, coordina con RR. HH. los usos sobre personas: la guía de [IA en recursos humanos](/blog/ia-recursos-humanos-alto-riesgo) explica qué es alto riesgo.
+
+</Checklist>
+
+<Callout tipo="legal">Este artículo es informativo y no es asesoramiento jurídico. Las obligaciones deontológicas y de protección de datos dependen de cada caso y de tu colegio profesional: consulta con tu asesoría legal y con las guías de tu colegio antes de fijar vuestras reglas internas.</Callout>
+
+<Fuentes>
+
+- [AI Hallucination Cases database](https://www.damiencharlotin.com/hallucinations/), Damien Charlotin, actualizada el 16 de octubre de 2026.
+- [Auto 61/2026 del TSJ de Galicia, Sala de lo Social](https://www.damiencharlotin.com/documents/2614/Galicia_7_July_2026.pdf), 7 de julio de 2026 (copia en la base de Charlotin).
+- [Nota informativa n.º 90/2024](https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2024_090/NOTA%20INFORMATIVA%20N%C2%BA%2090-2024.pdf), Tribunal Constitucional, septiembre de 2024.
+- [Mata v. Avianca, Opinion and Order on Sanctions](https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0.pdf), S.D.N.Y., 22 de junio de 2023.
+- [Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools](https://arxiv.org/abs/2405.20362), Magesh et al., Stanford, mayo de 2024.
+- [Large Legal Fictions](https://arxiv.org/abs/2401.01301), Dahl et al., Stanford, enero de 2024.
+- [Ley Orgánica 5/2024, del Derecho de Defensa, art. 16](https://www.boe.es/eli/es/lo/2024/11/11/5/con), BOE, texto consolidado.
+- [El ICAM lanza la primera guía práctica para un uso responsable de la IA en la abogacía](https://web.icam.es/el-icam-lanza-la-primera-guia-practica-para-un-uso-responsable-de-la-ia-en-la-abogacia/), ICAM, octubre de 2025.
+
+</Fuentes>

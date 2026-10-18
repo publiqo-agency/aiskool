@@ -1,6 +1,10 @@
 # Roadmap del blog
 
-Conceptos de artículo para atraer tráfico y convertirlo en leads. **Aún no están escritos.**
+Conceptos de artículo para atraer tráfico y convertirlo en leads.
+
+> **Estado (18/10/2026): 50 artículos publicados** en `content/blog/`. Lista y slugs en `docs/blog-research/temas.md` (incluye N1–N3, nuevos). Quedan fuera F6 (FUNDAE, en pausa), F7 (páginas de ciudad) y G4. Investigación, keywords, guía de estilo, paquetes de datos e informes de verificación en `docs/blog-research/`; componentes MDX en `docs/blog-research/componentes.md`.
+>
+> **Revisar periódicamente:** precios de herramientas (C1–C4, E3, E6, B5), fechas del AI Act y estado de la ley española de IA (tras las elecciones del 29/11/2026), datos del INE (nueva edición con datos de 2026 para N3), retirada de los GPTs (C7) y nuestros precios «desde» (F3, N1) si cambian en `src/lib/`.
 
 **Antes de escribir cada artículo:**
 

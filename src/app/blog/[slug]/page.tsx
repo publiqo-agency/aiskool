@@ -1,12 +1,15 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { getPost, getPosts, blogCategories } from "@/lib/blog";
+import remarkGfm from "remark-gfm";
+import { getPost, getPosts, blogCategories, authorOf, readingTime } from "@/lib/blog";
 import { pageMetadata, JsonLd, articleJsonLd } from "@/lib/seo";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { BlogCta } from "@/components/ui/BlogCta";
 import { Faq } from "@/components/sections/Faq";
 import { CtaBand } from "@/components/ui/CtaBand";
+import { mdxComponents, headingsOf } from "@/components/blog/Mdx";
+import "../blog.css";
 
 // Todas las variantes se prerenderizan en build; la navegación puede esperar a la página generada.
 export const instant = false;
@@ -31,10 +34,13 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
   const { meta, content } = post;
   const cat = blogCategories[meta.category];
   const related = (await getPosts()).filter((p) => p.category === meta.category && p.slug !== slug).slice(0, 3);
+  const toc = headingsOf(content);
+  const author = authorOf(meta);
+  const fecha = (d: string) => new Date(d).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
 
   return (
     <>
-      <JsonLd data={articleJsonLd({ title: meta.title, description: meta.description, path: `/blog/${slug}`, date: meta.date, updated: meta.updated, author: meta.author })} />
+      <JsonLd data={articleJsonLd({ title: meta.title, description: meta.description, path: `/blog/${slug}`, date: meta.date, updated: meta.updated, author: meta.author, image: `/blog/${slug}/opengraph-image`, section: cat?.label })} />
       <PageHeader
         eyebrow={cat?.label}
         title={meta.title}
@@ -42,7 +48,11 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
           { name: "Blog", path: "/blog" },
           { name: meta.title, path: `/blog/${slug}` },
         ]}
-      />
+      >
+        <p className="eyebrow text-muted color:text-white/70">
+          {author} · {fecha(meta.updated ?? meta.date)} · {readingTime(content)} min de lectura
+        </p>
+      </PageHeader>
       <section className="bg-paper pb-20">
         <div className="container-x grid gap-12 md:grid-cols-12">
           <article className="md:col-span-8">
@@ -52,13 +62,27 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
                 <p className="mt-2 text-[1.1rem] leading-[1.6]">{meta.tldr}</p>
               </div>
             )}
+            {toc.length > 2 && (
+              <nav aria-label="Índice" className="mb-10 rounded-[16px] border border-line p-6">
+                <p className="eyebrow text-muted">En este artículo</p>
+                <ol className="mt-3 grid gap-x-8 gap-y-2 text-[0.98rem] sm:grid-cols-2">
+                  {toc.map((h) => (
+                    <li key={h.id}>
+                      <a href={`#${h.id}`} className="text-ink-soft underline-offset-4 hover:text-ink hover:underline">
+                        {h.text}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
             <div className="prose-ia">
-              <MDXRemote source={content} components={{ CtaInline: () => <BlogCta category={meta.category} /> }} />
+              <MDXRemote source={content} components={mdxComponents(meta.category)} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
             </div>
             <BlogCta category={meta.category} />
             <footer className="mt-10 border-t border-line pt-6 text-[0.95rem] text-muted">
-              Escrito por <span className="text-ink">{meta.author}</span> · Actualizado el{" "}
-              {new Date(meta.updated ?? meta.date).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" })}
+              Escrito por <span className="text-ink">{author}</span> · Actualizado el {fecha(meta.updated ?? meta.date)}. Cifras y precios
+              comprobados en sus fuentes en esa fecha.
             </footer>
           </article>
           <aside className="md:col-span-4">

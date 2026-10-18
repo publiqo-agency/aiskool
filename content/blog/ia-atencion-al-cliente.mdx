@@ -1,0 +1,173 @@
+---
+title: "IA en atención al cliente sin perder el trato humano"
+description: "IA en atención al cliente: qué automatizar y qué no, cuándo pasar a una persona y qué exigen la Ley 10/2025 y el AI Act. Con datos, casos reales y checklist."
+date: "2026-10-18"
+category: "departamentos"
+tldr: "La IA en atención al cliente funciona mejor como apoyo del agente humano: en el mayor estudio de campo subió un 14 % las incidencias resueltas por hora, y un 34 % en los novatos. La Ley 10/2025 prohíbe a las empresas obligadas usar el bot como único canal: el cliente debe poder pedir una persona."
+faqs:
+  - q: "¿Es legal atender a los clientes solo con un chatbot?"
+    a: "No para las empresas incluidas en la Ley 10/2025 de servicios de atención a la clientela: su art. 8.1 prohíbe usar contestadores automáticos u otros medios análogos como medio exclusivo de atención. Pueden usar bots, pero el cliente debe poder pedir una persona en cualquier momento. Las empresas que quedan fuera de la ley no tienen esa obligación, aunque el bot sí debe avisar de que es una IA (art. 50 del AI Act)."
+  - q: "¿Tengo que avisar al cliente de que habla con una IA?"
+    a: "Sí, como regla general. El art. 50.1 del AI Act obliga a los proveedores a diseñar los sistemas que interactúan con personas para que estas sepan que hablan con una IA, salvo que sea evidente por el contexto. Se aplica desde el 2 de agosto de 2026 y el aviso debe darse, como tarde, en la primera interacción. Si usas el bot de un tercero, comprueba que lo incluye."
+  - q: "¿Quién responde si el chatbot da una información falsa?"
+    a: "La empresa. En el caso Moffatt contra Air Canada (2024), un tribunal canadiense rechazó que el chatbot fuera responsable de sus actos y condenó a la aerolínea a pagar 812,02 dólares canadienses. El tribunal dijo que la empresa responde de toda la información de su web, venga de una página estática o de un chatbot. Es un caso de Canadá, pero el principio es fácil de trasladar."
+  - q: "¿Cuánto tarda en montarse un asistente para atención al cliente?"
+    a: "Depende de lo ordenada que esté tu información. Un asistente interno que sugiere respuestas al agente con la base de conocimiento existente puede probarse en pocas semanas. Un bot de cara al público con acceso a pedidos o facturas necesita integración, pruebas y reglas de escalado, y conviene empezar con un piloto acotado."
+  - q: "¿Los clientes aceptan la IA en la atención?"
+    a: "Con reservas. En una encuesta de Gartner a 5.728 clientes (diciembre de 2023), el 64 % prefería que las empresas no usaran IA en atención al cliente y el 53 % se plantearía cambiar de proveedor si supiera que la empresa iba a usarla. Lo que más tranquiliza es saber que siempre hay una persona disponible si la necesitas."
+---
+
+La IA en atención al cliente da mejores resultados cuando ayuda a las personas que atienden que cuando las sustituye. El estudio de campo más citado, con 5.179 agentes, midió un 14 % más de incidencias resueltas por hora y un 34 % más en los agentes novatos ([Brynjolfsson, Li y Raymond, NBER y QJE 2025](https://www.nber.org/papers/w31161)). En esta guía tienes qué automatizar y qué no, cuándo pasar la conversación a una persona y qué exigen la Ley 10/2025 y el AI Act.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- La IA como copiloto del agente humano mejora la productividad, el sentimiento del cliente y la retención de la plantilla.
+- Sustituir a las personas sin control ha salido caro: Air Canada perdió un juicio por lo que dijo su chatbot y Klarna ha vuelto a contratar agentes.
+- La Ley 10/2025 prohíbe el bot como único canal en las empresas obligadas y fija que el 95 % de las peticiones de atención personal se atiendan, de media, en menos de tres minutos.
+
+</Callout>
+
+## ¿Qué dice la evidencia sobre la IA en atención al cliente?
+
+La evidencia más sólida sobre IA en atención al cliente procede de un estudio con 5.179 agentes de una empresa de software: con un asistente de IA generativa que sugería respuestas, resolvieron un 14 % más de incidencias por hora de media. Los novatos mejoraron un 34 % y los más expertos, apenas nada ([NBER, working paper 31161](https://www.nber.org/papers/w31161)).
+
+Los autores añaden un dato que importa para el trato humano: «AI assistance improves customer sentiment, increases employee retention, and may lead to worker learning». Es decir, el asistente aceleró el trabajo y, además, mejoró el tono de las conversaciones y redujo la rotación. El estudio se publicó en *The Quarterly Journal of Economics* en 2025.
+
+Del otro lado está la desconfianza del cliente. En la encuesta de [Gartner (julio de 2024)](https://www.gartner.com/en/newsroom/press-releases/2024-07-09-gartner-survey-finds-64-percent-of-customers-would-prefer-that-companies-didnt-use-ai-for-customer-service), con 5.728 clientes, el 64 % prefería que las empresas no usaran IA en el servicio de atención y el 53 % se plantearía irse a la competencia si supiera que la empresa iba a usarla.
+
+<Stats>
+  <Stat valor="+14 %" etiqueta="Incidencias resueltas por hora con asistente de IA (media)" fuente="Brynjolfsson et al., QJE 2025" href="https://www.nber.org/papers/w31161" />
+  <Stat valor="+34 %" etiqueta="Mejora en agentes novatos o poco cualificados" fuente="Brynjolfsson et al., QJE 2025" href="https://www.nber.org/papers/w31161" />
+  <Stat valor="64 %" etiqueta="Clientes que preferirían que no se usara IA en la atención" fuente="Gartner, 2024" href="https://www.gartner.com/en/newsroom/press-releases/2024-07-09-gartner-survey-finds-64-percent-of-customers-would-prefer-that-companies-didnt-use-ai-for-customer-service" />
+</Stats>
+
+La conclusión: la IA rinde donde refuerza a quien atiende y genera rechazo donde el cliente siente que no hay nadie al otro lado.
+
+## Qué automatizar y qué no: un mapa por tipo de tarea
+
+Conviene automatizar en atención al cliente lo repetitivo, de bajo riesgo y fácil de comprobar, y dejar en manos de una persona lo que implica dinero, quejas, excepciones o clientes vulnerables. Entre ambos extremos está la zona más rentable: la IA prepara y la persona decide.
+
+| Tarea | Recomendación | Por qué |
+|---|---|---|
+| Preguntas frecuentes (horarios, estado de un pedido, cómo devolver) | Automatizar con bot, con salida a persona | Repetitivo y verificable contra datos propios |
+| Clasificar y enrutar tickets | Automatizar | Ahorra tiempo y un error se corrige rápido |
+| Sugerir respuesta al agente | IA asiste, persona envía | Es el modelo que midió el estudio de Brynjolfsson |
+| Resumir el historial del cliente antes de atender | IA asiste | Evita que el cliente repita su caso |
+| Reembolsos, compensaciones, excepciones de política | Solo persona (la IA puede preparar el caso) | Acciones con dinero o irreversibles |
+| Quejas y reclamaciones formales | Persona, con IA de apoyo | Requieren criterio y tienen plazos legales |
+| Clientes vulnerables o mayores | Persona | La Ley 10/2025 exige asistencia individualizada en determinados casos |
+| Cambios de contrato o datos sensibles | Persona, o bot con verificación y confirmación | Riesgo de error y de fraude |
+
+La guía de OpenAI para construir agentes lo resume con un ejemplo de atención al cliente: las acciones «sensitive, irreversible, or have high stakes» deben activar supervisión humana, como «canceling user orders, authorizing large refunds, or making payments» ([OpenAI, A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)).
+
+Si el bot va a responder con tus documentos (condiciones, tarifas, manuales), la técnica habitual es el RAG, que explicamos en [un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
+
+## Cuándo pasar la conversación a una persona
+
+El paso a una persona debe estar disponible desde el primer mensaje y activarse solo cuando el bot detecta que no puede resolver con seguridad. Si el cliente tiene que pelear con el bot para llegar a alguien, la automatización empeora la experiencia y, en las empresas obligadas por la Ley 10/2025, además incumple.
+
+<Flujo titulo="Recorrido recomendado" pasos="Aviso de que es una IA|Respuesta con datos propios|Detección de límite o petición de persona|Traspaso con resumen|Persona que se identifica y resuelve" />
+
+<Steps>
+
+1. **Avisa de entrada** de que el cliente habla con una IA y de cómo pedir una persona. Así cumples el art. 50 del AI Act y reduces la frustración.
+2. **Define disparadores de traspaso**: el cliente lo pide, menciona una queja o reclamación, hay dinero en juego, el bot no encuentra la respuesta en las fuentes o el cliente repite la misma pregunta dos veces.
+3. **Traspasa con contexto**: la persona recibe un resumen de lo hablado para que el cliente no tenga que empezar de cero.
+4. **Mide el tiempo hasta la persona**, no solo la tasa de resolución del bot. Es la métrica que fija la ley.
+5. **Revisa cada semana** una muestra de conversaciones del bot: respuestas incorrectas, traspasos tardíos y temas nuevos que documentar.
+
+</Steps>
+
+<CtaInline />
+
+## Lo que enseñan Air Canada y Klarna
+
+Air Canada y Klarna son los dos casos públicos que mejor muestran el riesgo de dejar la atención al cliente en manos de la IA sin control: uno acabó en una condena por la información que dio el chatbot y el otro en una marcha atrás pública tras presentar su asistente como sustituto de cientos de agentes.
+
+<Timeline>
+  <Hito fecha="nov 2022" titulo="El chatbot de Air Canada se equivoca">Indica a un cliente que puede pedir la tarifa por duelo después de viajar, en un plazo de 90 días, en contra de la política publicada en otra página de la web.</Hito>
+  <Hito fecha="14 feb 2024" titulo="Condena a Air Canada">El tribunal de resolución civil de Columbia Británica rechaza que el chatbot sea responsable de sus actos y ordena pagar 812,02 dólares canadienses.</Hito>
+  <Hito fecha="27 feb 2024" titulo="Klarna presenta su asistente">Según la propia empresa, en su primer mes gestiona dos tercios de los chats y hace el trabajo equivalente a 700 agentes a tiempo completo.</Hito>
+  <Hito fecha="may 2025" titulo="Klarna vuelve a contratar personas">Su consejero delegado reconoce que la calidad bajó y defiende que el cliente sepa que siempre habrá una persona si la quiere.</Hito>
+</Timeline>
+
+La frase clave de la [resolución Moffatt v. Air Canada](https://decisions.civilresolutionbc.ca/crt/crtd/en/item/525448/index.do) (párr. 27) es: «It should be obvious to Air Canada that it is responsible for all the information on its website. It makes no difference whether the information comes from a static page or a chatbot». Y añade que no explica «why customers should have to double-check information found in one part of its website on another part of its website».
+
+En el caso de Klarna, las cifras de 2024 son de la [nota de prensa de la propia empresa](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/), sin auditar, que ya entonces precisaba que los clientes podían seguir eligiendo un agente humano. La rectificación de 2025 la recoge [Entrepreneur](https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396), a partir de una entrevista en Bloomberg, con esta cita de Sebastian Siemiatkowski: «I just think it's so critical that you are clear to your customer that there will always be a human if you want».
+
+La lección para una pyme española no es renunciar a la IA, sino diseñarla para que se equivoque poco, lo reconozca pronto y pase a una persona. Las causas técnicas de esos errores las explicamos en [alucinaciones de la IA](/blog/alucinaciones-ia).
+
+## Qué exigen la Ley 10/2025 y el AI Act
+
+En España, la atención al cliente con IA tiene dos marcos que se suman: la [Ley 10/2025, de servicios de atención a la clientela](https://www.boe.es/eli/es/l/2025/12/26/10/con), que garantiza la atención por una persona, y el art. 50 del AI Act (Reglamento europeo de IA, Reglamento (UE) 2024/1689), que obliga a informar de que se habla con una IA.
+
+**Ley 10/2025.** En vigor desde el 28 de diciembre de 2025, da a las empresas incluidas doce meses para adaptarse. Sus puntos clave para quien use bots:
+
+- **Art. 8.1**: «Se prohíbe el empleo de contestadores automáticos u otros medios análogos como medio exclusivo de atención a la clientela».
+- **Art. 8.2**: los bots conversacionales deben ofrecer la posibilidad de pedir atención personalizada «en cualquier momento de la interacción, desde su inicio». Esa atención la presta «una persona física operadora que contesta en tiempo real», que debe identificarse al inicio, y el 95 % de las solicitudes debe atenderse, de media, en menos de tres minutos.
+- **Art. 9.2**: tanto el personal que atiende como «quien diseñe y gestione los medios automatizados» debe tener formación y capacitación adecuadas.
+
+¿A quién se aplica? Según su art. 2, a cualquier empresa, sin importar el tamaño, que preste servicios básicos de interés general (agua, gas, electricidad, transporte de pasajeros, servicios postales, comunicaciones electrónicas y servicios financieros, estos dos últimos con su normativa sectorial como preferente). Y al resto de empresas que venden principalmente a consumidores si, en el ejercicio anterior, tuvieron al menos 250 trabajadores, más de 50 millones de euros de volumen de negocios o más de 43 millones de balance.
+
+**AI Act, art. 50.1.** Los proveedores deben diseñar los sistemas destinados a interactuar con personas de forma que estas «estén informadas de que están interactuando con un sistema de IA», salvo que resulte evidente. El art. 50.5 añade que la información se dará «a más tardar con ocasión de la primera interacción». Se aplica desde el 2 de agosto de 2026, según el [calendario de la Comisión Europea](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act); el resto de fechas las tienes en [el calendario del AI Act](/blog/calendario-ai-act-fechas).
+
+<Checklist titulo="Checklist legal orientativa para un bot de atención">
+
+- Comprueba con tu asesoría si tu empresa está en el ámbito del art. 2 de la Ley 10/2025
+- El bot avisa de que es una IA en el primer mensaje
+- Hay una opción visible para pedir una persona desde el inicio de la conversación
+- Mides el tiempo hasta la atención personal y el porcentaje que entra en menos de tres minutos
+- La persona que atiende se identifica al empezar
+- El equipo que atiende y el que configura el bot tiene formación documentada
+- El bot no autoriza reembolsos, cambios de contrato ni pagos sin una persona
+
+</Checklist>
+
+<Callout tipo="aviso" titulo="Matiz importante">
+
+Que tu empresa no esté obligada por la Ley 10/2025 no cambia el criterio de negocio: la desconfianza del 64 % de los clientes y el caso Air Canada apuntan en la misma dirección. Ofrecer siempre una salida a una persona es la forma más barata de evitar problemas.
+
+</Callout>
+
+## Cuándo no te hace falta un chatbot
+
+No todas las empresas necesitan un bot de cara al público. Si recibes pocas consultas, son muy variadas o tu ventaja competitiva es precisamente el trato personal, un bot añade riesgo sin ahorrar mucho. En esos casos, lo rentable suele ser darle al equipo un asistente interno: redactar respuestas con el tono de la marca, resumir historiales y mantener al día la base de conocimiento.
+
+Para empezar a probar tampoco necesitas contratar a nadie: con una cuenta de empresa de ChatGPT, Claude o Copilot y tus respuestas tipo, tu equipo puede comprobar en dos semanas si gana tiempo. La ayuda externa compensa al integrar el bot con pedidos o CRM, con muchas personas que formar o cuando la ley te obliga a medir y documentar.
+
+## Qué hacer ahora
+
+El orden que recomendamos es empezar por dentro y salir después: primero IA que ayuda al agente, luego automatización de lo repetitivo y, por último, un bot de cara al cliente con salida a persona.
+
+<Steps>
+
+1. **Ordena el conocimiento**: reúne respuestas tipo, políticas y condiciones en documentos actualizados. Sin esto, ningún bot responde bien.
+2. **Prueba un asistente interno** durante un mes y mide tiempo por incidencia y satisfacción.
+3. **Elige dos o tres consultas repetitivas** para el primer bot y define cuándo pasa a una persona.
+4. **Revisa la checklist legal** con tu asesoría si vendes a consumidores.
+5. **Forma al equipo** que atiende y al que configura el bot, como pide el art. 9.2 de la Ley 10/2025.
+
+</Steps>
+
+En nuestra [formación de IA para atención al cliente](/formaciones/ia-atencion-cliente) trabajamos tono y plantillas, base de conocimiento lista para IA y criterios de escalado a una persona. Si lo que necesitas es construir el asistente o el bot, lo hacemos en [consultoría de agentes y automatización](/consultoria), empezando por un piloto. Para ver otros ejemplos de agentes en empresas, tienes [ejemplos reales de agentes de IA por área](/blog/agentes-ia-ejemplos-empresas), y para ventas, [IA para ventas y prospección B2B](/blog/ia-para-ventas-b2b).
+
+<FormacionCard slug="ia-atencion-cliente" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico. Para saber si tu empresa está incluida en la Ley 10/2025 y cómo aplicar el art. 50 del AI Act a tu caso, consulta con tu asesoría legal.
+
+</Callout>
+
+<Fuentes>
+
+- [Generative AI at Work, working paper 31161](https://www.nber.org/papers/w31161) — Brynjolfsson, Li y Raymond, NBER; versión publicada en The Quarterly Journal of Economics, 2025.
+- [Gartner Survey Finds 64% of Customers Would Prefer That Companies Didn't Use AI for Customer Service](https://www.gartner.com/en/newsroom/press-releases/2024-07-09-gartner-survey-finds-64-percent-of-customers-would-prefer-that-companies-didnt-use-ai-for-customer-service) — Gartner, 9 de julio de 2024.
+- [Moffatt v. Air Canada, 2024 BCCRT 149](https://decisions.civilresolutionbc.ca/crt/crtd/en/item/525448/index.do) — Civil Resolution Tribunal de Columbia Británica, 14 de febrero de 2024.
+- [Klarna AI assistant handles two-thirds of customer service chats in its first month](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/) — Klarna, 27 de febrero de 2024.
+- [Klarna CEO Reverses Course By Hiring More Humans, Not AI](https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396) — Entrepreneur, 9 de mayo de 2025.
+- [Ley 10/2025, de 26 de diciembre, por la que se regulan los servicios de atención a la clientela](https://www.boe.es/eli/es/l/2025/12/26/10/con) — BOE, 27 de diciembre de 2025.
+- [Reglamento (UE) 2024/1689, art. 50](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689) — EUR-Lex, 12 de julio de 2024; y [calendario de aplicación](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act) — Comisión Europea.
+- [A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — OpenAI, abril de 2025.
+
+</Fuentes>

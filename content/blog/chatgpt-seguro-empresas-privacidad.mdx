@@ -1,0 +1,170 @@
+---
+title: "¿Es seguro ChatGPT para empresas? Privacidad por plan"
+description: "¿Es seguro ChatGPT para tu empresa? Tabla por plan (Free, Plus, Business, Enterprise y API): entrenamiento, retención, DPA y datos en la UE, a octubre de 2026."
+date: "2026-10-18"
+category: "gobernanza"
+tldr: "ChatGPT es razonablemente seguro para una empresa si usa ChatGPT Business, Enterprise o la API: no entrenan con tus datos por defecto, ofrecen contrato de encargo (DPA) y dan control a los administradores. No lo es con cuentas personales Free, Plus o Pro, que pueden usar tu contenido para entrenar. Datos revisados el 18 de octubre de 2026."
+faqs:
+  - q: "¿ChatGPT Plus es seguro para usarlo en la empresa?"
+    a: "No para datos de trabajo. Plus es un plan para particulares: OpenAI puede usar su contenido para entrenar modelos salvo que el usuario lo desactive, y no hay administración centralizada. OpenAI ofrece el contrato de encargo (DPA) para Business, Enterprise y la API. Para información pública o borradores genéricos, Plus con el entrenamiento desactivado puede bastar."
+  - q: "¿Dónde guarda ChatGPT los datos de una empresa europea?"
+    a: "Depende del plan. OpenAI ofrece residencia de datos en Europa para los espacios nuevos de ChatGPT Enterprise y Edu y para la API, y desde el 16 de enero de 2026 también inferencia en la región para clientes elegibles de Enterprise y Edu. La tarjeta de ChatGPT Business no incluye controles de residencia de datos. Si necesitas que los datos se queden en la UE, pregunta por Enterprise."
+  - q: "¿Pueden los empleados de OpenAI leer las conversaciones de mi empresa?"
+    a: "Solo en supuestos concretos. En los planes de empresa, OpenAI no usa los datos para entrenar, pero en Business y la API permite el acceso de empleados autorizados (soporte, abusos y obligaciones legales) y de contratistas especializados para revisar abusos. En Enterprise, solo para resolver incidencias, recuperar conversaciones con tu permiso o por obligación legal. Que no entrene no significa que nadie pueda ver nunca el contenido. Por eso los datos de categoría roja no deben entrar en ninguna IA de uso general."
+  - q: "¿Qué pasó con la multa de 15 millones de Italia a OpenAI?"
+    a: "El Garante italiano de protección de datos impuso a OpenAI una multa de 15 M€ en diciembre de 2024, por el RGPD y no por el AI Act. El Tribunal de Roma estimó la impugnación de OpenAI en su sentencia 4153/2026, publicada el 18 de marzo de 2026, y el Garante retiró la resolución de su web, según su propia nota. No se puede decir que la multa siga en pie."
+  - q: "¿Es seguro conectar ChatGPT al correo, a Drive o a otras aplicaciones?"
+    a: "Añade riesgos que conviene evaluar aparte. Cuando un asistente lee correos, documentos o webs, puede recibir instrucciones ocultas en ese contenido (inyección de prompts indirecta). La AEPD describe ataques en los que un correo con texto invisible hace que el agente obedezca una orden al resumirlo. Activa solo los conectores necesarios y con los permisos mínimos."
+---
+
+ChatGPT es seguro para una empresa cuando se usa con un plan de empresa: ChatGPT Business, ChatGPT Enterprise o la API de OpenAI. Los tres declaran que no entrenan con tus datos por defecto, permiten firmar un contrato de encargo del tratamiento (DPA) y dan a los administradores control sobre cuentas y retención. Con las cuentas personales (Free, Plus y Pro) la respuesta cambia: OpenAI puede usar su contenido para entrenar. Esta guía compara cada plan con la documentación oficial consultada el 18 de octubre de 2026 y te dice cuál encaja con tu empresa.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- La diferencia de seguridad no está entre ChatGPT y otras IA, sino entre **cuentas personales y cuentas de empresa**.
+- **Business, Enterprise y la API** no entrenan con tus datos por defecto; **Free, Plus y Pro** sí pueden hacerlo si no lo desactivas.
+- «No entrena» no significa «no guarda»: lo borrado se elimina en un plazo de **30 días** y hay accesos autorizados para soporte y abusos.
+- Si necesitas **datos en Europa**, la residencia está en Enterprise, Edu y la API, no en Business.
+
+</Callout>
+
+## Privacidad de ChatGPT por plan: tabla comparativa
+
+La privacidad de ChatGPT depende del plan contratado. Los planes para particulares (Free, Plus y Pro) pueden usar tus conversaciones para entrenar modelos; los planes de empresa (Business y Enterprise) y la API no lo hacen por defecto y añaden contrato, controles de administración y, en Enterprise y la API, residencia de datos en Europa.
+
+| | Free, Plus y Pro | ChatGPT Business | ChatGPT Enterprise y Edu | API de OpenAI |
+|---|---|---|---|---|
+| ¿Entrena con tus datos por defecto? | **Sí puede**, salvo que lo desactives | No | No | No (desde el 1 de marzo de 2023) |
+| Retención | Historial hasta que lo borras; lo borrado se elimina en 30 días | La controlan los administradores; lo borrado, en 30 días salvo obligación legal | La controlan los administradores; lo borrado, en 30 días | Registros de abuso hasta 30 días; retención cero (ZDR) en endpoints elegibles |
+| Contrato de encargo (DPA) | — (OpenAI lo ofrece para Business, Enterprise y API) | Disponible | Disponible | Disponible |
+| Administración y acceso | Cuenta individual | Espacio dedicado, SAML SSO y MFA | Además SCIM, gestión de claves (EKM), roles (RBAC), Compliance API y registros de auditoría | — |
+| Auditoría de seguridad | — | SOC 2 Type 2 | SOC 2 Type 2 | SOC 2 Type 2 |
+| Residencia de datos en Europa | No | No incluida en el plan | Sí, para espacios nuevos | Sí, región Europa (EEE y Suiza) |
+
+Fuentes de la tabla: [Enterprise privacy at OpenAI (actualizada el 8 de enero de 2026)](https://openai.com/enterprise-privacy/), [How your data is used to improve model performance](https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance), [Chat and file retention in ChatGPT](https://help.openai.com/en/articles/8983778), [planes de ChatGPT](https://learn.chatgpt.com/docs/pricing), [Your data en la API](https://developers.openai.com/api/docs/guides/your-data) e [Introducing data residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/). No hemos encontrado una declaración específica de privacidad del plan Go, por eso no figura.
+
+Dos detalles de la tabla que pasan desapercibidos:
+
+- **El pulgar entrena.** En Free, Plus y Pro, si valoras una respuesta con el pulgar arriba o abajo, OpenAI puede usar toda la conversación aunque hayas desactivado el entrenamiento.
+- **El chat temporal también se guarda.** No se usa para entrenar, pero OpenAI puede conservar una copia hasta 30 días por seguridad, según su [página sobre el chat temporal](https://help.openai.com/en/articles/8914046-temporary-chat-faq).
+
+El precio de cada plan lo tienes en [cuánto cuesta ChatGPT Business y Enterprise](/blog/precio-chatgpt-business-enterprise).
+
+## Qué significa que ChatGPT «no entrena con tus datos»
+
+Que ChatGPT no entrene con los datos de tu empresa significa que tus conversaciones no se usan para mejorar los modelos de OpenAI. No significa que no se guarden, ni que nadie pueda verlas nunca, ni que se borren al instante. Son tres compromisos distintos y conviene revisarlos por separado.
+
+OpenAI lo dice así en su [página de privacidad empresarial](https://openai.com/enterprise-privacy/): «By default, we do not use your business data for training our models» (por defecto, no usamos los datos de tu empresa para entrenar nuestros modelos). Pero la misma página prevé, en Business y la API, el acceso de empleados autorizados de OpenAI para soporte, investigación de abusos y cumplimiento legal, y de contratistas especializados para revisar abusos (en Enterprise el acceso es más restringido), y fija el plazo de 30 días para eliminar lo borrado, salvo que la ley obligue a conservarlo.
+
+Ese «salvo que la ley obligue» tiene un ejemplo reciente. Por el litigio con The New York Times, OpenAI tuvo una orden judicial de conservar datos de ChatGPT Free, Plus, Pro y Team (hoy Business) y de la API sin retención cero (no de Enterprise ni Edu). Según [OpenAI](https://openai.com/index/response-to-nyt-data-demands/), la obligación terminó el 26 de septiembre de 2025: ya no tiene que conservar de forma indefinida los datos nuevos ni las conversaciones originadas en el Espacio Económico Europeo, Suiza o Reino Unido, aunque sigue guardando, bloqueados, datos históricos limitados de abril a septiembre de 2025.
+
+<Timeline>
+  <Hito fecha="1 mar 2023" titulo="La API deja de entrenar con datos de clientes">Desde esa fecha, los datos enviados a la API no se usan para entrenar salvo que el cliente lo autorice.</Hito>
+  <Hito fecha="26 sep 2025" titulo="Fin de la orden de conservación del caso NYT">OpenAI deja de estar obligada a conservar de forma indefinida los datos nuevos de ChatGPT y de la API.</Hito>
+  <Hito fecha="8 ene 2026" titulo="Última actualización de la privacidad empresarial">Versión vigente de los compromisos de Business, Enterprise, Edu y la API.</Hito>
+  <Hito fecha="16 ene 2026" titulo="Inferencia en Europa">Los clientes elegibles de ChatGPT Enterprise y Edu con residencia en Europa pueden procesar también la inferencia en la región.</Hito>
+</Timeline>
+
+## ChatGPT y el RGPD: qué tiene que revisar tu empresa
+
+Para usar ChatGPT con datos personales cumpliendo el RGPD, tu empresa necesita, como mínimo, un plan con contrato de encargo del tratamiento, una base legal para cada uso y una configuración que limite los datos que entran. Si el uso puede suponer un alto riesgo para las personas, además hace falta una evaluación de impacto antes de empezar.
+
+El [RGPD](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32016R0679) da tres pistas claras:
+
+- **Art. 28.** Quien trata datos por cuenta de tu empresa debe ofrecer «garantías suficientes» y firmar un contrato. Es el DPA que OpenAI pone a disposición de Business, Enterprise y la API.
+- **Art. 35.** Si un tratamiento con nuevas tecnologías puede entrañar un alto riesgo para los derechos de las personas, el responsable debe hacer una evaluación de impacto antes de empezar. Usar ChatGPT para redactar correos no suele llegar ahí; usarlo para analizar expedientes de clientes o de empleados puede llegar.
+- **Art. 9.** Los datos de salud, afiliación sindical o religión tienen una protección reforzada. Con independencia del plan, la mejor práctica es dejarlos fuera.
+
+La AEPD añade un criterio útil para quien compra. En su [política interna de IA generativa (27 de noviembre de 2025)](https://www.aepd.es/documento/politica-iag-aepd.pdf) pide que los sistemas externos que traten información sensible aporten «evidencias de cumplimiento […] más allá de meras manifestaciones o compromisos contractuales». En la práctica: pide el informe SOC 2, revisa el DPA y comprueba la configuración de retención, no te quedes en la página comercial.
+
+<Callout tipo="dato" titulo="La multa italiana, en su contexto">
+
+El Garante italiano multó a OpenAI con 15 M€ en diciembre de 2024 por el RGPD, en relación con ChatGPT. El Tribunal de Roma estimó la impugnación de OpenAI (sentencia 4153/2026, publicada el 18 de marzo de 2026) y el Garante retiró la resolución de su web, según su [nota](https://www.garanteprivacy.it/home/docweb/-/docweb-display/print/10085432). El caso recuerda que los servicios de consumo están en el punto de mira de las autoridades de datos, pero la sanción no está en vigor.
+
+</Callout>
+
+<CtaInline />
+
+## ¿Y Copilot, Claude o Gemini? La misma regla
+
+Las otras grandes herramientas siguen el mismo patrón que ChatGPT: las cuentas de empresa no entrenan con tus datos por defecto y las de consumo pueden hacerlo. Las diferencias reales están en la retención y en dónde se procesan los datos, sobre todo si tu empresa exige que se queden en la Unión Europea.
+
+| Herramienta y plan | ¿Entrena por defecto? | Retención | Datos en la UE |
+|---|---|---|---|
+| Microsoft 365 Copilot (hoy Microsoft Copilot) y Copilot Chat con cuenta de trabajo | No | Gestionada con Microsoft Purview | EU Data Boundary, salvo búsquedas web y modelos de Anthropic |
+| Claude Team y Enterprise (y API) | No | Enterprise: indefinida por defecto, configurable con un mínimo de 30 días. API: 30 días | Datos en EE. UU.; en Europa, vía AWS Bedrock o Google Vertex |
+| Claude Free, Pro y Max | Lo decide el usuario | 5 años si acepta entrenar; 30 días si no | Sin información específica para consumo |
+| Gemini en Google Workspace | No sin permiso | Configurable por el administrador; 72 horas con el historial desactivado | Regiones de datos en Business Standard y Plus; no cubren Gemini Notebook |
+| Gemini de consumo | Sí, salvo que desactives la actividad | Revisión humana; lo revisado, hasta 3 años | — |
+
+Fuentes: [Microsoft Learn](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy), [protección de datos empresarial de Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection), [Anthropic, entrenamiento en productos comerciales](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training) y [en productos de consumo](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training), [Anthropic, retención en Enterprise](https://privacy.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans), [Anthropic, ubicación de servidores](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), [Google Workspace Privacy Hub](https://support.google.com/a/answer/15706919?hl=en), [regiones de datos de Workspace](https://knowledge.workspace.google.com/admin/compliance/data-covered-by-data-regions) y [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961?hl=en).
+
+Si estás decidiendo entre varias, la comparativa de funciones está en [ChatGPT vs Copilot vs Claude vs Gemini](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini), y los criterios de compra, en [cómo elegir una herramienta de IA corporativa](/blog/elegir-herramienta-ia-corporativa).
+
+## Qué plan de ChatGPT elegir según tu empresa
+
+El plan de ChatGPT adecuado depende de tres preguntas: si vais a tratar datos de clientes o empleados, cuántas personas lo usarán y si necesitáis que los datos se queden en Europa. Para la mayoría de pymes que trabajan con información interna, ChatGPT Business es el punto de partida razonable.
+
+| Tu situación | Recomendación |
+|---|---|
+| Autónomo o microempresa que solo trabaja con información pública | Una cuenta personal con el entrenamiento desactivado puede bastar. En cuanto haya datos de clientes, pasa a un plan de empresa |
+| Pyme con información interna y datos de clientes básicos | ChatGPT Business (mínimo 2 usuarios): sin entrenamiento, DPA, SSO y administración |
+| Empresa con datos sensibles, sector regulado o requisito de datos en la UE | ChatGPT Enterprise con residencia en Europa, o valorar alternativas con tratamiento en la UE |
+| Empresa que ya paga Microsoft 365 y aún no usa IA | Empieza por Copilot Chat, incluido sin coste adicional para cuentas Microsoft Entra con suscripción elegible, antes de comprar otra herramienta |
+| Equipo técnico que integra IA en sus aplicaciones | API de OpenAI con región Europa y retención cero si el endpoint lo permite. Los endpoints con residencia de datos tienen un recargo del 10 % en los modelos publicados desde el 5 de marzo de 2026 |
+
+El dato de Copilot Chat sale de la [página de precios de Microsoft para España](https://www.microsoft.com/es-es/copilot/pricing/enterprise), y el recargo de la API, de la [documentación de OpenAI](https://developers.openai.com/api/docs/guides/your-data).
+
+<Columnas>
+<Pros titulo="ChatGPT es seguro si">
+
+- Usas Business, Enterprise o la API.
+- Has firmado el DPA y configurado la retención.
+- Las cuentas se gestionan con SSO y se dan de baja al salir.
+- La plantilla sabe qué datos no debe introducir.
+
+</Pros>
+<Contras titulo="No es seguro si">
+
+- Se trabaja con cuentas personales Free, Plus o Pro.
+- Nadie ha revisado el DPA ni los ajustes del espacio.
+- Se conectan correo y documentos sin limitar permisos.
+- Se confía en que «no entrena» equivale a «no guarda».
+
+</Contras>
+</Columnas>
+
+## Qué hacer ahora
+
+Para dejar ChatGPT configurado de forma segura en tu empresa, esta semana basta con revisar tres cosas: qué cuentas se están usando, qué contrato hay detrás y qué datos se permiten. Si las cuentas son personales, el primer paso es migrar a un espacio de empresa, no endurecer los ajustes de cada usuario.
+
+<Checklist titulo="Lista para TI y compras">
+
+- Inventaria quién usa ChatGPT y con qué tipo de cuenta.
+- Contrata un plan de empresa y firma el DPA.
+- Activa el SSO y define cómo se dan de alta y de baja las cuentas.
+- Configura la retención y documenta la decisión.
+- Revisa qué conectores y aplicaciones se permiten: leer correo o documentos abre la puerta a la [inyección de prompts](/blog/prompt-injection-riesgos-agentes).
+- Si el uso puede suponer un alto riesgo para las personas, valora con tu delegado de protección de datos una evaluación de impacto.
+- Publica las normas: qué datos van en rojo (tienes la lista en [qué datos no meter nunca en ChatGPT](/blog/que-datos-no-meter-en-chatgpt)) y una [política de uso de IA](/blog/politica-uso-ia-empresa) con la plantilla de [recursos](/recursos).
+
+</Checklist>
+
+Si tu equipo ya trabaja con ChatGPT Business o Enterprise, la mayor parte de la seguridad depende de cómo se usa: proyectos, conectores, qué se comparte y cómo se revisan las respuestas. Eso es lo que trabajamos en la formación de ChatGPT para empresas, que empieza precisamente por planes, privacidad y administración. Si dudas entre herramientas o tienes datos sensibles, en el [diagnóstico de 30 minutos](/diagnostico) lo revisamos contigo. El AI Act (Reglamento (UE) 2024/1689, modificado por el Reglamento (UE) 2026/1744) también pide a las empresas que usan IA, ChatGPT incluido, adoptar medidas para apoyar la alfabetización de su plantilla: lo explicamos en [qué es la alfabetización en IA](/blog/alfabetizacion-ia-que-es).
+
+<FormacionCard slug="chatgpt-empresas" />
+
+<Callout tipo="legal">Este artículo es informativo y no es asesoramiento jurídico. Las condiciones de cada proveedor cambian: comprueba la documentación vigente antes de contratar. Si vas a tratar datos sensibles o de empleados con IA, consulta con tu asesoría legal o tu delegado de protección de datos.</Callout>
+
+<Fuentes>
+
+- [Enterprise privacy at OpenAI](https://openai.com/enterprise-privacy/), OpenAI, actualizada el 8 de enero de 2026.
+- [How your data is used to improve model performance](https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance), [Temporary chat in ChatGPT](https://help.openai.com/en/articles/8914046-temporary-chat-faq) y [Chat and file retention in ChatGPT](https://help.openai.com/en/articles/8983778), OpenAI Help Center, consultados el 18 de octubre de 2026.
+- [Planes de ChatGPT](https://learn.chatgpt.com/docs/pricing) y [Your data (API)](https://developers.openai.com/api/docs/guides/your-data), OpenAI, consultados el 18 de octubre de 2026.
+- [Introducing data residency in Europe](https://openai.com/index/introducing-data-residency-in-europe/), OpenAI, actualizada el 16 de enero de 2026; y [How we're responding to The New York Times' data demands](https://openai.com/index/response-to-nyt-data-demands/), OpenAI, actualizada el 22 de octubre de 2025.
+- [Reglamento (UE) 2016/679 (RGPD), arts. 9, 28 y 35](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32016R0679), EUR-Lex.
+- [Política general para el uso de IA generativa en procesos administrativos](https://www.aepd.es/documento/politica-iag-aepd.pdf), AEPD, 27 de noviembre de 2025.
+- [Data, Privacy, and Security for Microsoft Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) y [Enterprise data protection in Microsoft Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/enterprise-data-protection), Microsoft Learn; [Microsoft Copilot para empresas: precios](https://www.microsoft.com/es-es/copilot/pricing/enterprise), Microsoft; [Is my data used for model training? (comercial)](https://privacy.claude.com/en/articles/7996868-is-my-data-used-for-model-training), [(consumo)](https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training), [Configure custom data retention controls for Enterprise plans](https://privacy.claude.com/en/articles/10440198-configure-custom-data-retention-controls-for-enterprise-plans) y [Where are your servers located?](https://privacy.claude.com/en/articles/7996890-where-are-your-servers-located-do-you-host-your-models-on-eu-servers), Anthropic; [Generative AI in Google Workspace Privacy Hub](https://support.google.com/a/answer/15706919?hl=en), [Google Workspace Data Regions](https://knowledge.workspace.google.com/admin/compliance/data-covered-by-data-regions) y [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961?hl=en), Google. Consultados el 18 de octubre de 2026.
+- [ChatGPT, il Garante privacy chiude l'istruttoria](https://www.garanteprivacy.it/home/docweb/-/docweb-display/print/10085432), Garante per la protezione dei dati personali (Italia), 20 de diciembre de 2024, con nota posterior a la sentencia de 18 de marzo de 2026.
+
+</Fuentes>

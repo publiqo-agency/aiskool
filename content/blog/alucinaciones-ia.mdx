@@ -1,0 +1,171 @@
+---
+title: "Alucinaciones de la IA: por qué ocurren y cómo evitarlas"
+description: "Las alucinaciones de la IA son respuestas falsas dichas con seguridad. Por qué ocurren, cuánto alucinan hoy los modelos, casos reales y cómo verificarlas."
+date: "2026-10-18"
+category: "conceptos"
+tldr: "Una alucinación de la IA es una respuesta falsa o inventada que el modelo presenta con total seguridad. Ocurre porque los LLM generan texto probable y porque su entrenamiento premia adivinar antes que admitir que no saben. No se puede eliminar del todo: se reduce dando contexto y fuentes, y se controla verificando."
+faqs:
+  - q: "¿ChatGPT alucina menos que otros modelos?"
+    a: "Depende del modelo concreto y de la tarea, no solo de la marca. En la prueba AA-Omniscience que recoge el AI Index 2026, las tasas de alucinación de 26 modelos van del 22 % al 94 %, con modelos de distintos proveedores en ambos extremos. Ninguno de los 26 está a cero, así que la verificación es necesaria uses el que uses."
+  - q: "¿Por qué la IA se inventa fuentes y enlaces?"
+    a: "Porque genera texto con la forma de una cita sin comprobar que exista. Un LLM ha visto millones de referencias bibliográficas y sentencias, y sabe cómo suelen ser, pero no consulta una base de datos al escribirlas. Si la herramienta no busca en una fuente real y te enseña el enlace, trata cada cita como pendiente de verificar."
+  - q: "¿Usar la búsqueda web o RAG elimina las alucinaciones?"
+    a: "Las reduce, pero no las elimina. Un estudio de Stanford de 2024 encontró que herramientas jurídicas de investigación con IA, que trabajan sobre bases documentales, seguían alucinando entre el 17 % y el 33 % de las veces, menos que un chatbot general. Dar documentos al modelo ayuda mucho; revisar lo que dice sobre ellos sigue siendo necesario."
+  - q: "¿Quién responde si un empleado usa un dato inventado por la IA?"
+    a: "En la práctica, la empresa y el profesional que firman el trabajo. Los tribunales han sido claros: Air Canada tuvo que indemnizar por lo que dijo su chatbot y el Tribunal Constitucional recordó que el letrado es siempre responsable de revisar sus escritos. Para tu caso concreto, consulta con tu asesoría legal."
+  - q: "¿Se puede pedir a la IA que no alucine?"
+    a: "Pedirlo sin más sirve de poco. Lo que sí funciona, según la documentación de Anthropic, es darle permiso explícito para decir «no lo sé», pedirle que cite literalmente el documento antes de responder y que retire cualquier afirmación que no pueda respaldar con una cita. Reduce mucho el problema, pero el propio proveedor advierte que no lo elimina."
+---
+
+Las alucinaciones de la IA son respuestas falsas, inventadas o incoherentes que un modelo de lenguaje presenta con la misma seguridad que una respuesta correcta: una cifra que no existe, una sentencia que nadie dictó, un enlace que no lleva a ninguna parte. El NIST las llama «confabulaciones». Aquí verás por qué ocurren, cuánto alucinan los modelos actuales, qué casos reales han acabado en sanciones y un protocolo de verificación por tipo de tarea.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- Alucinar no es un fallo puntual: es una consecuencia de cómo funcionan los LLM, que **generan texto probable**, no consultan hechos.
+- La tasa depende mucho de la tarea: del **1,8 % al 5,4 %** al resumir un documento dado, y del **22 % al 94 %** al responder preguntas de conocimiento de memoria (AI Index 2026).
+- La responsabilidad no se delega en la herramienta: la empresa responde de lo que publica, firma o dice su chatbot.
+
+</Callout>
+
+## Qué es una alucinación de la IA
+
+Una alucinación de la IA es un contenido falso o erróneo que el modelo genera y presenta con seguridad, de forma que puede engañar a quien lo lee. El NIST, en su perfil de riesgos de la IA generativa, prefiere el término «confabulación» y la define como la producción de contenido erróneo o falso expresado con confianza ([NIST AI 600-1, julio de 2024](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf)).
+
+[Anthropic](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations) añade un matiz útil: incluso los modelos más avanzados pueden generar texto que es incorrecto o que **no es coherente con el contexto dado**. Es decir, hay dos tipos que conviene distinguir en la empresa:
+
+- **Inventar hechos:** datos, nombres, citas, normas o referencias que no existen.
+- **Traicionar el documento:** al resumir un contrato o un informe, atribuirle algo que no dice o cambiar una cifra.
+
+El segundo es más peligroso porque se espera menos: si le has dado el documento, tiendes a fiarte del resumen.
+
+## Por qué alucina la IA
+
+La IA alucina porque un LLM está diseñado para generar el texto más probable, no el más cierto, y porque su entrenamiento y sus pruebas premian adivinar antes que reconocer la incertidumbre. Cuando no tiene la respuesta, produce algo con la forma de una respuesta correcta.
+
+El NIST lo explica así: las confabulaciones son un resultado natural del diseño de los modelos generativos, que generan salidas que aproximan la distribución estadística de sus datos de entrenamiento. Si quieres entender esa mecánica, la contamos en [qué es un LLM y cómo funciona](/blog/que-es-un-llm).
+
+En septiembre de 2025, investigadores de OpenAI y Georgia Tech añadieron una segunda causa ([Kalai et al., «Why Language Models Hallucinate»](https://arxiv.org/abs/2509.04664)): los modelos se comportan como estudiantes ante un examen tipo test sin penalización por fallar. Responder «no lo sé» puntúa cero, igual que equivocarse, así que adivinar siempre sale a cuenta. Un modelo que admite su incertidumbre obtiene peor nota en la mayoría de pruebas que otro que se lanza siempre. Su propuesta es puntuar los errores por debajo de la abstención.
+
+Hay un tercer efecto que afecta mucho al uso diario: el modelo tiende a darte la razón. El [AI Index 2026 de Stanford](https://hai.stanford.edu/ai-index/2026-ai-index-report) recoge que, cuando una afirmación falsa se presenta como algo que cree el usuario, el rendimiento se desploma: la precisión de GPT-4o cayó del 98,2 % al 64,4 %. Si formulas la pregunta dando por hecho un dato erróneo («como la ley exige X, redacta…»), es más probable que lo confirme.
+
+## Cuánto alucinan los modelos actuales
+
+Los modelos actuales alucinan en proporciones muy distintas según la tarea. Al resumir un documento que se les da, los mejores se equivocan entre un 1,8 % y un 5,4 % de las veces; al responder de memoria preguntas de conocimiento, las tasas de 26 modelos van del 22 % al 94 %, según el AI Index 2026.
+
+<Stats>
+  <Stat valor="22–94 %" etiqueta="Tasa de alucinación de 26 modelos en preguntas de conocimiento (AA-Omniscience)" fuente="Stanford AI Index, 2026" href="https://hai.stanford.edu/ai-index/2026-ai-index-report" />
+  <Stat valor="1,8–5,4 %" etiqueta="Tasa de los 15 mejores modelos al resumir documentos (Vectara HHEM)" fuente="Stanford AI Index, 2026" href="https://hai.stanford.edu/ai-index/2026-ai-index-report" />
+  <Stat valor="17–33 %" etiqueta="Tasa de herramientas jurídicas con IA sobre bases documentales" fuente="Magesh et al., 2024" href="https://arxiv.org/abs/2405.20362" />
+</Stats>
+
+| Tarea | Tasa de alucinación | Qué nos dice |
+|---|---|---|
+| Resumir un documento que se le da | Del 1,8 % al 5,4 % (15 mejores modelos) | Dar el documento reduce mucho el riesgo, pero no a cero |
+| Preguntas de conocimiento de memoria | Del 22 % al 94 % (26 modelos) | Sin fuente, el modelo adivina con frecuencia |
+| Preguntas sobre sentencias concretas, chatbot general | Del 58 % (ChatGPT 4) al 88 % (Llama 2) | Lo especializado y verificable es terreno peligroso ([Dahl et al., 2024](https://arxiv.org/abs/2401.01301)) |
+| Herramientas jurídicas con IA de editoriales | Del 17 % al 33 % | Menos que un chatbot general, pero lejos de cero |
+
+<Callout tipo="aviso" titulo="Las cifras no son comparables entre sí">
+
+Cada prueba mide una cosa distinta, con preguntas, modelos y fechas diferentes, como advierte el propio AI Index. Sirven para entender el orden de magnitud y la dependencia de la tarea, no para elegir proveedor. Los estudios jurídicos son de 2024 y usan modelos ya superados.
+
+</Callout>
+
+## Casos reales: cuando la alucinación sale cara
+
+Las alucinaciones ya han tenido consecuencias documentadas: sanciones a abogados, indemnizaciones a clientes, devoluciones de dinero y caídas en bolsa. La base de datos del investigador Damien Charlotin (HEC Paris, no oficial) recoge 2.199 resoluciones judiciales en el mundo con contenido alucinado, ocho de ellas en España, con datos actualizados al 16 de octubre de 2026.
+
+<Timeline>
+  <Hito fecha="8 feb 2023" titulo="Google Bard y el telescopio James Webb">Bard atribuyó al telescopio la primera foto de un planeta fuera del sistema solar. Alphabet perdió 100.000 millones de dólares de valor ese día, aunque la caída también reflejó la decepción con la presentación de Google (Reuters).</Hito>
+  <Hito fecha="22 jun 2023" titulo="Mata v. Avianca (Nueva York)">Dos abogados y su despacho presentaron sentencias inexistentes generadas por ChatGPT. Sanción conjunta de 5.000 dólares.</Hito>
+  <Hito fecha="14 feb 2024" titulo="Moffatt v. Air Canada (Canadá)">El chatbot de la aerolínea informó mal sobre una tarifa. El tribunal condenó a la empresa a pagar 812,02 dólares canadienses.</Hito>
+  <Hito fecha="9 sep 2024" titulo="Tribunal Constitucional (España)">Apercibimiento a un abogado por entrecomillar pasajes de 19 sentencias del TC que no eran reales. El TC no dio por probado que se usara IA: consideró irrelevante la causa.</Hito>
+  <Hito fecha="7 oct 2025" titulo="Deloitte Australia">Devolución parcial de un informe de 440.000 dólares australianos, encargado por el Departamento de Empleo y Relaciones Laborales (DEWR), con una cita judicial y referencias académicas inventadas (AP).</Hito>
+  <Hito fecha="7 jul 2026" titulo="TSJ de Galicia">Multa de 1.800 euros por citas sin comprobar, fijada a partir de lo que cuesta una IA jurídica con bases verificadas.</Hito>
+</Timeline>
+
+Dos frases de estas resoluciones resumen la lección para cualquier empresa. El tribunal canadiense rechazó que el chatbot fuera una entidad separada: para Air Canada, debía ser obvio que responde de toda la información de su web, y daba igual que viniera de una página estática o de un chatbot ([Moffatt v. Air Canada, 2024 BCCRT 149](https://decisions.civilresolutionbc.ca/crt/crtd/en/item/525448/index.do)). Y el [Tribunal Constitucional (nota 90/2024)](https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2024_090/NOTA%20INFORMATIVA%20N%C2%BA%2090-2024.pdf) dejó escrito que, fuera cual fuese la causa, «el letrado es siempre responsable de revisar exhaustivamente todo el contenido de este y de cualquier escrito».
+
+En [Mata v. Avianca](https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0.pdf) el juez fue más allá: no hay nada inapropiado en usar una herramienta de IA fiable como ayuda, pero la responsabilidad de que lo presentado sea exacto sigue siendo del profesional. Lo aplicamos al sector en [IA para despachos y asesorías jurídicas](/blog/ia-despachos-asesorias-juridicas). Fuentes del resto de casos: [Reuters en The Irish Times](https://www.irishtimes.com/business/2023/02/09/alphabet-shares-dive-after-google-chatbot-gets-satellite-question-wrong/), [AP](https://baynews9.com/fl/tampa/ap-top-news/2025/10/07/deloitte-to-partially-refund-australian-government-for-report-with-apparent-ai-generated-errors), [Auto 61/2026 del TSJ de Galicia](https://www.damiencharlotin.com/documents/2614/Galicia_7_July_2026.pdf) y la [base de datos de Charlotin](https://www.damiencharlotin.com/hallucinations/).
+
+<CtaInline />
+
+## Cómo evitar que la IA se invente datos
+
+Para evitar alucinaciones hay que combinar tres cosas: darle al modelo la información en lugar de pedirle que la recuerde, permitirle decir «no lo sé» y obligarle a citar de dónde saca cada afirmación. Ninguna técnica las elimina, así que el último paso siempre es verificar lo que importa.
+
+Estas son las técnicas que recomienda [Anthropic en su documentación](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations), traducidas a instrucciones que cualquier empleado puede usar:
+
+<Steps>
+
+1. **Dale permiso para no saber.** «Si no tienes el dato o no estás seguro, dilo en lugar de suponerlo.» Según Anthropic, esta técnica tan simple reduce drásticamente la información falsa.
+2. **Dale la fuente.** Adjunta el documento, la norma o la hoja de datos, y pide que responda solo con esa información.
+3. **Pide citas literales primero.** En documentos largos, «extrae las frases exactas que responden a la pregunta y después contesta».
+4. **Exige que respalde cada afirmación.** «Cita el pasaje en que te basas para cada dato; si no lo encuentras, retira la afirmación.»
+5. **No le des la respuesta en la pregunta.** Pregunta «¿qué exige la norma sobre X?» en lugar de «como la norma exige X, redacta…».
+
+</Steps>
+
+Anthropic termina con una advertencia que conviene repetir en cualquier formación: estas técnicas reducen significativamente las alucinaciones, pero no las eliminan, y la información crítica hay que validarla siempre.
+
+### Protocolo de verificación por tipo de tarea
+
+| Si la IA te da… | Riesgo | Cómo verificarlo |
+|---|---|---|
+| Cifras y estadísticas | Alto | Busca el dato en la fuente primaria (INE, Eurostat, informe original) y comprueba fecha y base |
+| Citas textuales | Alto | Busca la frase exacta en el documento original; si no aparece, no la entrecomilles |
+| Sentencias y jurisprudencia | Muy alto | Compruébalas en CENDOJ, de acceso gratuito, o en la base de datos de tu editorial jurídica |
+| Normas y artículos de ley | Alto | Abre el texto vigente en el BOE o en EUR-Lex; las normas cambian |
+| Resumen de un documento tuyo | Medio | Contrasta las cifras, fechas y obligaciones clave con el original |
+| Nombres, cargos, empresas | Medio | Busca en la web oficial de la persona u organización |
+| Borradores de correo o textos creativos | Bajo | Revisión normal de estilo y tono |
+
+La idea de CENDOJ no es nuestra: el propio TSJ de Galicia señaló que la simple comprobación de las citas en CENDOJ, de acceso gratuito, habría evitado el problema.
+
+## Qué no funciona (y qué no hace falta)
+
+No funciona confiar en que el modelo más nuevo ya no alucina, ni pedirle «no te inventes nada» sin darle fuentes, ni preguntarle a la propia IA si su respuesta es correcta sin un documento con el que contrastar. Tampoco hace falta verificarlo todo con el mismo rigor: un borrador de correo no necesita el control de un informe a un cliente.
+
+Lo razonable es proporcional: verificar según el riesgo de la tarea y según adónde va el resultado. Fijar esa regla por escrito es parte de una buena [política de uso de IA en la empresa](/blog/politica-uso-ia-empresa), y explicar por qué existe es parte de la [alfabetización en IA](/blog/alfabetizacion-ia-que-es), que el art. 4 del AI Act pide apoyar con medidas.
+
+## Qué hacer ahora en tu empresa
+
+Si tu equipo ya verifica las cifras y las citas antes de usarlas fuera, no necesitas formación específica sobre alucinaciones: basta con dejar el protocolo por escrito. Si cada persona decide por su cuenta qué revisar, empieza por estos pasos.
+
+<Checklist titulo="Para esta semana">
+
+- Identifica qué tareas con IA acaban fuera de la empresa: informes, propuestas, escritos, respuestas a clientes.
+- Asigna a cada una el nivel de verificación de la tabla anterior.
+- Si tienes un chatbot de cara al cliente, revisa qué puede prometer y quién supervisa sus respuestas.
+- Comparte las cinco instrucciones anti-alucinación con todo el equipo.
+- Decide quién firma y responde de cada documento hecho con ayuda de IA.
+
+</Checklist>
+
+En nuestra [formación de alfabetización en IA](/formaciones/alfabetizacion-ia) trabajamos la detección de alucinaciones y la verificación de resultados, con prácticas sobre tareas reales. Y si quieres saber qué te pide el AI Act en materia de alfabetización, haz el [test del AI Act](/test-ai-act).
+
+<FormacionCard slug="alfabetizacion-ia" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico. Los casos judiciales se citan para ilustrar riesgos y cada uno depende de su jurisdicción y circunstancias. Si usas IA en escritos profesionales, decisiones sobre personas o atención a clientes, consulta con tu asesoría legal.
+
+</Callout>
+
+<Fuentes>
+
+- [NIST AI 600-1, Generative Artificial Intelligence Profile](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf), NIST, julio de 2024.
+- [Why Language Models Hallucinate](https://arxiv.org/abs/2509.04664), Kalai, Nachum, Vempala y Zhang (OpenAI y Georgia Tech), 4 de septiembre de 2025.
+- [AI Index Report 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report), Stanford HAI, abril de 2026 (cap. 3.2).
+- [Reduce hallucinations](https://platform.claude.com/docs/en/test-and-evaluate/strengthen-guardrails/reduce-hallucinations), Anthropic, consultada el 18 de octubre de 2026.
+- [Large Legal Fictions](https://arxiv.org/abs/2401.01301), Dahl et al. (Stanford), enero de 2024.
+- [Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools](https://arxiv.org/abs/2405.20362), Magesh et al. (Stanford), mayo de 2024.
+- [Mata v. Avianca, Opinion and Order on Sanctions](https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0.pdf), S.D.N.Y., 22 de junio de 2023.
+- [Moffatt v. Air Canada, 2024 BCCRT 149](https://decisions.civilresolutionbc.ca/crt/crtd/en/item/525448/index.do), Civil Resolution Tribunal (Columbia Británica), 14 de febrero de 2024.
+- [Nota informativa n.º 90/2024](https://www.tribunalconstitucional.es/NotasDePrensaDocumentos/NP_2024_090/NOTA%20INFORMATIVA%20N%C2%BA%2090-2024.pdf), Tribunal Constitucional, septiembre de 2024.
+- [Auto 61/2026, Sala de lo Social](https://www.damiencharlotin.com/documents/2614/Galicia_7_July_2026.pdf), TSJ de Galicia, 7 de julio de 2026.
+- [Base de datos de resoluciones judiciales con alucinaciones de IA](https://www.damiencharlotin.com/hallucinations/), Damien Charlotin (HEC Paris), actualizada el 16 de octubre de 2026.
+- [Deloitte to partially refund Australian government for report with apparent AI-generated errors](https://baynews9.com/fl/tampa/ap-top-news/2025/10/07/deloitte-to-partially-refund-australian-government-for-report-with-apparent-ai-generated-errors), Associated Press, 7 de octubre de 2025.
+- [Alphabet shares dive after Google chatbot gets satellite question wrong](https://www.irishtimes.com/business/2023/02/09/alphabet-shares-dive-after-google-chatbot-gets-satellite-question-wrong/), Reuters en The Irish Times, 9 de febrero de 2023.
+
+</Fuentes>

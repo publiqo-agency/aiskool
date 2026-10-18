@@ -1,0 +1,162 @@
+---
+title: "IA en contabilidad y finanzas: casos de uso reales"
+description: "IA en contabilidad y finanzas: qué tareas acelera de verdad (conciliación, cierre, tesorería, informes), con prompts, datos de adopción y controles clave."
+date: "2026-10-18"
+category: "departamentos"
+tldr: "La IA en contabilidad y finanzas ya la usa el 59 % de los responsables financieros encuestados por Gartner (2025) en su función, sobre todo para gestionar conocimiento, automatizar cuentas a pagar y detectar errores. Acelera conciliaciones, cierres e informes, pero no sustituye al software contable ni a la revisión: cada cifra que genera hay que poder rastrearla."
+faqs:
+  - q: "¿La IA puede llevar la contabilidad de una pyme sola?"
+    a: "No. Un asistente como ChatGPT, Claude o Copilot no es un programa de contabilidad: no lleva libros oficiales, no presenta impuestos y puede equivocarse con cifras. Sirve para preparar, revisar y explicar: clasificar movimientos, detectar descuadres, redactar comentarios de gestión. El registro contable y la responsabilidad siguen en tu software y en tu equipo o asesoría."
+  - q: "¿Qué herramienta de IA es mejor para un departamento financiero?"
+    a: "Depende de dónde viven tus datos. Si trabajas en Excel y Microsoft 365, Copilot actúa dentro del libro y respeta los permisos de tu organización. Si necesitas analizar documentos largos o escribir informes, ChatGPT Business o Claude Team funcionan bien. Lo decisivo es usar una cuenta de empresa, no personal, y definir qué datos pueden entrar."
+  - q: "¿Puedo subir extractos bancarios o nóminas a ChatGPT?"
+    a: "Solo con una cuenta corporativa que no entrene con tus datos y si tu política interna lo permite. Las nóminas contienen datos personales protegidos por el RGPD, así que conviene anonimizar o trabajar con datos agregados. Con cuentas personales o gratuitas, no: es la vía más habitual de fuga de información."
+  - q: "¿Sigue existiendo la función =COPILOT en Excel?"
+    a: "No. Microsoft retiró la función COPILOT de Excel el 14 de septiembre de 2026. Copilot sigue disponible en Excel como asistente: crea tablas, gráficos, tablas dinámicas y fórmulas a partir de una petición, y explica fórmulas existentes. Si tienes plantillas que usaban esa función, hay que rehacerlas."
+  - q: "¿Cuánto tiempo se tarda en ver resultados?"
+    a: "Menos de lo que cuesta un proyecto de software, pero más de lo que prometen los anuncios. En la encuesta de Gartner de 2025, el 91 % de los responsables financieros declaró un impacto bajo o moderado al principio. Los primeros resultados llegan con tareas acotadas y repetitivas, medidas antes y después."
+---
+
+La IA en contabilidad y finanzas sirve hoy para preparar y revisar, no para firmar: clasificar movimientos, encontrar descuadres en una conciliación, adelantar el cierre mensual, ordenar una previsión de tesorería y redactar el comentario de gestión para dirección. En la encuesta de [Gartner (noviembre de 2025)](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025), el 59 % de los responsables financieros dice que ya la usa en su función. Aquí tienes los casos que funcionan, con prompts, y los controles que no te puedes saltar.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- La adopción en finanzas se ha estabilizado: 58 % en 2024 y 59 % en 2025, según Gartner, tras un salto desde el 37 % de 2023.
+- Los usos más comunes son la gestión del conocimiento, la automatización de cuentas a pagar y la detección de errores y anomalías.
+- La IA acelera el trabajo previo; el registro contable, los impuestos y la responsabilidad siguen en tu software y en tu equipo.
+
+</Callout>
+
+## ¿Cuánto se usa la IA en finanzas y contabilidad?
+
+La IA en finanzas se usa en algo más de la mitad de los departamentos financieros encuestados, pero su impacto todavía es modesto. Según la encuesta de Gartner a 183 directores financieros y responsables de finanzas (mayo y junio de 2025), el 59 % la usa en su función, un punto más que en 2024, y el 91 % declaró un impacto inicial bajo o moderado.
+
+En España, el dato oficial mide otra cosa: empresas, no departamentos. Según el [INE (primer trimestre de 2025)](https://www.ine.es/jaxi/Tabla.htm?tpx=76387), el 20,5 % de las empresas de 10 o más empleados que usan IA la aplica a la gestión contable, de control o financiera. Con datos comparables de [Eurostat (2025)](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ain2/default/table), España está en el 20,4 % y la media de la UE, en el 23,1 %.
+
+<Stats>
+  <Stat valor="59 %" etiqueta="Responsables financieros que usan IA en su función (encuesta a 183 CFO y directivos de finanzas, 2025)" fuente="Gartner, nov. 2025" href="https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025" />
+  <Stat valor="20,5 %" etiqueta="Empresas españolas que usan IA y la aplican a contabilidad, control o finanzas" fuente="INE, 1T 2025" href="https://ine.es/jaxi/Tabla.htm?tpx=76387" />
+  <Stat valor="34,7 %" etiqueta="Empresas españolas de actividades jurídicas, contables, sedes centrales y consultoría de gestión (10+ empleados) que usan IA" fuente="Eurostat, 2025" href="https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ain2/default/table" />
+</Stats>
+
+<Barras titulo="Usos de la IA en las funciones financieras (% de responsables que los citan, 2025)" datos="Gestión del conocimiento|49;Automatización de cuentas a pagar|37;Detección de errores y anomalías|34" unidad=" %" fuente="Gartner, AI in Finance Survey 2025" href="https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025" />
+
+Ojo con la base de cada cifra: Gartner pregunta a directores financieros y responsables de finanzas (su comunicado no detalla países ni tamaño de empresa); el INE y Eurostat miden empresas españolas o europeas de 10 o más empleados, y la base del 20,5 % son solo las que ya usan IA. Si quieres el panorama completo, lo reunimos en [la IA en las empresas españolas: datos y estadísticas](/blog/ia-empresas-espanolas-estadisticas). Si trabajas en un despacho que también lleva la parte jurídica, tienes casos específicos en [IA para despachos y asesorías jurídicas](/blog/ia-despachos-asesorias-juridicas).
+
+## Seis casos de uso que funcionan en un departamento financiero
+
+Los casos de IA en contabilidad que dan resultado son tareas repetitivas, con datos que ya tienes y con un resultado que una persona puede comprobar en minutos. La tabla resume seis, con la herramienta habitual y el control mínimo que conviene aplicar a cada uno.
+
+| Caso de uso | Qué hace la IA | Herramienta habitual | Control mínimo |
+|---|---|---|---|
+| Conciliación bancaria | Cruza extracto y mayor, señala partidas sin pareja y propone causas | Copilot en Excel, ChatGPT o Claude con el archivo exportado | Cuadrar totales con la fórmula de siempre; la IA solo propone |
+| Clasificación de gastos | Sugiere cuenta del plan contable y centro de coste a partir de la descripción | Asistente con tu plan de cuentas como referencia | Muestreo de un porcentaje de asientos cada mes |
+| Cierre mensual | Genera la lista de tareas, detecta variaciones raras respecto al mes anterior | Copilot en Excel o el agente Analyst de Microsoft 365 Copilot | Responsable humano por cada ajuste |
+| Previsión de tesorería | Ordena cobros y pagos previstos, plantea escenarios y explica supuestos | Excel con Copilot, o asistente con los datos agregados | Supuestos escritos y revisados por quien firma la previsión |
+| Informe a dirección | Redacta el comentario de gestión a partir de la cuenta de resultados | ChatGPT Business, Claude Team o Copilot en Word | Cada cifra del texto se comprueba contra la tabla origen |
+| Consultas internas | Responde dudas de procedimiento (política de gastos, plazos) con documentos propios | Asistente con documentos de la empresa (RAG) | Respuestas con cita al documento fuente |
+
+Algunos fabricantes ya publican casos con cifras. Qonto, que ofrece banca y contabilidad a empresas en ocho mercados europeos, es un ejemplo: según [la ficha de cliente publicada por Anthropic](https://claude.com/customers/qonto), sus agentes de IA preparan las facturas de sus clientes y el cliente las confirma antes de enviarlas, con «3X less time to create client invoices». Es una cifra del propio proveedor, sin auditar, pero ilustra el patrón que funciona: la IA prepara y una persona confirma.
+
+### Prompts de ejemplo para empezar
+
+<Steps>
+
+1. **Conciliación**: «Te adjunto el extracto bancario de septiembre y el mayor de la cuenta 572. Empareja movimientos por importe y fecha con una tolerancia de 3 días. Dame una tabla con las partidas sin pareja y una posible explicación para cada una. No modifiques los datos originales».
+2. **Variaciones del cierre**: «Compara la cuenta de resultados de septiembre con la de agosto y con septiembre del año pasado. Señala las partidas que varían más de un 15 % y formula una pregunta para el responsable de cada una».
+3. **Comentario de gestión**: «Redacta un comentario de 200 palabras para el comité de dirección a partir de esta tabla. Usa solo las cifras de la tabla, cita la fila de la que sale cada cifra y marca con [REVISAR] cualquier conclusión que no se deduzca directamente de los datos».
+4. **Tesorería**: «Con estos cobros y pagos previstos para las próximas 13 semanas, construye tres escenarios (base, cobros con 30 días de retraso, pérdida del cliente principal) y explica qué supuestos usas en cada uno».
+
+</Steps>
+
+El patrón se repite: pedir que use solo los datos aportados, que cite de dónde sale cada cifra y que marque lo dudoso. Si tu equipo aún no tiene soltura con las instrucciones, empieza por [la guía de prompts para empleados](/blog/como-hacer-prompts-guia-empleados).
+
+<CtaInline />
+
+## Copilot en Excel: qué hace y qué ha cambiado en 2026
+
+Copilot en Excel es el asistente más cercano al trabajo diario de un departamento financiero porque actúa dentro del libro. Según [la documentación de Microsoft (consultada en octubre de 2026)](https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel), usa tablas, gráficos, tablas dinámicas y fórmulas para cumplir tus peticiones, y el contenido sigue siendo editable.
+
+Tres cambios recientes que conviene conocer antes de formar al equipo:
+
+- **La función =COPILOT() ya no existe.** Microsoft la retiró el [14 de septiembre de 2026](https://support.microsoft.com/en-us/excel/functions/copilot-function). Las plantillas que la usaban hay que rehacerlas.
+- **Puede trabajar con modelos de OpenAI o de Anthropic.** Para usar Claude, el administrador tiene que habilitar Anthropic como subencargado ([preguntas frecuentes de Copilot en Excel](https://support.microsoft.com/en-au/excel/copilot/frequently-asked-questions-about-copilot-in-excel)). Y aquí hay un matiz de privacidad: según Microsoft, los modelos de Anthropic están excluidos por ahora del EU Data Boundary ([privacidad de Microsoft Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy)). Con datos financieros sensibles, decide esa configuración con tu equipo de TI.
+- **El precio depende del plan.** Microsoft 365 Copilot para empresas cuesta 15,60 € por usuario y mes con pago anual en promoción hasta el 31 de diciembre de 2026 (18,20 € de precio normal), sin IVA y además de la licencia de Microsoft 365 ([precios de Microsoft, consultado en octubre de 2026](https://www.microsoft.com/es-es/copilot/pricing/business)).
+
+Si quieres ver flujos concretos en Outlook, Excel y Teams, los tienes en [Copilot en Outlook, Excel y Teams: guía práctica](/blog/copilot-outlook-excel-teams-guia).
+
+## Lo que la IA no debe hacer en finanzas (y por qué)
+
+La IA no debe ser la fuente de una cifra que llega a dirección, a un auditor o a Hacienda sin que nadie la haya comprobado. Los modelos de lenguaje generan texto plausible, no cálculos garantizados, y cuando una tarea queda fuera de lo que hacen bien, empeoran el resultado de profesionales competentes.
+
+Esa es la conclusión del experimento de Harvard y BCG con 758 consultores publicado en 2026: en tareas dentro de la «frontera» de la IA, quienes la usaron completaron un 12,2 % más de tareas y con un 32 % más de calidad; en una tarea fuera de esa frontera, acertaron 19 puntos menos que quienes no la usaron ([Dell'Acqua et al., Organization Science, 2026](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700)). En finanzas, la frontera está clara: redactar, ordenar y comparar, sí; calcular sin fórmula verificable o interpretar normativa fiscal sin revisión, no. Lo explicamos con más detalle en [alucinaciones de la IA](/blog/alucinaciones-ia).
+
+<Columnas>
+<Pros titulo="Buen uso">
+
+- Proponer emparejamientos y explicar descuadres
+- Detectar variaciones y formular preguntas
+- Redactar borradores de informes con cifras citadas
+- Responder dudas internas con documentos propios
+
+</Pros>
+<Contras titulo="Mal uso">
+
+- Copiar cifras de un chat a un informe sin cuadrarlas
+- Pedir a un chatbot el cálculo de un impuesto
+- Subir nóminas o datos de clientes a cuentas personales
+- Sustituir el software de facturación o contabilidad
+
+</Contras>
+</Columnas>
+
+<Callout tipo="aviso" titulo="Facturación electrónica: estado a 18 de octubre de 2026">
+
+Un asistente de IA no es un sistema informático de facturación. Los requisitos de esos sistemas (Verifactu) los fija el Real Decreto 1007/2023. Tras el Real Decreto-ley 15/2025, los plazos vigentes de adaptación son el 1 de enero de 2027 para quienes presentan el Impuesto sobre Sociedades y el 1 de julio de 2027 para el resto, según [la nota informativa de la Agencia Tributaria](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html). El 5 de octubre de 2026, el [Ministerio de Hacienda anunció](https://www.hacienda.gob.es/sgt/gabsehacienda/nota-informativa-verifactu.pdf) que prevé aplazar esas obligaciones hasta octubre de 2028, para alinearlas con la factura electrónica obligatoria; es una previsión que aún tiene que aprobarse. Consulta las fechas vigentes en [la sede de la Agencia Tributaria](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html) (página actualizada el 14/10/2026).
+
+</Callout>
+
+### Cuándo no te hace falta una formación externa
+
+Si tu equipo financiero es pequeño, ya usa una cuenta corporativa de IA y alguien interno tiene criterio para revisar resultados, puedes empezar por tu cuenta: elige uno de los seis casos de arriba, mídelo durante un mes y escribe las reglas que funcionen. Una formación compensa cuando hay varias personas que aprender a la vez, cuando los errores con cifras tienen consecuencias o cuando nadie tiene tiempo de diseñar los controles.
+
+## Qué hacer esta semana
+
+Empezar con IA en contabilidad no requiere un proyecto: requiere elegir una tarea, fijar un control y medir. Estos pasos caben en una semana y te dan datos para decidir si ampliar.
+
+<Checklist titulo="Plan de arranque para finanzas">
+
+- Confirma que el equipo usa una cuenta de empresa de IA, no cuentas personales
+- Escribe qué datos no pueden entrar (nóminas identificadas, datos bancarios de clientes) con ayuda de [qué datos no meter nunca en una IA](/blog/que-datos-no-meter-en-chatgpt)
+- Elige una tarea repetitiva (conciliación o comentario de gestión) y mide cuánto tarda hoy
+- Prueba los prompts de este artículo con datos anonimizados
+- Define el control: quién revisa, qué cuadra y dónde se deja constancia
+- Repite durante un cierre completo y compara tiempos y errores
+
+</Checklist>
+
+Si prefieres que lo hagamos con tu equipo, en nuestra [formación de IA para Finanzas](/formaciones/ia-finanzas) trabajamos con hojas de cálculo e informes reales anonimizados: análisis con lenguaje natural, comentarios de gestión y controles para evitar errores de la IA en cifras. Y si aún no sabes por qué área empezar, el [diagnóstico gratuito de 30 minutos](/diagnostico) sirve para priorizar. Para la visión de conjunto de la dirección, mira [cómo hacer una hoja de ruta de IA](/blog/estrategia-ia-empresa-hoja-de-ruta).
+
+<FormacionCard slug="ia-finanzas" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico ni fiscal. Para las obligaciones de facturación (Verifactu) y el tratamiento de datos personales de empleados o clientes, consulta con tu asesoría.
+
+</Callout>
+
+<Fuentes>
+
+- [Gartner Survey Shows Finance AI Adoption Remains Steady in 2025](https://www.gartner.com/en/newsroom/press-releases/2025-11-18-gartner-survey-shows-finance-ai-adoption-remains-steady-in-2025) — Gartner, 18 de noviembre de 2025.
+- [Gartner Survey Shows 58% of Finance Functions Use AI in 2024](https://www.gartner.com/en/newsroom/press-releases/2024-09-11-gartner-survey-shows-58-percent-of-finance-functions-use-ai-in-2024) — Gartner, 11 de septiembre de 2024.
+- [Encuesta TIC en empresas, tabla «Inteligencia artificial» (1T 2025)](https://ine.es/jaxi/Tabla.htm?tpx=76387) — INE, 22 de octubre de 2025.
+- [Uso de IA por sector y finalidad, dataset isoc_eb_ain2](https://ec.europa.eu/eurostat/databrowser/view/isoc_eb_ain2/default/table) — Eurostat, actualizado el 15 de junio de 2026.
+- [Get started with Copilot in Excel](https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel) (consultado en octubre de 2026), [retirada de la función COPILOT](https://support.microsoft.com/en-us/excel/functions/copilot-function) (septiembre de 2026) y [preguntas frecuentes de Copilot en Excel](https://support.microsoft.com/en-au/excel/copilot/frequently-asked-questions-about-copilot-in-excel) — Microsoft.
+- [Data, Privacy, and Security for Microsoft Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy) — Microsoft Learn, octubre de 2026.
+- [Precios de Microsoft 365 Copilot para empresas (sin IVA, consultado en octubre de 2026)](https://www.microsoft.com/es-es/copilot/pricing/business) — Microsoft.
+- [Navigating the Jagged Technological Frontier](https://www.hbs.edu/faculty/Pages/item.aspx?num=64700) — Dell'Acqua et al., Organization Science, 11 de marzo de 2026.
+- [Qonto, caso de cliente](https://claude.com/customers/qonto) — Anthropic.
+- [Sistemas informáticos de facturación y Verifactu](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu.html) y [nota informativa sobre la ampliación del plazo de adaptación](https://sede.agenciatributaria.gob.es/Sede/iva/sistemas-informaticos-facturacion-verifactu/nota-informativa-ampliacion-plazo-adaptacion-facturacion.html) — Agencia Tributaria, actualizados el 14 y el 13 de octubre de 2026.
+- [Previsión de modificación de los plazos del Real Decreto 1007/2023](https://www.hacienda.gob.es/sgt/gabsehacienda/nota-informativa-verifactu.pdf) — Ministerio de Hacienda, nota de prensa de 5 de octubre de 2026.
+
+</Fuentes>

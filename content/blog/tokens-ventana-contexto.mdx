@@ -1,0 +1,149 @@
+---
+title: "Qué son los tokens en IA y la ventana de contexto"
+description: "Un token es el trozo de texto con el que trabaja una IA: unos 4 caracteres. Qué es la ventana de contexto, por qué el chat olvida y cuánto cuesta cada token."
+date: "2026-10-18"
+category: "conceptos"
+tldr: "Los tokens son los trozos en que un modelo de IA divide el texto: en inglés, un token equivale a unos 4 caracteres o 0,75 palabras. La ventana de contexto es el máximo de tokens que el modelo maneja a la vez, en torno a un millón en los modelos punteros de octubre de 2026. Más contexto no garantiza mejores respuestas."
+faqs:
+  - q: "¿Cuántas palabras son 1.000 tokens?"
+    a: "En inglés, unas 750 palabras, según la regla aproximada de OpenAI (0,75 palabras por token); Google da entre 600 y 800 palabras por cada 1.000 tokens en Gemini. En español salen menos palabras por token, porque los tokenizadores trocean más nuestro idioma. Para un cálculo exacto, Anthropic y Google ofrecen herramientas para contar los tokens de un texto con cada modelo."
+  - q: "¿Los tokens se pagan si uso ChatGPT, Claude o Copilot con una licencia por usuario?"
+    a: "No directamente. Con una licencia por usuario pagas una cuota fija al mes, y los tokens solo se notan como límites de uso o de longitud de los documentos. El pago por token es propio de las API, que usan las empresas cuando integran un modelo en sus aplicaciones, automatizaciones o agentes. Ahí sí conviene calcular el consumo."
+  - q: "¿Por qué la misma pregunta gasta más tokens en español que en inglés?"
+    a: "Porque los tokenizadores se diseñan con mucho más texto en inglés, así que una palabra española suele dividirse en más trozos. En un estudio presentado en NeurIPS 2023, con el tokenizador de ChatGPT y GPT-4 de entonces, el mismo texto en español necesitaba unas 1,55 veces los tokens del inglés. Los tokenizadores de 2026 pueden haber reducido esa diferencia."
+  - q: "¿Las imágenes y los audios también cuentan como tokens?"
+    a: "Sí. En Gemini, según la documentación de Google, una imagen pequeña cuenta como 258 tokens y las grandes se dividen en bloques de 258 tokens cada uno; el audio consume 32 tokens por segundo. En Claude, una petición admite hasta 600 imágenes o páginas de PDF. Todo ello ocupa espacio en la misma ventana de contexto que el texto."
+  - q: "¿Qué pasa si supero la ventana de contexto?"
+    a: "Depende de la herramienta. Por API, si la entrada supera la ventana, la petición falla. En las aplicaciones de chat, lo habitual es que la conversación siga pero el modelo deje de tener en cuenta lo más antiguo: Anthropic indica que claude.ai puede gestionar la ventana descartando primero lo más antiguo. Por eso parece que el asistente «olvida» instrucciones del principio."
+---
+
+Un token es el trozo de texto con el que trabaja un modelo de IA: una palabra corta, una parte de una palabra o un signo. En inglés, un token equivale de media a unos 4 caracteres, o 0,75 palabras, según OpenAI. La ventana de contexto es el número máximo de tokens que el modelo puede tener en cuenta a la vez, incluida su propia respuesta. Aquí verás por qué importan, cuánto caben en los modelos de octubre de 2026, por qué el chat «olvida» y cuánto cuesta cada token.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- Los modelos no leen palabras, leen **tokens**. En español se necesitan más tokens que en inglés para decir lo mismo.
+- Los modelos punteros de OpenAI, Anthropic y Google admiten en torno a **1 millón de tokens** por petición, pero rinden peor cuanto más llenas la ventana.
+- En las API se paga por token, y los de salida cuestan bastante más que los de entrada.
+
+</Callout>
+
+## Qué es un token en IA
+
+Un token es la unidad mínima en la que un modelo de lenguaje divide el texto para procesarlo: puede ser una palabra completa, un fragmento de palabra, un carácter o incluso un byte. Las palabras frecuentes suelen ser un solo token; las largas o raras se parten en varios. El modelo nunca ve letras, sino secuencias de tokens.
+
+[OpenAI](https://developers.openai.com/api/docs/concepts) pone un ejemplo: la palabra inglesa «tokenization» se divide en «token» e «ization», mientras que una palabra corta y común como «the» es un único token. Cada proveedor publica su propia regla aproximada, y no coinciden del todo porque cada uno usa un tokenizador distinto:
+
+| Proveedor | Regla oficial aproximada | Fuente |
+|---|---|---|
+| OpenAI | 1 token ≈ 4 caracteres ≈ 0,75 palabras en inglés | [Key concepts](https://developers.openai.com/api/docs/concepts) |
+| Google (Gemini) | 1 token ≈ 4 caracteres; 100 tokens ≈ 60-80 palabras en inglés | [Documentación de tokens de Gemini](https://ai.google.dev/gemini-api/docs/tokens), actualizada el 13/10/2026 |
+| Anthropic (Claude) | Depende del modelo y del idioma; los modelos desde Claude 4.7 generan un 30 % más de tokens para el mismo texto que los anteriores, en los que un token eran unos 3,5 caracteres en inglés | [Glossary](https://platform.claude.com/docs/en/about-claude/glossary) |
+
+### En español se gastan más tokens
+
+Los tokenizadores se construyen con mucho más texto en inglés que en otros idiomas, así que el español se trocea más. Un estudio presentado en NeurIPS 2023 midió que, con el tokenizador que usaban entonces ChatGPT y GPT-4, el mismo texto ocupaba en español unas 1,55 veces los tokens del inglés ([Petrov et al., 2023](https://arxiv.org/abs/2305.15425)). Los autores advierten de que eso encarece el servicio, lo hace más lento y reduce cuánto contenido cabe en el contexto.
+
+<Stats>
+  <Stat valor="≈ 4" etiqueta="Caracteres por token en inglés, según OpenAI y Google" fuente="OpenAI y Google, 2026" href="https://ai.google.dev/gemini-api/docs/tokens" />
+  <Stat valor="1,55 veces" etiqueta="Tokens que necesitaba el español frente al inglés con el tokenizador de GPT-4 de 2023" fuente="Petrov et al., NeurIPS 2023" href="https://arxiv.org/abs/2305.15425" />
+  <Stat valor="+30 %" etiqueta="Tokens que genera el tokenizador de Claude 4.7 y posteriores frente al anterior" fuente="Anthropic, 2026" href="https://platform.claude.com/docs/en/about-claude/glossary" />
+</Stats>
+
+Las imágenes y el audio también se convierten en tokens. En Gemini, una imagen pequeña cuenta como 258 tokens, las grandes se dividen en bloques de 258 tokens cada uno y el audio consume 32 tokens por segundo ([Google](https://ai.google.dev/gemini-api/docs/tokens)). Con esa cifra, una hora de audio ocupa unos 115.000 tokens (cálculo propio).
+
+## Qué es la ventana de contexto
+
+La ventana de contexto es todo el texto que un modelo puede tener en cuenta al generar una respuesta, incluida la propia respuesta. Anthropic la describe como la «memoria de trabajo» del modelo, distinta de lo que aprendió al entrenarse. Si algo no está en la ventana, para el modelo no existe en esa conversación.
+
+Según la [documentación de Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows), cuenta todo lo que va en la petición: las instrucciones del sistema, cada mensaje de la conversación (con documentos, imágenes y resultados de herramientas) y la respuesta que genera el modelo, incluido su razonamiento interno. OpenAI lo resume igual: la pregunta y la respuesta juntas no pueden superar la longitud máxima de contexto del modelo.
+
+| Proveedor | Modelos (octubre de 2026) | Ventana de contexto | Salida máxima por respuesta |
+|---|---|---|---|
+| Anthropic | Claude Fable 5.1, Opus 5.5, Sonnet 5.5, Haiku 5.5 y otros recientes | 1 millón de tokens | 128.000 tokens |
+| OpenAI | GPT-6 Astra, GPT-6.1 Sol, GPT-6 Luna | 1,05 millones de tokens | 128.000 tokens |
+| Google | Gemini 4 Argon | 1.048.576 tokens compartidos entre entrada, razonamiento y salida | 65.536 tokens por defecto |
+| Google | Gemini 3 y 2.5 | 1.048.576 tokens de entrada | 65.536 tokens |
+
+Fuentes: [Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows), [OpenAI](https://developers.openai.com/api/docs/models) y [Google](https://ai.google.dev/gemini-api/docs/tokens), consultadas el 18 de octubre de 2026. Son cifras de las API; las aplicaciones de chat pueden aplicar límites distintos según el plan.
+
+¿Cuánto es un millón de tokens? Con la regla de 0,75 palabras por token, unas 750.000 palabras en inglés (cálculo propio; en español, menos). En documentos, Claude admite hasta 600 imágenes o páginas de PDF por petición, y antes del límite de tokens se puede llegar al límite de tamaño de la petición. El [AI Index 2026 de Stanford](https://hai.stanford.edu/ai-index/2026-ai-index-report) calcula que las ventanas han crecido casi 30 veces al año desde mediados de 2023: de unos pocos miles de tokens a un millón o más.
+
+## Por qué el chat «se olvida» de lo que le dijiste
+
+El chat parece olvidar por dos motivos: cuando la conversación llena la ventana, la herramienta descarta o resume lo más antiguo, y, aunque todo quepa, los modelos usan peor la información cuanto más larga es la entrada, sobre todo la que queda en medio. Anthropic llama a esto «context rot», degradación del contexto.
+
+Anthropic explica que, a medida que crece el número de tokens, la precisión y la capacidad de recordar se degradan, y que más contexto no es automáticamente mejor. También indica que interfaces como claude.ai pueden gestionar la ventana descartando primero lo más antiguo. El AI Index 2026 lo confirma con carácter general: hay una gran distancia entre el contexto que un modelo acepta y el que usa bien, y las entradas largas son más lentas, más caras y menos precisas con la información que aparece tarde.
+
+El fenómeno ya se midió en 2023 con el estudio [«Lost in the Middle»](https://arxiv.org/abs/2307.03172): los modelos rendían mejor cuando el dato relevante estaba al principio o al final del texto y empeoraban mucho cuando estaba en medio. Aquellos modelos están superados, pero la recomendación práctica sigue vigente.
+
+<Steps>
+
+1. **Pon lo importante al principio** (o repítelo al final): instrucciones, formato y restricciones.
+2. **Abre una conversación nueva** al cambiar de tarea, en lugar de encadenarlo todo en un hilo eterno.
+3. **Pide un resumen del hilo** cuando una conversación se alarga y empieza otra con ese resumen.
+4. **Da solo los documentos necesarios.** Diez páginas relevantes funcionan mejor que doscientas por si acaso.
+5. **Para mucha documentación, usa RAG,** que busca los fragmentos pertinentes en lugar de cargarlo todo.
+
+</Steps>
+
+<CtaInline />
+
+## Cuánto cuesta un token
+
+En las API, un millón de tokens cuesta entre 0,10 y 50 dólares según el modelo y según sea entrada o salida. Se paga por separado lo que envías y lo que el modelo genera, y la salida es cinco veces más cara en todos los modelos de la tabla. Con una licencia por usuario, como ChatGPT Business o Microsoft 365 Copilot, no pagas por token; alguna excepción, como [Claude Enterprise](https://claude.com/pricing), suma al puesto el uso a tarifas de API.
+
+| Modelo | Entrada (USD por millón de tokens) | Salida (USD por millón de tokens) |
+|---|---|---|
+| GPT-6 Astra (OpenAI) | 10,00 | 50,00 |
+| GPT-6.1 Sol (OpenAI) | 2,00 | 10,00 |
+| GPT-6 Luna (OpenAI) | 0,10 | 0,50 |
+| Claude Fable 5.1 (Anthropic) | 10 | 50 |
+| Claude Sonnet 5.5 (Anthropic) | 2 | 10 |
+| Claude Haiku 5.5 (Anthropic, hasta 100.000 tokens) | 0,10 | 0,50 |
+| Gemini 4 Argon (Google, precio promocional) | 2,00 | 10,00 |
+
+Precios oficiales de [OpenAI](https://developers.openai.com/api/docs/pricing) (contexto corto, hasta 272.000 tokens de entrada), [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) y [Google](https://ai.google.dev/gemini-api/docs/pricing), en dólares, sin impuestos, consultados el 18 de octubre de 2026. Google indica que el precio de Gemini 4 Argon pasa a 4 y 20 dólares a partir del 1 de diciembre de 2026. Las tres ofrecen procesamiento por lotes con un 50 % de descuento.
+
+Un ejemplo de cálculo propio: resumir un informe de 50.000 tokens con una respuesta de 2.000 tokens cuesta con Claude Sonnet 5.5 unos 0,12 dólares (0,10 de entrada más 0,02 de salida), y con GPT-6 Luna, unos 0,006 dólares. Dos detalles encarecen la factura: el razonamiento interno de los modelos que «piensan» se cobra como tokens de salida ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows)), y un agente que encadena muchos pasos reenvía el contexto en cada uno. Si estás valorando un proyecto así, lo desglosamos en [cuánto cuesta implantar un agente de IA](/blog/cuanto-cuesta-agente-ia).
+
+## Lo que no significa tener 1 millón de tokens
+
+Una ventana de un millón de tokens significa que el modelo acepta mucho texto, no que lo entienda todo igual de bien ni que convenga usarlo entero. Cargar todos los documentos de la empresa en una conversación suele dar respuestas peores, más lentas y más caras que darle solo lo relevante.
+
+<Callout tipo="aviso" titulo="Error frecuente">
+
+Pensar que, como cabe todo, ya no hace falta organizar la información. Por eso existen las técnicas de recuperación (RAG): buscan los fragmentos pertinentes y solo esos entran en la ventana. Lo explicamos en [RAG: un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
+
+</Callout>
+
+Tampoco es una memoria permanente. Lo que cabe en la ventana se usa en esa conversación; el modelo no aprende de ello ni lo recuerda en la siguiente, salvo que la herramienta tenga una función de memoria o proyectos que vuelvan a cargarlo. Para entender por qué funciona así, lee [qué es un LLM y cómo funciona](/blog/que-es-un-llm). Y la relación entre contexto largo y errores la contamos en [alucinaciones de la IA](/blog/alucinaciones-ia).
+
+## Qué hacer ahora
+
+Si tu equipo usa asistentes con licencia por usuario, no necesita calcular tokens: le basta con saber que el contexto se llena y se degrada, y trabajar con hilos cortos y documentos seleccionados. Si tu empresa usa o va a usar API, automatizaciones o agentes, sí conviene estimar el consumo antes de comprometer presupuesto.
+
+<Checklist titulo="Según tu caso">
+
+- **Usuarios de chat:** conversaciones por tarea, instrucciones al principio y solo los documentos necesarios.
+- **Proyectos con API:** estima tokens de entrada y salida por operación y multiplícalos por el volumen mensual.
+- **Agentes:** cuenta los pasos por tarea, porque cada paso reenvía contexto.
+- **Textos en español:** usa el contador de tokens del proveedor en lugar de reglas pensadas para el inglés.
+- **Precios:** revisa la fecha de los precios promocionales antes de cerrar un presupuesto.
+
+</Checklist>
+
+En nuestra [formación de alfabetización en IA](/formaciones/alfabetizacion-ia), el módulo «Tokens, contexto y por qué se equivoca» explica esto con ejercicios sobre las herramientas que ya usa tu equipo; para equipos técnicos, la de [desarrollo con LLMs y agentes](/formaciones/formacion-tecnica-llm) trata APIs, tokens y costes. Si quieres saber qué te pide el AI Act en alfabetización, haz el [test del AI Act](/test-ai-act).
+
+<FormacionCard slug="alfabetizacion-ia" />
+
+<Fuentes>
+
+- [Key concepts](https://developers.openai.com/api/docs/concepts) y [Models](https://developers.openai.com/api/docs/models), OpenAI, consultadas el 18 de octubre de 2026.
+- [Pricing](https://developers.openai.com/api/docs/pricing), OpenAI, consultada el 18 de octubre de 2026.
+- [Tokens](https://ai.google.dev/gemini-api/docs/tokens) y [precios de la API de Gemini](https://ai.google.dev/gemini-api/docs/pricing), Google AI for Developers, actualizadas el 13 y el 16 de octubre de 2026.
+- [Claude pricing](https://claude.com/pricing) (planes), [Glossary](https://platform.claude.com/docs/en/about-claude/glossary), [Context windows](https://platform.claude.com/docs/en/build-with-claude/context-windows) y [Pricing](https://platform.claude.com/docs/en/about-claude/pricing), Anthropic, consultadas el 18 de octubre de 2026.
+- [Language Model Tokenizers Introduce Unfairness Between Languages](https://arxiv.org/abs/2305.15425), Petrov et al., NeurIPS 2023.
+- [Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172), Liu et al., julio de 2023.
+- [AI Index Report 2026](https://hai.stanford.edu/ai-index/2026-ai-index-report) ([PDF](https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf), cap. 2, «The Gap Between Long Context Windows and Deep Understanding»), Stanford HAI, abril de 2026.
+
+</Fuentes>

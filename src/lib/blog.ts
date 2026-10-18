@@ -2,6 +2,7 @@ import "server-only";
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
+import { site } from "@/lib/site";
 
 export const blogCategories = {
   "ai-act": { label: "AI Act y alfabetización", pillar: "/ai-act", cta: "test" },
@@ -22,13 +23,19 @@ export type PostMeta = {
   date: string;
   updated?: string;
   category: BlogCategory;
-  author: string;
+  /** Si falta, «Equipo de {site.name}» (no inventar autores). */
+  author?: string;
   tldr?: string;
   draft?: boolean;
   faqs?: { q: string; a: string }[];
 };
 
 const DIR = path.join(process.cwd(), "content", "blog");
+
+export const authorOf = (meta: Pick<PostMeta, "author">) => meta.author ?? `Equipo de ${site.name}`;
+
+/** Minutos de lectura a 220 palabras por minuto. */
+export const readingTime = (content: string) => Math.max(1, Math.round(content.split(/\s+/).filter(Boolean).length / 220));
 
 /** Lee todos los artículos publicados (cacheado; se recalcula en cada build). */
 export async function getPosts(): Promise<PostMeta[]> {

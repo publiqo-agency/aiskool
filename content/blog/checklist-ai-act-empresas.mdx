@@ -1,0 +1,185 @@
+---
+title: "Cumplimiento del AI Act en empresas: checklist 2026"
+description: "Checklist de cumplimiento del AI Act para empresas que usan IA: rol, inventario, prohibiciones, alto riesgo, art. 50 y art. 4, con fechas del Digital Omnibus."
+date: "2026-10-18"
+category: "ai-act"
+tldr: "Cumplir el AI Act en una empresa que usa IA exige seis comprobaciones: rol, inventario, prácticas prohibidas, usos del anexo III, transparencia del art. 50 y medidas de alfabetización del art. 4. El alto riesgo del anexo III se aplica desde el 2 de diciembre de 2027; lo demás ya está en vigor."
+faqs:
+  - q: "¿Existe un checklist oficial de la AESIA o de la Comisión que garantice el cumplimiento?"
+    a: "No. La Comisión no ha publicado una lista que dé conformidad con el art. 4, y su repositorio de prácticas de alfabetización no otorga presunción de cumplimiento. La AESIA tiene 16 guías, una de ellas un manual de checklists, pero no son vinculantes. Cualquier checklist, incluida esta, es una herramienta de trabajo orientativa que debes adaptar a tu caso."
+  - q: "¿Toda empresa que usa IA tiene que hacer una evaluación de impacto en derechos fundamentales?"
+    a: "No. El art. 27.1 del AI Act limita la evaluación de impacto en derechos fundamentales a ciertos usuarios de sistemas de alto riesgo: organismos públicos, entidades privadas que prestan servicios públicos y quienes los usan para evaluar la solvencia o fijar precios de seguros de vida y salud. Además, tras el Digital Omnibus puede incluir referencias cruzadas a la EIPD que ya hayas hecho por el RGPD."
+  - q: "¿Necesito nombrar un responsable de IA para cumplir el AI Act?"
+    a: "No es obligatorio para el art. 4. La Comisión responde de forma expresa que no se exige ninguna estructura de gobierno concreta, ni un «AI officer» ni un comité. En la práctica conviene que alguien mantenga el inventario y la política de uso al día, pero puede ser una persona de operaciones, sistemas o compliance que ya tengas."
+  - q: "¿Cada cuánto hay que revisar el checklist del AI Act?"
+    a: "La norma no fija una periodicidad. Una revisión anual, más otra cada vez que se incorpore una herramienta nueva o cambie el uso de una existente, es una pauta razonable. También conviene revisarlo cuando se publiquen las directrices definitivas de alto riesgo, que a 18 de octubre de 2026 siguen en borrador, o una ley española de supervisión."
+  - q: "¿Qué pasa si una herramienta que ya uso resulta ser de alto riesgo?"
+    a: "Tienes margen: las obligaciones del anexo III se aplican desde el 2 de diciembre de 2027. Hasta entonces, pide al proveedor sus instrucciones de uso, decide quién supervisará el sistema con formación y autoridad suficientes, y prepara la información a la plantilla. Si es un uso de RR. HH., el RD 723/2026 ya te obliga a informar por escrito a cada trabajador (a quien ya estaba contratado, si lo solicita)."
+---
+
+Para una empresa que **usa** IA, el cumplimiento del AI Act (Reglamento europeo de IA, Reglamento (UE) 2024/1689) consiste en seis comprobaciones: qué rol tienes, qué IA se usa, que nada esté prohibido, si algún uso es de alto riesgo, si debes avisar de contenido generado y qué medidas de alfabetización has adoptado. Esta checklist está escrita para el responsable del despliegue, con las fechas vigentes tras el Digital Omnibus (consultadas el 18 de octubre de 2026). Es orientativa: adáptala y revísala con tu asesoría.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- Si tu equipo usa ChatGPT, Copilot o Gemini para trabajar, tu empresa es **responsable del despliegue** y el art. 4 se le aplica desde el 2 de febrero de 2025.
+- No existe un checklist oficial que, cumplido, te dé la conformidad. Tampoco hace falta certificado.
+- Si ningún uso entra en el anexo III, tu trabajo se reduce a inventario, prohibiciones, transparencia y alfabetización, todo bien documentado.
+
+</Callout>
+
+## ¿Qué papel tiene tu empresa ante el AI Act?
+
+El papel de tu empresa ante el AI Act depende de si **desarrollas** IA o la **usas**. Quien usa un sistema de IA «bajo su propia autoridad», salvo en una actividad personal no profesional, es responsable del despliegue según el [art. 3.4 del Reglamento (UE) 2024/1689](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689). Es el caso de casi cualquier empresa con IA en su día a día.
+
+La Comisión lo pone con un ejemplo muy concreto en sus [preguntas y respuestas sobre alfabetización (actualizadas el 27/7/2026)](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers): una empresa cuyos empleados usan ChatGPT para redactar anuncios o traducir textos tiene que cumplir el art. 4. Esta checklist está pensada para quien usa IA, no para quien la fabrica.
+
+Ojo con un matiz: puedes pasar a ser **proveedor** sin darte cuenta. El [art. 25.1](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689) lo prevé si pones tu marca en un sistema de alto riesgo, lo modificas de forma sustancial o cambias su finalidad de modo que pase a ser de alto riesgo, también con un modelo de uso general.
+
+| Situación | Rol probable | Qué revisar |
+|---|---|---|
+| La plantilla usa ChatGPT Business, Copilot o Gemini para escribir, resumir o analizar | Responsable del despliegue | Art. 4, art. 50.4 si publicas contenido, política de uso |
+| RR. HH. usa un software de terceros que puntúa y ordena CV | Responsable del despliegue de un posible sistema de alto riesgo | Anexo III 4 a), art. 26 desde el 2/12/2027, RGPD y RD 723/2026 |
+| Montas un chatbot propio en tu web sobre un modelo comercial | Puede que proveedor del sistema | Art. 50.1 (avisar de que se habla con una IA), consulta con tu asesoría |
+| Comercializas con tu marca un sistema de alto riesgo que te desarrolló otro | Proveedor (art. 25.1) | Todas las obligaciones del proveedor |
+| Un empleado usa la IA solo para asuntos personales | Fuera del ámbito como empresa | Nada específico |
+
+## Paso 1: haz el inventario de la IA que se usa
+
+El inventario de IA es la base de todo el checklist del AI Act, porque no puedes clasificar ni formar sobre lo que no conoces. Debe recoger cada herramienta, quién la usa, para qué y con qué datos, incluidas las cuentas personales que la plantilla usa sin permiso.
+
+La propia Comisión plantea como primera pregunta «What AI is used in our organisation?» (¿qué IA se usa en nuestra organización?) en su [contenido mínimo para el art. 4](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers). Y la AEPD aplica a su personal la regla de no usar sistemas que no estén en el inventario corporativo, según su [resumen de obligaciones de enero de 2026](https://www.aepd.es/guias/sumario-recomendaciones-iag-aepd.pdf).
+
+Aquí tienes un formato de inventario que puedes copiar: pásalo a una hoja de cálculo y rellena una fila por uso, no por herramienta (una misma herramienta puede tener usos de riesgo distinto).
+
+| Herramienta y plan | Área y personas | Uso concreto | Datos personales | Decide o influye sobre personas | Clasificación provisional | Responsable y fecha de revisión |
+|---|---|---|---|---|---|---|
+| Ejemplo: ChatGPT Business | Marketing, 6 | Borradores de textos y traducciones | No | No | Sin obligaciones específicas más allá del art. 4 | Responsable de marketing, enero |
+| Ejemplo: ATS con puntuación de CV | RR. HH., 2 | Ordenar candidaturas | Sí | Sí | Posible anexo III 4 a) | Dirección de personas, trimestral |
+| Ejemplo: chatbot de la web | Atención al cliente | Responder dudas de clientes | Sí | No | Art. 50.1: avisar de que es una IA | Responsable de atención, semestral |
+
+Para descubrir el uso no declarado, revisar las licencias no basta: añade una encuesta anónima y breve a la plantilla. Si quieres profundizar en ese riesgo, lo explicamos en [Shadow AI: el riesgo de las cuentas personales](/blog/shadow-ai-riesgos).
+
+## Paso 2: descarta prácticas prohibidas y detecta el alto riesgo
+
+La segunda comprobación del cumplimiento del AI Act es revisar cada fila del inventario contra dos listas: las prácticas prohibidas del art. 5, que ya se aplican, y los ocho ámbitos de alto riesgo del anexo III, cuyas obligaciones llegan el 2 de diciembre de 2027 tras el [Reglamento (UE) 2026/1744](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744).
+
+<Flujo titulo="Cómo clasificar cada uso del inventario" pasos="¿Es una práctica prohibida?|¿Entra en el anexo III?|¿Le salva el filtro del art. 6.3?|¿Tiene deber de transparencia?|Solo art. 4" />
+
+### Prácticas prohibidas
+
+Las prohibiciones del art. 5 se aplican desde el 2 de febrero de 2025. La que más afecta a empresas corrientes es la de **inferir emociones** de las personas en el lugar de trabajo o en centros educativos, salvo por motivos médicos o de seguridad (art. 5.1 f). Desde el **2 de diciembre de 2026** se suman dos nuevas: los sistemas que generan imágenes íntimas o sexuales realistas de una persona identificable sin su consentimiento y el material de abuso sexual infantil. La Comisión publicó el 4/2/2025 unas [directrices sobre prácticas prohibidas](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act) con ejemplos.
+
+### Alto riesgo del anexo III
+
+Los ámbitos que con más probabilidad tocan a una empresa usuaria son la selección de personal y la evaluación del rendimiento (punto 4), la solvencia crediticia, salvo la detección de fraude (5 b), y el riesgo y precio de seguros de vida y salud (5 c). Un uso del anexo III puede quedar fuera si es una tarea de procedimiento limitada, mejora una actividad humana previa, detecta patrones sin sustituir la valoración humana o es preparatorio, pero **nunca** si elabora perfiles de personas (art. 6.3). Tienes la lista completa con ejemplos de software real en [Sistemas de alto riesgo del AI Act: ejemplos en empresas](/blog/ia-alto-riesgo-ejemplos).
+
+## Paso 3: transparencia (art. 50) y alfabetización (art. 4)
+
+La transparencia del art. 50 y la alfabetización del art. 4 son las dos obligaciones que afectan a casi cualquier empresa usuaria. El art. 4 se aplica desde el 2 de febrero de 2025 y el art. 50 desde el 2 de agosto de 2026, según el [calendario oficial del AI Act Service Desk](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act).
+
+### Transparencia: qué te toca como usuario
+
+Según el [texto del art. 50 en el AI Act Service Desk](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50), como responsable del despliegue debes:
+
+- **Avisar de las ultrasuplantaciones** (*deepfakes*) de imagen, audio o vídeo que generes o manipules. En obras evidentemente artísticas, satíricas o de ficción basta con indicar que existen, sin estropear la obra.
+- **Avisar de los textos generados con IA que publiques para informar al público sobre asuntos de interés público**, salvo que hayan pasado revisión humana o control editorial y alguien asuma la responsabilidad editorial.
+- **Informar a las personas expuestas** si usas reconocimiento de emociones o categorización biométrica (y recuerda que en el trabajo el reconocimiento de emociones está prohibido).
+
+Avisar de que alguien habla con una IA, como en un chatbot, es obligación del proveedor (art. 50.1). Si el chatbot es tuyo, revisa si encajas como proveedor.
+
+### Alfabetización: adoptar medidas y poder explicarlas
+
+El [art. 4 vigente desde el 27 de julio de 2026](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744) dice que las empresas «adoptarán medidas para apoyar la promoción de la alfabetización en materia de IA» de su personal y de quienes usen sistemas en su nombre, y aclara que no exige garantizar «un nivel específico» en ninguna persona. Formar por perfiles, dar una política de uso clara y guardar un registro interno son la forma habitual de hacerlo. Cómo documentarlo, con plantilla, está en [Evidencias de formación en IA](/blog/evidencias-formacion-ia).
+
+<CtaInline />
+
+## Si usas un sistema de alto riesgo: lo que añade el art. 26
+
+Si algún uso de tu inventario es de alto riesgo, el [art. 26](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689) suma obligaciones concretas para el responsable del despliegue a partir del 2 de diciembre de 2027 (anexo III) o del 2 de agosto de 2028 (anexo I). Son tareas de organización, no de ingeniería, y se pueden preparar con tiempo.
+
+| Obligación del art. 26 | Qué significa en la práctica |
+|---|---|
+| Usar el sistema según las instrucciones del proveedor | Pedirlas por escrito y que el equipo las conozca |
+| Supervisión humana con «la competencia, la formación y la autoridad necesarias» (26.2) | Designar a las personas y formarlas en ese sistema concreto |
+| Datos de entrada pertinentes | Revisar qué datos se le dan al sistema |
+| Vigilar el funcionamiento y notificar riesgos e incidentes | Canal interno y contacto con el proveedor |
+| Conservar los registros al menos 6 meses (26.6) | Confirmar dónde se guardan y quién accede |
+| Informar a los representantes de los trabajadores y a los afectados antes de usarlo en el trabajo (26.7) | Comunicación previa documentada |
+| Informar a las personas sobre las que se decide (26.11) | Texto informativo para candidatos o clientes |
+
+La evaluación de impacto en derechos fundamentales del art. 27 **no** es general: entre quienes usan sistemas de alto riesgo, solo la hacen organismos públicos, entidades privadas que prestan servicios públicos y quienes usan sistemas de solvencia o de seguros de vida y salud.
+
+### El AI Act no viene solo: RGPD y normativa laboral española
+
+Dos novedades españolas de octubre de 2026 afectan sobre todo a RR. HH. Desde el 5 de octubre de 2026, el [Real Decreto 723/2026](https://www.boe.es/eli/es/rd/2026/09/09/723) obliga a informar por escrito a cada trabajador de la existencia de sistemas algorítmicos o automatizados de decisión y, si deciden sobre condiciones de trabajo, de sus pautas, criterios y reglas (a la plantilla contratada antes de esa fecha, cuando lo solicite). Y el 7 de octubre la AEPD publicó [una guía sobre sistemas algorítmicos en el ámbito laboral](https://www.aepd.es/recurso-multimedia/sistemas-algoritmicos-en-el-ambito-laboral.-transparencia-y-garantias-de) que recomienda inventariar los sistemas que apoyan decisiones sobre candidaturas, jornada, rendimiento o retribución, incluidos los de terceros. El encaje entre ambas normas está en [Diferencia entre RGPD y AI Act](/blog/ai-act-vs-rgpd).
+
+## Lo que el AI Act no te exige (y cuándo no necesitas ayuda externa)
+
+El AI Act no exige a una empresa usuaria un certificado de cumplimiento, un número mínimo de horas de formación, un formador acreditado ni un responsable de IA con ese cargo. La Comisión lo dice de forma expresa: «There is no need for a certificate» y no se impone ninguna estructura de gobierno concreta para el art. 4 ([Q&A sobre alfabetización](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers)).
+
+<Callout tipo="aviso" titulo="Estado a 18 de octubre de 2026">
+
+- Las [directrices de clasificación de alto riesgo](https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems) siguen en **borrador** (19/5/2026, página actualizada el 23/7/2026).
+- En España no consta ninguna ley que tipifique las infracciones del AI Act: el proyecto de ley caducó el 6/10/2026 con la disolución de las Cortes. El Reglamento se aplica igualmente. Lo explicamos en [Multas del AI Act: qué es mito y qué es realidad](/blog/sanciones-ai-act-mitos-realidad).
+- Las [16 guías de la AESIA](https://aesia.digital.gob.es/es/guias), incluido su manual de checklists, son recomendaciones no vinculantes.
+
+</Callout>
+
+Seamos claros sobre cuándo no nos necesitas. Si sois pocas personas, usáis una o dos herramientas corporativas para tareas de oficina y ningún uso entra en el anexo III, podéis hacer esta checklist internamente en una tarde: inventario en una hoja de cálculo, una política de uso de una página, una sesión interna sobre riesgos (alucinaciones, datos personales, revisión humana) y un registro de quién asistió. Para ese caso, la [plantilla de política de uso y el checklist del art. 4 de nuestros recursos](/recursos) son suficientes.
+
+Tiene más sentido apoyarse en alguien externo cuando hay muchos perfiles distintos, usos en RR. HH. o en decisiones sobre clientes, o cuando dirección quiere un dossier ordenado. Para eso existe nuestro [Pack Art. 4](/ai-act): inventario de IA, política de uso orientativa, formación por perfiles, registro de evidencias y revisión anual. Es formación y documentación operativa, no asesoramiento jurídico.
+
+## Checklist completa del AI Act para tu empresa
+
+Esta es la checklist del AI Act para una empresa usuaria, lista para copiar. Cada punto tiene base en el Reglamento, en las preguntas y respuestas de la Comisión o en documentos de la AEPD. Las fechas de cada obligación están en el [calendario del AI Act actualizado](/blog/calendario-ai-act-fechas).
+
+<Checklist titulo="Checklist orientativa del AI Act (empresa usuaria)">
+
+- Sabemos si somos responsables del despliegue, proveedores o las dos cosas en algún uso (arts. 3.3, 3.4 y 25)
+- Tenemos un inventario de usos de IA, incluidas las cuentas personales, con responsable y fecha de revisión
+- Ningún uso es una práctica prohibida del art. 5, incluidas las dos nuevas aplicables desde el 2/12/2026
+- Hemos revisado cada uso contra el anexo III y documentado por qué es o no es de alto riesgo
+- Cumplimos el art. 50.4: avisamos de ultrasuplantaciones y de textos de interés público sin revisión editorial
+- Hemos adoptado medidas de alfabetización por perfil y contexto de uso (art. 4)
+- Guardamos un registro interno de formaciones y otras iniciativas
+- Tenemos una política de uso con herramientas autorizadas y datos que no se pueden introducir
+- Si hay alto riesgo: plan para el art. 26 antes del 2/12/2027 y, si aplica, evaluación del art. 27
+- Hemos revisado en paralelo el RGPD (EIPD, art. 22, minimización) y el RD 723/2026 si hay algoritmos que afectan a trabajadores
+- Hemos fijado una revisión anual y otra cada vez que entra una herramienta nueva
+
+</Checklist>
+
+### Qué hacer esta semana
+
+<Steps>
+
+1. **Haz el [test AI Act de 3 minutos](/test-ai-act)** para ver qué bloques de esta checklist te afectan de verdad.
+2. **Lanza la encuesta de uso** a la plantilla y vuelca las respuestas en la tabla de inventario de este artículo.
+3. **Marca las filas dudosas** (personas, crédito, seguros, biometría) y llévalas a tu asesoría.
+4. **Programa la primera acción de alfabetización** y abre el registro desde el primer día.
+
+</Steps>
+
+<FormacionCard slug="alfabetizacion-ia" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico. La checklist es orientativa: adáptala a tu empresa y revísala con tu asesoría. Si algún uso puede ser de alto riesgo, afecta a RR. HH. o trata datos sensibles, consulta con tu asesoría legal.
+
+</Callout>
+
+<Fuentes>
+
+- [Reglamento (UE) 2024/1689 de Inteligencia Artificial (arts. 3, 4, 5, 6, 25, 26, 27, 50 y anexo III) — EUR-Lex, DOUE 12/7/2024](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202401689)
+- [Reglamento (UE) 2026/1744, Ómnibus digital sobre IA — EUR-Lex, DOUE 24/7/2026](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744)
+- [AI Literacy – Questions & Answers — Comisión Europea, actualizado el 27/7/2026](https://digital-strategy.ec.europa.eu/en/faqs/ai-literacy-questions-answers)
+- [Article 50: Transparency obligations — AI Act Service Desk, Comisión Europea](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-50)
+- [Guidelines on prohibited artificial intelligence practices — Comisión Europea, 4/2/2025](https://digital-strategy.ec.europa.eu/en/library/commission-publishes-guidelines-prohibited-artificial-intelligence-ai-practices-defined-ai-act)
+- [Timeline for the Implementation of the EU AI Act — AI Act Service Desk, Comisión Europea](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act)
+- [Draft guidelines on the classification of high-risk AI systems — Comisión Europea, 19/5/2026](https://digital-strategy.ec.europa.eu/en/library/draft-commission-guidelines-classification-high-risk-ai-systems)
+- [Resumen de obligaciones y recomendaciones para la gestión de IA generativa — AEPD, enero de 2026](https://www.aepd.es/guias/sumario-recomendaciones-iag-aepd.pdf)
+- [Sistemas algorítmicos en el ámbito laboral. Transparencia y garantías de protección de datos — AEPD, 7/10/2026](https://www.aepd.es/recurso-multimedia/sistemas-algoritmicos-en-el-ambito-laboral.-transparencia-y-garantias-de)
+- [Real Decreto 723/2026 — BOE núm. 228, 15/9/2026](https://www.boe.es/eli/es/rd/2026/09/09/723)
+- [Guías de la AESIA para el Reglamento de IA — AESIA](https://aesia.digital.gob.es/es/guias)
+
+</Fuentes>

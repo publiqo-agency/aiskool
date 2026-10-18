@@ -1,0 +1,180 @@
+---
+title: "Agentes de IA para empresas: ejemplos reales por área"
+description: "Agentes de IA para empresas: ejemplos reales con fuente (ILUNION, Serveo, BBVA, Klarna, Qonto) por área: qué hacen, con qué herramienta y qué riesgo tienen."
+date: "2026-10-18"
+category: "agentes"
+tldr: "Los agentes de IA para empresas ya tienen casos públicos con cifras: ILUNION analiza cada expediente jurídico en unos 40 segundos y ahorra más de 7.000 horas al año, y Serveo ha creado 733 agentes con Microsoft. Son datos publicados por los proveedores, sin auditar, y el despliegue de agentes sigue siendo minoritario en casi todas las funciones."
+faqs:
+  - q: "¿Qué empresas españolas usan agentes de IA?"
+    a: "Hay casos públicos con cifras. ILUNION usa un agente de Microsoft 365 Copilot para el análisis inicial de expedientes en su asesoría jurídica; Serveo ha creado 733 agentes con Copilot Agent Builder y Copilot Studio; BBVA creó más de 2.900 GPTs personalizados en cinco meses con ChatGPT Enterprise. Todos los datos proceden de comunicaciones de Microsoft u OpenAI."
+  - q: "¿Qué diferencia hay entre un agente de IA y un chatbot?"
+    a: "Un chatbot responde; un agente actúa. Según OpenAI, los agentes son sistemas que realizan tareas de forma independiente en tu nombre, y una aplicación que integra un modelo pero no lo usa para controlar el flujo de trabajo, como un chatbot sencillo, no es un agente. En la práctica, un agente consulta sistemas, decide el siguiente paso y ejecuta acciones."
+  - q: "¿Puede una pyme tener un agente de IA?"
+    a: "Sí, siempre que tenga un proceso repetitivo, con datos digitales y un resultado que alguien pueda comprobar. Herramientas como Copilot Studio, n8n, Make o Zapier permiten montar agentes sin un equipo de desarrollo propio. Lo razonable es empezar por un caso acotado, medir el tiempo antes y después y mantener a una persona en las decisiones importantes."
+  - q: "¿Los agentes de IA sustituyen a los empleados?"
+    a: "Los casos públicos muestran más bien tareas que se aceleran: análisis de expedientes, borradores de facturas o enrutado de solicitudes. Klarna, que congeló contrataciones apoyándose en su asistente de atención al cliente, ha vuelto a contratar personas para ese servicio. La recomendación de OpenAI es mantener supervisión humana en las acciones sensibles o irreversibles."
+  - q: "¿Qué riesgos de seguridad tiene un agente de IA?"
+    a: "Los principales son los permisos excesivos, la manipulación mediante instrucciones ocultas en documentos o correos (prompt injection) y las acciones irreversibles sin revisión. En la encuesta recogida por el AI Index 2026, el 62 % de los encuestados citó la seguridad y el riesgo como primer obstáculo para escalar agentes."
+---
+
+Los agentes de IA para empresas son sistemas que reciben un objetivo, consultan tus herramientas (correo, CRM, documentos) y ejecutan pasos para cumplirlo con poca intervención humana. Ya hay casos con nombre y cifra: ILUNION analiza cada expediente jurídico en unos 40 segundos con un agente de Microsoft 365 Copilot, según [Microsoft (julio de 2025)](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/). Aquí tienes ejemplos reales por área, con qué herramienta se hicieron y qué riesgo tienen.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- Hay casos españoles verificables: ILUNION, Serveo, BBVA, Indra y atmira, todos con fuente del proveedor tecnológico.
+- Las cifras las publican los fabricantes y no están auditadas: sirven para ver qué es posible, no para prometer resultados.
+- El despliegue de agentes sigue siendo minoritario: según el AI Index 2026, estaba en 2025 por debajo del 10 % en casi todas las funciones.
+
+</Callout>
+
+## ¿Qué cuenta como agente de IA en una empresa?
+
+Un agente de IA en una empresa es un sistema en el que un modelo de lenguaje decide qué pasos dar y qué herramientas usar para completar una tarea. OpenAI lo resume así: «Agents are systems that independently accomplish tasks on your behalf», y aclara que un chatbot sencillo que no controla el flujo de trabajo no es un agente ([OpenAI, abril de 2025](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)).
+
+Anthropic distingue entre flujos de trabajo, en los que el camino está programado de antemano, y agentes, en los que el modelo dirige su propio proceso ([Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)). Muchos de los casos de este artículo son una mezcla: un flujo con pasos fijos en el que la IA decide algunos. Si quieres la explicación completa, la tienes en [qué es un agente de IA, sin tecnicismos](/blog/que-es-un-agente-de-ia).
+
+<Flujo titulo="Anatomía de un agente en la empresa" pasos="Objetivo o disparador|Consulta datos y documentos|Decide el siguiente paso|Ejecuta con herramientas|Persona revisa lo importante" />
+
+## Ejemplos de agentes de IA en empresas españolas
+
+Los ejemplos españoles de agentes de IA con cifras públicas se concentran en grandes empresas que usan Microsoft 365 Copilot y Copilot Studio, ChatGPT Enterprise o Google Cloud. Para cada uno indicamos qué hace, con qué herramienta, qué resultado se ha publicado, qué nivel de riesgo tiene y qué hace falta para replicarlo.
+
+### ILUNION: un agente para la asesoría jurídica
+
+- **Qué hace**: el agente «Litigator» realiza el análisis inicial de cada expediente que llega a la asesoría jurídica.
+- **Herramienta**: agentes de Microsoft 365 Copilot.
+- **Resultado publicado**: «el tiempo que se dedica al análisis inicial de cada expediente se ha reducido a unos 40 segundos, lo que significa un ahorro global superior a las 7.000 horas anuales», según [Microsoft](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/) (1 de julio de 2025).
+- **Riesgo**: medio. Trabaja con documentación confidencial y su resultado orienta decisiones jurídicas, así que la revisión profesional es imprescindible.
+- **Qué hace falta**: expedientes digitalizados, permisos bien definidos en Microsoft 365 y un criterio claro de qué extrae el agente y quién lo valida.
+
+### Serveo: 733 agentes con herramientas de Microsoft
+
+- **Qué hace**: agentes de IA aplicados a distintos procesos de la compañía.
+- **Herramienta**: Microsoft 365 Copilot Agent Builder, Copilot Studio y el entorno de Microsoft 365.
+- **Resultado publicado**: «La compañía ya ha creado 733 agentes de IA», con reducciones de tiempo de hasta el 80 % y hasta un 95 % menos de errores en algunas tareas, según [Microsoft](https://news.microsoft.com/source/emea/features/serveo-impulsa-la-eficiencia-de-sus-procesos-con-la-ia-agentica-de-microsoft-y-reduce-tiempos-hasta-un-80/?lang=es) (15 de julio de 2026).
+- **Riesgo**: variable según el agente. Con cientos de agentes, el reto es el gobierno: inventario, responsables y permisos.
+- **Qué hace falta**: licencias, formación de la plantilla para crear agentes sencillos y un registro de qué agente existe, quién lo mantiene y a qué datos accede.
+
+### BBVA: miles de asistentes personalizados
+
+- **Qué hace**: asistentes personalizados creados por los empleados para tareas concretas de su puesto.
+- **Herramienta**: ChatGPT Enterprise (GPTs personalizados) y, en otro despliegue, Gemini en Google Workspace.
+- **Resultado publicado**: «In five months, BBVA employees created over 2,900 custom GPTs» ([OpenAI, abril de 2025](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf)). Con Gemini, los empleados declaran ahorrar casi tres horas semanales de media al automatizar tareas repetitivas ([Google Cloud](https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders)).
+- **Riesgo**: bajo a medio. Son asistentes de productividad más que agentes autónomos.
+- **Qué hace falta**: tener en cuenta que OpenAI está retirando los GPTs personalizados en ChatGPT Enterprise para sustituirlos por plugins ([OpenAI](https://learn.chatgpt.com/docs/migrate-custom-gpts)). Lo explicamos en [GPTs personalizados para empresas](/blog/gpts-personalizados-empresas-ejemplos).
+
+### atmira: IA para mejorar el recobro
+
+- **Qué hace**: SIREC, una plataforma de recobro de deudas basada en IA que gestiona unos 114 millones de solicitudes al mes.
+- **Herramienta**: Google Kubernetes Engine y Oracle sobre Google Cloud.
+- **Resultado publicado**: «The platform improved recovery rates by 30% to 40%, increased payment conversions by 45%, and reduced operational costs by 54%», según [Google Cloud](https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders) (página actualizada el 22 de abril de 2026).
+- **Riesgo**: medio a alto. Afecta a clientes y a decisiones con dinero, por lo que exige trazabilidad y revisión de criterios.
+- **Qué hace falta**: datos históricos de calidad, integración con los sistemas de cobro y un equipo técnico o un proveedor.
+
+### Indra Group: el contraste de un asistente
+
+Indra no es un caso de agente autónomo, sino de asistente, y por eso es útil como comparación. Según [Microsoft (julio de 2025)](https://news.microsoft.com/source/emea/2025/07/indra-group-acelera-sus-procesos-con-ia-mas-de-3-000-profesionales-mejoran-su-productividad-y-eficiencia-gracias-al-uso-de-microsoft-365-copilot/?lang=es), más de 3.000 profesionales usan Microsoft 365 Copilot y «de media, los usuarios han conseguido optimizar dos horas semanales de su jornada»; la mejora de productividad «se sitúa, a día de hoy, en un 5%», con reducciones de hasta el 90 % del tiempo en tareas repetitivas como comparar documentos. Antes de un agente, muchas empresas sacan valor de un buen asistente.
+
+## Ejemplos de agentes de IA por área de la empresa
+
+Fuera de España, los fabricantes publican casos de agentes en casi todas las áreas. La tabla resume los que tienen fuente oficial, con el resultado tal como lo publica la empresa o el proveedor. Úsala para identificar patrones, no como promesa de resultados.
+
+| Área | Empresa | Qué hace el agente | Herramienta | Resultado publicado |
+|---|---|---|---|---|
+| Atención al cliente | Klarna | Atiende chats de clientes | OpenAI | Dos tercios de los chats y resolución de 11 a 2 minutos (2024) |
+| Atención al cliente | Zendesk | Agentes personalizados para soporte | Claude (Anthropic) | Hasta un 80 % menos de tiempo de gestión humana |
+| Finanzas y facturación | Qonto | Prepara facturas que el cliente confirma antes de enviar | Claude (Anthropic) | 3 veces menos tiempo para crear facturas |
+| Operaciones bancarias | N26 | Automatiza tareas en procesos seleccionados | Claude (Anthropic) | Hasta el 70 % de las tareas automatizadas |
+| Operaciones de TI | Delivery Hero | Un flujo de operaciones de TI | n8n | 200 horas al mes ahorradas |
+| Operaciones | Vodafone UK | Flujos de automatización | n8n | 2,2 M£ de costes evitados y más de 5.000 jornadas ahorradas |
+| Ventas y CRM | Autotorino (Italia) | 109 automatizaciones que escriben en Salesforce | Zapier | 2.394 horas devueltas al equipo de CRM en 2025 |
+| Consultoría y entrega | JAKALA (Italia) | Tareas sistemáticas de los equipos de entrega | Claude Agent SDK | Alrededor de un 70 % menos de tiempo en tareas repetitivas |
+
+Fuentes: [OpenAI, AI in the Enterprise](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf) (Klarna); fichas de cliente de Anthropic para [Zendesk](https://claude.com/customers/zendesk), [Qonto](https://claude.com/customers/qonto), [N26](https://claude.com/customers/n26) y [JAKALA](https://claude.com/customers/jakala); casos de n8n de [Delivery Hero](https://n8n.io/case-studies/delivery-hero/) y [Vodafone](https://n8n.io/case-studies/vodafone/); y [casos de clientes de Zapier](https://zapier.com/customer-stories) (Autotorino).
+
+El patrón que se repite en los casos que funcionan: tareas de alto volumen, datos ya digitalizados y una persona que confirma lo importante. Qonto lo hace explícito, porque el cliente revisa la factura antes de enviarla. Para elegir plataforma, compara [n8n, Make y Zapier](/blog/n8n-vs-make-vs-zapier); y si el agente debe responder con tus documentos, mira [RAG: un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
+
+<CtaInline />
+
+## Cómo leer estas cifras sin dejarse llevar
+
+Las cifras de los casos de agentes de IA las publican los propios proveedores o clientes, sin auditoría independiente, y miden cosas distintas: horas, porcentaje de tareas o costes. Sirven para ver qué es posible; no permiten estimar cuánto ahorrará tu empresa ni compararse entre sí.
+
+El caso Klarna es el mejor recordatorio. En febrero de 2024 la empresa anunció que su asistente hacía el trabajo equivalente a 700 agentes a tiempo completo ([Klarna](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/)); en mayo de 2025, su consejero delegado defendió volver a invertir en atención humana, según recoge [Entrepreneur](https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396). Lo contamos en [IA en atención al cliente sin perder el trato humano](/blog/ia-atencion-al-cliente).
+
+Y el uso general sigue siendo bajo. Según el [AI Index 2026 de Stanford](https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf), con datos de la encuesta de McKinsey de 2025, el despliegue de agentes estaba «in the single digits across nearly all business functions».
+
+<Stats>
+  <Stat valor="62 %" etiqueta="Encuestados que citan la seguridad y el riesgo como primer obstáculo para escalar agentes" fuente="AI Index 2026" href="https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf" />
+  <Stat valor="17 %" etiqueta="Parte del valor total de la IA que ya aportan los agentes en 2025" fuente="BCG, 2025" href="https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf" />
+  <Stat valor="29 %" etiqueta="Parte que BCG prevé que aporten en 2028" fuente="BCG, 2025" href="https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf" />
+</Stats>
+
+La lectura equilibrada: los agentes ya generan valor medible en tareas concretas, pero la mayoría de las empresas está en fase de prueba y la seguridad es la principal preocupación. Los riesgos técnicos, como la manipulación de un agente con instrucciones ocultas, los explicamos en [prompt injection y otros riesgos de los agentes](/blog/prompt-injection-riesgos-agentes).
+
+## Cuándo no necesitas un agente de IA
+
+No necesitas un agente cuando el proceso sigue siempre los mismos pasos y las reglas se pueden escribir: ahí basta una automatización clásica, más barata y predecible. Anthropic lo recomienda así: «we recommend finding the simplest solution possible, and only increasing complexity when needed. This might mean not building agentic systems at all».
+
+OpenAI propone tres criterios para que un agente compense: decisiones complejas, reglas difíciles de mantener y mucha dependencia de datos no estructurados (correos, documentos, conversaciones). Si tu caso no cumple ninguno, «a deterministic solution may suffice».
+
+<Columnas>
+<Pros titulo="Un agente encaja si">
+
+- La tarea exige interpretar textos, correos o documentos variados
+- Las reglas cambian a menudo o tienen muchas excepciones
+- El volumen justifica el diseño y el mantenimiento
+- Hay una persona que revisa las acciones importantes
+
+</Pros>
+<Contras titulo="Mejor otra cosa si">
+
+- Los pasos son siempre los mismos: automatización clásica
+- Solo necesitas redactar o resumir: un asistente
+- Las acciones son irreversibles y no hay revisión posible
+- No tienes los datos digitalizados ni ordenados
+
+</Contras>
+</Columnas>
+
+Para las acciones de riesgo, OpenAI recomienda supervisión humana en las que sean «sensitive, irreversible, or have high stakes», como cancelar pedidos, autorizar reembolsos grandes o hacer pagos. Y si el agente trata datos personales, la AEPD publicó el 18 de febrero de 2026 unas [orientaciones sobre IA agéntica desde la protección de datos](https://www.aepd.es/prensa-y-comunicacion/notas-de-prensa/la-agencia-publica-unas-orientaciones-sobre-inteligencia) que conviene revisar antes de diseñarlo.
+
+## Cómo empezar con tu primer agente
+
+El primer agente de una empresa debe resolver un problema pequeño, medible y con revisión humana, no transformar un departamento. Estos pasos te sirven tanto si lo haces con tu equipo como si buscas ayuda externa.
+
+<Steps>
+
+1. **Elige un proceso** repetitivo, con datos digitales y un resultado comprobable: clasificar solicitudes, preparar un borrador o extraer datos de documentos.
+2. **Mide la línea de base**: cuánto tiempo lleva hoy y cuántos errores tiene.
+3. **Decide el nivel de autonomía**: qué hace solo el agente y qué confirma una persona.
+4. **Limita permisos**: el agente solo accede a los datos y sistemas que necesita.
+5. **Prueba con casos reales** durante unas semanas y compara con la línea de base.
+6. **Asigna un responsable** del agente: quién lo mantiene, revisa sus errores y decide si se amplía o se apaga.
+
+</Steps>
+
+Si tu equipo quiere aprender a construir sus propios agentes con n8n, Make o Zapier, en nuestra [formación de agentes de IA y automatización](/formaciones/agentes-ia-automatizacion) cada equipo monta su primer flujo durante las sesiones. Si prefieres que lo construyamos contigo, en [consultoría](/consultoria) trabajamos en fases: diagnóstico, piloto, prototipo en 2 a 4 semanas, puesta en producción y traspaso al equipo. Para hacerte una idea del presupuesto, consulta [cuánto cuesta implantar un agente de IA](/blog/cuanto-cuesta-agente-ia), y para el método, [cómo automatizar un proceso con IA paso a paso](/blog/automatizar-procesos-con-ia).
+
+<FormacionCard slug="agentes-ia-automatizacion" />
+
+<Callout tipo="legal">
+
+Este artículo es informativo y no es asesoramiento jurídico. Si un agente va a tratar datos personales o tomar decisiones sobre personas, consulta con tu asesoría legal.
+
+</Callout>
+
+<Fuentes>
+
+- [ILUNION ahorra más de 7.000 horas de trabajo anuales a su asesoría jurídica con los agentes de IA de Microsoft 365 Copilot](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/) — Microsoft, 1 de julio de 2025.
+- [Serveo impulsa la eficiencia de sus procesos con la IA agéntica de Microsoft](https://news.microsoft.com/source/emea/features/serveo-impulsa-la-eficiencia-de-sus-procesos-con-la-ia-agentica-de-microsoft-y-reduce-tiempos-hasta-un-80/?lang=es) — Microsoft, 15 de julio de 2026.
+- [Indra Group acelera sus procesos con IA](https://news.microsoft.com/source/emea/2025/07/indra-group-acelera-sus-procesos-con-ia-mas-de-3-000-profesionales-mejoran-su-productividad-y-eficiencia-gracias-al-uso-de-microsoft-365-copilot/?lang=es) — Microsoft, julio de 2025.
+- [AI in the Enterprise](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf) y [A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) — OpenAI, abril de 2025.
+- [1,302 real-world gen AI use cases from the world's leading organizations](https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders) — Google Cloud, actualizado el 22 de abril de 2026.
+- [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) — Anthropic, 19 de diciembre de 2024; y fichas de cliente de [Zendesk](https://claude.com/customers/zendesk), [Qonto](https://claude.com/customers/qonto), [N26](https://claude.com/customers/n26) y [JAKALA](https://claude.com/customers/jakala).
+- [Klarna AI assistant handles two-thirds of customer service chats in its first month](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/) — Klarna, 27 de febrero de 2024; y [Klarna CEO reverses course by hiring more humans, not AI](https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396) — Entrepreneur, 9 de mayo de 2025.
+- [Orientaciones sobre IA agéntica desde la perspectiva de protección de datos](https://www.aepd.es/prensa-y-comunicacion/notas-de-prensa/la-agencia-publica-unas-orientaciones-sobre-inteligencia) — AEPD, 18 de febrero de 2026.
+- Casos de [Delivery Hero](https://n8n.io/case-studies/delivery-hero/) y [Vodafone](https://n8n.io/case-studies/vodafone/) — n8n; [casos de clientes](https://zapier.com/customer-stories) — Zapier.
+- [AI Index Report 2026](https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf) — Stanford HAI, 2026; y [The Widening AI Value Gap](https://media-publications.bcg.com/The-Widening-AI-Value-Gap-October-2025.pdf) — BCG, 30 de septiembre de 2025.
+
+</Fuentes>

@@ -1,9 +1,11 @@
 import { site } from "@/lib/site";
 import { formaciones } from "@/lib/formaciones";
 import { absoluteUrl } from "@/lib/seo";
+import { getPosts } from "@/lib/blog";
 
 /** llms.txt: resumen del sitio para asistentes de IA (GEO). */
-export function GET() {
+export async function GET() {
+  const posts = await getPosts();
   const body = `# ${site.name}
 
 > ${site.description}
@@ -20,6 +22,9 @@ ${formaciones.map((f) => `- [${f.title}](${absoluteUrl(`/formaciones/${f.slug}`)
 ## Herramientas gratuitas
 - [Test AI Act](${absoluteUrl("/test-ai-act")})
 - [Recursos: política de uso de IA y checklist](${absoluteUrl("/recursos")})
+
+## Blog
+${posts.map((p) => `- [${p.title}](${absoluteUrl(`/blog/${p.slug}`)}): ${p.description}`).join("\n")}
 
 ## Contacto
 - Email: ${site.email}

@@ -61,15 +61,18 @@ export const courseJsonLd = (c: { title: string; description: string; path: stri
   })),
 });
 
-export const articleJsonLd = (a: { title: string; description: string; path: string; date: string; updated?: string; author: string }) => ({
+export const articleJsonLd = (a: { title: string; description: string; path: string; date: string; updated?: string; author?: string; image?: string; section?: string }) => ({
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   headline: a.title,
   description: a.description,
   datePublished: a.date,
   dateModified: a.updated ?? a.date,
-  author: { "@type": "Person", name: a.author },
-  publisher: { "@type": "Organization", name: site.name },
+  // Sin autor con nombre, firma la organización (no se inventan personas).
+  author: a.author ? { "@type": "Person", name: a.author } : { "@type": "Organization", name: site.name, url: absoluteUrl("/") },
+  publisher: { "@type": "Organization", name: site.name, url: absoluteUrl("/") },
   mainEntityOfPage: absoluteUrl(a.path),
+  ...(a.image && { image: absoluteUrl(a.image) }),
+  ...(a.section && { articleSection: a.section }),
   inLanguage: "es",
 });

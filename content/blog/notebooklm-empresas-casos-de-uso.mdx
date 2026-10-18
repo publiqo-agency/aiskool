@@ -1,0 +1,196 @@
+---
+title: "NotebookLM (ahora Gemini Notebook): qué es y casos de uso"
+description: "NotebookLM, hoy Gemini Notebook, responde con tus documentos y cita la fuente. Qué es, casos de uso en empresa y qué cambia entre la versión gratis y Workspace."
+date: "2026-10-18"
+category: "herramientas"
+tldr: "NotebookLM es el asistente de investigación de Google que responde solo a partir de las fuentes que subes y cita de dónde sale cada dato. Desde el 16 de julio de 2026 se llama Gemini Notebook, pero es el mismo producto. En empresa, úsalo con una cuenta de Google Workspace: no entrena con tus datos ni hay revisión humana."
+faqs:
+  - q: "¿NotebookLM y Gemini Notebook son lo mismo?"
+    a: "Sí. Google cambió el nombre de NotebookLM a Gemini Notebook el 16 de julio de 2026 y aclaró que es el mismo producto independiente. Los cuadernos y enlaces compartidos siguen funcionando gracias a redirecciones automáticas, y los administradores de Workspace no tienen que hacer nada. Lo que cambia es que los cuadernos se sincronizan también con la app de Gemini."
+  - q: "¿NotebookLM es gratis?"
+    a: "Sí, existe una versión gratuita con una cuenta personal de Google, con límites de 100 cuadernos por usuario y 50 fuentes por cuaderno. En Google Workspace es un servicio principal incluido en Business Starter, Standard y Plus. Los planes de pago de Google AI y las ediciones superiores de Workspace amplían los límites de cuadernos, fuentes, chats y resúmenes de audio por día."
+  - q: "¿NotebookLM funciona en español?"
+    a: "Sí. Según la ayuda de Google, Gemini Notebook admite más de 80 idiomas, entre ellos el español de España, y puedes elegir el idioma de salida de las respuestas del chat, los informes y los resúmenes de audio y vídeo. La excepción es el modo interactivo de los resúmenes de audio, en el que intervienes en la conversación: a octubre de 2026 solo está disponible en inglés."
+  - q: "¿Si subo un archivo de Drive a NotebookLM se actualiza solo?"
+    a: "Sí. Según la ayuda de Google, las fuentes importadas desde Google Drive se sincronizan solas cada pocos minutos y los cambios del original se reflejan al abrir el cuaderno; también hay un botón para sincronizar a mano. Eso sí, Gemini Notebook guarda una copia del archivo con los datos del cuaderno, no en Drive, y esa copia no sigue los permisos de Drive."
+  - q: "¿Puede un administrador desactivar NotebookLM en la empresa?"
+    a: "Sí. En Google Workspace los administradores pueden activar o desactivar Gemini Notebook para toda la organización o solo para un grupo de usuarios de una unidad organizativa concreta. Es una forma sencilla de hacer un piloto con un equipo antes de abrirlo a toda la plantilla."
+---
+
+NotebookLM es el asistente de Google que trabaja **solo con los documentos que tú le das**: subes PDF, documentos de Drive, presentaciones o enlaces, y te responde con citas que llevan a la frase exacta de la fuente. Desde el **16 de julio de 2026 se llama Gemini Notebook**. En este artículo usamos los dos nombres, porque es el mismo producto, y explicamos para qué sirve en una empresa, qué cambia entre la versión gratuita y la de Google Workspace y cuándo se queda corto.
+
+<Callout tipo="clave" titulo="Lo esencial">
+
+- NotebookLM responde con lo que hay en tus fuentes y cita cada afirmación. Por eso se equivoca menos que un chat genérico, aunque no deja de equivocarse.
+- Con Google Workspace es un servicio principal: no se entrena con tus datos ni hay revisión humana. Con una cuenta personal, Google puede revisar la conversación si envías comentarios.
+- No hereda los permisos de Drive ni las regiones de datos de tu organización: es una buena herramienta de equipo, no una base de conocimiento corporativa.
+
+</Callout>
+
+## Qué es NotebookLM y por qué ahora se llama Gemini Notebook
+
+NotebookLM es un asistente de investigación que crea «cuadernos» con las fuentes que eliges y responde solo a partir de ellas. Google lo define así en su [ayuda oficial](https://support.google.com/notebooklm/answer/16164461): «Chat with your notebook to get grounded information based on your sources with clear in-line citations». Desde julio de 2026 se llama Gemini Notebook.
+
+El cambio de nombre lo anunció Google en [su blog el 16 de julio de 2026](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/): «We're renaming NotebookLM to Gemini Notebook. It's the same standalone product». El nuevo nombre refleja que los cuadernos ya se pueden crear y consultar desde la app de Gemini, con sincronización entre ambas. Según el [aviso para clientes de Workspace](https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html), los administradores no tienen que hacer nada: las redirecciones automáticas mantienen los cuadernos y enlaces compartidos.
+
+<Stats>
+  <Stat valor="+30 M" etiqueta="personas que usan NotebookLM (más de)" fuente="Google, 16 jul 2026" href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" />
+  <Stat valor="+600.000" etiqueta="organizaciones que lo usan (más de)" fuente="Google, 16 jul 2026" href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" />
+  <Stat valor="500.000" etiqueta="palabras máximas por fuente (o 200 MB por archivo)" fuente="Google, ayuda de Gemini Notebook" href="https://support.google.com/gemininotebook/answer/16269187?hl=en" />
+</Stats>
+
+### Qué puedes subir y qué te devuelve
+
+Las fuentes admitidas incluyen Google Docs, Slides (hasta 100 diapositivas), Sheets, PDF, Word, texto, Markdown, CSV, PowerPoint, ePub, imágenes, audio, páginas web y vídeos públicos de YouTube, según la [lista de tipos de fuente](https://support.google.com/gemininotebook/answer/16215270?hl=en). Con esas fuentes puedes:
+
+- **Chatear** y obtener respuestas con citas en línea.
+- Generar **resúmenes de audio**, conversaciones entre dos voces sintéticas sobre tus documentos, en cuatro formatos: Deep Dive, The Brief, The Critique y The Debate. El modo interactivo, en el que intervienes en la conversación, solo está disponible en inglés según la [ayuda de Google](https://support.google.com/gemininotebook/answer/16212820?hl=en).
+- Crear **informes, fichas de estudio, cuestionarios, mapas mentales y resúmenes en vídeo**, con cupos diarios según el plan.
+- Desde julio de 2026, **ejecutar código** sobre tus fuentes para analizar datos, por ahora solo con Google AI Ultra o con los complementos AI Ultra Access y AI Expanded Access de Workspace (Google prevé ampliarlo a los usuarios Pro).
+
+## Casos de uso de NotebookLM en la empresa
+
+NotebookLM rinde mejor cuando un equipo necesita consultar a menudo un conjunto acotado de documentos que cambia poco: manuales, políticas, fichas técnicas, licitaciones o informes. Estos son los usos con ejemplos públicos de empresas, recogidos por Google en su [lista de casos de IA generativa](https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders).
+
+| Función | Para qué se usa | Ejemplo público |
+|---|---|---|
+| Atención interna y FAQ | Base de respuestas compartible con fuentes verificadas para reducir preguntas repetidas | Rivian |
+| Producto y técnica | Base centralizada de especificaciones para que la plantilla se resuelva sola las dudas | Sonata Design |
+| Ventas y licitaciones | Investigación de clientes y preparación de ofertas | Transcom |
+| Jurídico | Sintetizar grandes volúmenes de información jurídica | Freshfields |
+| Investigación y dirección | Investigar, generar resúmenes de audio de hallazgos complejos y redactar informes | BBVA |
+| Formación interna | Preparar programas formativos para varios perfiles a partir de la documentación | Infoxchange: de más de una semana a medio día para tener el punto de partida de cada módulo |
+| Marketing regulado | Comprobar afirmaciones contra la literatura científica | Fingerpaint |
+
+Google cita además, en el anuncio del cambio de nombre, a empresas que crean «interactive onboarding materials» para nuevas incorporaciones. Así se traducen estos usos a una pyme, con la petición que funciona en cada caso:
+
+### Acogida de nuevas incorporaciones
+
+Sube el manual de bienvenida, el organigrama, las políticas de vacaciones y teletrabajo y la guía de herramientas. Comparte el cuaderno con la persona que entra y deja que pregunte sin miedo a molestar.
+
+```text
+Soy nuevo en el departamento de [área]. Con las fuentes de este cuaderno, explícame en 10 puntos lo que tengo que saber la primera semana: horarios, a quién pedir accesos, cómo se piden vacaciones y qué herramientas voy a usar. Cita la fuente de cada punto.
+```
+
+### Recursos humanos: convenio y políticas
+
+El convenio colectivo, el plan de igualdad y las políticas internas son documentos largos que generan siempre las mismas preguntas. Un cuaderno de RR. HH. responde con la cita del artículo exacto y deja la interpretación de los casos personales al equipo.
+
+```text
+¿Cuántos días de permiso corresponden por mudanza según el convenio? Dame la respuesta, el artículo exacto y si alguna política interna lo amplía. Si las fuentes no lo dicen, responde "no consta".
+```
+
+### Ventas: preparar una oferta
+
+Junta en un cuaderno el pliego del cliente, tus fichas de producto y dos ofertas anteriores parecidas. NotebookLM te ayuda a no dejarte requisitos sin responder.
+
+```text
+Haz una tabla con todos los requisitos obligatorios del pliego, la página donde aparece cada uno y si nuestras fichas de producto lo cubren (sí, parcialmente, no). Marca los que necesitan confirmación del equipo técnico.
+```
+
+### Contratos y documentación jurídica
+
+Para comparar versiones de un contrato o localizar cláusulas en muchos documentos, la cita a la frase exacta ahorra mucho tiempo. La revisión final sigue siendo de una persona con criterio jurídico.
+
+```text
+Compara la versión 2 y la versión 3 del contrato. Lista cada cambio con la cita literal de las dos versiones y explica en una frase qué implica. No valores si es aceptable.
+```
+
+### Dirección: preparar el comité
+
+Sube los informes mensuales de cada área y pide un resumen de audio para escuchar de camino a la reunión, o un informe con las cifras clave citadas.
+
+```text
+Resume en una página los informes de este mes: tres cifras clave por área con su fuente, riesgos señalados y decisiones que se piden al comité.
+```
+
+Para escribir este tipo de peticiones con método, tienes más ejemplos en nuestra [guía de prompts por puesto](/blog/como-hacer-prompts-guia-empleados).
+
+<CtaInline />
+
+## NotebookLM gratis frente a Google Workspace: privacidad y límites
+
+La diferencia importante entre la versión gratuita y la de empresa no está en las funciones, sino en el tratamiento de los datos. Con una cuenta de Google Workspace, Gemini Notebook es un servicio principal con protección de nivel empresarial; con una cuenta personal, Google no entrena con tus datos salvo que envíes comentarios, y en ese caso puede revisar la conversación completa.
+
+Esto dice Google en la [página de planes de Gemini Notebook](https://support.google.com/gemininotebook/answer/16213268?hl=en) y en la de [uso con cuentas de trabajo](https://support.google.com/gemininotebook/answer/16337734?hl=en), consultadas el 18 de octubre de 2026 (los límites están marcados como «Subject to Change»):
+
+| | Cuenta personal gratuita | Workspace Business Starter | Workspace Business Standard y Plus |
+|---|---|---|---|
+| Tipo de servicio | Producto de consumo | Servicio principal con seguridad empresarial | Servicio principal con seguridad empresarial |
+| Cuadernos por usuario | 100 | 100 | 500 |
+| Fuentes por cuaderno | 50 | 50 | 300 |
+| Chats al día | No se detalla | 50 | 500 |
+| Resúmenes de audio al día | No se detalla | 3 | 20 |
+| ¿Entrena con tus datos? | No, salvo que envíes comentarios | No | No |
+| ¿Revisión humana? | Posible si envías comentarios | No, ni siquiera con el pulgar arriba o abajo | No |
+| Regiones de datos de la organización | No aplica | No se aplican a Gemini Notebook | No se aplican a Gemini Notebook |
+
+Para quien necesite más control existe **Gemini Notebook for Enterprise**, que se contrata a través de Google Cloud. Según Google, los archivos se quedan en el proyecto de Google Cloud de la empresa y se respeta la regionalización de datos. Si tu empresa ya paga Workspace, consulta los precios de cada plan en la [página oficial de precios](https://workspace.google.com/intl/es/pricing.html): no incluyen impuestos.
+
+<Callout tipo="aviso" titulo="Tres límites que conviene conocer antes de subir documentos">
+
+- **Hace copias.** Según el [centro de privacidad de Workspace](https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub), al añadir un archivo de Drive, Gemini Notebook crea una copia que se guarda con el cuaderno, no en Drive. Y avisa: «Your organization's file sharing and data region settings do not apply to data in Gemini Notebook».
+- **Sin certificaciones propias por ahora.** La misma página indica que, «At this stage», Gemini Notebook no tiene certificaciones ISO, SOC ni FedRAMP. Gemini en Workspace sí las tiene.
+- **Los administradores deciden.** Pueden activarlo o desactivarlo para toda la organización o solo para un grupo de usuarios.
+
+</Callout>
+
+## Cuándo NotebookLM se queda corto
+
+NotebookLM es la forma más rápida de tener un asistente que responde con documentos propios, pero está pensado para cuadernos de equipo, no para toda la documentación de una empresa. Se queda corto cuando las fuentes superan los cupos del plan, cambian a diario, tienen permisos distintos por persona o la respuesta tiene que integrarse en otra aplicación.
+
+<Columnas>
+<Pros titulo="NotebookLM basta si">
+
+- El conjunto de documentos es acotado: un manual, un proyecto, una licitación.
+- Los documentos cambian poco y alguien los mantiene al día.
+- Todas las personas del cuaderno pueden ver todas sus fuentes.
+- Tu empresa ya usa Google Workspace.
+
+</Pros>
+<Contras titulo="Necesitas otra solución si">
+
+- Hay miles de documentos repartidos por varios sistemas.
+- Cada persona solo debe ver lo que le permite su perfil.
+- Necesitas que el asistente viva en tu web, tu CRM o tu herramienta de soporte.
+- Tienes requisitos de certificación o de residencia de datos estrictos.
+
+</Contras>
+</Columnas>
+
+En los casos de la derecha, lo que buscas es un asistente que responda con tu documentación respetando permisos: lo explicamos en el artículo sobre el [chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa). Si lo que tienes son instrucciones fijas para tareas repetidas, más que documentos, mira las alternativas a los [GPTs personalizados](/blog/gpts-personalizados-empresas-ejemplos). Y si estás eligiendo entre el ecosistema de Google y el resto, la [comparativa de ChatGPT, Copilot, Claude y Gemini](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini) te ayuda a decidir.
+
+Tampoco conviene olvidar que tener las fuentes delante reduce los errores, pero no los elimina: revisa siempre la cita antes de reenviar una respuesta. Y antes de subir nada, repasa [qué datos no meter nunca en una IA](/blog/que-datos-no-meter-en-chatgpt); en [recursos](/recursos) tienes una guía descargable sobre ello.
+
+## Cómo empezar con NotebookLM en tu equipo
+
+La manera más segura de empezar es un piloto pequeño con una cuenta de empresa: un equipo, un caso de uso y un cuaderno bien preparado. En dos semanas sabrás si ahorra tiempo de verdad y qué hay que ajustar antes de abrirlo a más gente.
+
+<Steps>
+
+1. **Comprueba la cuenta**: que el equipo use la cuenta de Google Workspace de la empresa y no la personal, y que el administrador haya activado Gemini Notebook para ese grupo.
+2. **Elige un caso acotado**: el manual de acogida, el convenio o una licitación concreta. Mejor un cuaderno que funcione que diez a medias.
+3. **Prepara las fuentes**: versiones vigentes, sin duplicados y con nombres claros. Quita lo que no deba ver todo el equipo.
+4. **Prueba con diez preguntas reales** de las que ya sabes la respuesta y comprueba cada cita.
+5. **Comparte y nombra un responsable** que mantenga las fuentes al día.
+6. **Mide**: cuántas consultas resuelve y cuánto tiempo ahorra, y decide si se amplía.
+
+</Steps>
+
+Muchos equipos lo ponen en marcha solos con estos pasos y no necesitan ayuda externa. Si prefieres que la plantilla aprenda a usar NotebookLM junto con Gemini en Gmail, Docs, Sheets y Meet, nuestra formación de Gemini en Google Workspace incluye crear cuadernos de NotebookLM para vuestros procesos internos. Si no tienes claro si te basta NotebookLM o necesitas algo a medida, pide un [diagnóstico gratuito de 30 minutos](/diagnostico). Todas las formaciones por herramienta están en el [catálogo](/formaciones).
+
+<FormacionCard slug="gemini-workspace" />
+
+<Fuentes>
+
+- [NotebookLM is now Gemini Notebook — Google](https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/), 16 de julio de 2026.
+- [NotebookLM is now Gemini Notebook — Google Workspace Updates](https://workspaceupdates.googleblog.com/2026/07/notebooklm-now-gemini-notebook.html), 16 de julio de 2026.
+- [Learn about Gemini Notebook's plans — Google](https://support.google.com/gemininotebook/answer/16213268?hl=en), consultado el 18/10/2026.
+- [Use Gemini Notebook with a work or school Google account — Google](https://support.google.com/gemininotebook/answer/16337734?hl=en), consultado el 18/10/2026.
+- [Generative AI in Google Workspace Privacy Hub — Google](https://knowledge.workspace.google.com/admin/generative-ai/generative-ai-in-google-workspace-privacy-hub), actualizado el 6/10/2026.
+- [Ayuda de Gemini Notebook: qué es, tipos de fuente, límites y resúmenes de audio — Google](https://support.google.com/gemininotebook/answer/16215270?hl=en), consultado el 18/10/2026.
+- [Change output language in Gemini Notebook — Google](https://support.google.com/gemininotebook/answer/16261963?hl=en), consultado el 18/10/2026.
+- [101 real-world gen AI use cases from industry leaders — Google Cloud](https://cloud.google.com/transform/101-real-world-generative-ai-use-cases-from-industry-leaders), actualizado el 22/04/2026.
+- [Precios de Google Workspace — Google](https://workspace.google.com/intl/es/pricing.html), consultado el 18/10/2026.
+
+</Fuentes>
