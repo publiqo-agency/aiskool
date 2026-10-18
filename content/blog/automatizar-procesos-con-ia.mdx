@@ -3,34 +3,34 @@ title: "Automatización de procesos con IA: guía paso a paso"
 description: "Automatización de procesos con IA en 7 pasos: cómo elegir el primer proceso, un caso guiado con correos entrantes, costes y dónde poner la revisión humana."
 date: "2026-10-18"
 category: "agentes"
-tldr: "Automatizar un proceso con IA consiste en dejar que un flujo haga los pasos repetitivos y que un modelo de IA resuelva los que exigen leer o clasificar texto, con una persona revisando lo sensible. Según el INE, el 33,4 % de las empresas españolas que usan IA ya la usa para automatizar flujos de trabajo o ayudar en la toma de decisiones (1T 2025)."
+tldr: "Automatizar un proceso con IA es dejar que un flujo haga los pasos repetitivos y que un modelo resuelva los que piden leer o clasificar texto, con una persona vigilando lo sensible. Según el INE, el 33,4 % de las empresas españolas que usan IA ya la emplea para automatizar flujos de trabajo o apoyar la toma de decisiones (1T 2025)."
 faqs:
   - q: "¿Qué diferencia hay entre RPA y automatización con IA?"
-    a: "La RPA y la automatización clásica repiten pasos fijos sobre datos estructurados: si cambia el formato, el flujo falla. La automatización con IA añade un modelo de lenguaje que entiende texto libre, como un correo o un PDF, y decide cómo clasificarlo o qué extraer. En la práctica se combinan: reglas fijas para lo predecible y un modelo para lo que hay que leer o interpretar."
+    a: "La RPA y la automatización clásica repiten pasos fijos sobre datos estructurados: en cuanto cambia el formato, el flujo se cae. La automatización con IA suma un modelo de lenguaje que entiende texto libre, como un correo o un PDF, y decide cómo clasificarlo o qué extraer. Al final se combinan las dos: reglas fijas para lo predecible y un modelo para lo que hay que leer o interpretar."
   - q: "¿Necesito saber programar para automatizar procesos con IA?"
-    a: "No para la mayoría de procesos de oficina. Herramientas como Zapier, Make o n8n permiten montar flujos con bloques visuales y conectar un modelo de IA sin escribir código. Sí conviene entender cómo se estructura un flujo, cómo se gestionan los errores y cómo escribir buenas instrucciones al modelo. Para integraciones con sistemas propios o volúmenes muy altos, un perfil técnico ahorra tiempo."
+    a: "Para la mayoría de procesos de oficina, no. Con herramientas como Zapier, Make o n8n montas flujos con bloques visuales y enchufas un modelo de IA sin escribir una línea de código. Lo que sí ayuda es entender cómo se estructura un flujo, cómo se gestionan los errores y cómo redactar buenas instrucciones al modelo. Para integrar sistemas propios o mover volúmenes muy altos, un perfil técnico te ahorra tiempo."
   - q: "¿Cuánto tiempo se tarda en automatizar un proceso?"
-    a: "Depende del proceso, de las integraciones y de lo claras que estén las reglas. Un flujo sencillo entre dos aplicaciones puede quedar listo en una tarde; uno con varias integraciones, datos sensibles y revisión humana necesita semanas de pruebas. En nuestros proyectos de consultoría planteamos un prototipo con datos reales (o anonimizados) en 2 a 4 semanas antes de pasar a producción."
+    a: "Depende del proceso, de las integraciones y de lo nítidas que sean las reglas. Un flujo sencillo entre dos aplicaciones puede quedar listo en una tarde; uno con varias integraciones, datos sensibles y revisión humana se lleva semanas de pruebas. En nuestros proyectos de consultoría levantamos un prototipo con datos reales (o anonimizados) en 2 a 4 semanas antes de pasarlo a producción."
   - q: "¿La IA puede enviar respuestas a clientes sin que nadie las revise?"
-    a: "Técnicamente sí, pero no es lo recomendable al empezar. OpenAI aconseja que las acciones sensibles, irreversibles o de alto impacto pasen por supervisión humana hasta que confíes en la fiabilidad del sistema. Lo habitual es que la IA prepare el borrador y una persona lo apruebe, y solo automatizar el envío en casos muy acotados y medidos."
+    a: "Técnicamente sí, pero no es lo que conviene al empezar. OpenAI aconseja que las acciones sensibles, irreversibles o de alto impacto pasen por supervisión humana hasta que confíes en la fiabilidad del sistema. Lo normal es que la IA redacte el borrador y una persona lo apruebe, y dejar el envío automático solo para casos muy acotados y medidos."
   - q: "¿Qué pasa con los datos personales que pasan por el flujo?"
-    a: "Siguen sujetos al RGPD como en cualquier otro tratamiento. Antes de automatizar, revisa qué datos personales entran en el flujo, dónde se almacenan la plataforma de automatización y el modelo de IA, y si el proveedor usa esos datos para entrenar. Si el proceso afecta a decisiones sobre personas, como selección o evaluación de empleados, consulta con tu asesoría legal."
+    a: "Siguen bajo el RGPD igual que en cualquier otro tratamiento. Antes de automatizar, mira qué datos personales entran en el flujo, dónde los guardan la plataforma de automatización y el modelo de IA, y si el proveedor los usa para entrenar. Si el proceso incide en decisiones sobre personas, como selección o evaluación de empleados, consulta con tu asesoría legal."
 ---
 
-Automatizar un proceso con IA es combinar dos piezas: un **flujo** que mueve datos entre aplicaciones con reglas fijas y un **modelo de IA** que se encarga de los pasos que antes exigían a una persona leer, clasificar o redactar. La clave está en elegir bien el primer proceso, medir el antes y el después y decidir dónde revisa una persona. Esta guía te lleva por los siete pasos con un caso real resuelto: el buzón de correos entrantes.
+Automatizar un proceso con IA es juntar dos piezas: un **flujo** que mueve datos entre aplicaciones con reglas fijas y un **modelo de IA** que asume los pasos que antes obligaban a una persona a leer, clasificar o redactar. Todo depende de acertar con el primer proceso, medir el antes y el después y decidir dónde interviene una persona. Esta guía recorre los siete pasos con un caso resuelto de verdad: el buzón de correos entrantes.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- Empieza por un proceso **frecuente, con reglas claras y bajo riesgo**, no por el más ambicioso.
-- La IA solo hace falta en los pasos que piden entender texto libre; el resto lo resuelve una automatización clásica.
-- Mide el tiempo y los errores **antes** de automatizar, o no podrás demostrar que ha servido.
-- Pon una **revisión humana** en todo lo que salga hacia clientes o afecte a personas.
+- Arranca por un proceso **frecuente, con reglas claras y bajo riesgo**, no por el más ambicioso.
+- La IA solo entra en los pasos que exigen entender texto libre; lo demás lo despacha una automatización clásica.
+- Mide el tiempo y los errores **antes** de automatizar, o no tendrás con qué demostrar que ha servido.
+- Coloca una **revisión humana** en todo lo que salga hacia clientes o afecte a personas.
 
 </Callout>
 
 ## Qué es la automatización de procesos con IA (y en qué se diferencia de la clásica)
 
-La automatización de procesos con IA es la que incorpora un modelo de lenguaje en uno o varios pasos de un flujo para tratar información no estructurada: correos, PDF, formularios abiertos o notas. La automatización clásica, como la RPA o las reglas de un CRM, solo sigue instrucciones fijas sobre datos ordenados y falla cuando el formato cambia.
+Hablamos de automatización de procesos con IA cuando se mete un modelo de lenguaje en uno o varios pasos del flujo para tratar información no estructurada: correos, PDF, formularios abiertos o notas. La automatización clásica —la RPA o las reglas de un CRM— se limita a seguir instrucciones fijas sobre datos ordenados y se viene abajo cuando el formato cambia.
 
 | | Automatización clásica | Automatización con IA | Agente de IA |
 |---|---|---|---|
@@ -40,7 +40,7 @@ La automatización de procesos con IA es la que incorpora un modelo de lenguaje 
 | Previsibilidad | Total | Alta, si acotas lo que hace el modelo | Menor: necesita más controles |
 | Coste de mantenimiento | Bajo | Medio | Alto |
 
-Anthropic distingue entre flujos de trabajo, donde el modelo y las herramientas siguen caminos definidos de antemano, y agentes, donde el modelo dirige su propio proceso ([Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)). Y recomienda empezar por lo más simple: «we recommend finding the simplest solution possible, and only increasing complexity when needed». Para la mayoría de procesos de oficina, la segunda columna es la buena. Si quieres profundizar en la tercera, lo explicamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia).
+Anthropic separa los flujos de trabajo, donde el modelo y las herramientas recorren caminos definidos de antemano, de los agentes, donde el modelo dirige su propio proceso ([Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents)). Y aconseja empezar por lo más simple: «we recommend finding the simplest solution possible, and only increasing complexity when needed». Para casi cualquier proceso de oficina, la buena es la segunda columna. ¿Te interesa la tercera? La explicamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia).
 
 <Stats>
   <Stat valor="21,1 %" etiqueta="De las empresas españolas de 10 o más empleados usa IA (1T 2025)" fuente="INE, 2025" href="https://www.ine.es/dyngs/Prensa/ETICCE20241T2025.htm" />
@@ -50,9 +50,9 @@ Anthropic distingue entre flujos de trabajo, donde el modelo y las herramientas 
 
 ## Cómo elegir el primer proceso que automatizar
 
-El mejor primer proceso es el que se repite muchas veces, sigue reglas que alguien puede explicar, usa datos digitales y, si falla, no causa un daño grave. No es el que más impresiona en una presentación, sino el que deja una mejora medible en pocas semanas y enseña al equipo cómo funciona la automatización.
+El primer proceso ideal se repite muchas veces, sigue reglas que alguien sabe explicar, trabaja con datos digitales y, si se tuerce, no provoca un daño grave. No es el que más luce en una presentación, sino el que deja una mejora medible en pocas semanas y le enseña al equipo cómo funciona la automatización.
 
-Puntúa cada candidato de 1 a 3 en estos cinco criterios y empieza por el que sume más:
+Dale a cada candidato una nota de 1 a 3 en estos cinco criterios y empieza por el que más sume:
 
 | Criterio | 1 punto | 3 puntos |
 |---|---|---|
@@ -62,64 +62,64 @@ Puntúa cada candidato de 1 a 3 en estos cinco criterios y empieza por el que su
 | Riesgo si falla | Afecta a clientes, dinero o personas | Se detecta y corrige sin consecuencias |
 | Medición | Nadie sabe cuánto tarda hoy | Se puede contar el tiempo o los errores |
 
-Buenos candidatos habituales en una pyme: clasificar y repartir los correos de un buzón compartido, extraer datos de facturas o albaranes, resumir llamadas o reuniones en el CRM, preparar borradores de respuesta a preguntas repetidas o generar un informe semanal a partir de varias hojas. Malos candidatos para empezar: todo lo que decida sobre personas (selección, evaluación del desempeño), pagos o devoluciones sin revisión y procesos que nadie ha documentado.
+En una pyme suelen ser buenos candidatos: clasificar y repartir los correos de un buzón compartido, extraer datos de facturas o albaranes, resumir llamadas o reuniones en el CRM, preparar borradores de respuesta a preguntas repetidas o montar un informe semanal a partir de varias hojas. Y malos para empezar: cualquier cosa que decida sobre personas (selección, evaluación del desempeño), pagos o devoluciones sin revisión, y procesos que nadie ha documentado.
 
-OpenAI resume cuándo compensa algo más que reglas fijas: decisiones complejas, reglas difíciles de mantener o mucha dependencia de datos no estructurados. Si tu proceso no cumple ninguna, avisa de que «a deterministic solution may suffice» ([OpenAI, A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)).
+OpenAI lo resume así: algo más que reglas fijas compensa cuando hay decisiones complejas, reglas difíciles de mantener o mucha dependencia de datos no estructurados. Si tu proceso no encaja en ninguna, advierte de que «a deterministic solution may suffice» ([OpenAI, A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)).
 
 ## Automatizar un proceso con IA en 7 pasos
 
-El método tiene siete pasos que valen para casi cualquier proceso: documentarlo, medirlo, diseñar el flujo, decidir dónde entra la IA, poner la revisión humana, probar con casos reales y pasar a producción con seguimiento. Abajo los tienes aplicados a un caso concreto: el buzón de correos entrantes de atención al cliente.
+El método son siete pasos que sirven para casi cualquier proceso: documentarlo, medirlo, diseñar el flujo, decidir dónde entra la IA, poner la revisión humana, probar con casos reales y pasar a producción con seguimiento. Aquí los ves aplicados a un caso concreto: el buzón de correos entrantes de atención al cliente.
 
 <Flujo titulo="Del proceso manual al flujo en producción" pasos="Documentar y medir|Diseñar el flujo|Añadir la IA|Revisión humana|Piloto|Producción" />
 
 <Steps>
 
-1. **Documenta el proceso tal como se hace hoy.** Escribe cada paso, quién lo hace, con qué herramienta y qué decisiones toma. En el caso del buzón: alguien abre cada correo, decide si es una incidencia, un pedido, una factura o spam, copia los datos al sistema de tickets y responde o reenvía.
-2. **Mide la línea base.** Durante una o dos semanas, cuenta cuántos correos llegan, cuánto se tarda en clasificar y responder cada uno y cuántos se reparten mal. Sin este dato no podrás demostrar la mejora.
-3. **Diseña el flujo sin IA primero.** Disparador (llega un correo al buzón), acciones (crear ticket, avisar al responsable) y reglas fijas (si viene de un dominio de proveedor, a compras). Todo lo que se pueda resolver con una regla, resuélvelo con una regla.
+1. **Documenta el proceso tal como se hace hoy.** Anota cada paso, quién lo ejecuta, con qué herramienta y qué decide. En el buzón: alguien abre cada correo, decide si es una incidencia, un pedido, una factura o spam, copia los datos al sistema de tickets y responde o reenvía.
+2. **Mide la línea base.** Durante una o dos semanas, cuenta cuántos correos llegan, cuánto se tarda en clasificar y responder cada uno y cuántos se reparten mal. Sin ese dato no habrá forma de demostrar la mejora.
+3. **Diseña el flujo sin IA primero.** Disparador (llega un correo al buzón), acciones (crear ticket, avisar al responsable) y reglas fijas (si viene de un dominio de proveedor, a compras). Lo que se pueda resolver con una regla, resuélvelo con una regla.
 4. **Añade la IA solo donde hay que leer.** Un paso con un modelo de lenguaje lee el correo y devuelve, en un formato fijo, la categoría, la urgencia, el número de pedido si lo hay y un borrador de respuesta. Pide siempre una salida estructurada y una categoría «no lo sé» para los casos dudosos.
-5. **Decide dónde revisa una persona.** Los borradores de respuesta a clientes van a una bandeja de aprobación; los correos marcados como «no lo sé» o con urgencia alta pasan directamente a una persona. OpenAI recomienda supervisión humana en acciones «sensitive, irreversible, or have high stakes».
+5. **Decide dónde revisa una persona.** Los borradores de respuesta a clientes van a una bandeja de aprobación; los correos marcados como «no lo sé» o con urgencia alta pasan directos a una persona. OpenAI recomienda supervisión humana en acciones «sensitive, irreversible, or have high stakes».
 6. **Prueba con casos reales en paralelo.** Durante unas semanas, el flujo clasifica y propone, pero el equipo sigue trabajando como siempre y compara. Apunta cada error y ajusta las instrucciones al modelo o las reglas.
-7. **Pasa a producción y sigue midiendo.** Activa el flujo, revisa cada semana una muestra de clasificaciones y compara con la línea base del paso 2. Define quién recibe las alertas cuando algo falla.
+7. **Pasa a producción y sigue midiendo.** Activa el flujo, revisa cada semana una muestra de clasificaciones y compárala con la línea base del paso 2. Define quién recibe las alertas cuando algo falla.
 
 </Steps>
 
 ### Qué herramientas y qué coste tiene este caso
 
-Para montar el flujo del buzón te basta una plataforma de automatización y un modelo de IA por API. Las tres más usadas son n8n, Make y Zapier, que cobran de forma muy distinta (por ejecución, por credit o por task); las comparamos con precios en [n8n vs Make vs Zapier](/blog/n8n-vs-make-vs-zapier). Como referencia, el plan Pro de n8n cuesta 50 € al mes con pago anual e incluye 10.000 ejecuciones ([n8n, precios](https://n8n.io/pricing/)).
+Para montar el flujo del buzón te llega con una plataforma de automatización y un modelo de IA por API. Las tres más usadas son n8n, Make y Zapier, con tarifas muy distintas (por ejecución, por credit o por task); las comparamos con precios en [n8n vs Make vs Zapier](/blog/n8n-vs-make-vs-zapier). Como referencia, el plan Pro de n8n cuesta 50 € al mes con pago anual e incluye 10.000 ejecuciones ([n8n, precios](https://n8n.io/pricing/)).
 
-El modelo suele ser lo más barato. Cálculo propio de ejemplo: 2.000 correos al mes, unos 2.000 tokens de entrada y 300 de salida por correo, dan 4 millones de tokens de entrada y 0,6 de salida. Con Claude Haiku 5.5 (0,10 USD por millón de entrada y 0,50 USD de salida) serían unos 0,70 USD al mes; con Claude Sonnet 5.5 (2 y 10 USD), unos 14 USD ([Anthropic, precios de la API](https://platform.claude.com/docs/en/about-claude/pricing), sin IVA, consultado el 18/10/2026). El coste importante es el tiempo de diseño, pruebas y mantenimiento; lo desglosamos en [cuánto cuesta un agente de IA](/blog/cuanto-cuesta-agente-ia).
+Lo más barato suele ser el modelo. Un cálculo propio de ejemplo: 2.000 correos al mes, unos 2.000 tokens de entrada y 300 de salida por correo, suman 4 millones de tokens de entrada y 0,6 de salida. Con Claude Haiku 5.5 (0,10 USD por millón de entrada y 0,50 USD de salida) saldrían unos 0,70 USD al mes; con Claude Sonnet 5.5 (2 y 10 USD), unos 14 USD ([Anthropic, precios de la API](https://platform.claude.com/docs/en/about-claude/pricing), sin IVA, consultado el 18/10/2026). El gasto de verdad es el tiempo de diseño, pruebas y mantenimiento; lo desglosamos en [cuánto cuesta un agente de IA](/blog/cuanto-cuesta-agente-ia).
 
 <CtaInline />
 
 ## Ejemplos reales de procesos automatizados con IA
 
-Las empresas que publican resultados suelen haber automatizado procesos administrativos de mucho volumen, con una persona validando el resultado final. Son casos publicados por los fabricantes, no auditorías independientes, pero muestran el patrón: tarea repetitiva, IA que prepara y persona que confirma.
+Las empresas que publican resultados suelen haber automatizado procesos administrativos de gran volumen, con una persona validando el resultado final. Son casos difundidos por los propios fabricantes, no auditorías independientes, pero dibujan el patrón: tarea repetitiva, IA que prepara y persona que confirma.
 
 - **Facturas con confirmación del cliente.** La fintech europea Qonto usa agentes de IA que redactan las facturas y el cliente las confirma antes de enviarlas: «3X less time to create client invoices» ([Anthropic, caso Qonto](https://claude.com/customers/qonto)).
 - **Operaciones internas de TI.** Delivery Hero ahorró 200 horas al mes con un solo flujo de operaciones de TI en n8n ([n8n, caso Delivery Hero](https://n8n.io/case-studies/delivery-hero/)).
 - **Expedientes jurídicos.** ILUNION redujo a unos 40 segundos el análisis inicial de cada expediente con un agente de Microsoft 365 Copilot, con un ahorro estimado de más de 7.000 horas anuales ([Microsoft, caso ILUNION](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/)).
 
-Si tu proceso consiste en responder preguntas a partir de documentos internos (manuales, políticas, contratos), el enfoque es otro: un asistente con búsqueda en tus documentos, que explicamos en [RAG: un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
+¿Tu proceso consiste en responder preguntas a partir de documentos internos (manuales, políticas, contratos)? Entonces el enfoque es otro: un asistente con búsqueda en tus documentos, que explicamos en [RAG: un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
 
 ## Errores frecuentes y cuándo no compensa automatizar
 
-Los fallos más comunes no son técnicos: automatizar un proceso que nadie ha documentado, no medir el punto de partida, dejar que la IA actúe sin revisión desde el primer día o no asignar a nadie el mantenimiento. Y a veces la respuesta honesta es que no compensa automatizar.
+Los tropiezos más habituales no son técnicos: automatizar un proceso que nadie ha documentado, no medir el punto de partida, dejar que la IA actúe sin revisión desde el primer día o no encargar a nadie el mantenimiento. Y, a veces, la respuesta honesta es que no compensa automatizar.
 
 <Callout tipo="aviso" titulo="Errores frecuentes">
 
 - **Automatizar el desorden.** Si cada persona hace el proceso a su manera, el flujo hereda las incoherencias.
-- **Usar IA donde basta una regla.** Un modelo que decide si un correo viene de un proveedor, cuando lo dice el dominio, solo añade coste y errores.
-- **Sin categoría «no lo sé».** Si obligas al modelo a elegir siempre, acabará clasificando con seguridad lo que no entiende.
+- **Usar IA donde basta una regla.** Un modelo que decide si un correo viene de un proveedor, cuando lo canta el dominio, solo añade coste y errores.
+- **Sin categoría «no lo sé».** Si obligas al modelo a elegir siempre, acabará clasificando con aplomo lo que no entiende.
 - **Nadie es responsable.** Los flujos se rompen cuando cambia una aplicación o una contraseña; alguien tiene que recibir la alerta.
 
 </Callout>
 
-No compensa automatizar, o todavía no, cuando el proceso ocurre pocas veces al mes, cuando las reglas cambian cada semana o cuando el riesgo de un error es mayor que el ahorro. Tampoco tiene sentido si el proceso desaparecerá pronto con un cambio de software. En esos casos, lo que da más retorno suele ser formar al equipo para usar bien un asistente de IA corporativo en su trabajo diario, sin flujos de por medio. Si además el proceso implica decisiones sobre personas, como filtrar candidatos, revisa antes [qué usos de IA en RR. HH. son de alto riesgo](/blog/ia-recursos-humanos-alto-riesgo).
+No compensa automatizar, o todavía no, cuando el proceso ocurre pocas veces al mes, cuando las reglas cambian cada semana o cuando un error cuesta más que lo que se ahorra. Tampoco tiene sentido si el proceso va a desaparecer pronto con un cambio de software. En esos casos, lo que más retorno deja suele ser formar al equipo para usar bien un asistente de IA corporativo en su trabajo diario, sin flujos de por medio. Y si el proceso implica decisiones sobre personas, como filtrar candidatos, repasa antes [qué usos de IA en RR. HH. son de alto riesgo](/blog/ia-recursos-humanos-alto-riesgo).
 
 ## Qué hacer ahora
 
-Puedes empezar esta misma semana sin contratar a nadie: elige un proceso con la tabla de puntuación, mide cuánto tarda hoy y prueba un flujo sencillo con el plan gratuito de una plataforma. Si quieres ir más rápido o el proceso toca datos sensibles o varios sistemas, es cuando compensa pedir ayuda.
+Puedes arrancar esta misma semana sin contratar a nadie: elige un proceso con la tabla de puntuación, mide cuánto tarda hoy y prueba un flujo sencillo con el plan gratuito de una plataforma. Cuando quieras ir más rápido, o el proceso toque datos sensibles o varios sistemas, es el momento de pedir ayuda.
 
 <Checklist titulo="Tu plan para las próximas dos semanas">
 
@@ -132,7 +132,7 @@ Puedes empezar esta misma semana sin contratar a nadie: elige un proceso con la 
 
 </Checklist>
 
-Si prefieres hacerlo con acompañamiento, en nuestra [consultoría de agentes y automatización](/consultoria) seguimos este mismo método: elegimos contigo un proceso piloto con una métrica clara, montamos un prototipo con datos reales o anonimizados y formamos al equipo para mantenerlo. Para dar los primeros pasos a nivel de empresa, también te puede servir [cómo implantar la IA en una empresa paso a paso](/blog/como-implantar-ia-empresa). Y si lo que quieres es que tu equipo aprenda a construir sus propios flujos:
+¿Prefieres hacerlo con acompañamiento? En nuestra [consultoría de agentes y automatización](/consultoria) seguimos este mismo método: elegimos contigo un proceso piloto con una métrica clara, levantamos un prototipo con datos reales o anonimizados y formamos al equipo para mantenerlo. Para dar los primeros pasos a nivel de empresa, también te viene bien [cómo implantar la IA en una empresa paso a paso](/blog/como-implantar-ia-empresa). Y si lo que buscas es que tu equipo aprenda a construir sus propios flujos:
 
 <FormacionCard slug="agentes-ia-automatizacion" />
 

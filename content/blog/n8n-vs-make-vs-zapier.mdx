@@ -3,34 +3,34 @@ title: "n8n vs Make vs Zapier: cuál elegir para tu empresa"
 description: "n8n vs Make vs Zapier: precios oficiales, cómo cobra cada uno, dónde guardan tus datos, autoalojamiento y cuál encaja con tu empresa según su perfil."
 date: "2026-10-18"
 category: "agentes"
-tldr: "n8n cobra por ejecución en euros, guarda los datos en Frankfurt y se puede autoalojar; Make cobra por credits desde 9 USD al mes y Zapier por tasks desde 19,99 USD al mes, con más de 9.000 apps y datos en EE. UU. Precios consultados el 18 de octubre de 2026, sin IVA."
+tldr: "n8n factura por ejecución en euros, aloja los datos en Frankfurt y admite autoalojamiento; Make cobra por credits desde 9 USD al mes y Zapier por tasks desde 19,99 USD al mes, este con más de 9.000 apps y datos en EE. UU. Precios consultados el 18 de octubre de 2026, sin IVA."
 faqs:
-  - q: "¿Cuánto cuesta n8n si lo instalo en mi servidor?"
-    a: "La Community Edition de n8n se puede descargar de GitHub y autoalojar sin pagar licencia, pero no sale a coste cero: pagas el servidor y el tiempo de quien lo instala, actualiza y vigila. Su licencia, Sustainable Use License, permite usarlo para procesos internos de tu empresa, no revenderlo como servicio. Los planes en la nube empiezan en 20 € al mes con pago anual."
-  - q: "¿Qué es más fácil de aprender, Make o Zapier?"
-    a: "Para un primer flujo lineal, Zapier suele ser lo más rápido: eliges disparador, añades acciones y listo. Make se aprende en pocas sesiones y compensa cuando el flujo tiene ramas, filtros o bucles, porque los ves en un lienzo visual. n8n pide algo más de base técnica, sobre todo si lo autoalojas o trabajas con datos en formato JSON."
-  - q: "¿Puedo conectar ChatGPT o Claude a estas herramientas?"
-    a: "Sí. Las tres tienen módulos para llamar a modelos de OpenAI, Anthropic o Google y funciones de agentes: el nodo AI Agent de n8n, Make AI Agents y Zapier Agents. Normalmente conectas tu propia clave de API y pagas los tokens al proveedor del modelo, aparte de la cuota de la plataforma. En Make, usar tu propia conexión anula su garantía de procesar en la UE."
-  - q: "¿Zapier usa mis datos para entrenar su IA?"
-    a: "No con el contenido de tus flujos. Zapier declara que no entrena con los datos que pasan por tus automatizaciones en ningún plan, aunque puede aprender de cómo se construyen los flujos, es decir, de su estructura. Las cuentas Enterprise quedan excluidas de eso automáticamente y el resto puede pedir la exclusión con un formulario. Lo que no cambia es que almacena los datos en EE. UU."
-  - q: "¿Cuál es mejor para una pyme sin equipo técnico?"
-    a: "Depende de lo que automatices, pero Zapier o Make suelen encajar mejor que n8n autoalojado, porque no exigen mantener un servidor. Si te preocupa dónde se guardan los datos, la nube de n8n en Frankfurt o Make con zona de datos en la UE son opciones intermedias. Empieza por un solo proceso y mide cuántas tareas o ejecuciones consume al mes."
+  - q: "¿Qué cuesta n8n si lo monto en mi propio servidor?"
+    a: "La Community Edition de n8n se descarga de GitHub y se autoaloja sin pagar licencia, aunque eso no equivale a coste cero: asumes el servidor y el tiempo de quien lo instala, lo actualiza y lo vigila. Su licencia, la Sustainable Use License, te deja usarlo para los procesos internos de tu empresa, pero no revenderlo como servicio. En la nube, los planes arrancan en 20 € al mes con pago anual."
+  - q: "¿Se aprende antes Make o Zapier?"
+    a: "Si lo que quieres es un primer flujo lineal, Zapier acostumbra a ser lo más ágil: eliges el disparador, encadenas acciones y ya está. Make se domina en unas pocas sesiones y luce cuando el flujo lleva ramas, filtros o bucles, porque los ves sobre un lienzo visual. n8n exige algo más de base técnica, en especial si lo autoalojas o manejas datos en formato JSON."
+  - q: "¿Puedo enganchar ChatGPT o Claude a estas plataformas?"
+    a: "Sí. Las tres traen módulos para llamar a modelos de OpenAI, Anthropic o Google, además de funciones de agentes: el nodo AI Agent de n8n, Make AI Agents y Zapier Agents. Lo normal es conectar tu propia clave de API y pagar los tokens al proveedor del modelo, al margen de la cuota de la plataforma. Eso sí: en Make, usar tu propia conexión anula su garantía de procesar en la UE."
+  - q: "¿Entrena Zapier su IA con mis datos?"
+    a: "Con el contenido de tus flujos, no. Zapier afirma que en ningún plan entrena con los datos que circulan por tus automatizaciones, si bien puede aprender de cómo se arman los flujos, esto es, de su estructura. Las cuentas Enterprise quedan fuera de eso de forma automática y las demás pueden solicitar la exclusión mediante un formulario. Lo que no varía es que guarda los datos en EE. UU."
+  - q: "¿Qué conviene a una pyme sin equipo técnico?"
+    a: "Depende de lo que automatices, pero Zapier o Make suelen venir mejor que n8n autoalojado, porque te ahorran mantener un servidor. Si lo que te inquieta es dónde acaban los datos, la nube de n8n en Frankfurt o Make con zona de datos en la UE son términos medios. Arranca con un único proceso y mide cuántas tareas o ejecuciones te consume al mes."
 ---
 
-n8n, Make y Zapier sirven para lo mismo: conectar aplicaciones y automatizar tareas, cada vez más con un modelo de IA en medio. Se diferencian en tres cosas que deciden la elección: **cómo cobran** (por ejecución, por credit o por task), **dónde guardan tus datos** (UE, EE. UU. o tu propio servidor) y **cuánta técnica exigen**. Aquí tienes la comparativa con precios oficiales consultados el 18 de octubre de 2026 y un veredicto por perfil de empresa.
+n8n, Make y Zapier persiguen el mismo objetivo: conectar aplicaciones y automatizar tareas, y cada vez más con un modelo de IA por medio. Lo que las separa son tres factores que deciden la elección: **cómo cobran** (por ejecución, por credit o por task), **dónde guardan tus datos** (UE, EE. UU. o tu propio servidor) y **cuánta técnica te piden**. Debajo tienes la comparativa, con precios oficiales consultados el 18 de octubre de 2026 y un veredicto por perfil de empresa.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- **n8n** cobra por ejecución completa del flujo, en euros, guarda los datos en Frankfurt y es la única de las tres que se puede autoalojar.
-- **Make** es la más barata para empezar (9 USD al mes con pago anual) y la más visual para flujos con ramas.
-- **Zapier** tiene el catálogo más grande (más de 9.000 apps) y la curva más suave, pero almacena los datos en EE. UU. y sale cara con mucho volumen.
-- Ninguna es «la mejor»: elige según el volumen, la sensibilidad de los datos y quién va a mantener los flujos.
+- **n8n** cobra por cada ejecución completa del flujo, en euros, aloja los datos en Frankfurt y es la única de las tres que admite autoalojamiento.
+- **Make** es la más económica para arrancar (9 USD al mes con pago anual) y la más visual cuando el flujo tiene ramas.
+- **Zapier** reúne el catálogo más amplio (más de 9.000 apps) y la curva más suave, pero guarda los datos en EE. UU. y se encarece con mucho volumen.
+- Ninguna es «la mejor» en abstracto: decide según el volumen, la sensibilidad de los datos y quién va a mantener los flujos.
 
 </Callout>
 
 ## ¿En qué se diferencian n8n, Make y Zapier?
 
-n8n, Make y Zapier se diferencian sobre todo en el modelo de cobro, la ubicación de los datos y el autoalojamiento. n8n es alemana, cobra en euros por ejecución y se puede instalar en tu servidor. Make, de Celonis, cobra por credits. Zapier, estadounidense, cobra por tasks y tiene el mayor catálogo de integraciones.
+Las diferencias de fondo están en tres planos: el modelo de cobro, dónde viven los datos y el autoalojamiento. n8n es alemana, factura en euros por ejecución y puede instalarse en tu propio servidor. Make, del grupo Celonis, cobra por credits. Zapier, estadounidense, cobra por tasks y presume del mayor catálogo de integraciones.
 
 | | n8n | Make | Zapier |
 |---|---|---|---|
@@ -45,17 +45,17 @@ n8n, Make y Zapier se diferencian sobre todo en el modelo de cobro, la ubicació
 | Integraciones | 2.367 en su directorio | Más de 3.000 apps nativas | Más de 9.000 apps |
 | IA y agentes | Nodo AI Agent, MCP | Make AI Agents, Maia, MCP | Zapier Agents, Copilot, MCP |
 
-Precios sin IVA, consultados el 18/10/2026 en las páginas oficiales de [n8n](https://n8n.io/pricing/), [Make](https://www.make.com/en/pricing) y [Zapier](https://zapier.com/pricing). Make y Zapier publican en dólares; n8n, en euros. Las cifras de integraciones salen del [directorio de n8n](https://n8n.io/integrations/), de la página de precios de Make y de la de Zapier.
+Precios sin IVA, tomados el 18/10/2026 de las páginas oficiales de [n8n](https://n8n.io/pricing/), [Make](https://www.make.com/en/pricing) y [Zapier](https://zapier.com/pricing). Make y Zapier los publican en dólares; n8n, en euros. Las cifras de integraciones proceden del [directorio de n8n](https://n8n.io/integrations/), de la página de precios de Make y de la de Zapier.
 
 ## Cómo cobra cada herramienta (y por qué importa más que el precio)
 
-El precio de entrada engaña porque cada plataforma mide el consumo con una unidad distinta. n8n cuenta **ejecuciones**: un flujo de diez pasos que se ejecuta una vez es una ejecución. Make cuenta **credits**, uno por cada acción de módulo. Zapier cuenta **tasks**, una por cada acción completada con éxito. Con flujos largos, la diferencia se multiplica.
+El precio de entrada despista, porque cada plataforma mide el consumo con una vara distinta. n8n cuenta **ejecuciones**: un flujo de diez pasos que corre una vez es una ejecución. Make cuenta **credits**, uno por cada acción de módulo. Zapier cuenta **tasks**, una por cada acción completada con éxito. Cuanto más largos son los flujos, más se dispara la diferencia.
 
-n8n lo explica en su página de precios: «An execution is a single run of your entire workflow» y añade que no importa cuántos pasos tenga ni cuántos datos procese ([n8n, precios](https://n8n.io/pricing/)). En Make, los credits sustituyeron a las antiguas operaciones; en los módulos sin IA, una operación equivale a un credit, y si usas la IA de Make, el consumo depende de los tokens ([Make, ayuda sobre credits](https://help.make.com/credits.md)). En Zapier, las acciones fallidas y las comprobaciones de datos nuevos no cuentan como task, y cada llamada a una herramienta mediante Zapier MCP consume dos ([Zapier, precios](https://zapier.com/pricing)).
+Así lo explica n8n en su página de precios: «An execution is a single run of your entire workflow», y matiza que da igual cuántos pasos tenga o cuántos datos procese ([n8n, precios](https://n8n.io/pricing/)). En Make, los credits relevaron a las antiguas operaciones; en los módulos sin IA, una operación sale por un credit, y cuando entra la IA de Make, el consumo va por tokens ([Make, ayuda sobre credits](https://help.make.com/credits.md)). En Zapier, ni las acciones fallidas ni las comprobaciones de datos nuevos cuentan como task, mientras que cada llamada a una herramienta vía Zapier MCP gasta dos ([Zapier, precios](https://zapier.com/pricing)).
 
 ### Ejemplo calculado (ilustrativo): 5.000 ejecuciones al mes
 
-Supón un flujo de cuatro pasos: llega un correo con una solicitud (disparador), un modelo de IA la clasifica, se crea una fila en una hoja de cálculo o un registro en el CRM y se avisa al responsable en Teams. Se ejecuta 5.000 veces al mes.
+Imagina un flujo de cuatro pasos: entra un correo con una solicitud (disparador), un modelo de IA lo clasifica, se añade una fila en una hoja de cálculo o un registro en el CRM y se avisa al responsable en Teams. El flujo se ejecuta 5.000 veces al mes.
 
 | Plataforma | Consumo mensual | Plan que necesitas | Precio con pago anual |
 |---|---|---|---|
@@ -63,38 +63,38 @@ Supón un flujo de cuatro pasos: llega un correo con una solicitud (disparador),
 | Make | Unos 20.000 credits (4 módulos por ejecución) | Core con más credits | Unos 18 USD/mes (cálculo propio) |
 | Zapier | 15.000 tasks (3 acciones por ejecución; el disparador no cuenta) | Professional, tramo de 20.000 tasks | 189 USD/mes (283,50 USD con pago mensual) |
 
-Supuestos y matices del cálculo, que es nuestro y no de los fabricantes: en Make aplicamos el precio publicado del plan Core, 0,90 USD por cada 1.000 credits, y suponemos que escala de forma proporcional; comprueba el tramo exacto en su selector de precios. El tramo de 20.000 tasks de Zapier sale de su página de precios. En los tres casos, **los tokens del modelo se pagan aparte** al proveedor si conectas tu propia clave: con un modelo económico como GPT-6 Luna (0,10 USD por millón de tokens de entrada y 0,50 USD de salida, según [OpenAI](https://developers.openai.com/api/docs/pricing)), clasificar 5.000 correos de unos 1.500 tokens de entrada y 200 de salida (7,5 millones y 1 millón de tokens) costaría alrededor de 1,25 USD al mes.
+Supuestos y matices del cálculo, que es nuestro y no de los fabricantes: en Make tomamos el precio publicado del plan Core, 0,90 USD por cada 1.000 credits, y damos por hecho que escala de forma proporcional; confirma el tramo exacto en su selector de precios. El tramo de 20.000 tasks de Zapier procede de su página de precios. En los tres casos, **los tokens del modelo corren aparte** y los paga al proveedor quien conecta su propia clave: con un modelo económico como GPT-6 Luna (0,10 USD por millón de tokens de entrada y 0,50 USD de salida, según [OpenAI](https://developers.openai.com/api/docs/pricing)), clasificar 5.000 correos de unos 1.500 tokens de entrada y 200 de salida (7,5 millones y 1 millón de tokens) rondaría los 1,25 USD al mes.
 
-La conclusión práctica: con volumen alto y flujos de muchos pasos, el cobro por ejecución de n8n suele salir más barato; con pocos flujos cortos, Make y Zapier compiten bien y te ahorran mantenimiento.
+En la práctica: con volumen alto y flujos de muchos pasos, el cobro por ejecución de n8n tiende a salir más barato; con pocos flujos y cortos, Make y Zapier aguantan bien la comparación y te quitan el mantenimiento de encima.
 
 ## Dónde se guardan los datos: el criterio que más pesa en la UE
 
-La ubicación de los datos separa a las tres herramientas más que el precio. n8n en la nube almacena en Frankfurt y, autoalojado, donde tú decidas. Make ofrece zonas de datos en la UE, con excepciones en algunas funciones de IA. Zapier almacena los datos en Amazon Web Services en Estados Unidos.
+Más que el precio, lo que de verdad distancia a las tres herramientas es dónde acaban los datos. n8n en la nube los guarda en Frankfurt y, autoalojado, allí donde tú decidas. Make ofrece zonas de datos en la UE, con excepciones en algunas funciones de IA. Zapier los almacena en Amazon Web Services, en Estados Unidos.
 
 <Columnas>
 <Pros titulo="Datos en la UE o bajo tu control">
 
-- **n8n:** «For hosted plans, data is stored within the EU, on servers located in Frankfurt, Germany» ([n8n](https://n8n.io/pricing/)). Si lo autoalojas, los datos no salen de tu infraestructura.
-- **Make:** tiene zonas EU1 y EU2, y la mayor parte del procesamiento de IA nativo se queda en la UE si eliges una zona europea ([Make, IA y zonas de datos](https://help.make.com/ai-providers-and-data-zones-in-make.md)).
+- **n8n:** «For hosted plans, data is stored within the EU, on servers located in Frankfurt, Germany» ([n8n](https://n8n.io/pricing/)). Y si lo autoalojas, los datos no abandonan tu infraestructura.
+- **Make:** cuenta con zonas EU1 y EU2, y el grueso del procesamiento de IA nativo permanece en la UE si optas por una zona europea ([Make, IA y zonas de datos](https://help.make.com/ai-providers-and-data-zones-in-make.md)).
 
 </Pros>
 <Contras titulo="Matices que conviene leer">
 
-- **Make:** la misma página avisa de que algunas funciones y modelos siempre pasan por EE. UU., otros por Reino Unido, y que conectar tu propio proveedor de IA elimina la garantía europea de Make.
-- **Zapier:** «Zapier stores data on Amazon Web Services (AWS) in the United States» ([Zapier, seguridad](https://zapier.com/security-compliance)). Sí declara que no entrena con los datos que pasan por tus flujos en ningún plan.
+- **Make:** esa misma página advierte de que determinadas funciones y modelos pasan siempre por EE. UU., otros por Reino Unido, y de que conectar tu propio proveedor de IA borra la garantía europea de Make.
+- **Zapier:** «Zapier stores data on Amazon Web Services (AWS) in the United States» ([Zapier, seguridad](https://zapier.com/security-compliance)). Eso sí, declara que en ningún plan entrena con los datos que circulan por tus flujos.
 
 </Contras>
 </Columnas>
 
-Si tus flujos mueven datos personales de clientes o empleados, la ubicación del servidor afecta a cómo encajas el tratamiento en el RGPD, por ejemplo en las transferencias internacionales. No significa que Zapier esté vetado, pero sí que tu delegado de protección de datos o tu asesoría deberían revisarlo antes de automatizar procesos con datos sensibles. Para lo que nunca debería entrar en un flujo con IA, tienes la guía de [qué datos no meter en ChatGPT ni en ninguna IA](/blog/que-datos-no-meter-en-chatgpt).
+Cuando tus flujos mueven datos personales de clientes o empleados, dónde esté el servidor influye en cómo encajas el tratamiento en el RGPD, por ejemplo en las transferencias internacionales. No quiere decir que Zapier quede vetado, pero sí que tu delegado de protección de datos o tu asesoría tendrían que revisarlo antes de automatizar procesos con datos sensibles. Y para lo que nunca debería colarse en un flujo con IA, ahí está la guía de [qué datos no meter en ChatGPT ni en ninguna IA](/blog/que-datos-no-meter-en-chatgpt).
 
 ## Autoalojamiento y curva de aprendizaje
 
-Autoalojar n8n te da control total sobre los datos y elimina la cuota por ejecución de la nube, pero traslada a tu empresa la instalación, las copias de seguridad, las actualizaciones y la seguridad del servidor. Make y Zapier no se pueden autoalojar: a cambio, no tienes nada que mantener. La curva de aprendizaje sigue el mismo orden.
+Autoalojar n8n te da control total sobre los datos y te libra de la cuota por ejecución de la nube, pero pone en tu tejado la instalación, las copias de seguridad, las actualizaciones y la seguridad del servidor. Make y Zapier no admiten autoalojamiento; a cambio, no hay nada que mantener. La curva de aprendizaje va en ese mismo orden.
 
-La versión estándar de n8n está en [GitHub](https://github.com/n8n-io/n8n) con licencia *fair-code* (Sustainable Use License): puedes usarla para procesos internos de tu empresa o sin fines comerciales, pero no revenderla como servicio. El plan Business de 667 € al mes también es autoalojado, para quien necesita funciones de empresa sin salir de su infraestructura.
+La versión estándar de n8n vive en [GitHub](https://github.com/n8n-io/n8n) bajo licencia *fair-code* (Sustainable Use License): puedes emplearla en los procesos internos de tu empresa o sin fines comerciales, pero no revenderla como servicio. El plan Business de 667 € al mes también es autoalojado, pensado para quien necesita funciones de empresa sin salir de su propia infraestructura.
 
-Sobre la dificultad, esta es nuestra valoración orientativa, no un dato medido:
+En cuanto a la dificultad, lo que sigue es una valoración orientativa nuestra, no un dato medido:
 
 | | Zapier | Make | n8n |
 |---|---|---|---|
@@ -108,7 +108,7 @@ Sobre la dificultad, esta es nuestra valoración orientativa, no un dato medido:
 
 ## Casos reales publicados por los fabricantes
 
-Las tres plataformas publican casos de clientes con cifras. Son datos del propio fabricante, no auditorías independientes, pero sirven para ver qué tipo de empresa usa cada una. n8n destaca en grandes volúmenes técnicos, Make en procesos de negocio y Zapier en equipos comerciales y de operaciones.
+Las tres plataformas difunden casos de clientes con cifras. Son datos del propio fabricante, no auditorías independientes, pero ayudan a ver qué perfil de empresa recurre a cada una. n8n brilla en grandes volúmenes técnicos, Make en procesos de negocio y Zapier en equipos comerciales y de operaciones.
 
 <Stats>
   <Stat valor="200 h/mes" etiqueta="Ahorradas por Delivery Hero con un solo flujo de operaciones de TI en n8n" fuente="n8n, caso Delivery Hero" href="https://n8n.io/case-studies/delivery-hero/" />
@@ -116,51 +116,51 @@ Las tres plataformas publican casos de clientes con cifras. Son datos del propio
   <Stat valor="10.000 h" etiqueta="De back-office ahorradas en un año por Fonds Finanz con Make" fuente="Make, caso Fonds Finanz (2024)" href="https://www.make.com/en/success-stories/customer-fonds-finanz" />
 </Stats>
 
-Si buscas ideas de qué automatizar antes de elegir herramienta, tienes más casos por área en [agentes de IA para empresas: ejemplos reales](/blog/agentes-ia-ejemplos-empresas).
+Si andas buscando ideas de qué automatizar antes de decantarte por una herramienta, encontrarás más casos por área en [agentes de IA para empresas: ejemplos reales](/blog/agentes-ia-ejemplos-empresas).
 
 ## Cuándo no necesitas ninguna de las tres
 
-No siempre hace falta una plataforma de automatización. Si el proceso vive dentro de una sola herramienta que ya pagas, sus automatizaciones nativas pueden bastar. Y si la tarea cambia cada vez y la hace una persona con criterio, un buen asistente de IA corporativo resuelve más que un flujo rígido.
+No siempre toca una plataforma de automatización. Si el proceso transcurre dentro de una única herramienta que ya pagas, sus automatizaciones nativas pueden ser suficientes. Y cuando la tarea cambia cada vez y la ejecuta una persona con criterio, un buen asistente de IA corporativo cunde más que un flujo rígido.
 
-Algunas señales de que todavía no te toca:
+Algunas señales de que aún no es tu momento:
 
-- **El proceso no está definido.** Si cada persona lo hace a su manera, automatizarlo solo fija el desorden. Antes, escríbelo paso a paso: te lo explicamos en [cómo automatizar un proceso con IA paso a paso](/blog/automatizar-procesos-con-ia).
-- **Ocurre pocas veces al mes.** Un flujo que ahorra diez minutos dos veces al mes rara vez compensa el tiempo de montarlo y mantenerlo.
-- **Tu CRM o tu suite ya lo hace.** Microsoft 365, Google Workspace y muchos CRM traen reglas y automatizaciones incluidas.
-- **Necesitas decisiones complejas, no pasos fijos.** Ahí hablamos de agentes, que tienen otros costes y riesgos: lo explicamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia) y en los [riesgos de seguridad de los agentes](/blog/prompt-injection-riesgos-agentes).
+- **El proceso no está definido.** Si cada persona lo resuelve a su manera, automatizarlo solo consolida el desorden. Primero descríbelo paso a paso: te lo contamos en [cómo automatizar un proceso con IA paso a paso](/blog/automatizar-procesos-con-ia).
+- **Sucede pocas veces al mes.** Un flujo que ahorra diez minutos dos veces al mes rara vez justifica el tiempo de montarlo y mantenerlo.
+- **Tu CRM o tu suite ya lo cubre.** Microsoft 365, Google Workspace y muchos CRM incorporan reglas y automatizaciones de serie.
+- **Te hacen falta decisiones complejas, no pasos fijos.** Entonces entramos en el terreno de los agentes, con otros costes y riesgos: lo tratamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia) y en los [riesgos de seguridad de los agentes](/blog/prompt-injection-riesgos-agentes).
 
 ## Elige n8n, Make o Zapier según tu perfil
 
-El veredicto depende de tres preguntas: cuánto volumen vas a mover, qué datos pasan por los flujos y quién los va a mantener. Con esas respuestas, la elección suele estar clara. Este es nuestro resumen por perfil, con los precios de octubre de 2026.
+El veredicto se reduce a tres preguntas: cuánto volumen vas a mover, qué datos circulan por los flujos y quién se encargará de mantenerlos. Respondidas, la elección suele despejarse sola. Este es nuestro resumen por perfil, con los precios de octubre de 2026.
 
-- **Elige Zapier si** tu equipo es de negocio (ventas, marketing, operaciones), necesitas conectar apps poco comunes, el volumen es moderado y los datos no son sensibles. Pagas comodidad y catálogo.
-- **Elige Make si** quieres el precio de entrada más bajo, tus flujos tienen ramas y condiciones, y te basta con su zona de datos en la UE para lo que procesas. Revisa qué funciones de IA salen de la UE.
-- **Elige n8n en la nube si** vas a mover mucho volumen con flujos largos, quieres pagar en euros y que los datos se queden en Frankfurt.
-- **Elige n8n autoalojado si** tratas datos que no deben salir de tu infraestructura y tienes a alguien técnico que mantenga el servidor.
+- **Quédate con Zapier si** tu equipo es de negocio (ventas, marketing, operaciones), necesitas enlazar apps poco habituales, el volumen es moderado y los datos no son sensibles. Pagas por comodidad y catálogo.
+- **Decántate por Make si** buscas el precio de entrada más bajo, tus flujos llevan ramas y condiciones y te vale con su zona de datos en la UE para lo que procesas. Repasa qué funciones de IA salen de la UE.
+- **Ve a por n8n en la nube si** vas a mover mucho volumen con flujos largos, prefieres pagar en euros y quieres que los datos se queden en Frankfurt.
+- **Opta por n8n autoalojado si** manejas datos que no deben salir de tu infraestructura y cuentas con alguien técnico para mantener el servidor.
 
 <Checklist titulo="Antes de contratar, comprueba">
 
-- Cuántas ejecuciones, credits o tasks consumirá tu flujo principal al mes, con un cálculo como el de arriba.
-- Si los datos que pasan por el flujo son personales o confidenciales, y dónde se almacenan.
-- Qué integraciones necesitas exactamente y si existen como conector oficial.
-- Quién mantiene los flujos cuando algo falla, y con qué alertas.
-- Cuánto cuestan los tokens del modelo de IA, que se pagan aparte.
+- Cuántas ejecuciones, credits o tasks gastará tu flujo principal al mes, con un cálculo como el de arriba.
+- Si los datos que recorren el flujo son personales o confidenciales, y dónde se almacenan.
+- Qué integraciones necesitas en concreto y si existen como conector oficial.
+- Quién se ocupa de los flujos cuando algo falla, y con qué alertas.
+- Cuánto cuestan los tokens del modelo de IA, que van aparte.
 
 </Checklist>
 
-Si prefieres que alguien lo monte contigo, en nuestra [consultoría de agentes y automatización](/consultoria) trabajamos con las tres plataformas: elegimos la que encaja con tu caso, hacemos un piloto con un proceso acotado y formamos al equipo para que lo mantenga. Si quieres aprender a construir los flujos vosotros mismos, esta es la formación más relacionada:
+Si prefieres que alguien lo monte contigo, en nuestra [consultoría de agentes y automatización](/consultoria) trabajamos con las tres plataformas: escogemos la que encaja en tu caso, lanzamos un piloto con un proceso acotado y formamos al equipo para que lo mantenga. Y si lo que quieres es aprender a construir los flujos vosotros mismos, esta es la formación más cercana:
 
 <FormacionCard slug="agentes-ia-automatizacion" />
 
 ## Qué hacer ahora
 
-1. **Elige un proceso** repetitivo, frecuente y con reglas claras.
-2. **Cuenta los pasos** y las veces que se repite al mes, y calcula el consumo en las tres unidades de cobro.
-3. **Clasifica los datos** que pasarán por el flujo y decide si pueden salir de la UE.
-4. **Prueba el plan gratuito** de la herramienta que encaje con un flujo real durante dos semanas.
-5. Si tienes dudas sobre qué automatizar primero, pide un [diagnóstico gratuito de 30 minutos](/diagnostico).
+1. **Escoge un proceso** repetitivo, frecuente y con reglas claras.
+2. **Cuenta los pasos** y las veces que se repite al mes, y estima el consumo en las tres unidades de cobro.
+3. **Clasifica los datos** que recorrerán el flujo y decide si pueden salir de la UE.
+4. **Prueba el plan gratuito** de la herramienta elegida con un flujo real durante dos semanas.
+5. Si no ves claro qué automatizar primero, pide un [diagnóstico gratuito de 30 minutos](/diagnostico).
 
-<Callout tipo="legal">Este artículo es informativo y no es asesoramiento jurídico. Si tus automatizaciones tratan datos personales, revisa la ubicación de los datos y las transferencias internacionales con tu delegado de protección de datos o tu asesoría.</Callout>
+<Callout tipo="legal">Este artículo tiene carácter informativo y no es asesoramiento jurídico. Si tus automatizaciones tratan datos personales, revisa la ubicación de los datos y las transferencias internacionales con tu delegado de protección de datos o tu asesoría.</Callout>
 
 <Fuentes>
 

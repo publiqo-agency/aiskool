@@ -3,35 +3,35 @@ title: "Inteligencia artificial para ventas B2B: guía práctica"
 description: "Inteligencia artificial para ventas B2B fase a fase: investigar cuentas, preparar reuniones, propuestas y CRM, con prompts y los límites del RGPD y la LSSI."
 date: "2026-10-18"
 category: "departamentos"
-tldr: "La inteligencia artificial para ventas B2B ahorra tiempo en investigar cuentas, preparar reuniones, redactar propuestas y actualizar el CRM. Importa porque el comprador también la usa: el 45 % de los compradores B2B usó IA en una compra reciente, según Gartner (2026). La prospección automatizada tiene límites legales: el RGPD y el art. 21 de la LSSI."
+tldr: "La inteligencia artificial para ventas B2B libera horas en la investigación de cuentas, la preparación de reuniones, la redacción de propuestas y la puesta al día del CRM. Cuenta porque el comprador también recurre a ella: el 45 % de los compradores B2B usó IA en una compra reciente, según Gartner (2026). Y automatizar la prospección tiene frenos legales: el RGPD y el art. 21 de la LSSI."
 faqs:
-  - q: "¿Qué es un CRM con IA?"
-    a: "Es un CRM que incorpora funciones de IA generativa o agentes: resumir el historial de una cuenta, redactar correos de seguimiento, sugerir el siguiente paso o rellenar campos a partir de una reunión. No hace falta cambiar de CRM para empezar: muchas empresas conectan el que ya tienen con su asistente corporativo o con automatizaciones en Zapier, Make o n8n."
-  - q: "¿Puedo usar IA para enviar correos de prospección en frío?"
-    a: "Puedes usarla para redactarlos, pero el envío sigue sujeto a la ley. El art. 21 de la LSSI prohíbe las comunicaciones comerciales por correo electrónico no solicitadas ni autorizadas, salvo relación contractual previa con productos similares. Que el texto lo escriba una IA no cambia nada. Revisa con tu asesoría cómo prospectar por email en tu caso."
-  - q: "¿La IA va a sustituir a los comerciales?"
-    a: "Los datos apuntan a un cambio de papel, no a una desaparición. Gartner encontró que el 67 % de los compradores B2B prefiere una experiencia sin comercial, pero eso desplaza al vendedor hacia las conversaciones que aportan valor: diagnóstico, negociación y relación. La IA quita trabajo administrativo y de preparación, que es justo lo que no ve el cliente."
-  - q: "¿Qué datos de un cliente puedo meter en la IA?"
-    a: "Los necesarios para la tarea, en una herramienta contratada en modalidad empresa y con acuerdo de tratamiento de datos. Evita pegar exportaciones completas del CRM, datos bancarios o información confidencial de la negociación en cuentas personales. En ChatGPT Free, Plus y Pro el contenido puede usarse para entrenar salvo que lo desactives; en Business y Enterprise no, por defecto."
-  - q: "¿Cuánto cuesta empezar a usar IA en un equipo comercial?"
-    a: "Lo mínimo es una licencia corporativa de asistente por comercial. Por ejemplo, Microsoft 365 Copilot para empresas cuesta 15,60 € por usuario y mes sin IVA con pago anual en promoción hasta el 31 de diciembre de 2026 (18,20 € precio normal), y requiere una licencia de Microsoft 365. Consultado en octubre de 2026."
+  - q: "¿En qué consiste un CRM con IA?"
+    a: "Un CRM que suma capacidades de IA generativa o agentes: condensar el historial de una cuenta, escribir correos de seguimiento, proponer el siguiente paso o completar campos tras una reunión. Para arrancar no toca migrar de CRM; lo habitual es enlazar el que ya usas con el asistente corporativo o con flujos en Zapier, Make o n8n."
+  - q: "¿Vale la IA para mandar correos de prospección en frío?"
+    a: "Para escribirlos, sí; el envío, en cambio, sigue atado a la ley. El art. 21 de la LSSI veta las comunicaciones comerciales por correo electrónico que no se hayan solicitado ni autorizado, salvo relación contractual previa con productos similares. Que lo redacte una IA no cambia el panorama. Revisa con tu asesoría cómo prospectar por email en tu caso."
+  - q: "¿Reemplazará la IA a los comerciales?"
+    a: "Lo que señalan los datos es un cambio de rol, no una extinción. Según Gartner, el 67 % de los compradores B2B prefiere una experiencia sin comercial, y eso empuja al vendedor hacia lo que de verdad suma: diagnóstico, negociación y relación. La IA se lleva el trabajo administrativo y de preparación, precisamente lo que el cliente no ve."
+  - q: "¿Qué información de un cliente puedo introducir en la IA?"
+    a: "La imprescindible para la tarea, y siempre en una herramienta contratada en modalidad empresa y con acuerdo de tratamiento de datos. No pegues en cuentas personales exportaciones enteras del CRM, datos bancarios ni detalles confidenciales de la negociación. En ChatGPT Free, Plus y Pro el contenido puede servir para entrenar salvo que lo desactives; en Business y Enterprise, por defecto no."
+  - q: "¿Qué inversión hace falta para estrenar IA en un equipo comercial?"
+    a: "Como mínimo, una licencia corporativa de asistente por comercial. Microsoft 365 Copilot para empresas, por ejemplo, sale a 15,60 € por usuario y mes sin IVA con pago anual en promoción hasta el 31 de diciembre de 2026 (18,20 € precio normal), y exige una licencia de Microsoft 365. Consultado en octubre de 2026."
 ---
 
-La inteligencia artificial para ventas B2B sirve sobre todo para cuatro tareas: investigar cuentas antes de contactar, preparar reuniones y objeciones, redactar propuestas y correos personalizados, y dejar el CRM al día después de cada conversación. No sustituye la relación con el cliente; recupera el tiempo que se va en preparar y documentar. Esta guía recorre el proceso fase a fase, con un prompt para cada paso, las herramientas que ya tienes probablemente en tu empresa y los límites legales de la prospección automatizada.
+Cuatro tareas concentran casi todo el partido que la inteligencia artificial le saca a las ventas B2B: investigar cuentas antes del primer contacto, preparar reuniones y objeciones, redactar propuestas y correos a medida, y dejar el CRM al día tras cada conversación. La relación con el cliente no la sustituye; lo que devuelve es el tiempo que se escapa preparando y documentando. En esta guía recorremos el proceso fase a fase, con un prompt por paso, las herramientas que seguramente ya están en tu empresa y los límites legales de automatizar la prospección.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- Tu comprador ya usa IA: el 45 % de los compradores B2B la usó en una compra reciente y el 67 % prefiere comprar sin comercial (Gartner, 2026).
-- Donde más rinde la IA en ventas es en la preparación (cuentas, reuniones, propuestas) y en el seguimiento (resúmenes y CRM).
-- Que un correo lo redacte una IA no cambia las reglas: el RGPD y el art. 21 de la LSSI siguen aplicándose a la prospección.
+- Tu comprador ya la usa: el 45 % de los compradores B2B recurrió a la IA en una compra reciente y el 67 % prefiere comprar sin comercial (Gartner, 2026).
+- La IA rinde sobre todo en los extremos del proceso: la preparación (cuentas, reuniones, propuestas) y el seguimiento (resúmenes y CRM).
+- Que el correo lo escriba una IA no altera las reglas: el RGPD y el art. 21 de la LSSI siguen rigiendo la prospección.
 
 </Callout>
 
 ## Por qué la IA cambia las ventas B2B
 
-La IA cambia las ventas B2B por los dos lados de la mesa: el comprador investiga y compara proveedores con asistentes de IA antes de hablar con nadie, y el vendedor puede preparar cada contacto en minutos. El resultado es que el comercial llega más tarde al proceso y tiene que aportar más en cada conversación.
+El cambio ocurre en los dos lados de la mesa. De un lado, el comprador indaga y compara proveedores con asistentes de IA antes de hablar con nadie; del otro, el vendedor prepara cada contacto en cuestión de minutos. ¿La consecuencia? El comercial entra más tarde en el proceso y tiene que aportar más en cada conversación.
 
-Gartner lo midió en una encuesta a 646 compradores B2B entre agosto y septiembre de 2025, publicada el [9 de marzo de 2026](https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience):
+Gartner lo cuantificó encuestando a 646 compradores B2B entre agosto y septiembre de 2025, en un estudio publicado el [9 de marzo de 2026](https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience):
 
 <Stats>
   <Stat valor="67 %" etiqueta="De los compradores B2B prefiere una experiencia de compra sin comercial" fuente="Gartner, marzo de 2026" href="https://www.gartner.com/en/newsroom/press-releases/2026-03-09-gartner-sales-survey-finds-67-percent-of-b2b-buyers-prefer-a-rep-free-experience" />
@@ -39,30 +39,30 @@ Gartner lo midió en una encuesta a 646 compradores B2B entre agosto y septiembr
   <Stat valor="34,70 %" etiqueta="De las empresas de la UE que usan IA la aplican a marketing o ventas" fuente="Eurostat, 2025" href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises" />
 </Stats>
 
-El comunicado de Gartner no detalla el país de la muestra, así que tómalo como tendencia global. Lo que sí es europeo es el dato de [Eurostat (2025)](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises): marketing o ventas es la primera finalidad de la IA entre las empresas que ya la usan. Si el comprador consulta a ChatGPT o a Gemini qué proveedor elegir, también te interesa aparecer en esas respuestas: lo explicamos en la guía de [GEO para aparecer en las respuestas de ChatGPT](/blog/geo-aparecer-en-chatgpt).
+El comunicado no precisa el país de la muestra, de modo que conviene leerlo como tendencia global. Europeo sí es el dato de [Eurostat (2025)](https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Use_of_artificial_intelligence_in_enterprises): entre las empresas que ya usan IA, marketing o ventas es su primera finalidad. Y si tu comprador le pregunta a ChatGPT o a Gemini qué proveedor elegir, te interesa salir en esas respuestas; cómo lograrlo lo detallamos en la guía de [GEO para aparecer en las respuestas de ChatGPT](/blog/geo-aparecer-en-chatgpt).
 
 ## El proceso de venta fase a fase, con un prompt para cada paso
 
-El uso más rentable de la IA en ventas B2B es aplicarla a cada fase del proceso comercial con una instrucción fija que todo el equipo reutiliza. Así la calidad no depende de quién escriba el prompt ese día. Estas son las seis fases y un ejemplo de instrucción para cada una.
+Donde la IA sale más a cuenta en ventas B2B es en engancharla a cada fase del proceso comercial con una instrucción fija que reutiliza todo el equipo. De esa forma la calidad deja de depender de quién redacte el prompt ese día. Aquí van las seis fases, cada una con un ejemplo de instrucción.
 
 <Flujo titulo="Proceso comercial con IA" pasos="Investigar la cuenta|Preparar la reunión|Primer contacto|Reunión y notas|Propuesta|Seguimiento y CRM" />
 
 <Steps>
 
-1. **Investigar la cuenta.** Prompt: «Actúa como analista comercial. Con la web de [empresa] y las noticias del último año, prepara una ficha de una página: a qué se dedica, tamaño aproximado, novedades recientes, posibles prioridades para [nuestro tipo de solución] y tres preguntas para la primera reunión. Indica la fuente de cada dato y marca lo que sea suposición». Herramientas: ChatGPT o Claude con búsqueda web, o [Deep Research de Gemini](https://support.google.com/gemini/answer/15719111?hl=en), que suele tardar de 5 a 10 minutos en generar el informe.
-2. **Preparar la reunión y las objeciones.** Prompt: «Eres el director de compras de [empresa] y te reúnes con nosotros para evaluar [solución]. Plantéame las cinco objeciones más probables, de una en una, y espera mi respuesta antes de pasar a la siguiente. Al final, valora mis respuestas». Es una simulación de rol que funciona igual en cualquier asistente.
-3. **Primer contacto.** Prompt: «Redacta un mensaje de LinkedIn de menos de 80 palabras para [cargo] de [empresa]. Menciona [hecho concreto de la ficha] y propón una conversación de 20 minutos. Tono directo, sin halagos genéricos. Dame tres versiones». Revisa que el dato mencionado sea cierto y actual.
-4. **Reunión y notas.** Copilot en Teams resume los puntos clave, quién dijo qué y propone tareas, según [Microsoft](https://support.microsoft.com/en-us/teams/copilot/catch-up-on-meetings-with-microsoft-365-copilot-in-teams); para preguntarle después de la reunión hay que activar la transcripción. En Google Meet, Gemini puede tomar notas en un documento de Docs ([Google](https://support.google.com/meet/answer/14754931?hl=en)). Avisa siempre al cliente de que grabas o transcribes.
-5. **Propuesta.** Prompt: «Con las notas de la reunión adjuntas y nuestra plantilla de propuesta, redacta un borrador. Usa solo los precios y plazos de la tarifa adjunta; si falta un dato, déjalo marcado como PENDIENTE en lugar de inventarlo». La última frase es la que evita la mayoría de errores.
-6. **Seguimiento y CRM.** Prompt: «Resume esta reunión en el formato de nuestro CRM: necesidad, decisores, presupuesto, plazo, siguiente paso con fecha y riesgos». Después, una automatización puede copiar ese resumen a la ficha de la oportunidad.
+1. **Investigar la cuenta.** Prompt: «Actúa como analista comercial. Con la web de [empresa] y las noticias del último año, prepara una ficha de una página: a qué se dedica, tamaño aproximado, novedades recientes, posibles prioridades para [nuestro tipo de solución] y tres preguntas para la primera reunión. Indica la fuente de cada dato y marca lo que sea suposición». Herramientas: ChatGPT o Claude con búsqueda web, o [Deep Research de Gemini](https://support.google.com/gemini/answer/15719111?hl=en), que acostumbra a tardar de 5 a 10 minutos en elaborar el informe.
+2. **Preparar la reunión y las objeciones.** Prompt: «Eres el director de compras de [empresa] y te reúnes con nosotros para evaluar [solución]. Plantéame las cinco objeciones más probables, de una en una, y espera mi respuesta antes de pasar a la siguiente. Al final, valora mis respuestas». Es un juego de rol que rinde igual en cualquier asistente.
+3. **Primer contacto.** Prompt: «Redacta un mensaje de LinkedIn de menos de 80 palabras para [cargo] de [empresa]. Menciona [hecho concreto de la ficha] y propón una conversación de 20 minutos. Tono directo, sin halagos genéricos. Dame tres versiones». Comprueba que el dato citado sea real y esté vigente.
+4. **Reunión y notas.** En Teams, Copilot recoge los puntos clave, atribuye quién dijo qué y sugiere tareas, según [Microsoft](https://support.microsoft.com/en-us/teams/copilot/catch-up-on-meetings-with-microsoft-365-copilot-in-teams); para consultarle tras la reunión hay que tener activada la transcripción. En Google Meet, Gemini puede tomar notas en un documento de Docs ([Google](https://support.google.com/meet/answer/14754931?hl=en)). Avisa siempre al cliente de que grabas o transcribes.
+5. **Propuesta.** Prompt: «Con las notas de la reunión adjuntas y nuestra plantilla de propuesta, redacta un borrador. Usa solo los precios y plazos de la tarifa adjunta; si falta un dato, déjalo marcado como PENDIENTE en lugar de inventarlo». Esa última frase es la que ahorra la mayoría de los errores.
+6. **Seguimiento y CRM.** Prompt: «Resume esta reunión en el formato de nuestro CRM: necesidad, decisores, presupuesto, plazo, siguiente paso con fecha y riesgos». Luego, una automatización se encarga de volcar ese resumen en la ficha de la oportunidad.
 
 </Steps>
 
-En redacción profesional, el experimento de [Noy y Zhang en Science (2023)](https://www.science.org/doi/10.1126/science.adh2586) midió un 40 % menos de tiempo y un 18 % más de calidad con ChatGPT. Correos, propuestas y resúmenes son exactamente ese tipo de tarea. Si tu equipo necesita mejorar la forma de pedir, la guía de [prompts para empleados con ejemplos por puesto](/blog/como-hacer-prompts-guia-empleados) tiene más plantillas.
+En escritura profesional, el experimento de [Noy y Zhang en Science (2023)](https://www.science.org/doi/10.1126/science.adh2586) registró un 40 % menos de tiempo y un 18 % más de calidad usando ChatGPT. Correos, propuestas y resúmenes encajan de lleno en esa categoría. Y si tu equipo necesita afinar la forma de pedir, la guía de [prompts para empleados con ejemplos por puesto](/blog/como-hacer-prompts-guia-empleados) reúne más plantillas.
 
 ## Herramientas de IA para comerciales: qué usar en cada caso
 
-La mejor herramienta de IA para un equipo comercial suele ser la que ya está dentro de su correo, su calendario y su CRM, porque no obliga a copiar y pegar datos entre aplicaciones. Las herramientas especializadas de prospección tienen sentido después, cuando el proceso básico funciona.
+Para un equipo comercial, la mejor herramienta de IA suele ser la que ya vive dentro de su correo, su calendario y su CRM: así nadie tiene que copiar y pegar datos de una aplicación a otra. Las plataformas especializadas de prospección llegan después, cuando lo básico ya rueda.
 
 | Necesidad | Si trabajáis con Microsoft 365 | Si trabajáis con Google Workspace | Asistente general |
 |---|---|---|---|
@@ -72,21 +72,21 @@ La mejor herramienta de IA para un equipo comercial suele ser la que ya está de
 | Investigación de cuentas | Agente Researcher de Copilot | Deep Research | ChatGPT o Claude con búsqueda |
 | Conectar con el resto de herramientas | Agentes de Copilot Studio | Gems (en cuentas personales pasan a skills desde noviembre de 2026) | Conectores de Claude para Microsoft 365, Google Workspace y Slack; *apps* de ChatGPT |
 
-Fuentes de la tabla: ayuda de [Copilot en Outlook](https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook), [Gemini en Gmail](https://support.google.com/mail/answer/14355636?hl=en), [Facilitator en Teams](https://support.microsoft.com/en-us/teams/copilot/facilitator-in-microsoft-teams-meetings) y [conectores de Claude](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365), consultadas el 18 de octubre de 2026. Ojo con un límite práctico: Copilot en Outlook solo funciona en el buzón principal (no en buzones compartidos) y no lee correo cifrado con S/MIME o doble clave; Copilot en Teams no funciona en reuniones organizadas fuera de tu empresa.
+Fuentes de la tabla: la ayuda de [Copilot en Outlook](https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook), [Gemini en Gmail](https://support.google.com/mail/answer/14355636?hl=en), [Facilitator en Teams](https://support.microsoft.com/en-us/teams/copilot/facilitator-in-microsoft-teams-meetings) y [conectores de Claude](https://support.claude.com/en/articles/15183774-connect-to-microsoft-365), consultadas el 18 de octubre de 2026. Un apunte práctico: Copilot en Outlook solo opera en el buzón principal (no en los compartidos) y no lee correo cifrado con S/MIME o doble clave; Copilot en Teams se queda fuera de las reuniones organizadas por otra empresa.
 
-Para el paso de la reunión al CRM, las automatizaciones sin código hacen el trabajo pesado. Autotorino, empresa italiana, tiene 109 automatizaciones de Zapier que escriben en Salesforce y que devolvieron 2.394 horas a su equipo de CRM en 2025, según [Zapier](https://zapier.com/customer-stories). Es un caso del propio proveedor, útil como ejemplo de qué se puede automatizar. Si dudas entre plataformas, compara [n8n, Make y Zapier](/blog/n8n-vs-make-vs-zapier).
+En el salto de la reunión al CRM, las automatizaciones sin código cargan con el trabajo pesado. La italiana Autotorino mantiene 109 automatizaciones de Zapier que escriben en Salesforce y que, en 2025, le ahorraron 2.394 horas a su equipo de CRM, según [Zapier](https://zapier.com/customer-stories). Es un caso contado por el propio proveedor, válido como muestra de lo que cabe automatizar. Y si dudas entre plataformas, compara [n8n, Make y Zapier](/blog/n8n-vs-make-vs-zapier).
 
 <CtaInline />
 
 ## Prospección automatizada: lo que dicen el RGPD y la LSSI
 
-La prospección con IA está sujeta a las mismas normas que cualquier prospección: el RGPD y la LOPDGDD regulan cómo tratas los datos de contacto, y el art. 21 de la LSSI regula los correos comerciales. La IA no crea obligaciones nuevas aquí, pero facilita enviar mucho, muy rápido y a quien no debes.
+Prospectar con IA se rige por las mismas normas que cualquier otra prospección: el RGPD y la LOPDGDD marcan cómo tratas los datos de contacto, y el art. 21 de la LSSI, cómo mandas los correos comerciales. La IA no añade obligaciones nuevas; lo que hace es ponértelo fácil para enviar mucho, muy deprisa y a quien no debes.
 
-**Datos de contacto profesionales.** El [art. 19 de la LOPDGDD](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673) presume amparado en el interés legítimo el tratamiento de los datos de contacto y del puesto de las personas que trabajan en una empresa, siempre que se usen «únicamente» para su localización profesional y para mantener relaciones con la empresa en la que trabajan. Es la base que suele usarse en B2B, con condiciones.
+**Datos de contacto profesionales.** El [art. 19 de la LOPDGDD](https://www.boe.es/buscar/act.php?id=BOE-A-2018-16673) da por amparado en el interés legítimo el tratamiento de los datos de contacto y del cargo de quienes trabajan en una empresa, siempre que sirvan «únicamente» para su localización profesional y para mantener relaciones con la empresa en la que trabajan. Es la base habitual en B2B, con sus condiciones.
 
-**Correos comerciales.** El [art. 21.1 de la LSSI](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758) dice: «Queda prohibido el envío de comunicaciones publicitarias o promocionales por correo electrónico u otro medio de comunicación electrónica equivalente que previamente no hubieran sido solicitadas o expresamente autorizadas por los destinatarios de las mismas». La excepción del art. 21.2 es la relación contractual previa con productos o servicios similares. El texto habla de «destinatarios», sin excluir a las empresas.
+**Correos comerciales.** Así lo fija el [art. 21.1 de la LSSI](https://www.boe.es/buscar/act.php?id=BOE-A-2002-13758): «Queda prohibido el envío de comunicaciones publicitarias o promocionales por correo electrónico u otro medio de comunicación electrónica equivalente que previamente no hubieran sido solicitadas o expresamente autorizadas por los destinatarios de las mismas». Su excepción, en el art. 21.2, es la relación contractual previa con productos o servicios similares. Fíjate en que el texto habla de «destinatarios», sin dejar fuera a las empresas.
 
-**Derecho de oposición e información.** Según el [RGPD](https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807), si tratas datos con fines de mercadotecnia directa, la persona puede oponerse «en todo momento» (art. 21.2), incluida la elaboración de perfiles relacionada. Y si los datos no los obtuviste de ella, debes informarle a más tardar en la primera comunicación (art. 14.3).
+**Derecho de oposición e información.** El [RGPD](https://www.boe.es/buscar/doc.php?id=DOUE-L-2016-80807) establece que, si tratas datos con fines de mercadotecnia directa, la persona puede oponerse «en todo momento» (art. 21.2), incluida la elaboración de perfiles vinculada. Y cuando los datos no los conseguiste de ella, tienes que informarla a más tardar en la primera comunicación (art. 14.3).
 
 | Uso de IA en prospección | Riesgo | Qué hacer |
 |---|---|---|
@@ -98,22 +98,22 @@ La prospección con IA está sujeta a las mismas normas que cualquier prospecci�
 
 <Callout tipo="aviso" titulo="Error frecuente">
 
-Pensar que en B2B «todo vale» porque escribes a empresas. Los datos del interlocutor son datos personales, y la LSSI no distingue entre particulares y empresas al hablar de destinatarios. Usa la IA para escribir mejor, no para escribir a más gente sin permiso.
+Creer que en B2B «todo vale» por el hecho de escribir a empresas. Los datos del interlocutor son datos personales, y la LSSI, al hablar de destinatarios, no separa a particulares de empresas. Aprovecha la IA para escribir mejor, no para escribir a más gente sin permiso.
 
 </Callout>
 
 ## Cuándo no necesitas una formación externa
 
-No necesitas formación externa si tu equipo comercial es pequeño, ya tiene una herramienta corporativa y comparte un puñado de prompts que funcionan. Con las seis instrucciones de esta guía y media hora semanal de práctica, un equipo de dos o tres comerciales puede avanzar por su cuenta.
+Si tu equipo comercial es pequeño, ya cuenta con una herramienta corporativa y comparte un puñado de prompts que rinden, no te hace falta formación externa. Con las seis instrucciones de esta guía y media hora de práctica a la semana, un grupo de dos o tres comerciales avanza perfectamente por su cuenta.
 
-Compensa formar al equipo cuando:
+Formar al equipo compensa cuando:
 
-- Cada comercial usa la IA a su manera y los resultados son desiguales.
-- Hay cuentas personales de ChatGPT con datos de clientes dentro: revisa [qué datos no meter nunca en ChatGPT](/blog/que-datos-no-meter-en-chatgpt).
-- Queréis conectar la IA con el CRM y no sabéis qué automatizar primero.
-- Marketing y ventas trabajan con mensajes distintos: la guía de [IA para marketing](/blog/ia-para-marketing) sigue el mismo enfoque por tareas.
+- Cada comercial maneja la IA a su aire y los resultados bailan.
+- Hay cuentas personales de ChatGPT con datos de clientes metidos dentro: repasa [qué datos no meter nunca en ChatGPT](/blog/que-datos-no-meter-en-chatgpt).
+- Queréis enlazar la IA con el CRM y no tenéis claro qué automatizar primero.
+- Marketing y ventas van con mensajes distintos: la guía de [IA para marketing](/blog/ia-para-marketing) aplica este mismo enfoque por tareas.
 
-Nuestra [formación de IA para ventas](/formaciones/ia-ventas) dura 8 horas y trabaja con vuestras herramientas: fichas de cuenta, simulación de objeciones, propuestas y CRM. Si no tenéis claro si os hace falta, el [diagnóstico gratuito de 30 minutos](/diagnostico) sirve para decidirlo.
+Nuestra [formación de IA para ventas](/formaciones/ia-ventas) ocupa 8 horas y se trabaja con vuestras propias herramientas: fichas de cuenta, simulación de objeciones, propuestas y CRM. Y si no veis claro si la necesitáis, el [diagnóstico gratuito de 30 minutos](/diagnostico) os ayuda a decidirlo.
 
 <FormacionCard slug="ia-ventas" />
 
@@ -121,16 +121,16 @@ Nuestra [formación de IA para ventas](/formaciones/ia-ventas) dura 8 horas y tr
 
 <Checklist titulo="Primeros pasos con IA en tu equipo comercial">
 
-- Comprueba que todos los comerciales usan una cuenta de empresa y no personal.
-- Elige una fase del proceso (por ejemplo, la ficha de cuenta) y prueba el prompt con tres cuentas reales.
-- Crea una plantilla de propuesta con la regla «si falta un dato, márcalo como PENDIENTE».
-- Activa el resumen de reuniones y pide a cada comercial que lo revise antes de pasarlo al CRM.
-- Revisa con tu asesoría cómo hacéis la prospección por email antes de automatizar envíos.
-- Mide el tiempo de preparación de una reunión antes y después de un mes.
+- Verifica que todos los comerciales trabajan con una cuenta de empresa y no personal.
+- Escoge una fase del proceso (la ficha de cuenta, por ejemplo) y prueba el prompt con tres cuentas reales.
+- Monta una plantilla de propuesta con la regla «si falta un dato, márcalo como PENDIENTE».
+- Activa el resumen de reuniones y pide a cada comercial que lo repase antes de volcarlo al CRM.
+- Consulta con tu asesoría cómo planteáis la prospección por email antes de automatizar envíos.
+- Cronometra el tiempo de preparación de una reunión antes y después de un mes.
 
 </Checklist>
 
-<Callout tipo="legal">Este artículo es informativo y no es asesoramiento jurídico. La base legal de la prospección depende de cada caso: consulta con tu asesoría legal antes de automatizar envíos o enriquecer bases de datos con IA.</Callout>
+<Callout tipo="legal">Este artículo tiene carácter informativo y no es asesoramiento jurídico. La base legal de la prospección varía según el caso: consulta con tu asesoría legal antes de automatizar envíos o de enriquecer bases de datos con IA.</Callout>
 
 <Fuentes>
 

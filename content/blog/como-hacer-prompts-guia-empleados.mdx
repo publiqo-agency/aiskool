@@ -3,33 +3,33 @@ title: "Prompts para ChatGPT: guía con ejemplos por puesto"
 description: "Cómo hacer prompts para ChatGPT, Copilot, Claude o Gemini con la fórmula de las guías oficiales y una biblioteca de ejemplos por puesto, lista para copiar."
 date: "2026-10-18"
 category: "herramientas"
-tldr: "Un buen prompt para ChatGPT dice qué hacer con un verbo claro, da el contexto que tú conoces y la IA no, y pide un formato concreto. Google observó que los prompts que mejor funcionan rondan las 21 palabras, frente a las menos de 9 que se suelen escribir. La fórmula sirve igual en Copilot, Claude y Gemini."
+tldr: "Un buen prompt para ChatGPT empieza con un verbo claro, aporta el contexto que tú conoces y la IA no, y pide un formato concreto. Google observó que los prompts que mejor funcionan rondan las 21 palabras, frente a las menos de 9 que suele escribir la gente. Esa misma fórmula vale en Copilot, Claude y Gemini."
 faqs:
   - q: "¿Qué es un prompt?"
-    a: "Un prompt es la instrucción que le das a una IA generativa: la pregunta, la tarea y todo el contexto que la acompaña, incluidos los documentos que adjuntas. OpenAI lo describe como la forma de programar el modelo con instrucciones o ejemplos de cómo hacer bien una tarea. Cuanto más claro sea el prompt, menos tendrás que corregir el resultado."
+    a: "Es la instrucción que le das a una IA generativa: la pregunta, la tarea y todo el contexto que las rodea, documentos adjuntos incluidos. OpenAI lo plantea como programar el modelo mediante instrucciones o ejemplos de cómo resolver bien una tarea. A más claridad en el prompt, menos correcciones luego."
   - q: "¿Hay que escribir los prompts en inglés para que funcionen mejor?"
-    a: "No. ChatGPT, Copilot, Claude y Gemini entienden y responden bien en español, y escribir en el idioma en el que piensas te ayuda a dar más contexto y matices. Lo que sí conviene es pedir explícitamente el registro que quieres, por ejemplo «español de España, tuteando», para evitar giros de otras variantes del español."
+    a: "No. ChatGPT, Copilot, Claude y Gemini comprenden y responden bien en español, y redactar en el idioma en el que piensas te permite aportar más contexto y matices. Eso sí, conviene pedir de forma explícita el registro que buscas, por ejemplo «español de España, tuteando», para esquivar giros de otras variantes del español."
   - q: "¿Cuánto tiene que ocupar un prompt?"
-    a: "Lo necesario para que alguien sin contexto pudiera hacer la tarea. La guía de Google para Workspace observó que los prompts más útiles rondan las 21 palabras, frente a las menos de 9 que se suelen escribir. Para tareas complejas puede ser un párrafo largo con documentos adjuntos; lo importante es que no falte el contexto, no la longitud."
+    a: "Lo justo para que alguien sin contexto pudiera resolver la tarea. La guía de Google para Workspace vio que los prompts más útiles rondan las 21 palabras, frente a las menos de 9 que suele escribir la gente. En tareas complejas puede ser un párrafo largo con documentos adjuntos; lo que cuenta es que no falte contexto, no la extensión."
   - q: "¿Sirve de algo decirle a la IA que actúe como un experto?"
-    a: "Ayuda, pero no basta. Anthropic indica que asignar un rol enfoca el comportamiento y el tono, e incluso una sola frase marca diferencia. Pero un rol sin tarea, contexto y formato da resultados genéricos. Úsalo como la primera línea del prompt, no como el prompt entero."
+    a: "Ayuda, aunque no es suficiente. Anthropic señala que asignar un rol orienta el comportamiento y el tono, y que hasta una sola frase marca la diferencia. Pero un rol sin tarea, contexto ni formato acaba en respuestas genéricas. Úsalo como primera línea del prompt, nunca como el prompt completo."
   - q: "¿Puedo guardar mis prompts para no escribirlos cada vez?"
-    a: "Sí. Lo más sencillo es un documento compartido del equipo con los prompts que funcionan. Si una tarea se repite mucho, puedes convertir el prompt en instrucciones permanentes: un Project o una skill en Claude, una skill o plugin en ChatGPT, un Gem en Gemini o un agente de Agent Builder en Microsoft 365 Copilot."
+    a: "Sí. Lo más fácil es un documento compartido del equipo con los prompts que dan resultado. Y si una tarea se repite mucho, conviértelo en instrucciones permanentes: un Project o una skill en Claude, una skill o plugin en ChatGPT, un Gem en Gemini o un agente de Agent Builder en Microsoft 365 Copilot."
 ---
 
-Para hacer un buen prompt para ChatGPT necesitas cuatro cosas: **una tarea con un verbo claro, el contexto que tú conoces y la IA no, el formato en que quieres la respuesta y, si ayuda, un rol**. Esa es la fórmula común a las guías oficiales de OpenAI, Anthropic y Google. Abajo la explicamos con ejemplos de antes y después y una biblioteca de prompts por puesto en español de España, que sirven igual en Copilot, Claude o Gemini.
+Un buen prompt para ChatGPT se apoya en cuatro cosas: **una tarea con un verbo claro, el contexto que tú conoces y la IA no, el formato en que quieres la respuesta y, si ayuda, un rol**. Es la fórmula que comparten las guías oficiales de OpenAI, Anthropic y Google. A continuación la desgranamos con ejemplos de antes y después y una biblioteca de prompts por puesto en español de España, válidos igual en Copilot, Claude o Gemini.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- **Tarea + contexto + formato** (y rol si ayuda). Sin verbo, no hay prompt: «Always remember to include a verb or command as part of your task», dice Google.
-- Escribe para alguien listo pero nuevo: Anthropic compara el modelo con un empleado brillante que no conoce tus normas.
-- No pegues datos personales ni confidenciales en una cuenta que no sea la de empresa.
+- **Tarea + contexto + formato** (y rol si ayuda). Sin verbo no hay prompt: «Always remember to include a verb or command as part of your task», recuerda Google.
+- Redacta como para alguien espabilado pero recién llegado: Anthropic compara el modelo con un empleado brillante que no conoce tus normas.
+- Nunca pegues datos personales o confidenciales en una cuenta que no sea la de empresa.
 
 </Callout>
 
 ## Cómo se hace un buen prompt: la fórmula de las guías oficiales
 
-Un buen prompt combina cuatro elementos: qué quieres que haga (tarea), qué necesita saber (contexto), cómo quieres el resultado (formato) y desde qué perspectiva (rol). Las tres grandes guías oficiales lo formulan con palabras distintas, pero coinciden en lo esencial, como se ve en esta tabla.
+Cuatro elementos componen un buen prompt: qué quieres que haga (tarea), qué necesita saber (contexto), cómo quieres el resultado (formato) y desde qué perspectiva (rol). Las tres grandes guías oficiales lo nombran con palabras distintas, pero el fondo coincide, como muestra esta tabla.
 
 | Elemento | Google (Workspace) | OpenAI | Anthropic |
 |---|---|---|---|
@@ -48,7 +48,7 @@ Fuentes: [guía de prompts de Google Workspace](https://services.google.com/fh/f
 
 ### Un ejemplo de antes y después
 
-La diferencia se ve mejor con un caso real. Este es el prompt que escribe casi todo el mundo la primera vez:
+Un caso real lo deja más claro. Este es el prompt que casi todo el mundo escribe a la primera:
 
 ```text
 Hazme un correo para un cliente que se queja del retraso.
@@ -63,29 +63,29 @@ Contexto: el retraso se debe a que el proveedor de azulejos no entregó a tiempo
 Formato: menos de 150 palabras, tono cercano y sin excusas largas, tuteando, en español de España. Termina con un teléfono directo: 600 000 000.
 ```
 
-El segundo tarda un minuto más en escribirse y ahorra tres rondas de correcciones. Fíjate en que todo lo que añade es información que solo tú tenías.
+El segundo cuesta un minuto más de redacción y te ahorra tres rondas de correcciones. Y fíjate: todo lo que suma es información que solo estaba en tu cabeza.
 
 ## Siete reglas que repiten OpenAI, Anthropic y Google
 
-Las guías de los tres fabricantes coinciden en un puñado de hábitos que mejoran cualquier prompt, en cualquier herramienta. No hace falta aprender trucos: basta con explicar la tarea como se la explicarías a un compañero nuevo que no estuvo en la reunión.
+Los tres fabricantes coinciden en un puñado de hábitos que mejoran cualquier prompt, sea cual sea la herramienta. Nada de trucos: explica la tarea igual que se la contarías a un compañero recién llegado que no estuvo en la reunión.
 
 <Steps>
 
-1. **Empieza por el verbo**: redacta, resume, compara, clasifica, revisa. Es «the most important component of a prompt», según Google.
-2. **Da el contexto que falta**: para quién es, para qué, qué se sabe ya. La regla de oro de Anthropic: «Show your prompt to a colleague with minimal context on the task and ask them to follow it. If they'd be confused, Claude will be too».
-3. **Explica el porqué**: «no uses viñetas porque se leerá en voz alta» funciona mejor que «no uses viñetas». Anthropic recomienda dar la motivación detrás de cada instrucción.
-4. **Enseña un ejemplo**: si tienes un correo, un informe o una tabla que te gusta, pégalo como modelo. Para Anthropic, los ejemplos son «one of the most reliable ways» de fijar formato y tono.
-5. **Separa las partes**: con documentos largos, pon el material primero y la pregunta al final, y marca dónde empieza y acaba cada cosa (títulos, comillas o etiquetas).
-6. **Una tarea por prompt**: Google aconseja «create one prompt per instruction» en lugar de meter muchas instrucciones en uno. Encadena pasos en la misma conversación.
-7. **Itera y deja decir «no lo sé»**: pide que te pregunte lo que le falte y permite que reconozca que no sabe. Anthropic indica que darle permiso para admitir incertidumbre reduce mucho la información falsa.
+1. **Arranca con el verbo**: redacta, resume, compara, clasifica, revisa. Para Google es «the most important component of a prompt».
+2. **Añade el contexto que falta**: para quién es, con qué fin, qué se sabe ya. La regla de oro de Anthropic: «Show your prompt to a colleague with minimal context on the task and ask them to follow it. If they'd be confused, Claude will be too».
+3. **Di el porqué**: «no uses viñetas porque se leerá en voz alta» rinde más que un simple «no uses viñetas». Anthropic aconseja explicar la motivación detrás de cada instrucción.
+4. **Muestra un ejemplo**: si tienes un correo, un informe o una tabla que te gusten, pégalos de modelo. Para Anthropic, los ejemplos son «one of the most reliable ways» de fijar formato y tono.
+5. **Delimita las partes**: con documentos largos, coloca el material primero y la pregunta al final, y señala dónde empieza y acaba cada bloque (títulos, comillas o etiquetas).
+6. **Una tarea por prompt**: Google recomienda «create one prompt per instruction» antes que amontonar instrucciones en uno solo. Los pasos se encadenan dentro de la misma conversación.
+7. **Itera y deja hueco al «no lo sé»**: pídele que te pregunte lo que le falte y permítele reconocer que no sabe. Anthropic apunta que darle permiso para admitir incertidumbre reduce mucho la información falsa.
 
 </Steps>
 
-Sobre por qué la IA a veces se inventa datos y cómo detectarlo tienes más detalle en el artículo sobre [alucinaciones de la IA](/blog/alucinaciones-ia).
+Por qué la IA se inventa datos a veces, y cómo pillarlo, lo detallamos en el artículo sobre [alucinaciones de la IA](/blog/alucinaciones-ia).
 
 ## Biblioteca de prompts por puesto
 
-Estos prompts están pensados para copiar, pegar y completar lo que va entre corchetes. Funcionan en ChatGPT, Microsoft 365 Copilot, Claude y Gemini. Si alguno lo usas cada semana, conviértelo en instrucciones permanentes de un asistente: te explicamos cómo en el artículo de [GPTs personalizados y sus alternativas](/blog/gpts-personalizados-empresas-ejemplos).
+Los siguientes prompts están para copiar, pegar y rellenar lo que va entre corchetes. Funcionan en ChatGPT, Microsoft 365 Copilot, Claude y Gemini. Y si usas alguno cada semana, pásalo a instrucciones permanentes de un asistente: cómo hacerlo lo explicamos en [GPTs personalizados y sus alternativas](/blog/gpts-personalizados-empresas-ejemplos).
 
 ### Administración y oficina
 
@@ -171,71 +171,71 @@ Actúa como un consejero escéptico. Te paso la propuesta de [proyecto]. Dame lo
 
 ## Qué no debes poner nunca en un prompt
 
-Un prompt es información que sale de tu ordenador hacia el proveedor de la herramienta, así que lo que pegues en él cuenta tanto como lo que adjuntes. La regla práctica es sencilla: con una cuenta personal, nada que no publicarías; con la cuenta de empresa, solo lo que permita la política interna.
+Todo prompt es información que sale de tu ordenador rumbo al proveedor de la herramienta, así que lo que escribes en él pesa tanto como lo que adjuntas. La regla práctica es simple: en una cuenta personal, nada que no publicarías; en la de empresa, solo lo que permita la política interna.
 
 <Checklist titulo="Antes de enviar un prompt">
 
-- ¿Estoy usando la cuenta de empresa y no la personal?
-- ¿Lleva datos personales de clientes o empleados que puedo quitar o sustituir por iniciales?
-- ¿Incluye contraseñas, números de cuenta o datos de salud? Fuera.
-- ¿Es información confidencial (precios, contratos, planes) que la política de uso no permite?
-- ¿Voy a revisar el resultado antes de enviarlo a nadie?
+- ¿Estoy en la cuenta de empresa y no en la personal?
+- ¿Arrastra datos personales de clientes o empleados que pueda quitar o cambiar por iniciales?
+- ¿Mete contraseñas, números de cuenta o datos de salud? Fuera.
+- ¿Es información confidencial (precios, contratos, planes) que la política de uso no deja compartir?
+- ¿Voy a revisar el resultado antes de pasárselo a nadie?
 
 </Checklist>
 
-La lista completa, con ejemplos, está en el artículo [qué datos no meter nunca en ChatGPT](/blog/que-datos-no-meter-en-chatgpt), y en [recursos](/recursos) tienes una guía descargable para repartir a la plantilla.
+La lista entera, con ejemplos, la tienes en [qué datos no meter nunca en ChatGPT](/blog/que-datos-no-meter-en-chatgpt), y en [recursos](/recursos) hay una guía descargable para repartir entre la plantilla.
 
 ## ¿Los mismos prompts sirven en Copilot, Claude y Gemini?
 
-Sí: la fórmula de tarea, contexto, formato y rol funciona en las cuatro herramientas porque las guías de sus fabricantes la recomiendan. Lo que cambia es de dónde sale el contexto. Copilot y Gemini pueden leer tus correos y documentos de empresa sin que los pegues, y eso cambia cómo se escribe la parte de contexto.
+Sí: la fórmula de tarea, contexto, formato y rol rinde en las cuatro herramientas, porque las propias guías de sus fabricantes la recomiendan. Lo que varía es de dónde sale el contexto. Copilot y Gemini pueden leer tus correos y documentos de empresa sin que los pegues, y eso cambia cómo redactas esa parte.
 
-- **Microsoft 365 Copilot**: dentro de Outlook, Word o Teams trabaja sobre el correo, el documento o la reunión que tienes delante, y Microsoft indica que solo muestra datos de la organización a los que tienes al menos permiso de lectura. No hace falta pegar lo que ya está ahí: di a qué te refieres.
-- **Gemini en Google Workspace**: igual con Gmail, Docs y Drive. La guía de Google en español resume el estilo: «Usa un lenguaje natural», «Haz peticiones específicas e itera el proceso».
-- **Claude**: con documentos largos, Anthropic recomienda poner el material arriba, la pregunta al final y separar las partes con etiquetas («XML tags help Claude parse complex prompts unambiguously»).
-- **ChatGPT**: distingue entre modelos de razonamiento y modelos rápidos. OpenAI lo explica así: «A reasoning model is like a senior co-worker. You can give them a goal to achieve and trust them to work out the details», mientras que con el modelo rápido conviene ser más explícito.
+- **Microsoft 365 Copilot**: dentro de Outlook, Word o Teams actúa sobre el correo, el documento o la reunión que tienes delante, y Microsoft aclara que solo muestra datos de la organización sobre los que tienes al menos permiso de lectura. No hace falta pegar lo que ya está ahí: basta con decir a qué te refieres.
+- **Gemini en Google Workspace**: lo mismo con Gmail, Docs y Drive. La guía de Google en español lo resume así: «Usa un lenguaje natural», «Haz peticiones específicas e itera el proceso».
+- **Claude**: para documentos largos, Anthropic aconseja colocar el material arriba, la pregunta al final y separar los bloques con etiquetas («XML tags help Claude parse complex prompts unambiguously»).
+- **ChatGPT**: separa modelos de razonamiento y modelos rápidos. OpenAI lo pone así: «A reasoning model is like a senior co-worker. You can give them a goal to achieve and trust them to work out the details»; con el modelo rápido, en cambio, conviene ser más explícito.
 
-Si estás decidiendo cuál de las cuatro usar en tu empresa, lo comparamos en [ChatGPT vs Copilot vs Claude vs Gemini](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini). Y si lo que necesitas es preguntar a muchos documentos a la vez, prueba [NotebookLM](/blog/notebooklm-empresas-casos-de-uso), que responde citando cada fuente.
+Si estás eligiendo cuál de las cuatro implantar, la comparativa está en [ChatGPT vs Copilot vs Claude vs Gemini](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini). Y cuando lo que necesitas es interrogar muchos documentos a la vez, prueba [NotebookLM](/blog/notebooklm-empresas-casos-de-uso), que responde citando cada fuente.
 
 ## Errores frecuentes y cuándo no hace falta formación
 
-La mayoría de malos resultados con la IA no vienen de la herramienta, sino de pedir poco. Los errores se repiten en casi todos los equipos y se corrigen con práctica, no con trucos ni con «prompts mágicos».
+Casi ningún mal resultado con la IA es culpa de la herramienta: casi siempre es de pedir poco. Los fallos se repiten en casi todos los equipos y se arreglan con práctica, no con trucos ni con «prompts mágicos».
 
 <Columnas>
 <Pros titulo="Lo que funciona">
 
-- Dar el contexto que solo tú tienes.
-- Pedir un formato concreto y un límite de palabras.
-- Seguir la conversación para corregir en lugar de empezar de cero.
-- Comprobar cifras, nombres y citas antes de usar el resultado.
+- Aportar el contexto que solo tú manejas.
+- Pedir un formato concreto y un tope de palabras.
+- Corregir siguiendo la conversación en vez de empezar de cero.
+- Verificar cifras, nombres y citas antes de dar el resultado por bueno.
 
 </Pros>
 <Contras titulo="Lo que no funciona">
 
-- Prompts de una línea sin contexto.
-- Pedir diez cosas en el mismo mensaje.
-- Copiar listas de «100 prompts» que no conocen tu empresa.
-- Dar por bueno el primer resultado sin leerlo.
+- Prompts de una sola línea sin contexto.
+- Encajar diez peticiones en un mismo mensaje.
+- Copiar listas de «100 prompts» que no saben nada de tu empresa.
+- Aceptar el primer resultado sin leerlo.
 
 </Contras>
 </Columnas>
 
-Si tu equipo ya usa la IA a diario y obtiene buenos resultados, esta guía y la práctica bastan: no necesitas un curso. Donde una formación sí marca diferencia es cuando cada persona escribe a su manera, los resultados son irregulares o hay dudas sobre qué datos se pueden usar.
+Si tu equipo ya trabaja con IA a diario y saca buenos resultados, con esta guía y práctica tenéis de sobra: no hace falta un curso. Una formación aporta de verdad cuando cada persona escribe a su aire, los resultados bailan o hay dudas sobre qué datos se pueden usar.
 
 ## Qué hacer ahora
 
-Para que los prompts dejen de depender de la inspiración de cada uno, conviértelos en un recurso del equipo. Con una hora a la semana durante un mes, la mayoría de equipos tiene su propia biblioteca de prompts probados.
+Para que los prompts dejen de depender de la inspiración de cada cual, conviértelos en un recurso del equipo. Con una hora semanal durante un mes, la mayoría de equipos reúne su propia biblioteca de prompts probados.
 
 <Steps>
 
-1. **Elige tres tareas** que cada puesto repite cada semana.
-2. **Escribe un prompt para cada una** con la fórmula de tarea, contexto, formato y rol.
-3. **Pruébalo con casos reales** y ajústalo hasta que el resultado necesite pocas correcciones.
-4. **Guárdalo en un documento compartido** con un ejemplo del resultado esperado.
-5. **Revísalo cada trimestre**: las herramientas cambian y los prompts también.
+1. **Elige tres tareas** que cada puesto repite semana tras semana.
+2. **Redacta un prompt para cada una** con la fórmula de tarea, contexto, formato y rol.
+3. **Pruébalo con casos reales** y púlelo hasta que el resultado apenas necesite retoques.
+4. **Guárdalo en un documento compartido** junto a un ejemplo del resultado que esperas.
+5. **Repásalo cada trimestre**: las herramientas cambian y los prompts, también.
 
 </Steps>
 
-Si prefieres hacerlo acompañado, en nuestro taller de IA generativa para equipos cada persona sale con plantillas de prompts para las tareas más frecuentes de su puesto, trabajadas con vuestros casos. Puedes ver el resto de opciones en el [catálogo de formaciones](/formaciones) o pedir un [diagnóstico gratuito](/diagnostico) para saber por dónde empezar.
+Y si prefieres hacerlo acompañado, en nuestro taller de IA generativa para equipos cada persona se lleva plantillas de prompts para las tareas más habituales de su puesto, trabajadas con vuestros propios casos. El resto de opciones está en el [catálogo de formaciones](/formaciones), y si no sabes por dónde empezar, pide un [diagnóstico gratuito](/diagnostico).
 
 <FormacionCard slug="ia-generativa" />
 

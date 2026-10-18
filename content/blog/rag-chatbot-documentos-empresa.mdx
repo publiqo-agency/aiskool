@@ -3,42 +3,42 @@ title: "RAG en IA: un chatbot con los documentos de tu empresa"
 description: "Qué es RAG en IA y cómo montar un chatbot con los documentos de tu empresa: opciones sin programar, cuándo hace falta uno a medida, costes, permisos y límites."
 date: "2026-10-18"
 category: "agentes"
-tldr: "RAG (generación aumentada por recuperación) es la técnica que permite a una IA buscar en los documentos de tu empresa y responder con ellos, citando la fuente. Para empezar no necesitas desarrollo: NotebookLM, Claude Projects, Copilot o los plugins de ChatGPT lo hacen. Un RAG a medida compensa cuando hay muchos documentos, permisos por persona o integración con otros sistemas."
+tldr: "RAG (generación aumentada por recuperación) es la técnica con la que una IA consulta los documentos de tu empresa y responde a partir de ellos, indicando de dónde sale cada dato. Arrancar no exige desarrollo: NotebookLM, Claude Projects, Copilot o los plugins de ChatGPT ya lo hacen. Montarlo a medida sale a cuenta cuando manejas muchos documentos, permisos por persona o conexión con otros sistemas."
 faqs:
-  - q: "¿Qué significa RAG?"
-    a: "RAG son las siglas en inglés de retrieval-augmented generation, en español generación aumentada por recuperación. El término viene de un artículo de investigación de 2020 de Patrick Lewis y otros autores de Facebook AI Research. Describe sistemas que combinan un modelo de lenguaje con una búsqueda en una base de conocimiento externa antes de generar la respuesta."
+  - q: "¿Qué quiere decir RAG?"
+    a: "RAG es la sigla inglesa de retrieval-augmented generation; en español, generación aumentada por recuperación. La expresión nace de un artículo de investigación de 2020 firmado por Patrick Lewis y otros autores de Facebook AI Research. Nombra a los sistemas que, antes de redactar la respuesta, unen un modelo de lenguaje con una búsqueda en una base de conocimiento externa."
   - q: "¿Un chatbot con RAG deja de inventarse cosas?"
-    a: "No del todo. Responder con documentos delante reduce mucho los errores, pero no los elimina. Un estudio de investigadores de Stanford publicado en 2024 encontró que herramientas jurídicas comerciales con RAG seguían alucinando entre el 17 % y el 33 % de las veces. Por eso conviene pedir citas en cada respuesta y revisar las que se usen para decidir algo importante."
-  - q: "¿Es mejor RAG o entrenar un modelo con mis datos?"
-    a: "Para la mayoría de empresas, RAG. Ajustar un modelo con tus datos (fine-tuning) exige preparar ejemplos de entrenamiento, hay que repetirlo cuando cambian los documentos y no cita de dónde sale cada respuesta. Además, OpenAI indica en su [documentación](https://developers.openai.com/api/docs/guides/model-optimization) que está cerrando su plataforma de fine-tuning y que ya no admite nuevos usuarios. Con RAG basta con actualizar los documentos para que el asistente responda con la versión vigente."
+    a: "No por completo. Tener los documentos a la vista recorta bastante los fallos, aunque no los hace desaparecer. En 2024, investigadores de Stanford comprobaron que varias herramientas jurídicas comerciales con RAG aún alucinaban entre el 17 % y el 33 % de las veces. De ahí la recomendación: exige citas en cada respuesta y revisa las que vayas a usar para una decisión importante."
+  - q: "¿Qué es mejor, RAG o entrenar un modelo con mis datos?"
+    a: "En casi todas las empresas, RAG. Afinar un modelo con tus datos (fine-tuning) obliga a preparar ejemplos de entrenamiento, a rehacer el proceso cada vez que cambian los documentos y, encima, no señala de dónde procede cada respuesta. A esto se suma que OpenAI avisa en su [documentación de optimización de modelos](https://developers.openai.com/api/docs/guides/model-optimization) de que está cerrando su plataforma de fine-tuning y ya no acepta nuevos usuarios. Con RAG, en cambio, basta con poner al día los documentos para que el asistente conteste con la versión vigente."
   - q: "¿Mis documentos se usan para entrenar la IA si los subo a un chatbot?"
-    a: "Con cuentas de empresa, por defecto no. ChatGPT Business y Enterprise, Claude Team y Enterprise, Microsoft 365 Copilot y Gemini en Google Workspace declaran que no entrenan sus modelos con los datos del cliente por defecto. Con cuentas personales las condiciones cambian según el proveedor, así que los documentos de empresa deben ir siempre en una cuenta de empresa."
-  - q: "¿Cuánto tarda en montarse un chatbot con documentos?"
-    a: "Con una herramienta sin programar, configurar un cuaderno o un proyecto es cuestión de horas; lo que lleva tiempo es preparar los documentos y probar las respuestas. Un RAG a medida integrado con tus sistemas es un proyecto: en nuestra consultoría planteamos un prototipo funcional en 2 a 4 semanas sobre un caso acotado antes de llevarlo a producción."
+    a: "En cuentas de empresa, por defecto no. ChatGPT Business y Enterprise, Claude Team y Enterprise, Microsoft 365 Copilot y Gemini en Google Workspace afirman que, salvo que lo cambies, no entrenan sus modelos con los datos del cliente. En cuentas personales las condiciones varían según el proveedor, de modo que los documentos corporativos deberían ir siempre en una cuenta de empresa."
+  - q: "¿Cuánto se tarda en montar un chatbot con documentos?"
+    a: "Con una herramienta sin código, dejar listo un cuaderno o un proyecto son horas; lo que cuesta es preparar los documentos y poner a prueba las respuestas. Un RAG a medida conectado a tus sistemas ya es un proyecto en sí: en nuestra consultoría proponemos un prototipo funcional en 2 a 4 semanas sobre un caso acotado antes de pasarlo a producción."
 ---
 
-RAG (*retrieval-augmented generation*, generación aumentada por recuperación) es la técnica que permite a una IA **buscar primero en tus documentos y responder después con lo que ha encontrado**, citando de dónde sale cada dato. Es lo que hay detrás de cualquier «chatbot con los documentos de la empresa». Aquí explicamos cómo funciona sin tecnicismos, qué opciones hay sin programar, cuándo compensa uno a medida, qué cuesta y qué hay que preparar antes de empezar.
+RAG (*retrieval-augmented generation*, generación aumentada por recuperación) es la técnica que hace que una IA **primero busque en tus documentos y luego responda con lo que ha encontrado**, citando de dónde sale cada dato. Es el motor de cualquier «chatbot con los documentos de la empresa». En este artículo lo contamos sin tecnicismos: cómo funciona, qué opciones tienes sin programar, cuándo sale a cuenta uno a medida, qué cuesta y qué conviene preparar antes de empezar.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- RAG no entrena la IA con tus datos: le pasa los fragmentos relevantes de tus documentos en cada pregunta.
-- Para un equipo y unos cientos de documentos, una herramienta que ya pagas suele bastar.
-- El trabajo de verdad no es la tecnología, sino tener documentos vigentes, ordenados y con los permisos bien puestos.
+- RAG no entrena la IA con tus datos: en cada pregunta le entrega los fragmentos de tus documentos que vienen al caso.
+- Si hablamos de un equipo y unos cientos de documentos, la herramienta que ya pagas suele llegar de sobra.
+- Lo difícil no es la tecnología, sino mantener documentos actualizados, ordenados y con los permisos bien configurados.
 
 </Callout>
 
 ## Qué es RAG en IA y cómo funciona
 
-RAG es un método que recupera la información relevante de una base de conocimiento y la añade a la pregunta del usuario antes de que el modelo responda. Anthropic lo resume así: «RAG is a method that retrieves relevant information from a knowledge base and appends it to the user's prompt, significantly enhancing the model's response» ([Anthropic, 2024](https://www.anthropic.com/engineering/contextual-retrieval)).
+En esencia, RAG recupera la información pertinente de una base de conocimiento y la suma a la pregunta del usuario antes de que el modelo conteste. Anthropic lo resume así: «RAG is a method that retrieves relevant information from a knowledge base and appends it to the user's prompt, significantly enhancing the model's response» ([Anthropic, 2024](https://www.anthropic.com/engineering/contextual-retrieval)).
 
-Google Cloud lo define en español como «un framework de inteligencia artificial que combina las ventajas de los sistemas tradicionales de recuperación de información (como la búsqueda y las bases de datos) con las capacidades de los modelos generativos de lenguaje extenso (LLM)» ([Google Cloud](https://cloud.google.com/use-cases/retrieval-augmented-generation?hl=es)). Dicho de forma práctica: es como darle a la IA un archivador y obligarla a consultarlo antes de contestar.
+Google Cloud lo define en español como «un framework de inteligencia artificial que combina las ventajas de los sistemas tradicionales de recuperación de información (como la búsqueda y las bases de datos) con las capacidades de los modelos generativos de lenguaje extenso (LLM)» ([Google Cloud](https://cloud.google.com/use-cases/retrieval-augmented-generation?hl=es)). En román paladino: es como entregarle a la IA un archivador y exigirle que lo consulte antes de hablar.
 
 <Flujo titulo="Qué pasa cuando preguntas a un chatbot con RAG" pasos="Haces la pregunta|El sistema busca en tus documentos|Selecciona los fragmentos más relevantes|El modelo responde solo con ellos|Te enseña la respuesta con citas" />
 
-Dos ideas que conviene tener claras:
+Conviene no perder de vista dos cosas:
 
-- **El modelo no «aprende» tus documentos.** Los lee en cada consulta. Si cambias un documento, la siguiente respuesta ya usa la versión nueva.
-- **La calidad depende de la búsqueda.** Si el sistema no encuentra el fragmento correcto, el modelo responderá con lo que tenga. Anthropic publicó que mejorar cómo se trocean y describen los fragmentos reduce los fallos de recuperación un 49 %, y un 67 % si se añade una reordenación de resultados.
+- **El modelo no «aprende» tus documentos.** Los consulta en cada pregunta. Cambia un documento y la siguiente respuesta ya saldrá de la versión nueva.
+- **Todo depende de la búsqueda.** Si el sistema no da con el fragmento correcto, el modelo tirará de lo que tenga a mano. Anthropic publicó que afinar cómo se trocean y describen los fragmentos rebaja los fallos de recuperación un 49 %, y hasta un 67 % cuando se suma una reordenación de resultados.
 
 <Stats>
   <Stat valor="49 %" etiqueta="menos fallos de recuperación con su técnica de recuperación contextual" fuente="Anthropic, 2024" href="https://www.anthropic.com/engineering/contextual-retrieval" />
@@ -46,11 +46,11 @@ Dos ideas que conviene tener claras:
   <Stat valor="17–33 %" etiqueta="de respuestas con alucinaciones en herramientas jurídicas comerciales con RAG" fuente="Magesh et al., Stanford, 2024" href="https://arxiv.org/abs/2405.20362" />
 </Stats>
 
-La última cifra es la advertencia: tener los documentos delante reduce los errores, pero no los elimina. Lo explicamos con detalle en el artículo sobre [alucinaciones de la IA](/blog/alucinaciones-ia).
+Esa última cifra es el aviso: tener los documentos delante baja los errores, pero no los borra. Lo desarrollamos en el artículo sobre [alucinaciones de la IA](/blog/alucinaciones-ia).
 
 ## Opciones para tener un chatbot con tus documentos sin programar
 
-Las cuatro grandes herramientas de IA para empresa ya incluyen alguna forma de RAG que se configura sin código: subes o conectas documentos y el asistente responde con ellos. Para un equipo concreto y un volumen manejable de documentos, suelen bastar y evitan cualquier desarrollo.
+Las cuatro grandes herramientas de IA para empresa traen ya alguna variante de RAG que se monta sin código: subes o conectas documentos y el asistente contesta con ellos. Para un equipo concreto y un número manejable de documentos suelen dar la talla y te ahorran cualquier desarrollo.
 
 | Herramienta | Cómo se hace | Permisos | Lo mejor | El límite |
 |---|---|---|---|---|
@@ -61,13 +61,13 @@ Las cuatro grandes herramientas de IA para empresa ya incluyen alguna forma de R
 
 Fuentes de la tabla: [límites de Gemini Notebook](https://support.google.com/gemininotebook/answer/16337734?hl=en), [Claude Projects](https://support.claude.com/en/articles/9517075-what-are-projects), [privacidad de Microsoft 365 Copilot](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy), [Agent Builder](https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/agent-builder) y [FAQ de retirada de los GPTs](https://help.openai.com/en/articles/20001519-custom-gpt-retirement-and-migration-faq), consultadas el 18 de octubre de 2026.
 
-La columna de permisos es la que más se olvida. Microsoft lo deja claro para Copilot: «Microsoft Copilot only surfaces organizational data to which individual users have at least view permissions». En cambio, cuando subes archivos a un cuaderno, un proyecto o un plugin, cualquiera con acceso a ese asistente puede obtener respuestas basadas en todos ellos. Si tienes dudas sobre una herramienta concreta, tienes artículos dedicados a [NotebookLM](/blog/notebooklm-empresas-casos-de-uso) y a los [GPTs personalizados y sus alternativas](/blog/gpts-personalizados-empresas-ejemplos).
+La columna de permisos es la que casi nadie mira. Microsoft es claro con Copilot: «Microsoft Copilot only surfaces organizational data to which individual users have at least view permissions». Sin embargo, cuando cargas archivos en un cuaderno, un proyecto o un plugin, cualquiera que entre a ese asistente puede sacar respuestas basadas en todos ellos. Si te asalta la duda con una herramienta concreta, tenemos artículos dedicados a [NotebookLM](/blog/notebooklm-empresas-casos-de-uso) y a los [GPTs personalizados y sus alternativas](/blog/gpts-personalizados-empresas-ejemplos).
 
-Un caso conocido de este patrón a gran escala es Morgan Stanley: según la guía [AI in the Enterprise de OpenAI](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf), el 98 % de sus asesores usa OpenAI a diario y el acceso a documentos pasó del 20 % al 80 %.
+El ejemplo más citado de este patrón a gran escala es Morgan Stanley: según la guía [AI in the Enterprise de OpenAI](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf), el 98 % de sus asesores recurre a OpenAI cada día y el acceso a documentos saltó del 20 % al 80 %.
 
 ## Cuándo necesitas un RAG a medida
 
-Un RAG a medida compensa cuando las herramientas estándar se quedan cortas en volumen, permisos o integración: miles de documentos en varios sistemas, respuestas que deben respetar qué puede ver cada persona o un asistente que tiene que vivir en tu web, tu CRM o tu herramienta de soporte. Si no se da ninguna de esas condiciones, no lo necesitas.
+Un RAG a medida sale a cuenta cuando las herramientas estándar se quedan cortas en volumen, permisos o integración: miles de documentos repartidos en varios sistemas, respuestas que deben ajustarse a lo que puede ver cada persona o un asistente que tiene que vivir dentro de tu web, tu CRM o tu herramienta de soporte. Sin alguna de esas condiciones, no te hace falta.
 
 | Si tu situación es… | Lo razonable es… |
 |---|---|
@@ -78,13 +78,13 @@ Un RAG a medida compensa cuando las herramientas estándar se quedan cortas en v
 | El asistente lo usan clientes, no empleados | RAG a medida integrado en tu web o canal de soporte |
 | Necesitas datos alojados en la UE o certificaciones concretas | Revisar el proveedor y la región antes de elegir herramienta |
 
-Un RAG a medida tiene más piezas que mantener: un proceso que lee y trocea los documentos, un índice de búsqueda (normalmente una base de datos vectorial), el modelo de lenguaje, la capa de permisos y una forma de medir si las respuestas son correctas. Si además el asistente debe hacer cosas (abrir una incidencia, actualizar una ficha), ya no hablamos solo de RAG sino de un agente, que explicamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia).
+Un RAG a medida arrastra más piezas que mantener: un proceso que lee y trocea los documentos, un índice de búsqueda (por lo general una base de datos vectorial), el modelo de lenguaje, la capa de permisos y alguna manera de comprobar si las respuestas son correctas. Y si encima el asistente tiene que ejecutar acciones (abrir una incidencia, actualizar una ficha), ya no estamos ante un simple RAG sino ante un agente, que explicamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia).
 
 <CtaInline />
 
 ## Qué cuesta un chatbot con los documentos de tu empresa
 
-El coste depende sobre todo de la opción: con una herramienta sin programar pagas la licencia por usuario que quizá ya tienes; con un RAG a medida, el desarrollo y el mantenimiento pesan mucho más que el consumo del modelo. Estos son los precios publicados por los fabricantes, consultados el 18 de octubre de 2026:
+El coste depende sobre todo de la vía que elijas: con una herramienta sin código pagas la licencia por usuario que a lo mejor ya tienes; con un RAG a medida, el desarrollo y el mantenimiento pesan mucho más en la factura que el consumo del modelo. Estos son los precios que publican los fabricantes, consultados el 18 de octubre de 2026:
 
 | Opción | Precio publicado | Notas |
 |---|---|---|
@@ -94,45 +94,45 @@ El coste depende sobre todo de la opción: con una herramienta sin programar pag
 | Claude Team, puesto estándar | 20 $/puesto/mes con pago anual (25 $ mensual), de 2 a 150 puestos | En dólares, sin impuestos ([Anthropic](https://claude.com/pricing)) |
 | RAG a medida: consumo del modelo por API | Por ejemplo, Claude Sonnet 5.5 a 2 $ por millón de tokens de entrada y 10 $ de salida | Precios de [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing); se suman alojamiento, desarrollo y mantenimiento |
 
-Para hacerse una idea del consumo (cálculo propio, no de una fuente): un asistente que responde 1.000 preguntas al mes, con unos 5.000 tokens de entrada y 1.000 de salida por pregunta, gasta unos 20 $ al mes en tokens con Claude Sonnet 5.5. El modelo suele ser la parte pequeña de la factura. No hay cifras públicas fiables del coste de desarrollo de un RAG a medida: depende de cuántas fuentes conectas, de los permisos y de la calidad exigida. Lo desglosamos en [cuánto cuesta implantar un agente de IA](/blog/cuanto-cuesta-agente-ia).
+Para situarte en el consumo (cálculo propio, no de una fuente): un asistente que atiende 1.000 preguntas al mes, con unos 5.000 tokens de entrada y 1.000 de salida por pregunta, se va a unos 20 $ mensuales en tokens con Claude Sonnet 5.5. El modelo acostumbra a ser la parte menor del recibo. No existen cifras públicas fiables sobre el coste de desarrollo de un RAG a medida: cambia según cuántas fuentes conectes, los permisos y el nivel de calidad que exijas. Lo desglosamos en [cuánto cuesta implantar un agente de IA](/blog/cuanto-cuesta-agente-ia).
 
 ## Qué preparar antes: documentos, permisos y riesgos
 
-Un chatbot con documentos es tan bueno como los documentos que le das. La mayoría de proyectos que no funcionan fallan por versiones antiguas, duplicados contradictorios o permisos mal puestos, no por el modelo. Antes de elegir herramienta, dedica tiempo a preparar el material y a pensar quién debe ver qué.
+Un chatbot con documentos vale tanto como los documentos que le entregas. Cuando un proyecto no cuaja, casi siempre es por versiones antiguas, duplicados que se contradicen o permisos mal puestos, rara vez por el modelo. Así que, antes de elegir herramienta, invierte tiempo en ordenar el material y en decidir quién debe ver qué.
 
 <Checklist titulo="Antes de conectar documentos a un chatbot">
 
-- Una sola versión vigente de cada documento; archiva las antiguas.
-- Nombres y títulos claros: el buscador también los usa.
-- Fecha y responsable en cada documento, para saber si sigue vigente.
-- Quita datos personales que no hagan falta para responder.
-- Revisa los permisos de las carpetas que vas a conectar: si alguien ve hoy lo que no debería, el asistente se lo enseñará.
-- Diez preguntas de prueba con su respuesta correcta, para medir antes y después.
-- Una persona responsable de mantener la base de conocimiento.
+- Deja una única versión vigente de cada documento y archiva las antiguas.
+- Pon nombres y títulos claros: el buscador también se apoya en ellos.
+- Añade fecha y responsable a cada documento, para saber si sigue en vigor.
+- Elimina los datos personales que no sean necesarios para responder.
+- Repasa los permisos de las carpetas que vas a conectar: si hoy alguien ve lo que no debería, el asistente se lo servirá.
+- Prepara diez preguntas de prueba con su respuesta correcta, para medir el antes y el después.
+- Nombra a alguien responsable de mantener la base de conocimiento.
 
 </Checklist>
 
 <Callout tipo="aviso" titulo="Un riesgo específico: documentos con instrucciones ocultas">
 
-Un RAG lee texto y el modelo no distingue bien entre datos e instrucciones. La AEPD, en sus [orientaciones sobre IA agéntica](https://www.aepd.es/guias/orientaciones-ia-agentica.pdf) (febrero de 2026), describe el envenenamiento de la memoria y del RAG; y OWASP mantiene la inyección de prompts como el riesgo número 1 de su [lista de 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/). Si el asistente lee correos, webs o documentos de terceros, limita lo que puede hacer y revisa las respuestas sensibles. Lo contamos en el artículo sobre [prompt injection](/blog/prompt-injection-riesgos-agentes).
+Un RAG procesa texto y el modelo no separa bien los datos de las instrucciones. La AEPD, en sus [orientaciones sobre IA agéntica](https://www.aepd.es/guias/orientaciones-ia-agentica.pdf) (febrero de 2026), describe el envenenamiento de la memoria y del RAG; y OWASP sigue situando la inyección de prompts como el riesgo número 1 en su [lista de 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/). Si tu asistente lee correos, webs o documentos de terceros, acota lo que puede hacer y revisa las respuestas delicadas. Lo contamos en el artículo sobre [prompt injection](/blog/prompt-injection-riesgos-agentes).
 
 </Callout>
 
 ## Qué hacer ahora
 
-El camino más seguro es empezar con la opción más simple que cubra tu caso y medir antes de invertir más. Anthropic lo recomienda para cualquier sistema con IA: «we recommend finding the simplest solution possible, and only increasing complexity when needed» ([Anthropic](https://www.anthropic.com/engineering/building-effective-agents)).
+Lo más seguro es arrancar con la opción más sencilla que resuelva tu caso y medir antes de invertir más. Anthropic lo aconseja para cualquier sistema con IA: «we recommend finding the simplest solution possible, and only increasing complexity when needed» ([Anthropic](https://www.anthropic.com/engineering/building-effective-agents)).
 
 <Steps>
 
-1. **Elige un caso acotado**: un departamento, un tipo de pregunta y un conjunto de documentos (por ejemplo, el convenio y las políticas de RR. HH.).
-2. **Prepara los documentos** con la lista anterior.
-3. **Prueba con la herramienta que ya pagas**: NotebookLM si usáis Google Workspace, un agente de Copilot si tenéis Microsoft 365 Copilot, un proyecto de Claude o un plugin de ChatGPT.
-4. **Mide con tus diez preguntas**: cuántas acierta, cuántas cita bien y cuántas reconoce no saber.
-5. **Decide**: si funciona, amplía; si fallan volumen, permisos o integración, plantea un RAG a medida.
+1. **Acota un caso**: un departamento, un tipo de pregunta y un grupo de documentos (por ejemplo, el convenio y las políticas de RR. HH.).
+2. **Deja listos los documentos** siguiendo la lista anterior.
+3. **Empieza por la herramienta que ya pagas**: NotebookLM si usáis Google Workspace, un agente de Copilot si tenéis Microsoft 365 Copilot, un proyecto de Claude o un plugin de ChatGPT.
+4. **Evalúa con tus diez preguntas**: cuántas acierta, cuántas cita bien y en cuántas admite no saber.
+5. **Decide**: si va bien, amplía; si se atascan el volumen, los permisos o la integración, plantéate un RAG a medida.
 
 </Steps>
 
-Muchas empresas resuelven su caso con el paso 3 y no necesitan a nadie externo. Si tu caso necesita conectar varios sistemas o respetar permisos por persona, en nuestra [consultoría de agentes y automatización](/consultoria) montamos asistentes RAG sobre documentación propia: primero un caso piloto con métrica, un prototipo en 2 a 4 semanas validado por el equipo que lo usará y después la puesta en producción. Si prefieres que tu equipo aprenda a construirlo, la formación de agentes incluye un asistente sobre vuestra documentación interna. Y si no sabes qué opción te conviene, empieza por un [diagnóstico gratuito de 30 minutos](/diagnostico).
+Muchas empresas se quedan en el paso 3 y no necesitan a nadie de fuera. Cuando el caso obliga a conectar varios sistemas o a respetar permisos por persona, en nuestra [consultoría de agentes y automatización](/consultoria) montamos asistentes RAG sobre documentación propia: primero un piloto con métrica, luego un prototipo en 2 a 4 semanas que valida el equipo que va a usarlo y, por último, la puesta en producción. Si prefieres que sea tu equipo quien aprenda a construirlo, la formación de agentes incluye un asistente sobre vuestra documentación interna. Y si no tienes claro qué opción te encaja, arranca con un [diagnóstico gratuito de 30 minutos](/diagnostico).
 
 <FormacionCard slug="agentes-ia-automatizacion" />
 

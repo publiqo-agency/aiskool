@@ -3,41 +3,41 @@ title: "Prompt injection: qué es y cómo proteger tus agentes"
 description: "La prompt injection cuela órdenes ocultas en lo que lee una IA. Qué es, por qué encabeza el OWASP Top 10 de 2026 y cómo proteger los agentes de tu empresa."
 date: "2026-10-18"
 category: "gobernanza"
-tldr: "La prompt injection (inyección de prompts) es un ataque que esconde instrucciones en el texto que lee una IA para que haga algo que su dueño no quería. Es el riesgo n.º 1 del OWASP Top 10 para LLM 2026 y no tiene solución completa: en un agente se gestiona limitando lo que puede hacer."
+tldr: "La prompt injection (inyección de prompts) cuela instrucciones ocultas en el texto que lee una IA para que obedezca a otro y no a su dueño. Encabeza el OWASP Top 10 para LLM 2026 y no tiene cura completa: en un agente, el control está en acotar lo que puede hacer."
 faqs:
-  - q: "¿Es lo mismo prompt injection que jailbreak?"
-    a: "No exactamente. Según OWASP, el jailbreak es una forma de inyección de prompts en la que el atacante consigue que el modelo ignore por completo sus protocolos de seguridad. La inyección es la categoría amplia: cualquier entrada que altere el comportamiento del modelo, incluidas las órdenes escondidas en webs, correos o documentos que la IA lee sin que el usuario lo sepa."
-  - q: "¿Puede afectarme si solo uso ChatGPT o Copilot para redactar?"
-    a: "El riesgo es bajo si la herramienta solo genera texto y tú lo revisas. Sube cuando la IA lee contenido externo (webs, correos, PDF de terceros) y, sobre todo, cuando puede actuar: enviar correos, modificar registros o comprar. Aun así, conviene que tu equipo sepa que un documento puede llevar instrucciones ocultas y que la respuesta puede estar manipulada."
-  - q: "¿Un antivirus o un filtro de contenidos evita la inyección de prompts?"
-    a: "No por sí solo. El NCSC británico afirma que la inyección de prompts seguirá siendo un riesgo residual que no puede mitigarse por completo con un producto o un dispositivo. Los filtros de entrada y salida ayudan y OWASP los recomienda, pero deben combinarse con mínimo privilegio, aprobación humana en acciones de riesgo y pruebas de ataque."
-  - q: "¿Usar RAG o un modelo ajustado (fine-tuning) protege contra este ataque?"
-    a: "No. OWASP indica que la investigación muestra que RAG y el fine-tuning no mitigan del todo las vulnerabilidades de inyección de prompts. De hecho, un sistema con RAG añade una vía nueva: si alguien consigue meter un documento manipulado en la base de conocimiento, el asistente puede leer y seguir sus instrucciones. Hay que controlar qué fuentes entran."
-  - q: "¿Quién responde si un agente manipulado hace algo indebido?"
-    a: "Depende del caso y del contrato, pero en general la empresa que despliega la herramienta responde ante sus clientes de lo que hace en su nombre. Un tribunal canadiense ya condenó a Air Canada por la información errónea de su chatbot. Por eso conviene documentar qué puede hacer cada agente y quién lo aprobó, y revisar el caso con tu asesoría."
+  - q: "¿Prompt injection y jailbreak son lo mismo?"
+    a: "No del todo. OWASP ve el jailbreak como un caso concreto de inyección de prompts: aquel en que el atacante logra que el modelo se salte por completo sus protocolos de seguridad. La inyección abarca mucho más: cualquier entrada que tuerza el comportamiento del modelo, incluidas las órdenes camufladas en webs, correos o documentos que la IA lee sin que nadie se dé cuenta."
+  - q: "¿Me afecta si solo uso ChatGPT o Copilot para redactar?"
+    a: "Poco, mientras la herramienta se limite a generar texto que tú repasas. El riesgo crece cuando la IA consume contenido externo (webs, correos, PDF de terceros) y, sobre todo, cuando pasa a actuar: mandar correos, tocar registros o comprar. Aun en el primer caso, tu equipo debería saber que un documento puede esconder instrucciones y que una respuesta puede venir manipulada."
+  - q: "¿Un antivirus o un filtro de contenidos frena la inyección de prompts?"
+    a: "Ninguno de los dos basta por sí mismo. El NCSC británico sostiene que la inyección de prompts seguirá siendo un riesgo residual que ningún producto ni dispositivo elimina por completo. Filtrar lo que entra y lo que sale ayuda, y OWASP lo aconseja, pero hay que sumarlo al mínimo privilegio, a la aprobación humana en las acciones de riesgo y a las pruebas de ataque."
+  - q: "¿Me protege usar RAG o un modelo ajustado (fine-tuning) frente a este ataque?"
+    a: "No. OWASP recoge que, según la investigación, ni RAG ni el fine-tuning frenan del todo las vulnerabilidades de inyección de prompts. Es más, montar un RAG abre una puerta extra: si alguien cuela un documento manipulado en la base de conocimiento, el asistente puede leerlo y acatar sus órdenes. Por eso toca vigilar qué fuentes entran."
+  - q: "Si un agente manipulado hace algo indebido, ¿quién responde?"
+    a: "Depende del caso y del contrato, aunque, por norma, quien despliega la herramienta responde ante sus clientes de lo que esta hace en su nombre. En Canadá, un tribunal ya condenó a Air Canada por la información errónea que dio su chatbot. De ahí que convenga dejar por escrito qué puede hacer cada agente y quién lo aprobó, y revisar el caso con tu asesoría."
 ---
 
-La prompt injection, o inyección de prompts, es un ataque en el que alguien esconde instrucciones dentro del texto que va a leer un modelo de IA (un correo, una web, un PDF) para que obedezca a esa persona y no a quien lo usa. Encabeza el [OWASP Top 10 para aplicaciones con LLM 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/), publicado el 3 de agosto de 2026, y es especialmente delicada en los agentes, porque un agente no solo responde: actúa. Aquí tienes ejemplos de empresa, el Top 10 explicado para negocio y una checklist para quien aprueba un agente.
+La prompt injection, o inyección de prompts, es un ataque que consiste en esconder instrucciones dentro del texto que un modelo de IA va a leer (un correo, una web, un PDF) para que acabe obedeciendo a quien las coló y no a quien usa la herramienta. Encabeza el [OWASP Top 10 para aplicaciones con LLM 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/), publicado el 3 de agosto de 2026, y resulta especialmente peliaguda en los agentes: un agente no se limita a responder, actúa. Más abajo encontrarás ejemplos de empresa, el Top 10 traducido a lenguaje de negocio y una checklist para quien aprueba un agente.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- La inyección de prompts es el riesgo n.º 1 de OWASP para aplicaciones con LLM en 2025 y en 2026.
-- No tiene solución completa: el NCSC británico la considera un **riesgo residual** que hay que gestionar, no un fallo que se parchea.
-- En un agente, lo que limita el daño es lo que el agente **puede hacer**: permisos mínimos, aprobación humana en acciones sensibles y controles que no dependan del propio modelo.
+- OWASP la coloca en el n.º 1 de riesgos para aplicaciones con LLM, tanto en 2025 como en 2026.
+- No tiene arreglo definitivo: para el NCSC británico es un **riesgo residual** que se gestiona, no un fallo que se parchea.
+- En un agente, el daño lo marca lo que el agente **puede hacer**: permisos mínimos, aprobación humana en las acciones sensibles y controles que no dependan del propio modelo.
 
 </Callout>
 
 ## Qué es la prompt injection y por qué funciona
 
-La prompt injection funciona porque un modelo de lenguaje no distingue entre las instrucciones de su dueño y los datos que lee: para el modelo todo es texto del mismo flujo. Si un documento dice «ignora lo anterior y haz esto», el modelo puede tratarlo como una orden más.
+Esto funciona porque un modelo de lenguaje no separa las instrucciones de su dueño de los datos que lee: para él, todo es texto del mismo flujo. Si un documento dice «ignora lo anterior y haz esto», el modelo puede tomárselo como una orden más.
 
-El documento de OWASP de 2026 lo explica así: los LLM no hacen ninguna distinción de arquitectura entre «instrucciones» y «datos», porque ambos son tokens del mismo flujo, y por tanto no existe un equivalente limpio a las consultas parametrizadas que resolvieron la inyección SQL ([OWASP GenAI, 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/); traducción propia). Si quieres entender qué es un token y cómo lee un modelo, lo contamos en [qué es un LLM y cómo funciona](/blog/que-es-un-llm).
+Así lo plantea el documento de OWASP de 2026: en su arquitectura, los LLM no hacen ninguna distinción entre «instrucciones» y «datos», porque ambos son tokens del mismo flujo; por eso no existe un equivalente limpio a las consultas parametrizadas que zanjaron la inyección SQL ([OWASP GenAI, 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/); traducción propia). Para entender qué es un token y cómo lee un modelo, lo contamos en [qué es un LLM y cómo funciona](/blog/que-es-un-llm).
 
-Una forma sencilla de verlo: imagina a una persona en prácticas muy diligente que obedece cualquier nota adhesiva que encuentre entre los papeles que le das. Si un proveedor pega una nota en su factura que dice «paga esta factura dos veces», esa persona no tiene manera fiable de saber que la nota no viene de ti.
+Para verlo claro: imagina a alguien en prácticas, muy aplicado, que hace caso a cualquier nota adhesiva que aparezca entre los papeles que le entregas. Si un proveedor engancha en su factura un «paga esta factura dos veces», esa persona no tiene forma fiable de saber que la nota no la escribiste tú.
 
 ### Inyección directa e indirecta
 
-[OWASP distingue dos tipos](https://genai.owasp.org/llmrisk/llm01-prompt-injection/): la **directa**, cuando es el propio usuario quien escribe la entrada que altera el comportamiento del modelo, y la **indirecta**, cuando el modelo acepta contenido de fuentes externas, como webs o ficheros, y ese contenido trae las instrucciones. La indirecta es la que más preocupa: al atacante le basta con que tu IA lea algo suyo.
+[OWASP separa dos tipos](https://genai.owasp.org/llmrisk/llm01-prompt-injection/): la **directa**, cuando es el propio usuario quien teclea la entrada que altera el comportamiento del modelo, y la **indirecta**, cuando el modelo se traga contenido de fuentes externas, como webs o ficheros, y es ese contenido el que carga las instrucciones. La indirecta inquieta más: al atacante le basta con que tu IA lea algo suyo.
 
 | Tipo | Quién mete la orden | Ejemplo en una empresa | Por qué preocupa |
 |---|---|---|---|
@@ -47,9 +47,9 @@ Una forma sencilla de verlo: imagina a una persona en prácticas muy diligente q
 
 ## Por qué los agentes multiplican el riesgo
 
-Los agentes multiplican el riesgo porque conectan el modelo con herramientas reales: correo, CRM, hojas de cálculo, pagos o un navegador. En un chat, una orden inyectada produce como mucho una respuesta mala que alguien puede revisar. En un agente, esa misma orden puede convertirse en un correo enviado, un dato filtrado o una compra hecha.
+Los agentes elevan el riesgo porque enchufan el modelo a herramientas reales: correo, CRM, hojas de cálculo, pagos o un navegador. En un chat, una orden inyectada como mucho da una respuesta mala que alguien revisará. En un agente, esa misma orden puede acabar en un correo enviado, un dato filtrado o una compra hecha.
 
-OpenAI define los agentes como sistemas que realizan tareas de forma independiente en tu nombre, con tres piezas: el modelo, las herramientas y las instrucciones ([OpenAI, guía práctica para construir agentes, 2025](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)). Cada herramienta es una capacidad más que un atacante puede intentar usar (definición completa en [qué es un agente de IA](/blog/que-es-un-agente-de-ia)).
+Para OpenAI, un agente es un sistema que ejecuta tareas de forma independiente en tu nombre a partir de tres piezas: el modelo, las herramientas y las instrucciones ([OpenAI, guía práctica para construir agentes, 2025](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)). Y cada herramienta es una capacidad de más que un atacante puede intentar aprovechar (definición completa en [qué es un agente de IA](/blog/que-es-un-agente-de-ia)).
 
 <Flujo titulo="Cómo se encadena un ataque indirecto" pasos="Un tercero esconde una orden en un correo o documento|El agente lo lee para resumirlo o procesarlo|El modelo toma la orden como propia|El agente usa sus herramientas|Fuga de datos o acción no autorizada" />
 
@@ -63,14 +63,14 @@ OpenAI define los agentes como sistemas que realizan tareas de forma independien
 
 ## El OWASP Top 10 para LLM 2026, explicado para negocio
 
-El OWASP Top 10 para aplicaciones con LLM 2026 es la lista de referencia de los diez riesgos de seguridad más críticos de las aplicaciones basadas en modelos de lenguaje. La publicó el proyecto OWASP GenAI Security el 3 de agosto de 2026, mantiene la inyección de prompts en el n.º 1 y sube la «agencia excesiva» al n.º 3, un cambio que el propio documento califica como el de más consecuencias, porque es en los despliegues de agentes donde se está produciendo el daño.
+El OWASP Top 10 para aplicaciones con LLM 2026 es la lista de referencia con los diez riesgos de seguridad más críticos de las aplicaciones basadas en modelos de lenguaje. El proyecto OWASP GenAI Security la publicó el 3 de agosto de 2026: deja la inyección de prompts en el n.º 1 y asciende la «agencia excesiva» al n.º 3, un movimiento que el propio documento señala como el de mayores consecuencias, porque el daño se está dando justo en los despliegues de agentes.
 
 <Stats>
   <Stat valor="N.º 1" etiqueta="Puesto de la prompt injection en el Top 10 para LLM de 2025 y de 2026" fuente="OWASP GenAI, 2026" href="https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/" />
   <Stat valor="10" etiqueta="Riesgos propios de los agentes en el Top 10 para aplicaciones agénticas 2026" fuente="OWASP GenAI, dic. 2025" href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" />
 </Stats>
 
-La tabla resume cada riesgo con su nombre original y lo que significa para una empresa usuaria. La columna de ejemplos es nuestra, para aterrizarlo. La edición de 2026 amplía además la inyección de prompts a los ataques entre formatos, que esconden instrucciones en una imagen o en una pista de audio.
+La tabla recoge cada riesgo con su nombre original y lo que supone para una empresa usuaria. La columna de ejemplos la ponemos nosotros, para aterrizar cada punto. La edición de 2026 estira además la inyección de prompts hacia los ataques entre formatos, los que esconden instrucciones en una imagen o en una pista de audio.
 
 | N.º | Riesgo (nombre original) | Qué significa | Ejemplo en una empresa |
 |---|---|---|---|
@@ -85,78 +85,78 @@ La tabla resume cada riesgo con su nombre original y lo que significa para una e
 | 9 | Vector and Embedding Weaknesses | Fallos en la búsqueda semántica que usa el RAG | Un usuario recupera fragmentos de documentos de otro departamento |
 | 10 | Improper Output Handling | La salida de la IA se usa sin validar en otros sistemas | Un texto generado que se ejecuta como código o se inserta en la web |
 
-El riesgo 7 conecta con otro tema que tratamos aparte: [por qué la IA se inventa datos y cómo evitarlo](/blog/alucinaciones-ia).
+El riesgo 7 enlaza con un tema que abordamos por separado: [por qué la IA se inventa datos y cómo evitarlo](/blog/alucinaciones-ia).
 
 ### Y los riesgos propios de los agentes
 
-Para los agentes, OWASP publicó el 9 de diciembre de 2025 una lista específica, el [Top 10 para aplicaciones agénticas 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), con los riesgos ASI01 a ASI10. Para una empresa usuaria destacan el secuestro del objetivo del agente (ASI01), el mal uso de sus herramientas (ASI02), el abuso de identidad y privilegios (ASI03), el envenenamiento de memoria y contexto (ASI06) y la explotación de la confianza entre persona y agente (ASI09): aprobar lo que el agente propone sin leerlo.
+Para los agentes, el 9 de diciembre de 2025 OWASP sacó una lista propia, el [Top 10 para aplicaciones agénticas 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/), con los riesgos ASI01 a ASI10. A una empresa usuaria le interesan sobre todo el secuestro del objetivo del agente (ASI01), el mal uso de sus herramientas (ASI02), el abuso de identidad y privilegios (ASI03), el envenenamiento de memoria y contexto (ASI06) y la explotación de la confianza entre persona y agente (ASI09): dar el visto bueno a lo que el agente propone sin leerlo.
 
 <CtaInline />
 
 ## ¿Se puede evitar del todo? Lo que dicen el NCSC y OWASP
 
-No, la inyección de prompts no se puede evitar del todo con la tecnología actual. El NCSC británico sostiene que es muy posible que nunca se mitigue por completo, como sí se consiguió con la inyección SQL, y OWASP reconoce que no está claro que existan métodos infalibles. La respuesta realista es diseñar asumiendo que, alguna vez, el modelo será engañado.
+No: con la tecnología de hoy, la inyección de prompts no se elimina por completo. El NCSC británico cree muy probable que nunca llegue a mitigarse del todo, como sí ocurrió con la inyección SQL, y OWASP admite que no está claro que haya métodos infalibles. Lo realista es diseñar dando por hecho que, en algún momento, el modelo caerá en el engaño.
 
-Según el NCSC, estos ataques seguirán siendo un riesgo residual que no se resuelve con un producto o un dispositivo ([NCSC, 8 de diciembre de 2025](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)). La [página de OWASP sobre LLM01](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) añade que RAG y el fine-tuning tampoco lo mitigan del todo. Para la terminología técnica, la referencia es la taxonomía [NIST AI 100-2 E2025](https://csrc.nist.gov/pubs/ai/100/2/e2025/final) (marzo de 2025).
+Para el NCSC, estos ataques seguirán siendo un riesgo residual que ningún producto ni dispositivo resuelve ([NCSC, 8 de diciembre de 2025](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection)). La [página de OWASP sobre LLM01](https://genai.owasp.org/llmrisk/llm01-prompt-injection/) añade que ni RAG ni el fine-tuning lo mitigan del todo. Para la terminología técnica, la referencia es la taxonomía [NIST AI 100-2 E2025](https://csrc.nist.gov/pubs/ai/100/2/e2025/final) (marzo de 2025).
 
 <Callout tipo="aviso" titulo="Tres ideas que conviene desterrar">
 
-- **«Con un buen prompt de sistema queda resuelto».** Ayuda a reducir el riesgo, pero no lo elimina, según OWASP y el NCSC.
-- **«Es como la inyección SQL y se arregla igual».** El NCSC califica esa comparación de peligrosa, porque lleva a buscar un parche que no existe.
-- **«Si nadie hace clic en nada, no hay riesgo».** Los ataques de «cero clics» que describe la AEPD funcionan solo con que el agente lea el contenido.
+- **«Con un buen prompt de sistema queda resuelto».** Reduce el riesgo, sí, pero no lo borra, según OWASP y el NCSC.
+- **«Es como la inyección SQL y se arregla igual».** El NCSC tacha esa comparación de peligrosa, porque empuja a buscar un parche que no existe.
+- **«Si nadie hace clic en nada, no hay riesgo».** Los ataques de «cero clics» que relata la AEPD funcionan con que el agente, simplemente, lea el contenido.
 
 </Callout>
 
-No hay que renunciar a los agentes: hay que trasladar la seguridad a lo que rodea al modelo, es decir, qué puede tocar, qué necesita aprobación y qué queda registrado.
+No se trata de renunciar a los agentes, sino de llevar la seguridad a lo que rodea al modelo: qué puede tocar, qué exige aprobación y qué queda registrado.
 
 ## Cómo proteger un agente antes de aprobarlo
 
-Proteger un agente consiste sobre todo en limitar el daño posible si el modelo es engañado: darle solo los permisos imprescindibles, exigir aprobación humana en las acciones sensibles o irreversibles y poner controles que no dependan del propio LLM. Las estrategias de OWASP, del NCSC y de la AEPD coinciden en ese enfoque.
+Proteger un agente es, ante todo, acotar el daño que haría si el modelo cae en el engaño: concederle solo los permisos imprescindibles, pedir aprobación humana en lo sensible o irreversible y añadir controles que no dependan del propio LLM. OWASP, el NCSC y la AEPD coinciden en ese enfoque.
 
-OWASP propone, entre otras medidas, mínimo privilegio, filtrar entradas y salidas, separar el contenido externo, aprobación humana para acciones de alto riesgo y pruebas de ataque. OpenAI pone ejemplos de esas acciones: cancelar pedidos, autorizar reembolsos grandes o hacer pagos ([OpenAI, 2025](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)). Convertido en checklist para quien aprueba:
+Entre otras medidas, OWASP plantea el mínimo privilegio, filtrar entradas y salidas, aislar el contenido externo, aprobación humana para las acciones de alto riesgo y pruebas de ataque. OpenAI ilustra esas acciones: cancelar pedidos, autorizar reembolsos grandes o hacer pagos ([OpenAI, 2025](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)). Llevado a una checklist para quien aprueba:
 
 <Checklist titulo="Antes de dar el visto bueno a un agente">
 
-- Hay una lista escrita de lo que el agente **puede** hacer, y usa una cuenta propia con acceso mínimo, nunca una de administrador.
-- Pagos, envíos externos, borrados y cambios de datos maestros piden confirmación de una persona.
-- Hay límites que no dependen del modelo: importe máximo, destinatarios permitidos, acciones por hora.
-- El contenido externo (correos, webs, adjuntos) se trata como no fiable y no puede cambiar las instrucciones.
-- La salida no puede cargar imágenes ni enlaces externos arbitrarios, para cerrar la fuga por URL.
-- Las instrucciones internas no contienen contraseñas ni claves: OWASP recomienda asumir que ese contexto oculto se puede descubrir.
-- Se controla quién puede añadir documentos a la base de conocimiento, y se guardan registros de lo que el agente lee y hace.
-- Se ha probado con ataques simulados, y quien lo usa sabe que una respuesta puede estar manipulada.
+- Existe una lista escrita de lo que el agente **puede** hacer, y trabaja con una cuenta propia de acceso mínimo, nunca una de administrador.
+- Pagos, envíos al exterior, borrados y cambios en datos maestros pasan por la confirmación de una persona.
+- Hay topes que no dependen del modelo: importe máximo, destinatarios permitidos, acciones por hora.
+- El contenido externo (correos, webs, adjuntos) se considera no fiable y no puede reescribir las instrucciones.
+- La salida no puede cargar imágenes ni enlaces externos arbitrarios, con lo que se cierra la fuga por URL.
+- Las instrucciones internas no guardan contraseñas ni claves: OWASP aconseja dar por hecho que ese contexto oculto puede acabar a la vista.
+- Se controla quién añade documentos a la base de conocimiento y se conservan registros de lo que el agente lee y hace.
+- Se ha puesto a prueba con ataques simulados, y quien lo utiliza sabe que una respuesta puede venir manipulada.
 
 </Checklist>
 
-Menos datos expuestos significa menos que filtrar: lo complementan nuestra guía de [qué datos no meter nunca en ChatGPT ni en ninguna IA](/blog/que-datos-no-meter-en-chatgpt) y el artículo sobre [Shadow AI (IA en la sombra)](/blog/shadow-ai-riesgos).
+Cuantos menos datos expuestos, menos hay que filtrar: lo redondean nuestra guía de [qué datos no meter nunca en ChatGPT ni en ninguna IA](/blog/que-datos-no-meter-en-chatgpt) y el artículo sobre [Shadow AI (IA en la sombra)](/blog/shadow-ai-riesgos).
 
 ## Qué dicen el AI Act y la AEPD
 
-El AI Act (Reglamento europeo de IA, Reglamento (UE) 2024/1689) exige que los sistemas de alto riesgo sean robustos y ciberseguros (art. 15), y la AEPD trata la inyección de prompts como un riesgo de protección de datos en sus orientaciones sobre IA agéntica. Para la mayoría de empresas usuarias, el marco práctico es el RGPD y su política interna.
+El AI Act (Reglamento europeo de IA, Reglamento (UE) 2024/1689) pide que los sistemas de alto riesgo sean robustos y ciberseguros (art. 15), y la AEPD aborda la inyección de prompts como un riesgo de protección de datos en sus orientaciones sobre IA agéntica. Para la mayoría de empresas usuarias, el marco que cuenta en el día a día es el RGPD y su política interna.
 
-Tras el Digital Omnibus ([Reglamento (UE) 2026/1744](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744), en vigor desde el 27 de julio de 2026), un sistema de alto riesgo que entre en el ámbito del Reglamento de Ciberresiliencia y cumpla las condiciones de su art. 12.1 se considera conforme con los requisitos de ciberseguridad del art. 15 (nuevo art. 42.3). Un agente que resume correos no suele ser de alto riesgo, pero si trata datos personales hay que analizar estos riesgos, y qué herramientas y conexiones se permiten debe quedar en la [política de uso de IA de la empresa](/blog/politica-uso-ia-empresa).
+Tras el Digital Omnibus ([Reglamento (UE) 2026/1744](https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=OJ:L_202601744), en vigor desde el 27 de julio de 2026), un sistema de alto riesgo que caiga dentro del Reglamento de Ciberresiliencia y cumpla las condiciones de su art. 12.1 se da por conforme con los requisitos de ciberseguridad del art. 15 (nuevo art. 42.3). Un agente que resume correos no suele ser de alto riesgo, pero, si trata datos personales, toca analizar estos riesgos; y qué herramientas y conexiones se permiten debe figurar en la [política de uso de IA de la empresa](/blog/politica-uso-ia-empresa).
 
 ## Cuándo no necesitas ayuda externa y qué hacer ahora
 
-Si tu equipo usa ChatGPT, Claude o Copilot con cuentas de empresa solo para redactar y resumir, sin conectores que actúen y revisando lo que sale, no necesitas una auditoría de seguridad: te basta con formación y una política de uso clara. La revisión de diseño compensa cuando un agente puede enviar, modificar, pagar o leer datos de clientes.
+Si tu equipo usa ChatGPT, Claude o Copilot con cuentas de empresa solo para redactar y resumir, sin conectores que actúen y repasando lo que sale, no te hace falta una auditoría de seguridad: basta con formación y una política de uso clara. Revisar el diseño compensa cuando un agente puede enviar, modificar, pagar o leer datos de clientes.
 
 <Steps>
 
-1. **Haz inventario** de asistentes y agentes: qué leen y qué pueden hacer.
-2. **Clasifica por capacidad de acción:** leer y responder es riesgo bajo; enviar, modificar o pagar, alto.
-3. **Recorta permisos.** Quita lo que no se usa y pon confirmación humana en lo irreversible.
-4. **Pasa la checklist** de arriba a cada agente con capacidad de acción antes de ampliarlo.
-5. **Forma a quien lo usa** para que reconozca respuestas manipuladas y no apruebe a ciegas.
+1. **Haz inventario** de asistentes y agentes: qué leen y qué son capaces de hacer.
+2. **Clasifica por capacidad de acción:** leer y responder es riesgo bajo; enviar, modificar o pagar, riesgo alto.
+3. **Recorta permisos.** Retira lo que no se usa y añade confirmación humana en lo irreversible.
+4. **Aplica la checklist** de arriba a cada agente con capacidad de acción antes de ampliarlo.
+5. **Forma a quien lo usa** para que detecte respuestas manipuladas y no dé su visto bueno a ciegas.
 
 </Steps>
 
-Si estás diseñando agentes conectados a tus sistemas, en nuestra [consultoría de agentes y automatización](/consultoria) revisamos permisos, puntos de aprobación humana y pruebas antes de pasar del piloto a producción, y para equipos técnicos tenemos la formación de [desarrollo con LLMs y agentes](/formaciones/formacion-tecnica-llm), que incluye un módulo de seguridad y prompt injection. Las plantillas de política de uso están en [recursos](/recursos).
+Si estás diseñando agentes conectados a tus sistemas, en nuestra [consultoría de agentes y automatización](/consultoria) repasamos permisos, puntos de aprobación humana y pruebas antes de dar el salto del piloto a producción; y, para equipos técnicos, está la formación de [desarrollo con LLMs y agentes](/formaciones/formacion-tecnica-llm), con un módulo de seguridad y prompt injection. Las plantillas de política de uso las tienes en [recursos](/recursos).
 
 <FormacionCard slug="agentes-ia-automatizacion" />
 
 <Callout tipo="legal">
 
-Este artículo es informativo y no es asesoramiento jurídico ni una auditoría de seguridad. Si tus agentes tratan datos personales o intervienen en decisiones sobre personas, consulta con tu asesoría legal y con tu responsable de seguridad.
+Este artículo es informativo y no es asesoramiento jurídico ni una auditoría de seguridad. Si tus agentes tratan datos personales o participan en decisiones sobre personas, consulta con tu asesoría legal y con tu responsable de seguridad.
 
 </Callout>
 
