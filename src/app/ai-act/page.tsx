@@ -8,13 +8,14 @@ import { CtaBand } from "@/components/ui/CtaBand";
 export const metadata = pageMetadata({
   title: "AI Act y alfabetización en IA (art. 4): qué debe hacer tu empresa",
   description:
-    "Qué exige el artículo 4 del Reglamento Europeo de IA sobre alfabetización, a quién afecta y cómo documentarlo. Pack Cumplimiento Art. 4: formación, política de uso, inventario y evidencias.",
+    "Qué exige el artículo 4 del Reglamento Europeo de IA sobre alfabetización, a quién afecta y cómo documentarlo. Pack Art. 4: formación, política de uso, inventario y evidencias.",
   path: "/ai-act",
 });
 
 /*
- * TODO(legal): revisar todo el texto de esta página con el equipo legal y verificar en EUR-Lex
- * la redacción vigente del art. 4 tras el Reglamento «Digital Omnibus» de 2026 antes de publicar.
+ * Redacción del art. 4 verificada en EUR-Lex: Reglamento (UE) 2026/1744 (DOUE 24/7/2026, en vigor el 27/7/2026).
+ * No somos abogados: esta página informa y vende formación y documentación, nunca asesoramiento jurídico ni
+ * «certificación» de cumplimiento. Ver docs/LIMITES-LEGALES.md antes de tocar el texto.
  */
 
 const pack = [
@@ -32,7 +33,7 @@ const faqs = [
   },
   {
     q: "¿Exige un certificado o un número mínimo de horas?",
-    a: "No fija horas ni títulos. Pide medidas adecuadas teniendo en cuenta los conocimientos técnicos, la experiencia y la formación de las personas, y el contexto en el que se usa la IA. Por eso conviene diseñar la formación por perfiles y documentarla.",
+    a: "No. No fija horas, títulos ni certificados oficiales, y tampoco exige que la imparta un formador acreditado. Pide medidas adecuadas teniendo en cuenta los conocimientos técnicos, la experiencia y la formación de las personas, y el contexto en el que se usa la IA. Por eso conviene diseñar la formación por perfiles y documentarla.",
   },
   {
     q: "¿Hay multas por no cumplir el artículo 4?",
@@ -44,24 +45,41 @@ const faqs = [
   },
   {
     q: "¿Qué pasa con los sistemas de alto riesgo?",
-    a: "Si usas IA en ámbitos como selección de personal, evaluación de empleados o acceso a servicios esenciales, hay obligaciones adicionales (supervisión humana, formación específica, información). Te ayudamos a identificarlos y te derivamos a asesoría jurídica cuando haga falta.",
+    a: "Si usas IA en ámbitos como selección de personal, evaluación de empleados o acceso a servicios esenciales, hay obligaciones adicionales (supervisión humana, formación específica, información). En la formación te enseñamos a reconocerlos; la valoración jurídica de cada caso corresponde a tu asesoría legal.",
   },
+];
+
+const keyPoints = [
+  "Pide adoptar medidas, no un certificado",
+  "Sin horas mínimas ni formador acreditado",
+  "Contenido formativo. No es asesoramiento jurídico",
 ];
 
 export default function AiActPage() {
   return (
     <>
       <PageHeader
+        figure="pyramid"
         eyebrow="Reglamento Europeo de IA · Art. 4"
         title="Alfabetización en IA: qué debe hacer tu empresa"
         crumbs={[{ name: "AI Act", path: "/ai-act" }]}
-        intro="El AI Act pide a las empresas que usan IA que su personal tenga los conocimientos suficientes para usarla con criterio. Te explicamos qué significa, sin alarmismos, y te ayudamos a demostrarlo."
+        intro="El AI Act pide a las empresas que usan IA que adopten medidas para que su personal aprenda a usarla con criterio. Te explicamos qué significa, sin alarmismos, y te ayudamos a documentarlo."
+        footer={
+          <ul className="grid gap-4 border-t border-white/15 pt-6 sm:grid-cols-3">
+            {keyPoints.map((p, i) => (
+              <li key={p} className="flex items-baseline gap-4">
+                <span className="eyebrow text-white/40 color:text-white/70">0{i + 1}</span>
+                <span className="text-white/85">{p}</span>
+              </li>
+            ))}
+          </ul>
+        }
       >
         <div className="flex flex-wrap gap-3">
           <BracketButton href="/test-ai-act" tone="accent" size="lg">
             Haz el test (3 min)
           </BracketButton>
-          <BracketButton href="/presupuesto?formacion=alfabetizacion-ia" size="lg">
+          <BracketButton href="/presupuesto?formacion=alfabetizacion-ia" tone="dark" size="lg">
             Pedir el Pack Art. 4
           </BracketButton>
         </div>
@@ -78,9 +96,10 @@ export default function AiActPage() {
               usarla de forma informada, conocer sus oportunidades y sus riesgos y saber qué daños puede causar.
             </p>
             <p>
-              En 2026 el Reglamento se ha revisado dentro del paquete de simplificación conocido como «Digital Omnibus». El enfoque se
-              mantiene: medidas razonables y proporcionadas según el perfil de cada persona y el uso que hace de la IA, no un examen ni
-              un título obligatorio.
+              Desde el 27 de julio de 2026, el Reglamento (UE) 2026/1744, conocido como «Digital Omnibus», da al artículo 4 una
+              redacción nueva: las empresas deben <strong>adoptar medidas para apoyar</strong> la alfabetización de su personal según
+              sus conocimientos, su experiencia y el contexto de uso, sin estar obligadas a garantizar un nivel concreto en cada
+              persona. Medidas razonables y proporcionadas, no un examen ni un título obligatorio.
             </p>
             <h2>Qué significa en la práctica</h2>
             <ul>
@@ -104,7 +123,7 @@ export default function AiActPage() {
 
           <aside className="md:col-span-4 md:col-start-9">
             <div className="rounded-[18px] bg-night p-7 text-white md:sticky md:top-28">
-              <p className="eyebrow text-white/60">Pack Cumplimiento Art. 4</p>
+              <p className="eyebrow text-white/60">Pack Art. 4</p>
               <p className="display mt-4 text-[2.2rem]">desde 2.900 €</p>
               <p className="text-white/60">por empresa · IVA no incluido</p>
               <ul className="mt-6 space-y-2 text-white/80">
@@ -136,8 +155,9 @@ export default function AiActPage() {
             ))}
           </ol>
           <p className="mt-6 text-[0.9rem] text-muted">
-            Te ayudamos a documentar las medidas; la responsabilidad del cumplimiento sigue siendo de la empresa. No sustituye al
-            asesoramiento jurídico.
+            Formamos y te ayudamos a documentar las medidas; la responsabilidad del cumplimiento sigue siendo de la empresa. No
+            prestamos asesoramiento jurídico ni certificamos el cumplimiento: para cuestiones legales concretas, consulta con tu
+            asesoría legal.
           </p>
         </div>
       </section>

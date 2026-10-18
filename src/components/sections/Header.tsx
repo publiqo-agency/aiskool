@@ -7,15 +7,33 @@ import { nav, site } from "@/lib/site";
 import { BracketButton } from "@/components/ui/BracketButton";
 import { Logo } from "@/components/ui/Logo";
 
-/** Rutas que empiezan con hero oscuro: el header arranca en modo claro sobre oscuro. */
-const darkHeroRoutes = ["/"];
+/** «Color» y «Mezcla»: tarjeta blanca flotante desde arriba, como en Founderz. */
+const floating =
+  "color:mt-3 color:max-w-[min(1360px,calc(100%-1.5rem))] color:rounded-[18px] color:border color:border-black/5 color:bg-white/95 color:px-4 color:py-2.5 color:shadow-[0_10px_40px_-18px_rgba(20,10,50,0.35)] color:backdrop-blur-md color:md:px-6 " +
+  "mezcla:mt-3 mezcla:max-w-[min(1360px,calc(100%-1.5rem))] mezcla:rounded-[18px] mezcla:border mezcla:border-black/5 mezcla:bg-white/95 mezcla:px-4 mezcla:py-2.5 mezcla:shadow-[0_10px_40px_-18px_rgba(20,10,50,0.35)] mezcla:backdrop-blur-md mezcla:md:px-6";
+
+/** Rutas (y sus subrutas) que empiezan con hero oscuro: el header arranca en modo claro sobre oscuro. */
+const darkHeroRoutes = [
+  "/formaciones",
+  "/formacion-ia",
+  "/cursos",
+  "/ai-act",
+  "/test-ai-act",
+  "/consultoria",
+  "/metodologia",
+  "/diagnostico",
+  "/presupuesto",
+  "/precios",
+  "/nosotros",
+  "/recursos",
+];
 
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
-  const onDark = darkHeroRoutes.includes(pathname) && !scrolled;
+  const onDark = !scrolled && (pathname === "/" || darkHeroRoutes.some((r) => pathname === r || pathname.startsWith(r + "/")));
 
   useEffect(() => {
     let last = window.scrollY;
@@ -48,9 +66,9 @@ export function Header() {
           scrolled
             ? "mt-3 max-w-[1100px] rounded-[14px] border border-line/70 bg-surface/85 px-3 py-2 shadow-[0_8px_30px_-12px_rgba(0,0,0,0.18)] backdrop-blur-md md:px-4"
             : "max-w-[1440px] px-4 py-5 md:px-10"
-        } ${open ? "mx-3" : "mx-3 md:mx-auto"}`}
+        } ${floating} ${open ? "mx-3" : "mx-3 md:mx-auto"}`}
       >
-        <Link href="/" aria-label={`${site.name}, inicio`} className={onDark ? "text-white" : "text-ink"}>
+        <Link href="/" aria-label={`${site.name}, inicio`} className={`${onDark ? "text-white" : "text-ink"} color:text-ink mezcla:text-ink`}>
           <Logo compact={scrolled} />
         </Link>
 
@@ -62,10 +80,10 @@ export function Header() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className={`group/nav relative block overflow-hidden px-4 py-2 eyebrow ${onDark ? "text-white/85 hover:text-white" : "text-ink-soft hover:text-ink"} ${active ? "!text-accent" : ""}`}
+                    className={`group/nav relative block overflow-hidden px-4 py-2 eyebrow ${onDark ? "text-white/85 hover:text-white" : "text-ink-soft hover:text-ink"} color:text-ink-soft color:hover:text-ink mezcla:text-ink-soft mezcla:hover:text-ink ${active ? "!text-accent" : ""}`}
                   >
                     {/* esquinas al pasar el ratón */}
-                    <span aria-hidden className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/nav:opacity-100">
+                    <span aria-hidden className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/nav:opacity-100 color:hidden">
                       <span className="absolute top-0 left-0 size-[6px] border-t border-l border-current" />
                       <span className="absolute top-0 right-0 size-[6px] border-t border-r border-current" />
                       <span className="absolute bottom-0 left-0 size-[6px] border-b border-l border-current" />
@@ -92,7 +110,7 @@ export function Header() {
           </span>
           <button
             type="button"
-            className={`grid size-[42px] place-items-center rounded-[8px] lg:hidden ${onDark && !open ? "text-white" : "text-ink"}`}
+            className={`grid size-[42px] place-items-center rounded-[8px] lg:hidden ${onDark && !open ? "text-white" : "text-ink"} color:text-ink mezcla:text-ink`}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
@@ -109,7 +127,7 @@ export function Header() {
       {/* Menú móvil */}
       <div
         id="mobile-menu"
-        className={`mx-3 mt-2 overflow-hidden rounded-[14px] border border-line bg-surface transition-all duration-500 ease-expo lg:hidden ${open ? "max-h-[80dvh] opacity-100" : "pointer-events-none max-h-0 opacity-0"}`}
+        className={`mx-3 mt-2 overflow-hidden rounded-[14px] border border-line bg-surface color:rounded-[18px] color:bg-white transition-all duration-500 ease-expo lg:hidden ${open ? "max-h-[80dvh] opacity-100" : "pointer-events-none max-h-0 opacity-0"}`}
       >
         <ul className="flex flex-col p-4">
           {nav.map((item) => (

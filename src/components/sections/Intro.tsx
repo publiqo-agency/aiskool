@@ -7,11 +7,12 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 import { DotIllustration } from "@/components/motion/DotIllustration";
 import { BracketButton } from "@/components/ui/BracketButton";
 
+// «Color»: violeta, coral, lavanda y menta. «Mezcla»: coral, violeta, lima y rosa (tokens).
 const tones = {
-  night: { card: "bg-night text-white", dot: "#f3f2ee" },
-  cobalt: { card: "bg-cobalt text-white", dot: "#ffffff" },
-  sage: { card: "bg-sage text-ink", dot: "#111214" },
-  sand: { card: "bg-sand text-ink", dot: "#111214" },
+  night: { card: "bg-night text-white color:bg-violet mezcla:bg-coral", dot: "#f3f2ee" },
+  cobalt: { card: "bg-cobalt text-white color:bg-coral", dot: "#ffffff" },
+  sage: { card: "bg-sage text-ink color:bg-lavender", dot: "#111214" },
+  sand: { card: "bg-sand text-ink color:bg-mint", dot: "#111214" },
 } as const;
 
 /** Panel claro que sube sobre el hero + los 4 pilares. */
@@ -34,10 +35,10 @@ export function Intro() {
   );
 
   return (
-    <section className="relative z-20 -mt-6 rounded-t-[22px] bg-paper pt-24 pb-24 md:pt-36 md:pb-36" aria-labelledby="intro-title">
+    <section className="relative z-20 -mt-6 rounded-t-[22px] bg-paper color:mt-0 color:rounded-none pt-24 pb-24 md:pt-36 md:pb-36" aria-labelledby="intro-title">
       <div className="container-x grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <p className="eyebrow text-muted">El problema</p>
+          <p className="eyebrow tag text-muted color:text-accent">El problema</p>
           <SplitReveal id="intro-title" className="display mt-4 text-[clamp(2rem,4.2vw,3.6rem)]">
             Tu equipo ya usa IA. La pregunta es cómo.
           </SplitReveal>
@@ -59,13 +60,13 @@ export function Intro() {
         </div>
       </div>
 
-      <ul ref={cards} className="container-x mt-20 grid grid-cols-1 sm:grid-cols-2 md:mt-28 lg:grid-cols-4">
+      <ul ref={cards} className="container-x mt-20 grid grid-cols-1 color:gap-4 sm:grid-cols-2 md:mt-28 lg:grid-cols-4">
         {pillars.map((p, i) => {
           const t = tones[p.tone];
           return (
             <li
               key={p.n}
-              className={`pillar relative flex min-h-[520px] flex-col rounded-[20px] p-7 md:min-h-[600px] ${t.card} ${i > 0 ? "lg:-ml-5" : ""} max-lg:mt-[-16px] max-sm:first:mt-0 sm:max-lg:[&:nth-child(-n+2)]:mt-0`}
+              className={`pillar relative flex min-h-[520px] flex-col rounded-[20px] p-7 color:rounded-[28px] mezcla:rounded-[26px] md:min-h-[600px] ${t.card} ${i > 0 ? "lg:-ml-5 color:lg:ml-0" : ""} max-lg:mt-[-16px] color:max-lg:mt-0 max-sm:first:mt-0 sm:max-lg:[&:nth-child(-n+2)]:mt-0`}
               style={{ zIndex: i + 1 }}
             >
               <h3 className="display text-center text-[clamp(1.6rem,2.4vw,2.2rem)]">{p.title}</h3>

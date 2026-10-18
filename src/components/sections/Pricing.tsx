@@ -3,14 +3,15 @@ import { prices } from "@/lib/site";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { BracketButton } from "@/components/ui/BracketButton";
 
-export function Pricing({ heading = true }: { heading?: boolean }) {
+/** `overlap`: sin fondo ni margen superior, para montar las tarjetas sobre el banner de la página de precios. */
+export function Pricing({ heading = true, overlap = false }: { heading?: boolean; overlap?: boolean }) {
   return (
-    <section className="bg-paper py-24 md:py-36" aria-labelledby={heading ? "pricing-title" : undefined}>
+    <section className={overlap ? "pb-24 md:pb-36" : "bg-paper py-24 md:py-36"} aria-labelledby={heading ? "pricing-title" : undefined}>
       <div className="container-x">
         {heading && (
           <div className="grid gap-6 md:grid-cols-12 md:items-end">
             <div className="md:col-span-6">
-              <p className="eyebrow text-muted">Precios</p>
+              <p className="eyebrow tag text-muted color:text-accent">Precios</p>
               <SplitReveal id="pricing-title" className="display mt-4 text-[clamp(2rem,4vw,3.4rem)]">
                 Precios claros desde el principio
               </SplitReveal>
@@ -25,9 +26,11 @@ export function Pricing({ heading = true }: { heading?: boolean }) {
           {prices.map((p) => (
             <li
               key={p.label}
-              className={`relative flex flex-col rounded-[18px] p-7 ${p.featured ? "bg-ink text-white" : "bg-surface text-ink"}`}
+              className={`relative flex flex-col rounded-[18px] p-7 color:rounded-[28px] mezcla:rounded-[24px] ${p.featured ? "bg-ink text-white color:bg-violet mezcla:bg-grad" : "bg-surface text-ink"} ${overlap && p.featured ? "ring-1 ring-white/15" : ""}`}
             >
-              {p.featured && <span className="eyebrow absolute top-6 right-6 rounded-full bg-accent px-3 py-1 text-[0.65rem] text-white">Más pedido</span>}
+              {p.featured && <span className="eyebrow absolute top-6 right-6 rounded-full bg-accent px-3 py-1 text-[0.65rem] text-white color:bg-white color:text-violet mezcla:bg-ink">
+                  Más pedido
+                </span>}
               <h3 className="pr-20 text-[1.1rem] font-semibold">{p.label}</h3>
               <p className="mt-8">
                 <span className="eyebrow opacity-60">desde</span>

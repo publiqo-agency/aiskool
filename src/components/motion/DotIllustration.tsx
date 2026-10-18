@@ -22,6 +22,9 @@ export function DotIllustration({ pattern, color = "#111214", className = "" }: 
     let t = 0;
     let w = 0;
     let h = 0;
+    // Ratón relativo al canvas (suavizado) y fuerza de la repulsión, que entra y sale poco a poco
+    let client: { x: number; y: number } | null = null;
+    const m = { x: 0, y: 0, f: 0 };
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -33,7 +36,20 @@ export function DotIllustration({ pattern, color = "#111214", className = "" }: 
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
+    const R = 90;
     const dot = (x: number, y: number, s: number, a = 1) => {
+      if (m.f > 0.001) {
+        const dx = x - m.x;
+        const dy = y - m.y;
+        const d = Math.hypot(dx, dy) + 0.001;
+        if (d < R) {
+          const k = (1 - d / R) ** 2 * m.f;
+          x += (dx / d) * k * 34;
+          y += (dy / d) * k * 34;
+          s *= 1 + k * 0.7;
+          a += k * 0.4;
+        }
+      }
       ctx.globalAlpha = Math.max(0, Math.min(1, a));
       ctx.beginPath();
       ctx.arc(x, y, s, 0, Math.PI * 2);
@@ -101,8 +117,25 @@ export function DotIllustration({ pattern, color = "#111214", className = "" }: 
       ctx.globalAlpha = 1;
     };
 
+    const track = () => {
+      const r = canvas.getBoundingClientRect();
+      const inside = !!client && client.x > r.left - 20 && client.x < r.right + 20 && client.y > r.top - 20 && client.y < r.bottom + 20;
+      if (inside && client) {
+        const x = client.x - r.left;
+        const y = client.y - r.top;
+        if (m.f < 0.01) {
+          m.x = x;
+          m.y = y;
+        }
+        m.x += (x - m.x) * 0.18;
+        m.y += (y - m.y) * 0.18;
+      }
+      m.f += ((inside ? 1 : 0) - m.f) * 0.08;
+    };
+
     const loop = () => {
       t += 0.012;
+      track();
       draw();
       if (visible && !reduce) raf = requestAnimationFrame(loop);
     };
@@ -121,7 +154,16 @@ export function DotIllustration({ pattern, color = "#111214", className = "" }: 
     });
     io.observe(canvas);
 
+    const onMove = (e: PointerEvent) => (client = { x: e.clientX, y: e.clientY });
+    const onLeave = () => (client = null);
+    if (!reduce) {
+      window.addEventListener("pointermove", onMove, { passive: true });
+      document.documentElement.addEventListener("pointerleave", onLeave);
+    }
+
     return () => {
+      window.removeEventListener("pointermove", onMove);
+      document.documentElement.removeEventListener("pointerleave", onLeave);
       cancelAnimationFrame(raf);
       ro.disconnect();
       io.disconnect();

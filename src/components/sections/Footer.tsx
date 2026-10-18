@@ -29,10 +29,10 @@ async function Year() {
 export function Footer() {
   return (
     <footer className="grid bg-night text-white md:grid-cols-2">
-      <div className="relative hidden min-h-[640px] overflow-hidden md:block">
-        <Particles shape="torus" count={3200} size={2.6} color="#d8d8d4" className="absolute inset-0" />
+      <div className="relative hidden min-h-[640px] overflow-hidden color:mesh color:grain md:block">
+        <Particles shape="torus" count={3200} size={2.6} color="#d8d8d4" className="absolute inset-0 color:hidden" />
       </div>
-      <div className="flex flex-col bg-cobalt p-6 md:rounded-tl-[22px] md:p-12">
+      <div className="flex flex-col bg-cobalt p-6 color:bg-night mezcla:glow md:rounded-tl-[22px] md:p-12 color:md:rounded-tl-[36px]">
         <div className="flex items-start justify-between gap-6">
           <div>
             <p className="display text-[1.5rem] md:text-[1.9rem]">Empieza por un diagnóstico.</p>
@@ -40,10 +40,10 @@ export function Footer() {
               30 minutos, sin compromiso. Te decimos por dónde empezar y qué necesita cada equipo.
             </p>
           </div>
-          <Mark className="size-[72px] shrink-0 text-white md:size-[120px]" />
+          <Mark className="size-[72px] shrink-0 text-white mezcla:text-lime md:size-[120px]" />
         </div>
         <div className="mt-8">
-          <BracketButton href="/diagnostico" tone="dark" size="lg">
+          <BracketButton href="/diagnostico" tone="dark" size="lg" className="color:!bg-white color:!text-ink">
             Reservar diagnóstico
           </BracketButton>
         </div>

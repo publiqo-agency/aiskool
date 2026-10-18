@@ -41,6 +41,7 @@ export default async function CiudadPage({ params }: PageProps<"/formacion-ia/[c
   return (
     <>
       <PageHeader
+        figure="terrain"
         eyebrow={c.region}
         title={`Formación en IA para empresas en ${c.name}`}
         crumbs={[
@@ -53,7 +54,7 @@ export default async function CiudadPage({ params }: PageProps<"/formacion-ia/[c
           <BracketButton href="/diagnostico" tone="accent" size="lg">
             Diagnóstico gratuito
           </BracketButton>
-          <BracketButton href="/presupuesto" size="lg">
+          <BracketButton href="/presupuesto" tone="dark" size="lg">
             Pedir presupuesto
           </BracketButton>
         </div>

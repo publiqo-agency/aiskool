@@ -47,7 +47,7 @@ export function AiActTest() {
             Revisarlo en un diagnóstico gratuito
           </BracketButton>
           <BracketButton href="/ai-act" size="lg">
-            Ver Pack Cumplimiento Art. 4
+            Ver Pack Art. 4
           </BracketButton>
         </div>
       </div>

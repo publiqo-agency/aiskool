@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 export const inputCls =
-  "mt-2 block w-full rounded-[10px] border border-line bg-surface px-4 py-3 text-[1rem] text-ink outline-none transition placeholder:text-muted/70 focus:border-ink aria-[invalid=true]:border-red-600";
+  "mt-2 block w-full rounded-[10px] border border-line bg-surface color:rounded-[14px] color:bg-white px-4 py-3 text-[1rem] text-ink outline-none transition placeholder:text-muted/70 focus:border-ink aria-[invalid=true]:border-red-600";
 
 export function Field({ label, name, error, children, hint }: { label: string; name: string; error?: string; children: ReactNode; hint?: string }) {
   return (

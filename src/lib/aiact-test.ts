@@ -117,7 +117,7 @@ export function scoreAnswers(answers: Answers) {
     pct >= 80
       ? { key: "alto", label: "Bien encaminada", text: "Tienes la base. Revisa los puntos pendientes y mantén las evidencias al día." }
       : pct >= 45
-        ? { key: "medio", label: "A medio camino", text: "Hay medidas en marcha, pero faltan piezas para poder demostrar una alfabetización suficiente." }
+        ? { key: "medio", label: "A medio camino", text: "Hay medidas en marcha, pero faltan piezas para poder demostrar las medidas de alfabetización que habéis adoptado." }
         : { key: "bajo", label: "Por empezar", text: "Tu plantilla usa (o puede usar) IA sin un marco claro. Es buen momento para ordenar: inventario, política y formación." };
   return { score, pct, level, tips };
 }

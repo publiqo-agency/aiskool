@@ -7,11 +7,12 @@ import { Particles } from "@/components/three/Particles";
 import { SplitReveal } from "@/components/motion/SplitReveal";
 import { BracketButton } from "@/components/ui/BracketButton";
 
+// «Color»: violeta, menta, coral y lavanda sobre blanco. «Mezcla»: violeta, lima, rosa y blanco (tokens).
 const tones = {
   cobalt: "bg-cobalt text-white",
   sage: "bg-sage text-ink",
-  sand: "bg-sand text-ink",
-  night: "bg-surface text-ink",
+  sand: "bg-sand text-ink color:bg-coral color:text-white",
+  night: "bg-surface text-ink color:bg-lavender mezcla:bg-white",
 } as const;
 
 /** Texto fijo a la izquierda y tarjetas que se apilan al hacer scroll. */
@@ -37,31 +38,31 @@ export function Methodology() {
   );
 
   return (
-    <section ref={root} className="relative bg-night text-white" aria-labelledby="method-title">
+    <section ref={root} className="relative bg-night text-white color:bg-paper color:text-ink mezcla:glow" aria-labelledby="method-title">
       <div className="container-x grid gap-10 py-24 md:grid-cols-12 md:py-36">
         <div className="md:col-span-5">
           <div className="md:sticky md:top-28">
-            <p className="eyebrow text-white/60">Metodología</p>
+            <p className="eyebrow tag text-white/60 color:text-accent">Metodología</p>
             <SplitReveal id="method-title" className="display mt-4 text-[clamp(2rem,4vw,3.4rem)]">
               Formar no es dar una charla
             </SplitReveal>
-            <div className="mt-6 h-px w-full bg-night-line" />
-            <p className="mt-6 max-w-[46ch] eyebrow leading-[1.7] text-white/60">
+            <div className="mt-6 h-px w-full bg-night-line color:bg-line" />
+            <p className="mt-6 max-w-[46ch] eyebrow leading-[1.7] text-white/60 color:text-ink-soft">
               Diagnóstico, diseño a medida, práctica y seguimiento. Medimos la adopción y te entregamos la documentación.
             </p>
             <div className="mt-8">
-              <BracketButton href="/metodologia" tone="dark">
+              <BracketButton href="/metodologia" tone="dark" className="color:!border-ink/15 color:!text-ink color:hover:!bg-ink color:hover:!text-white">
                 Ver el proceso
               </BracketButton>
             </div>
-            <Particles shape="cloud" count={2200} size={2.2} color="#d8d8d4" opacity={0.7} className="relative mt-6 hidden h-[340px] md:block" />
+            <Particles shape="cloud" count={2200} size={2.2} color="#d8d8d4" opacity={0.7} className="relative mt-6 hidden h-[340px] md:block color:md:hidden" />
           </div>
         </div>
         <ol className="flex flex-col gap-5 md:col-span-7">
           {methodology.map((m) => (
             <li
               key={m.n}
-              className={`stack-card sticky top-24 flex min-h-[380px] origin-top flex-col justify-between rounded-[20px] p-7 md:top-28 md:min-h-[440px] md:p-10 ${tones[m.tone]}`}
+              className={`stack-card sticky top-24 flex min-h-[380px] origin-top flex-col justify-between rounded-[20px] p-7 color:rounded-[32px] mezcla:rounded-[26px] md:top-28 md:min-h-[440px] md:p-10 ${tones[m.tone]}`}
             >
               <h3 className="display text-[clamp(1.6rem,2.6vw,2.3rem)]">{m.title}</h3>
               <div>

@@ -30,7 +30,7 @@ export function FormacionesCarousel() {
   return (
     <section className="overflow-hidden bg-mist pt-10 pb-24 md:pb-36" aria-labelledby="carousel-title">
       <div className="container-x text-center">
-        <p className="eyebrow text-muted">Formaciones</p>
+        <p className="eyebrow tag text-muted color:mx-auto color:text-accent">Formaciones</p>
         <SplitReveal id="carousel-title" className="display mx-auto mt-4 max-w-[20ch] text-[clamp(1.8rem,3.4vw,2.8rem)]">
           De la base común a los agentes
         </SplitReveal>
@@ -55,13 +55,16 @@ export function FormacionesCarousel() {
               return (
                 <li key={f.slug} className="min-w-0 shrink-0 grow-0 basis-[82%] px-2 sm:basis-[46%] lg:basis-[28%] md:px-3">
                   <article
-                    className={`relative flex h-full min-h-[440px] flex-col rounded-[20px] p-7 transition-all duration-700 ease-expo ${
-                      active ? "scale-100 bg-surface opacity-100 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)]" : "scale-[0.92] bg-surface/60 opacity-55"
+                    className={`relative flex h-full min-h-[440px] flex-col rounded-[20px] p-7 transition-all duration-700 ease-expo color:rounded-[28px] mezcla:rounded-[26px] ${
+                      active
+                        ? "scale-100 bg-surface opacity-100 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.35)] color:bg-white"
+                        : "scale-[0.92] bg-surface/60 opacity-55 color:bg-white/70"
                     }`}
                   >
-                    <span aria-hidden className="absolute top-5 left-5 size-[8px] border-t border-l border-ink/50" />
-                    <span aria-hidden className="absolute top-5 right-5 size-[8px] border-t border-r border-ink/50" />
-                    <p className="eyebrow text-center text-muted">{categorias[f.categoria]}</p>
+                    <span aria-hidden className="absolute top-5 left-5 size-[8px] border-t border-l border-ink/50 color:hidden mezcla:hidden" />
+                    <span aria-hidden className="absolute top-5 right-5 size-[8px] border-t border-r border-ink/50 color:hidden mezcla:hidden" />
+                    <span aria-hidden className="mx-auto mb-5 hidden h-1.5 w-16 rounded-full bg-grad mezcla:block" />
+                    <p className="eyebrow tag text-center text-muted color:mx-auto color:text-accent">{categorias[f.categoria]}</p>
                     <h3 className="display mt-6 text-center text-[1.65rem]">{f.title}</h3>
                     <p className="mt-6 flex-1 text-center text-[1rem] leading-[1.55] text-ink-soft">{f.short}</p>
                     <dl className="mt-6 grid grid-cols-2 gap-3 border-t border-line pt-5 text-[0.85rem]">
@@ -89,7 +92,7 @@ export function FormacionesCarousel() {
         {cursor && (
           <span
             aria-hidden
-            className="pointer-events-none absolute z-10 grid size-[76px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-ink eyebrow text-[0.65rem] text-white max-md:hidden"
+            className="pointer-events-none absolute z-10 grid size-[76px] -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-ink eyebrow text-[0.65rem] text-white color:bg-accent mezcla:bg-grad max-md:hidden"
             style={{ left: cursor.x, top: cursor.y }}
           >
             Arrastra
@@ -101,7 +104,7 @@ export function FormacionesCarousel() {
         <button
           type="button"
           onClick={() => embla?.scrollPrev()}
-          className="grid size-[38px] place-items-center rounded-[6px] bg-surface text-ink transition hover:bg-ink hover:text-white"
+          className="grid size-[38px] place-items-center rounded-[6px] bg-surface text-ink transition hover:bg-ink hover:text-white color:size-[48px] color:rounded-full color:bg-accent color:text-white mezcla:rounded-full"
           aria-label="Anterior"
         >
           ←
@@ -109,7 +112,7 @@ export function FormacionesCarousel() {
         <button
           type="button"
           onClick={() => embla?.scrollNext()}
-          className="grid size-[38px] place-items-center rounded-[6px] bg-surface text-ink transition hover:bg-ink hover:text-white"
+          className="grid size-[38px] place-items-center rounded-[6px] bg-surface text-ink transition hover:bg-ink hover:text-white color:size-[48px] color:rounded-full color:bg-accent color:text-white mezcla:rounded-full"
           aria-label="Siguiente"
         >
           →

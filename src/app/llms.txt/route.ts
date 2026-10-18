@@ -12,7 +12,7 @@ export async function GET() {
 
 ## Servicios
 - [Alfabetización en IA (art. 4 AI Act)](${absoluteUrl("/formaciones/alfabetizacion-ia")})
-- [AI Act y Pack Cumplimiento Art. 4](${absoluteUrl("/ai-act")})
+- [AI Act y Pack Art. 4](${absoluteUrl("/ai-act")})
 - [Consultoría e implantación de agentes](${absoluteUrl("/consultoria")})
 - [Precios orientativos](${absoluteUrl("/precios")})
 

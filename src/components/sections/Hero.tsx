@@ -6,12 +6,31 @@ import { SplitReveal } from "@/components/motion/SplitReveal";
 import { BracketButton } from "@/components/ui/BracketButton";
 import { Mark } from "@/components/ui/Logo";
 import { LogosCard } from "./LogosCard";
+import { HeroColor } from "./HeroColor";
+
+/**
+ * Las tres versiones del hero están en el DOM y se muestran por CSS según <html data-variant>:
+ * así no hay salto al hidratar. Los canvas solo se montan en la versión visible.
+ */
+export function Hero() {
+  return (
+    <>
+      <div className="color:hidden">
+        <HeroClassic />
+      </div>
+      <div className="hidden color:block">
+        <HeroColor />
+      </div>
+    </>
+  );
+}
 
 /**
  * Hero oscuro y alargado: la esfera de partículas queda fija mientras se hace scroll,
  * se ordena en una retícula y sube la tarjeta blanca con las empresas formadas.
+ * En «Mezcla» lleva brillos de color detrás y la esfera teñida.
  */
-export function Hero() {
+function HeroClassic() {
   const wrap = useRef<HTMLElement>(null);
 
   return (
@@ -19,6 +38,7 @@ export function Hero() {
       {/* Capa fija con el campo de partículas */}
       <div className="absolute inset-0" aria-hidden>
         <div className="sticky top-0 h-dvh overflow-hidden">
+          <div className="glow grain absolute inset-0 hidden mezcla:block" />
           <Particles
             shape="sphere"
             count={2900}
@@ -40,7 +60,7 @@ export function Hero() {
             Formamos equipos
           </SplitReveal>
           <SplitReveal as="span" immediate delay={0.15} className="block max-w-[13ch] self-end text-right">
-            que usan la IA con criterio
+            que usan la IA <span className="mezcla:text-grad">con criterio</span>
           </SplitReveal>
         </h1>
 
@@ -57,7 +77,7 @@ export function Hero() {
             Formación en inteligencia artificial para empresas. Alfabetización según el art. 4 del AI Act, ChatGPT, Claude, Copilot,
             agentes y automatización. En tus oficinas, en cualquier punto de España, u online en directo.
           </p>
-          <Mark className="hidden size-[44px] justify-self-end text-white md:col-span-1 md:block" />
+          <Mark className="hidden size-[44px] justify-self-end text-white mezcla:text-lime md:col-span-1 md:block" />
         </div>
       </div>
 

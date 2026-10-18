@@ -38,6 +38,7 @@ export default async function FormacionPage({ params }: PageProps<"/formaciones/
     <>
       <JsonLd data={courseJsonLd({ title: f.title, description: f.short, path: `/formaciones/${f.slug}`, duration: f.duration, formats: f.formats })} />
       <PageHeader
+        figure="torus"
         eyebrow={categorias[f.categoria]}
         title={f.title}
         crumbs={[
@@ -50,7 +51,7 @@ export default async function FormacionPage({ params }: PageProps<"/formaciones/
           <BracketButton href={`/presupuesto?formacion=${f.slug}`} tone="accent" size="lg">
             Pedir presupuesto
           </BracketButton>
-          <BracketButton href="/diagnostico" size="lg">
+          <BracketButton href="/diagnostico" tone="dark" size="lg">
             Hablar con el equipo
           </BracketButton>
         </div>

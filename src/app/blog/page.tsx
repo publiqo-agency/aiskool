@@ -17,6 +17,9 @@ export default async function BlogPage() {
   return (
     <>
       <PageHeader
+        figure="orbits"
+        tone="light"
+        seed="blog"
         eyebrow="Blog"
         title="IA en la empresa, explicada con criterio"
         crumbs={[{ name: "Blog", path: "/blog" }]}

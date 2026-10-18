@@ -38,9 +38,11 @@ export function FocusList() {
 
   return (
     <section ref={root} className="relative overflow-hidden bg-mist py-24 md:py-36" aria-labelledby="focus-title">
-      <Particles shape="tunnel" count={4200} size={2.4} color="#111214" opacity={0.55} className="absolute inset-0" />
+      <Particles shape="tunnel" count={4200} size={2.4} color="#111214" opacity={0.55} className="absolute inset-0 color:hidden" />
+      {/* «Color»: mancha de degradado difuminada en vez del túnel */}
+      <div aria-hidden className="mesh absolute top-1/2 left-1/2 hidden size-[80vmin] -translate-1/2 rounded-full opacity-25 blur-[90px] color:block" />
       <div className="container-x relative text-center">
-        <p className="eyebrow text-muted">Por departamento</p>
+        <p className="eyebrow tag text-muted color:mx-auto color:text-accent">Por departamento</p>
         <SplitReveal id="focus-title" className="display mx-auto mt-4 max-w-[18ch] text-[clamp(2rem,4.4vw,3.8rem)] text-ink">
           Cada área usa la IA a su manera
         </SplitReveal>
@@ -53,7 +55,7 @@ export function FocusList() {
           <li key={d.label} className="focus-item will-change-[opacity,filter,transform]">
             <Link
               href={d.href}
-              className="display block py-1 text-center text-[clamp(1.9rem,5.4vw,5rem)] text-ink transition-colors hover:text-accent"
+              className="display block py-1 text-center text-[clamp(1.9rem,5.4vw,5rem)] text-ink transition-colors hover:text-accent color:text-grad mezcla:text-grad color:py-1.5"
             >
               {d.label}
             </Link>

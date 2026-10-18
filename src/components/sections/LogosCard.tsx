@@ -12,7 +12,7 @@ function ClientLogo({ c }: { c: (typeof clients)[number] }) {
         alt={c.name}
         width={Math.round(height * ratio)}
         height={height}
-        className="h-auto w-auto opacity-60 brightness-0 transition duration-500 hover:opacity-100"
+        className="h-auto w-auto opacity-60 brightness-0 transition duration-500 hover:opacity-100 color:opacity-75 color:[filter:brightness(0)_invert(22%)_sepia(60%)_saturate(2000%)_hue-rotate(245deg)]"
         style={{ height }}
         unoptimized={c.src.endsWith(".svg")}
       />
@@ -21,12 +21,14 @@ function ClientLogo({ c }: { c: (typeof clients)[number] }) {
   );
 }
 
-/** Tarjeta blanca que sube sobre el hero: empresas formadas + cifras. */
-export function LogosCard() {
+/** Tarjeta que sube sobre el hero: empresas formadas + cifras. En «Color» es lavanda y sin sombra. */
+export function LogosCard({ showStats = true }: { showStats?: boolean }) {
   return (
     <div className="container-x relative z-10">
-      <div className="mx-auto max-w-[1180px] rounded-[20px] bg-surface px-4 py-10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)] md:px-10 md:py-14">
-        <h2 className="text-center text-[1.35rem] font-medium tracking-tight text-ink md:text-[1.9rem]">Empresas que ya se han formado con nosotros.</h2>
+      <div className="mx-auto max-w-[1180px] rounded-[20px] bg-surface px-4 py-10 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.5)] color:rounded-[28px] color:bg-lavender color:py-8 color:shadow-none mezcla:rounded-[28px] md:px-10 md:py-14 color:md:py-10">
+        <h2 className="text-center text-[1.35rem] font-medium tracking-tight text-ink color:text-[1rem] color:font-normal color:text-muted md:text-[1.9rem] color:md:text-[1.05rem]">
+          Empresas que ya se han formado con nosotros.
+        </h2>
 
         <div className="relative mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)] md:mt-10">
           <ul className="flex w-max animate-marquee items-center motion-reduce:animate-none" style={{ ["--marquee-duration" as string]: "34s" }}>
@@ -36,6 +38,7 @@ export function LogosCard() {
           </ul>
         </div>
 
+        {showStats && (
         <dl className="mt-10 grid grid-cols-1 gap-6 border-t border-line pt-8 text-center sm:grid-cols-3 md:mt-12 md:pt-10">
           {stats.map((s) => (
             <div key={s.label}>
@@ -47,13 +50,14 @@ export function LogosCard() {
             </div>
           ))}
         </dl>
+        )}
       </div>
     </div>
   );
 }
 
 /** Subtítulos mientras no haya cifras reales. */
-const statsFallbackLabel: Record<string, string> = {
+export const statsFallbackLabel: Record<string, string> = {
   "Profesionales formados": "Formación en tus oficinas o en directo",
   Empresas: "Presencial en cualquier ciudad",
   "Valoración media": "Con evaluación y certificado",

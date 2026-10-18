@@ -15,6 +15,7 @@ export default function PresupuestoPage() {
   return (
     <>
       <PageHeader
+        figure="torus"
         eyebrow="Presupuesto"
         title="Pide tu propuesta de formación"
         crumbs={[{ name: "Presupuesto", path: "/presupuesto" }]}

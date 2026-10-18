@@ -15,6 +15,7 @@ export default function FormacionesPage() {
   return (
     <>
       <PageHeader
+        figure="torus"
         eyebrow="Catálogo"
         title="Formaciones de IA para empresas"
         crumbs={[{ name: "Formaciones", path: "/formaciones" }]}

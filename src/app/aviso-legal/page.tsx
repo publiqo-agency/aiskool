@@ -28,8 +28,14 @@ export default function AvisoLegal() {
       </p>
       <h2>Responsabilidad</h2>
       <p>
-        La información sobre normativa (incluido el Reglamento Europeo de IA) tiene carácter divulgativo y no constituye asesoramiento
-        jurídico.
+        La información sobre normativa (incluido el Reglamento Europeo de IA y la protección de datos) tiene carácter divulgativo y
+        no constituye asesoramiento jurídico. El titular presta servicios de formación, documentación y consultoría técnica en
+        inteligencia artificial; no presta servicios de abogacía ni certifica el cumplimiento normativo de sus clientes, que sigue
+        siendo responsabilidad de cada empresa.
+      </p>
+      <p>
+        Los certificados que se entregan al finalizar las formaciones son certificados de aprovechamiento propios y no constituyen
+        títulos oficiales ni certificados de profesionalidad.
       </p>
       <h2>Legislación aplicable</h2>
       <p>Este aviso se rige por la legislación española.</p>

@@ -94,6 +94,7 @@ export function Analytics() {
       {show && (
         <div
           role="dialog"
+          data-cookie-banner
           aria-live="polite"
           aria-label="Preferencias de cookies"
           className="fixed inset-x-3 bottom-3 z-[60] mx-auto max-w-[560px] rounded-[14px] border border-line bg-surface p-5 text-ink shadow-[0_20px_60px_-20px_rgba(0,0,0,0.35)]"

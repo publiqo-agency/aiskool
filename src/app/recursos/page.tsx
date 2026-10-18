@@ -14,7 +14,7 @@ const resources = [
   {
     id: "politica-uso-ia",
     t: "Plantilla de política de uso de IA",
-    d: "Documento editable con herramientas permitidas, datos prohibidos, revisión humana, responsables y canal de dudas.",
+    d: "Documento editable y orientativo con herramientas permitidas, datos prohibidos, revisión humana, responsables y canal de dudas. Adáptalo a tu empresa y revísalo con tu asesoría.",
   },
   {
     id: "checklist-art-4",
@@ -32,6 +32,8 @@ export default function RecursosPage() {
   return (
     <>
       <PageHeader
+        figure="orbits"
+        seed="recursos"
         eyebrow="Recursos gratuitos"
         title="Recursos para ordenar el uso de IA"
         crumbs={[{ name: "Recursos", path: "/recursos" }]}

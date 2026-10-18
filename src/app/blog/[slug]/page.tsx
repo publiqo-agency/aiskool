@@ -42,6 +42,9 @@ export default async function PostPage({ params }: PageProps<"/blog/[slug]">) {
     <>
       <JsonLd data={articleJsonLd({ title: meta.title, description: meta.description, path: `/blog/${slug}`, date: meta.date, updated: meta.updated, author: meta.author, image: `/blog/${slug}/opengraph-image`, section: cat?.label })} />
       <PageHeader
+        figure="orbits"
+        tone="light"
+        seed={slug}
         eyebrow={cat?.label}
         title={meta.title}
         crumbs={[

@@ -7,3 +7,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Límites legales del copy (obligatorio)
+
+Antes de escribir o cambiar cualquier texto de la web, el blog, los emails o los metadatos, lee y cumple `docs/LIMITES-LEGALES.md`. Resumen: en el equipo no hay abogados; vendemos formación, documentación y consultoría técnica, nunca asesoramiento jurídico, títulos oficiales ni «certificación» de cumplimiento.

@@ -276,8 +276,8 @@ export const formaciones: Formacion[] = [
     formats: allFormats,
     level: "Intermedio",
     tools: ["Claude", "ChatGPT", "Copilot", "NotebookLM"],
-    intro: "Impartida por nuestro equipo legal: uso responsable de la IA en el trabajo jurídico y cómo liderar el cumplimiento del AI Act en la empresa.",
-    outcomes: ["Revisión asistida de contratos con verificación", "Investigación con fuentes contrastadas", "Plan de cumplimiento del AI Act para la organización"],
+    intro: "Formación en herramientas de IA para profesionales del ámbito jurídico: cómo usarlas con verificación y confidencialidad, y cómo organizar el gobierno de la IA en la empresa. Enseñamos a usar la IA; el criterio jurídico lo ponéis vosotros.",
+    outcomes: ["Revisión asistida de contratos con verificación", "Investigación con fuentes contrastadas", "Inventario de usos de IA y hoja de ruta interna para el AI Act"],
     modules: [
       { title: "Práctica jurídica", items: ["Revisión y comparación de documentos", "Investigación y citas"] },
       { title: "Riesgos", items: ["Confidencialidad y secreto profesional", "Alucinaciones en contexto legal"] },

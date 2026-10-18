@@ -21,6 +21,7 @@ export default function MetodologiaPage() {
   return (
     <>
       <PageHeader
+        figure="terrain"
         eyebrow="Metodología"
         title="Así formamos a tu equipo"
         crumbs={[{ name: "Metodología", path: "/metodologia" }]}

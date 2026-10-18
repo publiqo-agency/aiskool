@@ -74,7 +74,7 @@ export const prices: Price[] = [
     featured: true,
   },
   {
-    label: "Pack Cumplimiento Art. 4",
+    label: "Pack Art. 4",
     from: "2.900 €",
     unit: "por empresa",
     detail: "Formación + política de uso de IA + inventario de herramientas + registro de evidencias.",
@@ -162,7 +162,7 @@ export const methodology = [
 export const faqs = [
   {
     q: "¿Es obligatorio formar a la plantilla en IA?",
-    a: "El artículo 4 del Reglamento Europeo de IA obliga a las empresas que usan sistemas de IA a adoptar medidas para que su personal tenga conocimientos suficientes sobre ellos. No exige un título concreto, pero sí que puedas demostrar qué has hecho: formación, criterios de uso y registros. Te ayudamos a documentarlo.",
+    a: "El artículo 4 del Reglamento Europeo de IA obliga a las empresas que usan sistemas de IA a adoptar medidas para apoyar la alfabetización en IA de su personal. No exige un título ni un certificado oficial, ni garantizar un nivel concreto en cada persona, pero conviene poder explicar qué has hecho: formación, criterios de uso y registros. Te ayudamos a documentarlo.",
   },
   {
     q: "¿La formación es presencial u online?",
@@ -182,7 +182,7 @@ export const faqs = [
   },
   {
     q: "¿Entregáis certificado?",
-    a: "Sí. Cada participante recibe un certificado de aprovechamiento y la empresa un registro de asistencia y evaluación que sirve como evidencia de las medidas de alfabetización adoptadas.",
+    a: "Sí. Cada participante recibe un certificado de aprovechamiento propio (no es un título oficial: el AI Act no lo exige) y la empresa un registro de asistencia y evaluación que puede usar como evidencia de las medidas de alfabetización adoptadas.",
   },
   {
     q: "¿Cuánto tarda en estar lista una formación a medida?",

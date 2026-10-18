@@ -3,6 +3,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { BracketButton } from "@/components/ui/BracketButton";
 import { Particles } from "@/components/three/Particles";
 import { CtaBand } from "@/components/ui/CtaBand";
+import { ServiceLinks, ServicePins, ServiceCards, type Service } from "@/components/sections/ServiceLinks";
 
 export const metadata = pageMetadata({
   title: "Consultoría e implantación de agentes de IA",
@@ -11,7 +12,7 @@ export const metadata = pageMetadata({
   path: "/consultoria",
 });
 
-const services = [
+const services: Service[] = [
   {
     t: "Diagnóstico de madurez",
     d: "Analizamos procesos, herramientas y datos para priorizar dónde la IA aporta más con menos riesgo.",
@@ -37,34 +38,26 @@ const services = [
 export default function ConsultoriaPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="Consultoría"
-        title="Implantamos la IA que tu equipo ya sabe usar"
-        crumbs={[{ name: "Consultoría", path: "/consultoria" }]}
-        intro="La formación detecta oportunidades; nuestro equipo técnico las convierte en agentes y automatizaciones que funcionan, con seguridad y supervisión humana."
-      >
-        <BracketButton href="/diagnostico" tone="accent" size="lg">
-          Cuéntanos tu proceso
-        </BracketButton>
-      </PageHeader>
+      {/* Fondo noche detrás del banner: las líneas bajan sin cortes hasta las tarjetas */}
+      <ServiceLinks className="bg-night">
+        <PageHeader
+          figure="terrain"
+          eyebrow="Consultoría"
+          title="Implantamos la IA que tu equipo ya sabe usar"
+          crumbs={[{ name: "Consultoría", path: "/consultoria" }]}
+          intro="La formación detecta oportunidades; nuestro equipo técnico las convierte en agentes y automatizaciones que funcionan, con seguridad y supervisión humana."
+          footer={<ServicePins services={services} />}
+        >
+          <BracketButton href="/diagnostico" tone="accent" size="lg">
+            Cuéntanos tu proceso
+          </BracketButton>
+        </PageHeader>
 
-      <section className="relative overflow-hidden bg-night py-20 text-white md:py-28">
-        <Particles shape="terrain" count={4800} size={2} color="#e9e9e4" className="absolute inset-0 opacity-60" />
-        <ul className="container-x relative grid gap-4 md:grid-cols-2">
-          {services.map((s, i) => (
-            <li key={s.t} className="rounded-[18px] border border-night-line bg-night/80 p-7 backdrop-blur-sm md:p-9">
-              <p className="eyebrow text-white/40">0{i + 1}</p>
-              <h2 className="mt-4 text-[1.5rem] font-semibold">{s.t}</h2>
-              <p className="mt-3 text-white/70">{s.d}</p>
-              <ul className="mt-6 space-y-1.5 text-white/60">
-                {s.items.map((it) => (
-                  <li key={it}>— {it}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section className="relative overflow-hidden bg-night pt-2 pb-20 text-white md:pb-28">
+          <Particles shape="cloud" count={4800} size={2} color="#e9e9e4" className="absolute inset-0 opacity-60" />
+          <ServiceCards services={services} />
+        </section>
+      </ServiceLinks>
 
       <section className="bg-paper py-24 md:py-32">
         <div className="container-x grid gap-10 md:grid-cols-12">

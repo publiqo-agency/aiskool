@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/ui/CtaBand";
 
 export const metadata = pageMetadata({
   title: "Precios de formación en IA para empresas",
-  description: "Precios orientativos de formación en IA para empresas: alfabetización online desde 99 €/persona, talleres in-company desde 1.500 € y Pack Cumplimiento Art. 4 desde 2.900 €.",
+  description: "Precios orientativos de formación en IA para empresas: alfabetización online desde 99 €/persona, talleres in-company desde 1.500 € y Pack Art. 4 desde 2.900 €.",
   path: "/precios",
 });
 
@@ -22,13 +22,15 @@ export default function PreciosPage() {
   return (
     <>
       <PageHeader
+        figure="horizon"
         eyebrow="Precios"
         title="Precios orientativos, sin sorpresas"
         crumbs={[{ name: "Precios", path: "/precios" }]}
         intro="El precio final depende del número de personas, la modalidad y la personalización. Te enviamos una propuesta cerrada en 48 h."
       />
-      <div className="-mt-24 md:-mt-36">
-        <Pricing heading={false} />
+      {/* Las tarjetas suben sobre el horizonte de puntos del banner */}
+      <div className="relative z-10 -mt-32 md:-mt-44">
+        <Pricing heading={false} overlap />
       </div>
       <Faq items={faqs} title="Dudas sobre precios" />
       <CtaBand />

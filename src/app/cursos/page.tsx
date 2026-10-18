@@ -17,6 +17,7 @@ export default function CursosPage() {
   return (
     <>
       <PageHeader
+        figure="torus"
         eyebrow="Online a tu ritmo"
         title="Cursos de IA online"
         crumbs={[{ name: "Cursos", path: "/cursos" }]}

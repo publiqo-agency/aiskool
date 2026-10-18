@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 
 /**
  * Plantilla de páginas legales. TODO(legal): completar los datos marcados [ENTRE CORCHETES]
- * y revisar el texto con el equipo legal antes de publicar.
+ * y revisar el texto con una asesoría externa antes de publicar (no hay abogados en el equipo).
  */
 export function LegalPage({ title, path, children }: { title: string; path: string; children: ReactNode }) {
   return (

@@ -21,6 +21,7 @@ export default function DiagnosticoPage() {
   return (
     <>
       <PageHeader
+        figure="horizon"
         eyebrow="Gratis · 30 minutos · online"
         title="Diagnóstico gratuito de IA"
         crumbs={[{ name: "Diagnóstico", path: "/diagnostico" }]}

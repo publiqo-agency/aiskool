@@ -46,7 +46,8 @@ Cuando se decida, añadir en la web:
 - **Equipo:** nombres, cargos, fotos y LinkedIn. Las fotos van en `public/team`.
 - **Precios definitivos.** Los precios «desde» de `src/lib/site.ts` son provisionales.
 - **Autorización de los clientes** para mostrar sus logos.
-- **Revisión legal** de todo el copy sobre el AI Act. Verificar en EUR-Lex la redacción vigente del art. 4 tras el Digital Omnibus (Reglamento (UE) 2026/1744).
+- **Revisión externa** del copy sobre el AI Act y de las páginas legales por una asesoría (en el equipo no hay abogados). La redacción del art. 4 tras el Digital Omnibus ya está verificada en EUR-Lex y aplicada. Reglas del copy en `docs/LIMITES-LEGALES.md`.
+- **IVA de las formaciones:** confirmar con la gestoría si los talleres en directo pueden ir exentos (art. 20.Uno.9º LIVA, consulta DGT V5202-26) y si el curso online grabado va al 21 %. Hasta entonces, precios «+ IVA» y sin anunciar exención.
 
 ## Configuración pendiente
 

@@ -11,13 +11,13 @@ export function CtaBand({
   return (
     <section className="bg-paper pb-24 md:pb-32">
       <div className="container-x">
-        <div className="flex flex-col gap-8 rounded-[22px] bg-ink p-8 text-white md:flex-row md:items-end md:justify-between md:p-14">
+        <div className="relative flex flex-col gap-8 overflow-hidden rounded-[22px] bg-ink p-8 text-white color:mesh color:grain color:rounded-[32px] mezcla:bg-night mezcla:glow mezcla:rounded-[28px] md:flex-row md:items-end md:justify-between md:p-14">
           <div>
             <h2 className="display max-w-[20ch] text-[clamp(1.8rem,3.4vw,2.8rem)]">{title}</h2>
             <p className="mt-4 max-w-[56ch] text-white/70">{text}</p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <BracketButton href="/diagnostico" tone="accent" size="lg">
+            <BracketButton href="/diagnostico" tone="accent" size="lg" className="color:!bg-white color:!text-ink">
               Diagnóstico gratuito
             </BracketButton>
             <BracketButton href="/presupuesto" tone="dark" size="lg">

@@ -10,14 +10,15 @@ type AsButton = Common & { href?: undefined } & Omit<ComponentProps<"button">, "
 
 const toneClasses: Record<Tone, { root: string; dot: string; corner: string }> = {
   // dark = sobre fondo oscuro (texto claro)
-  dark: { root: "text-white", dot: "bg-white", corner: "border-white/70" },
-  light: { root: "text-ink", dot: "bg-ink", corner: "border-ink/70" },
-  accent: { root: "text-accent-ink bg-accent rounded-[6px]", dot: "bg-white", corner: "border-transparent" },
+  // En «Color» son pastillas con borde; en «Mezcla» el acento es el degradado
+  dark: { root: "text-white color:border color:border-white/45 color:hover:bg-white color:hover:text-ink", dot: "bg-white", corner: "border-white/70" },
+  light: { root: "text-ink color:border color:border-ink/15 color:hover:bg-ink color:hover:text-white", dot: "bg-ink", corner: "border-ink/70" },
+  accent: { root: "text-accent-ink bg-accent rounded-[6px] mezcla:bg-grad color:hover:bg-ink", dot: "bg-white", corner: "border-transparent" },
 };
 
 function Inner({ children, tone = "light", size = "md" }: Common) {
   const t = toneClasses[tone];
-  const corner = `pointer-events-none absolute size-[8px] ${t.corner} transition-all duration-500 ease-expo`;
+  const corner = `pointer-events-none absolute size-[8px] ${t.corner} transition-all duration-500 ease-expo color:hidden`;
   return (
     <>
       {/* Esquinas en L */}
@@ -30,7 +31,7 @@ function Inner({ children, tone = "light", size = "md" }: Common) {
         {/* Punto que entra desenfocado */}
         <span
           aria-hidden
-          className={`${t.dot} size-[8px] -translate-x-[18px] rounded-[2px] opacity-0 blur-[10px] transition-all duration-500 ease-expo group-hover/btn:-translate-x-[6px] group-hover/btn:opacity-100 group-hover/btn:blur-0 motion-reduce:hidden`}
+          className={`${t.dot} size-[8px] -translate-x-[18px] rounded-[2px] opacity-0 blur-[10px] transition-all duration-500 ease-expo group-hover/btn:-translate-x-[6px] group-hover/btn:opacity-100 group-hover/btn:blur-0 motion-reduce:hidden color:hidden`}
         />
         {/* Texto que rueda hacia arriba */}
         <span className="relative block overflow-hidden">
@@ -51,7 +52,7 @@ function Inner({ children, tone = "light", size = "md" }: Common) {
 
 /** Botón con esquinas, punto desenfocado, texto que rueda y glitch breve al pasar el ratón. */
 export function BracketButton({ children, tone = "light", className = "", size = "md", ...rest }: AsLink | AsButton) {
-  const base = `group/btn relative isolate inline-flex eyebrow select-none whitespace-nowrap hover:animate-glitch motion-reduce:hover:animate-none ${toneClasses[tone].root} ${className}`;
+  const base = `group/btn relative isolate inline-flex eyebrow select-none whitespace-nowrap hover:animate-glitch motion-reduce:hover:animate-none color:rounded-full color:font-medium color:transition-colors color:duration-300 color:hover:animate-none ${toneClasses[tone].root} ${className}`;
 
   if (rest.href !== undefined) {
     const linkProps = rest as Omit<AsLink, keyof Common>;

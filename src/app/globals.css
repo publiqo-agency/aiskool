@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Versiones de diseño (pilla abajo a la izquierda): <html data-variant="actual|color|mezcla"> */
+@custom-variant color (&:where([data-variant="color"], [data-variant="color"] *));
+@custom-variant mezcla (&:where([data-variant="mezcla"], [data-variant="mezcla"] *));
+
 /* ───────────────────────── Tokens ───────────────────────── */
 :root {
   --paper: #f3f2ee;
@@ -17,6 +21,17 @@
   --sage: #b9cfc1;
   --sand: #ebdfc9;
   --cobalt: #2b47ff;
+  /* Paleta viva (versiones Color y Mezcla) */
+  --coral: #ff5a36;
+  --magenta: #e8407f;
+  --violet: #5b3df5;
+  --blue: #2e5bff;
+  --lavender: #e9e6ff;
+  --mint: #d6f3e5;
+  --lime: #c8f169;
+  --pink: #ffc4dd;
+  --cloud: #f4f5f7;
+  --grad: linear-gradient(100deg, #ff5a36 0%, #e8407f 34%, #6a4bff 68%, #2e5bff 100%);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -37,6 +52,15 @@
   --color-sage: var(--sage);
   --color-sand: var(--sand);
   --color-cobalt: var(--cobalt);
+  --color-coral: var(--coral);
+  --color-magenta: var(--magenta);
+  --color-violet: var(--violet);
+  --color-blue: var(--blue);
+  --color-lavender: var(--lavender);
+  --color-mint: var(--mint);
+  --color-lime: var(--lime);
+  --color-pink: var(--pink);
+  --color-cloud: var(--cloud);
   --font-display: var(--font-archivo);
   --font-sans: var(--font-instrument);
   --font-mono: var(--font-plex-mono);
@@ -44,6 +68,51 @@
   --ease-io: var(--ease-in-out);
   --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
   --animate-glitch: glitch 0.35s steps(2, end) 1;
+  --animate-pin-pulse: pin-pulse 2.6s var(--ease-out-expo) infinite;
+}
+
+/* Color: inspirada en Founderz. Fondo blanco, tarjetas gris nube y lavanda, violeta de acento, sans geométrica en minúscula. */
+[data-variant="color"] {
+  --paper: #ffffff;
+  --surface: #f4f5f7;
+  --ink: #17141f;
+  --ink-soft: #3d3948;
+  --muted: #6f6b7b;
+  --line: #e6e4ec;
+  --night: #1a1033;
+  --night-soft: #251a45;
+  --night-line: #3a2f5e;
+  --mist: #f4f5f7;
+  --accent: #5b3df5;
+  --cobalt: #5b3df5;
+  --sage: #d6f3e5;
+  --sand: #ffe1d3;
+  --body-font: var(--font-outfit);
+  --display-font: var(--font-outfit);
+  --display-stretch: 100%;
+  --display-case: none;
+  --display-tracking: -0.035em;
+  --display-leading: 1.04;
+  --eyebrow-font: var(--font-outfit);
+  --eyebrow-size: 0.875rem;
+  --eyebrow-tracking: 0;
+  --eyebrow-case: none;
+  --tag-display: block;
+  --tag-width: fit-content;
+  --tag-pad: 0.4rem 0.95rem;
+  --tag-bg: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+/* Mezcla: la estructura actual con la paleta viva. */
+[data-variant="mezcla"] {
+  --night: #0c0a16;
+  --night-soft: #171327;
+  --night-line: #2a2540;
+  --mist: #e6e4ee;
+  --accent: #6a4bff;
+  --cobalt: #6a4bff;
+  --sage: #c8f169;
+  --sand: #ffc4dd;
 }
 
 /* ───────────────────────── Base ───────────────────────── */
@@ -56,7 +125,7 @@ html {
 body {
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-family: var(--body-font, var(--font-instrument)), system-ui, sans-serif;
   text-rendering: optimizeLegibility;
 }
 
@@ -84,12 +153,12 @@ html.lenis body {
 
 /* ───────────────────────── Utilities ───────────────────────── */
 @utility display {
-  font-family: var(--font-archivo), system-ui, sans-serif;
-  font-stretch: 125%;
+  font-family: var(--display-font, var(--font-archivo)), system-ui, sans-serif;
+  font-stretch: var(--display-stretch, 125%);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  line-height: 0.95;
+  text-transform: var(--display-case, uppercase);
+  letter-spacing: var(--display-tracking, -0.01em);
+  line-height: var(--display-leading, 0.95);
   overflow-wrap: break-word;
   /* Palabras largas (AUTOMATIZACIÓN, ALFABETIZACIÓN) en pantallas estrechas */
   @media (width < 48rem) {
@@ -99,10 +168,62 @@ html.lenis body {
 }
 
 @utility eyebrow {
-  font-family: var(--font-plex-mono), ui-monospace, monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-family: var(--eyebrow-font, var(--font-plex-mono)), ui-monospace, monospace;
+  font-size: var(--eyebrow-size, 0.75rem);
+  letter-spacing: var(--eyebrow-tracking, 0.08em);
+  text-transform: var(--eyebrow-case, uppercase);
+}
+
+/* Etiqueta de sección: texto plano en Actual/Mezcla, chip en Color */
+@utility tag {
+  display: var(--tag-display, block);
+  width: var(--tag-width, auto);
+  padding: var(--tag-pad, 0);
+  border-radius: 999px;
+  background: var(--tag-bg, transparent);
+}
+
+@utility bg-grad {
+  background-image: var(--grad);
+}
+
+@utility text-grad {
+  background-image: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Degradado de manchas (versión Color) */
+@utility mesh {
+  background-color: #2a0f45;
+  background-image:
+    radial-gradient(55% 75% at 12% 25%, #ff5a36 0%, transparent 62%),
+    radial-gradient(50% 70% at 88% 18%, #2e5bff 0%, transparent 62%),
+    radial-gradient(60% 75% at 72% 92%, #e8407f 0%, transparent 62%),
+    radial-gradient(70% 90% at 38% 62%, #6a4bff 0%, transparent 72%);
+}
+
+/* Brillos de color sobre fondo oscuro (versión Mezcla) */
+@utility glow {
+  background-image:
+    radial-gradient(45% 55% at 8% 12%, rgb(106 75 255 / 0.45) 0%, transparent 70%),
+    radial-gradient(40% 50% at 95% 85%, rgb(255 90 54 / 0.35) 0%, transparent 70%),
+    radial-gradient(35% 45% at 70% 10%, rgb(232 64 127 / 0.25) 0%, transparent 70%);
+}
+
+/* Grano fotográfico encima de un fondo (necesita position relative/absolute en el padre) */
+@utility grain {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    opacity: 0.35;
+  }
 }
 
 @utility container-x {
@@ -123,6 +244,19 @@ html.lenis body {
 }
 
 /* ───────────────────────── Keyframes ───────────────────────── */
+/* Onda que sale de los marcadores del banner para avisar de que se pueden señalar */
+@keyframes pin-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  70%,
+  100% {
+    transform: scale(2.9);
+    opacity: 0;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translate3d(0, 0, 0);
@@ -151,6 +285,24 @@ html.lenis body {
   }
 }
 
+/* La pilla sube por encima del banner de cookies cuando ambos comparten la parte baja */
+@media (width < 64rem) {
+  body:has([data-cookie-banner]) [data-variant-pill] {
+    bottom: 10rem;
+  }
+}
+@media (width < 40rem) {
+  body:has([data-cookie-banner]) [data-variant-pill] {
+    bottom: 15rem;
+  }
+}
+
+@media print {
+  [data-variant-pill] {
+    display: none !important;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -172,8 +324,9 @@ html.lenis body {
   margin-top: 1.1em;
 }
 .prose-ia h2 {
-  font-family: var(--font-archivo), sans-serif;
-  font-stretch: 112%;
+  font-family: var(--display-font, var(--font-archivo)), sans-serif;
+  font-stretch: var(--display-stretch, 112%);
+  letter-spacing: var(--display-tracking, normal);
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 1.15;

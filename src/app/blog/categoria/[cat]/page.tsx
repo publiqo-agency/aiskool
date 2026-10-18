@@ -29,6 +29,9 @@ export default async function CategoryPage({ params }: PageProps<"/blog/categori
   return (
     <>
       <PageHeader
+        figure="orbits"
+        tone="light"
+        seed={cat}
         eyebrow="Blog"
         title={c.label}
         crumbs={[
