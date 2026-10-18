@@ -3,34 +3,34 @@ title: "Copilot en Excel, Outlook y Teams: guía práctica"
 description: "Cómo usar Copilot en Excel, Outlook y Teams: qué hace en cada aplicación, qué licencia necesitas, prompts por puesto y qué revisar cuando Copilot no aparece."
 date: "2026-10-18"
 category: "herramientas"
-tldr: "Copilot en Excel crea tablas, gráficos, tablas dinámicas y fórmulas desde su panel; la función =COPILOT dejó de existir el 14 de septiembre de 2026. En Outlook resume hilos y redacta correos, y en Teams resume reuniones con tareas pendientes. Copilot Chat viene incluido con Microsoft 365; usar todos tus correos, archivos y reuniones exige la licencia de pago."
+tldr: "Copilot en Excel genera tablas, gráficos, tablas dinámicas y fórmulas desde su panel; la función =COPILOT dejó de existir el 14 de septiembre de 2026. En Outlook resume hilos y redacta correos, y en Teams resume reuniones con sus tareas pendientes. Copilot Chat ya viene con Microsoft 365; para usar todos tus correos, archivos y reuniones hace falta la licencia de pago."
 faqs:
   - q: "¿Qué ha pasado con la función =COPILOT de Excel?"
-    a: "Microsoft la retiró: desde el 14 de septiembre de 2026, la función COPILOT ya no está disponible en Excel (era una función en vista previa). Los resultados ya calculados se quedan en el libro como valores guardados, pero cuando una celda con la función se recalcula devuelve el error #¿NOMBRE?. Microsoft remite al panel de Copilot en Excel, que admite muchas de las mismas tareas."
+    a: "Microsoft la retiró: desde el 14 de septiembre de 2026, la función COPILOT ya no está en Excel (estaba en vista previa). Lo que ya se había calculado permanece en el libro como valores guardados, pero en cuanto una celda con la función se recalcula, devuelve el error #¿NOMBRE?. Microsoft te manda al panel de Copilot en Excel, que cubre muchas de esas mismas tareas."
   - q: "¿Copilot en Teams graba las reuniones?"
-    a: "No necesita grabarlas para funcionar durante la reunión: Microsoft indica que la transcripción no es obligatoria para activar Copilot. Pero si quieres preguntarle por la reunión o ver el historial cuando ya ha terminado, hay que activar la transcripción en directo. Conviene explicar al equipo para qué se usa la transcripción."
+    a: "No le hace falta grabarlas para funcionar durante la reunión: Microsoft señala que la transcripción no es obligatoria para activar Copilot. Ahora bien, si quieres preguntarle por la reunión o repasar el historial una vez terminada, tienes que activar la transcripción en directo. Y conviene aclararle al equipo para qué se usa esa transcripción."
   - q: "¿Copilot funciona en buzones compartidos de Outlook?"
-    a: "Las páginas de Microsoft no coinciden. Los requisitos de octubre de 2026 dicen que Copilot trabaja con buzones principales de Exchange Online y puede usar el contenido al que tienes permiso en buzones de archivo, compartidos y delegados; las preguntas frecuentes de Outlook (agosto de 2026) dicen que sus funciones solo están en el buzón principal. En lo que sí coinciden: no funciona en buzones de grupo. Compruébalo en tu caso con tu administrador."
+    a: "Las páginas de Microsoft se contradicen. Los requisitos de octubre de 2026 afirman que Copilot funciona con buzones principales de Exchange Online y puede usar el contenido al que tienes permiso en buzones de archivo, compartidos y delegados; las preguntas frecuentes de Outlook (agosto de 2026) sostienen que sus funciones solo están en el buzón principal. Coinciden en una cosa: no funciona en buzones de grupo. Confírmalo para tu caso con tu administrador."
   - q: "¿Puedo elegir el modelo de IA que usa Copilot en Excel?"
-    a: "En parte. Microsoft indica que Copilot en Excel puede trabajar con modelos de OpenAI o de Anthropic (Claude), y que para usar los de Anthropic el administrador debe habilitarlo como subencargado. Ten en cuenta que, según Microsoft, los modelos de Anthropic quedan por ahora fuera de la EU Data Boundary y vienen desactivados por defecto para clientes de la UE, algo relevante si tus datos deben procesarse en la UE."
+    a: "En parte. Microsoft indica que Copilot en Excel puede apoyarse en modelos de OpenAI o de Anthropic (Claude), y que para los de Anthropic el administrador tiene que habilitarlo como subencargado. Ten presente que, según Microsoft, los modelos de Anthropic quedan por ahora fuera de la EU Data Boundary y vienen desactivados por defecto para clientes de la UE, algo que importa si tus datos deben procesarse en la UE."
   - q: "¿Copilot sustituye a saber Excel?"
-    a: "No. Copilot construye tablas, fórmulas y gráficos editables, pero quien decide si el análisis tiene sentido sigue siendo la persona. Puede equivocarse en una fórmula, malinterpretar una columna o sacar conclusiones de datos incompletos. Saber leer una fórmula y comprobar un total con un cálculo rápido es lo que separa un buen uso de un error caro."
+    a: "No. Copilot arma tablas, fórmulas y gráficos editables, pero quien juzga si el análisis se sostiene sigue siendo la persona. Puede errar en una fórmula, malinterpretar una columna o concluir a partir de datos incompletos. Saber leer una fórmula y contrastar un total con un cálculo rápido es lo que separa un buen uso de un error caro."
 ---
 
-Copilot en Excel, Outlook y Teams sirve para tres cosas muy concretas: en Excel, construir y editar tablas, gráficos, tablas dinámicas y fórmulas pidiéndolo en lenguaje natural; en Outlook, resumir hilos largos y redactar o mejorar correos; y en Teams, resumir reuniones con quién dijo qué y las tareas pendientes. Esta guía explica cada aplicación con prompts por puesto, qué licencia necesita cada función y qué revisar si Copilot no aparece.
+Copilot en Excel, Outlook y Teams resuelve tres cosas muy concretas: en Excel, crear y editar tablas, gráficos, tablas dinámicas y fórmulas pidiéndolo en lenguaje natural; en Outlook, resumir hilos largos y redactar o pulir correos; y en Teams, resumir reuniones con quién dijo qué y las tareas pendientes. En esta guía repasamos cada aplicación con prompts por puesto, la licencia que pide cada función y qué mirar cuando Copilot no aparece.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- **Excel**: Copilot trabaja desde su panel. La función =COPILOT [dejó de estar disponible el 14 de septiembre de 2026](https://support.microsoft.com/en-us/excel/functions/copilot-function).
-- **Outlook**: resume hilos con citas, redacta borradores y te da sugerencias de tono y claridad.
+- **Excel**: Copilot actúa desde su panel. La función =COPILOT [dejó de estar disponible el 14 de septiembre de 2026](https://support.microsoft.com/en-us/excel/functions/copilot-function).
+- **Outlook**: resume hilos con citas, prepara borradores y sugiere mejoras de tono y claridad.
 - **Teams**: resume reuniones durante o después; para preguntar al terminar, activa la transcripción.
-- **Licencia**: Copilot Chat viene incluido con Microsoft 365; el acceso automático a tus correos, archivos y reuniones requiere la licencia de pago.
+- **Licencia**: Copilot Chat ya viene con Microsoft 365; el acceso automático a tus correos, archivos y reuniones pide la licencia de pago.
 
 </Callout>
 
 ## Qué licencia necesitas para cada función
 
-La función que puedes usar en Outlook, Excel o Teams depende de tu licencia. Copilot Chat, incluido con las suscripciones de Microsoft 365 elegibles, trabaja con datos de la web y con el contenido que tienes abierto o subes. La licencia de pago de Microsoft 365 Copilot añade el acceso automático a tus correos, archivos, reuniones y calendario, y la experiencia completa dentro de Word, Excel y PowerPoint.
+Lo que puedes hacer en Outlook, Excel o Teams depende de tu licencia. Copilot Chat, incluido en las suscripciones de Microsoft 365 elegibles, se mueve con datos de la web y con el contenido que tienes abierto o que subes. La licencia de pago de Microsoft 365 Copilot suma el acceso automático a tus correos, archivos, reuniones y calendario, y la experiencia completa dentro de Word, Excel y PowerPoint.
 
 | Función | Sin el complemento de pago | Con Microsoft 365 Copilot |
 |---|---|---|
@@ -41,26 +41,26 @@ La función que puedes usar en Outlook, Excel o Teams depende de tu licencia. Co
 | Agentes que usan datos de trabajo | De pago por uso | Incluidos |
 | Agente Facilitator en reuniones de Teams | No | Sí, en reuniones programadas |
 
-Fuente: [What is Microsoft Copilot?](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview), Microsoft Learn, 14 de octubre de 2026. Si estás valorando el coste, tienes los importes en euros en nuestra guía de [precio de Microsoft 365 Copilot](/blog/precio-microsoft-365-copilot).
+Fuente: [What is Microsoft Copilot?](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview), Microsoft Learn, 14 de octubre de 2026. Si estás calculando el coste, los importes en euros están en nuestra guía de [precio de Microsoft 365 Copilot](/blog/precio-microsoft-365-copilot).
 
 ## Copilot en Excel: qué hace y cómo pedírselo
 
-Copilot en Excel construye y modifica libros usando las herramientas de siempre: tablas, gráficos, tablas dinámicas y fórmulas. Según el [soporte de Microsoft](https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel) (24 de septiembre de 2026), el contenido queda editable y tú controlas todo lo que se modifica. No hace magia con datos desordenados: funciona mejor con datos en formato de tabla y encabezados claros.
+Copilot en Excel crea y retoca libros con las herramientas de siempre: tablas, gráficos, tablas dinámicas y fórmulas. Según el [soporte de Microsoft](https://support.microsoft.com/en-us/excel/copilot/get-started-with-copilot-in-excel) (24 de septiembre de 2026), todo queda editable y tú mandas sobre cada cambio. Con datos desordenados no hace milagros: rinde mejor cuando están en formato de tabla y con encabezados claros.
 
-Lo que puedes pedirle, según la documentación de Microsoft:
+Esto es lo que le puedes pedir, según la documentación de Microsoft:
 
-- **Fórmulas**: sugerir columnas con fórmula o fórmulas de una celda (por ejemplo, BUSCARX) y [explicar fórmulas que ya existen](https://support.microsoft.com/en-us/excel/copilot/data-insights-with-copilot-in-excel).
-- **Análisis**: resumir tendencias, detectar valores atípicos y crear gráficos o tablas dinámicas.
-- **Modelos**: trabajar con modelos de OpenAI o de Anthropic (Claude); para los de Anthropic, el administrador debe habilitarlos como subencargado, según las [preguntas frecuentes de Copilot en Excel](https://support.microsoft.com/en-au/excel/copilot/frequently-asked-questions-about-copilot-in-excel). En la UE vienen [desactivados por defecto](https://learn.microsoft.com/en-us/copilot/microsoft-365/connect-to-ai-subprocessor) y quedan fuera de la EU Data Boundary.
-- **Análisis más profundo**: el [agente Analyst](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-analyst-in-microsoft-365-copilot) de Microsoft 365 Copilot analiza archivos de Excel y CSV con estadística, tendencias y gráficos.
+- **Fórmulas**: proponer columnas con fórmula o fórmulas de una celda (por ejemplo, BUSCARX) y [explicar fórmulas que ya existen](https://support.microsoft.com/en-us/excel/copilot/data-insights-with-copilot-in-excel).
+- **Análisis**: resumir tendencias, localizar valores atípicos y crear gráficos o tablas dinámicas.
+- **Modelos**: apoyarse en modelos de OpenAI o de Anthropic (Claude); para los de Anthropic, el administrador debe habilitarlos como subencargado, según las [preguntas frecuentes de Copilot en Excel](https://support.microsoft.com/en-au/excel/copilot/frequently-asked-questions-about-copilot-in-excel). En la UE vienen [desactivados por defecto](https://learn.microsoft.com/en-us/copilot/microsoft-365/connect-to-ai-subprocessor) y se quedan fuera de la EU Data Boundary.
+- **Análisis más a fondo**: el [agente Analyst](https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-with-analyst-in-microsoft-365-copilot) de Microsoft 365 Copilot examina archivos de Excel y CSV con estadística, tendencias y gráficos.
 
 <Callout tipo="aviso" titulo="La función =COPILOT ya no existe">
 
-Muchos tutoriales enseñan a escribir `=COPILOT(...)` en una celda. Desde el 14 de septiembre de 2026, esa función no está disponible en Excel: los resultados ya calculados se conservan como valores, pero al recalcular la celda aparece el error #¿NOMBRE?. Microsoft remite al panel de Copilot, que admite muchas de las mismas tareas. Si alguna plantilla de tu empresa la usaba, revísala.
+Muchos tutoriales todavía te enseñan a escribir `=COPILOT(...)` en una celda. Desde el 14 de septiembre de 2026 esa función ya no está en Excel: lo calculado se conserva como valores, pero al recalcular la celda salta el error #¿NOMBRE?. Microsoft te deriva al panel de Copilot, que cubre muchas de esas tareas. Y si alguna plantilla de tu empresa la usaba, repásala.
 
 </Callout>
 
-Prompts de ejemplo por puesto (escríbelos en el panel de Copilot con la tabla seleccionada):
+Ejemplos de prompts por puesto (escríbelos en el panel de Copilot con la tabla seleccionada):
 
 | Puesto | Prompt | Qué revisar después |
 |---|---|---|
@@ -69,38 +69,38 @@ Prompts de ejemplo por puesto (escríbelos en el panel de Copilot con la tabla s
 | RR. HH. | «Explícame qué hace la fórmula de la columna F y propón una versión más sencilla» | Probar la nueva fórmula en dos o tres filas a mano |
 | Operaciones | «Detecta filas duplicadas o con fechas fuera del rango de 2026 y resáltalas» | Que no haya marcado como duplicados registros distintos |
 
-Si tu área es financiera, en [IA en finanzas y contabilidad](/blog/ia-finanzas-contabilidad) tienes más casos y controles para no fiarte a ciegas de las cifras.
+Si trabajas en finanzas, en [IA en finanzas y contabilidad](/blog/ia-finanzas-contabilidad) hay más casos y controles para no fiarte a ciegas de las cifras.
 
 ## Copilot en Outlook: resumir, redactar y mejorar el tono
 
-Copilot en Outlook ahorra tiempo sobre todo en dos tareas: ponerse al día con hilos largos y escribir el primer borrador de un correo. Según Microsoft, [al resumir un hilo](https://support.microsoft.com/en-us/outlook/copilot-pages/summarize-an-email-thread-with-copilot-in-outlook) Copilot busca los puntos clave y muestra el resumen en la parte superior del correo, con citas numeradas a los mensajes de origen.
+En Outlook, Copilot gana tiempo sobre todo en dos tareas: ponerse al día con hilos largos y sacar el primer borrador de un correo. Según Microsoft, [al resumir un hilo](https://support.microsoft.com/en-us/outlook/copilot-pages/summarize-an-email-thread-with-copilot-in-outlook) Copilot rastrea los puntos clave y coloca el resumen en la parte superior del correo, con citas numeradas a los mensajes de origen.
 
-Las tres funciones principales:
+Sus tres funciones principales:
 
-1. **Resumir un hilo**: abre el correo y usa la opción de resumen de Copilot que aparece en la parte superior del mensaje. Comprueba las citas antes de responder con lo que dice el resumen.
-2. **Redactar con Copilot**: describe lo que quieres decir y ajusta [la longitud y el tono](https://support.microsoft.com/en-us/outlook/copilot-pages/draft-an-email-message-with-copilot-in-outlook) del borrador.
-3. **Sugerencias de Copilot (coaching)**: revisa tu borrador y propone mejoras de tono, sentimiento y claridad, según las [preguntas frecuentes de Outlook](https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook).
+1. **Resumir un hilo**: abre el correo y pulsa la opción de resumen de Copilot que aparece en la parte superior del mensaje. Revisa las citas antes de responder apoyándote en el resumen.
+2. **Redactar con Copilot**: cuéntale lo que quieres decir y ajusta [la longitud y el tono](https://support.microsoft.com/en-us/outlook/copilot-pages/draft-an-email-message-with-copilot-in-outlook) del borrador.
+3. **Sugerencias de Copilot (coaching)**: repasa tu borrador y propone mejoras de tono, sentimiento y claridad, según las [preguntas frecuentes de Outlook](https://support.microsoft.com/en-us/outlook/frequently-asked-questions-about-copilot-in-outlook).
 
-Prompts que funcionan bien en Outlook:
+Prompts que rinden bien en Outlook:
 
 - «Resume este hilo en tres puntos y dime qué se espera de mí y para cuándo.»
 - «Redacta una respuesta breve y cordial aceptando la propuesta, pero pidiendo mover la entrega al viernes.»
 - «Revisa este correo: quiero que suene firme, pero no agresivo, porque es un cliente con retrasos de pago.»
 
-Copilot funciona con las versiones compatibles de Outlook clásico y del nuevo Outlook para Windows y Mac, siempre que el buzón esté en Exchange Online, según los [requisitos de Microsoft](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements) (5 de octubre de 2026). No está disponible en buzones de grupo, y en buzones compartidos o delegados las páginas de Microsoft se contradicen, así que compruébalo en tu caso. Para escribir mejores instrucciones en cualquier aplicación, tienes nuestra [guía de prompts para empleados](/blog/como-hacer-prompts-guia-empleados).
+Copilot opera con las versiones compatibles de Outlook clásico y del nuevo Outlook para Windows y Mac, siempre que el buzón esté en Exchange Online, según los [requisitos de Microsoft](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements) (5 de octubre de 2026). No está en buzones de grupo y, en los compartidos o delegados, las páginas de Microsoft se contradicen, así que compruébalo en tu caso. Para redactar mejores instrucciones en cualquier aplicación, tienes nuestra [guía de prompts para empleados](/blog/como-hacer-prompts-guia-empleados).
 
 ## Copilot en Teams: reuniones con resumen y tareas
 
-Copilot en Teams resume los puntos clave de una reunión, indica quién habló y qué dijo, sugiere tareas pendientes y responde preguntas durante la reunión o después, según el [soporte de Microsoft](https://support.microsoft.com/en-us/teams/copilot/catch-up-on-meetings-with-microsoft-365-copilot-in-teams). Es la función que más tiempo devuelve a quien encadena reuniones.
+En Teams, Copilot resume los puntos clave de una reunión, señala quién habló y qué dijo, propone tareas pendientes y responde preguntas durante la reunión o al terminar, según el [soporte de Microsoft](https://support.microsoft.com/en-us/teams/copilot/catch-up-on-meetings-with-microsoft-365-copilot-in-teams). Es la función que más tiempo devuelve a quien encadena reuniones.
 
-Detalles que conviene saber antes de usarlo:
+Conviene tener claros unos cuantos detalles antes de usarlo:
 
-- **Transcripción**: no es obligatoria para activar Copilot en la reunión, pero sí para preguntarle por ella o ver el historial cuando termina.
-- **Si llegas tarde**: si te unes más de 5 minutos después del inicio y Copilot está activo, te ofrece ponerte al día.
+- **Transcripción**: no hace falta para activar Copilot en la reunión, pero sí para preguntarle por ella o ver el historial una vez termina.
+- **Si llegas tarde**: cuando te unes más de 5 minutos después del inicio y Copilot está activo, te ofrece ponerte al día.
 - **Reuniones externas**: Copilot no funciona en reuniones organizadas fuera de la organización del participante.
-- **Facilitator**: este agente [toma notas en tiempo real](https://support.microsoft.com/en-us/teams/copilot/facilitator-in-microsoft-teams-meetings), resume decisiones y preguntas abiertas y ayuda a controlar la agenda y el tiempo. Requiere licencia de Copilot y solo funciona en reuniones programadas.
+- **Facilitator**: este agente [toma notas en tiempo real](https://support.microsoft.com/en-us/teams/copilot/facilitator-in-microsoft-teams-meetings), resume decisiones y preguntas abiertas y echa una mano para controlar la agenda y el tiempo. Pide licencia de Copilot y solo funciona en reuniones programadas.
 
-Prompts útiles en Teams:
+Prompts que vienen bien en Teams:
 
 - «¿Qué decisiones se han tomado y qué temas han quedado abiertos?»
 - «Haz una tabla con las tareas acordadas, el responsable y la fecha.»
@@ -108,16 +108,16 @@ Prompts útiles en Teams:
 
 ## Un flujo completo: de la reunión al correo y a la tabla
 
-El valor de Copilot crece cuando encadenas las tres aplicaciones en un mismo flujo, en lugar de usarlas por separado. Un ejemplo habitual en un equipo comercial o de proyecto: la reunión en Teams genera las tareas, Outlook las convierte en un correo de seguimiento y Excel las registra para hacer el seguimiento semanal.
+Copilot rinde más cuando enlazas las tres aplicaciones en un mismo flujo en vez de usarlas sueltas. Un caso típico en un equipo comercial o de proyecto: la reunión en Teams genera las tareas, Outlook las convierte en un correo de seguimiento y Excel las registra para el repaso semanal.
 
 <Flujo titulo="De la reunión al seguimiento" pasos="Reunión en Teams con transcripción|Resumen y tareas con Copilot|Correo de seguimiento en Outlook|Registro de tareas en Excel|Revisión semanal" />
 
 <Steps>
 
-1. **En Teams**, con la transcripción activada, pide al terminar: «Haz una tabla con las tareas acordadas, el responsable y la fecha».
-2. **Revisa la tabla** y corrige nombres o fechas mal interpretados.
-3. **En Outlook**, pide: «Redacta un correo de seguimiento para los asistentes con un resumen en tres líneas y la tabla de tareas».
-4. **En Excel**, pega las tareas en tu registro y pide: «Añade una columna de estado y resalta las tareas que vencen esta semana».
+1. **En Teams**, con la transcripción activada, pídele al terminar: «Haz una tabla con las tareas acordadas, el responsable y la fecha».
+2. **Revisa la tabla** y arregla los nombres o las fechas que haya interpretado mal.
+3. **En Outlook**, pídele: «Redacta un correo de seguimiento para los asistentes con un resumen en tres líneas y la tabla de tareas».
+4. **En Excel**, pega las tareas en tu registro y pídele: «Añade una columna de estado y resalta las tareas que vencen esta semana».
 5. **Cada lunes**, pide a Copilot en Excel un resumen de las tareas vencidas por responsable.
 
 </Steps>
@@ -126,44 +126,44 @@ El valor de Copilot crece cuando encadenas las tres aplicaciones en un mismo flu
 
 ## Copilot no aparece: qué revisar
 
-Cuando Copilot no aparece en Outlook, Excel o Teams, la causa suele estar en la licencia, en la cuenta con la que has iniciado sesión o en la configuración de la empresa, no en el ordenador. Estos son los requisitos que publica Microsoft; revísalos con tu administrador de Microsoft 365 antes de reinstalar nada.
+Cuando Copilot no aparece en Outlook, Excel o Teams, el motivo casi nunca es el ordenador: suele estar en la licencia, en la cuenta con la que has iniciado sesión o en la configuración de la empresa. Estos son los requisitos que publica Microsoft; repásalos con tu administrador de Microsoft 365 antes de reinstalar nada.
 
 <Checklist titulo="Lista de comprobación (según los requisitos de Microsoft)">
 
-- Has iniciado sesión con tu cuenta de trabajo (Microsoft Entra ID), no con una cuenta personal.
-- Tienes asignada una licencia de Microsoft 365 elegible y, para las funciones de pago, la licencia de Copilot.
-- Tu buzón está en Exchange Online (no es un buzón de grupo).
-- Tienes una cuenta de OneDrive: algunas funciones la necesitan.
-- En Word, Excel o PowerPoint para la web, tu navegador permite las cookies de terceros.
+- Has entrado con tu cuenta de trabajo (Microsoft Entra ID) y no con una personal.
+- Tienes asignada una licencia de Microsoft 365 elegible y, para las funciones de pago, la de Copilot.
+- Tu buzón está en Exchange Online (y no es un buzón de grupo).
+- Dispones de cuenta de OneDrive: algunas funciones la requieren.
+- En Word, Excel o PowerPoint para la web, tu navegador acepta las cookies de terceros.
 - La red de la empresa no bloquea el dominio cloud.microsoft ni las conexiones de Copilot.
-- En Teams, si quieres preguntar después de la reunión, la transcripción estaba activada.
-- Tu administrador puede usar el diagnóstico Copilot License Details para comprobar tu cuenta.
+- En Teams, si quieres preguntar tras la reunión, la transcripción estaba activada.
+- Tu administrador puede usar el diagnóstico Copilot License Details para revisar tu cuenta.
 
 </Checklist>
 
-Fuente: [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements), Microsoft Learn, 5 de octubre de 2026. Un detalle que confunde: Microsoft ha renombrado el producto como «Microsoft Copilot» en su documentación y la aplicación se mueve a copilot.cloud.microsoft, así que puede que veas nombres distintos según la pantalla.
+Fuente: [Microsoft Copilot requirements](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-requirements), Microsoft Learn, 5 de octubre de 2026. Un detalle que despista: Microsoft ha pasado a llamar al producto «Microsoft Copilot» en su documentación y la aplicación se traslada a copilot.cloud.microsoft, de modo que quizá veas nombres distintos según la pantalla.
 
 ## Lo que Copilot no hace por ti (y cuándo no necesitas formación)
 
-Copilot acelera el trabajo, pero no revisa por ti. Resume con citas para que compruebes la fuente, construye fórmulas que pueden estar mal planteadas y solo ve lo que tus permisos te dejan ver, según la [documentación de privacidad de Microsoft](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy). Si los permisos de SharePoint están desordenados, también mostrará documentos que no deberían estar tan a mano.
+Copilot agiliza el trabajo, pero no revisa en tu lugar. Resume con citas para que verifiques la fuente, arma fórmulas que pueden estar mal planteadas y solo ve lo que tus permisos le dejan ver, según la [documentación de privacidad de Microsoft](https://learn.microsoft.com/en-us/copilot/microsoft-365/microsoft-365-copilot-privacy). Y si los permisos de SharePoint están desordenados, sacará a la luz documentos que no deberían estar tan a mano.
 
-Tampoco siempre necesitas una formación externa. Si tu equipo es pequeño y tiene soltura con Office, Microsoft ofrece recursos propios sin coste, como la galería de prompts de Copilot y un kit de formación descargable, enlazados desde su [página de introducción a Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview). Una formación compensa cuando quieres que toda la plantilla use Copilot con un mismo método, con casos de vuestro trabajo y en poco tiempo, o cuando las licencias ya están pagadas y el uso no despega.
+Tampoco siempre hace falta formación externa. Si tu equipo es pequeño y se maneja con Office, Microsoft pone recursos propios gratuitos, como la galería de prompts de Copilot y un kit de formación descargable, enlazados desde su [página de introducción a Copilot](https://learn.microsoft.com/en-us/microsoft-365/copilot/microsoft-365-copilot-overview). Una formación compensa cuando quieres que toda la plantilla use Copilot con un mismo método, con casos de vuestro trabajo y en poco tiempo, o cuando las licencias ya están pagadas y el uso no arranca.
 
 ## Qué hacer ahora
 
-Para empezar a sacar partido a Copilot esta semana, elige una tarea repetitiva por aplicación, pruébala con los prompts de esta guía y mide cuánto tiempo te ahorra. Con dos o tres semanas de práctica sabrás qué personas necesitan la licencia de pago y cuáles se apañan con Copilot Chat.
+Para empezar a exprimir Copilot esta semana, escoge una tarea repetitiva por aplicación, pruébala con los prompts de esta guía y mide el tiempo que te ahorra. En dos o tres semanas de práctica verás quién necesita la licencia de pago y quién se apaña con Copilot Chat.
 
 <Steps>
 
-1. **Comprueba tu licencia**: qué ves en Outlook, Excel y Teams y si es Copilot Chat o la licencia de pago.
-2. **Elige una tarea por aplicación**: un hilo largo en Outlook, una reunión semanal en Teams y un informe en Excel.
-3. **Prueba el flujo completo** de reunión a correo y tabla con una reunión real.
-4. **Revisa las plantillas** que usaban la función =COPILOT y pásalas al panel de Copilot.
-5. **Si vais a licenciar a más gente**, forma antes al equipo. Si quieres valorarlo con nosotros, pide el [diagnóstico gratuito de 30 minutos](/diagnostico) o mira el resto del [catálogo de formaciones](/formaciones).
+1. **Comprueba tu licencia**: qué ves en Outlook, Excel y Teams y si es Copilot Chat o la de pago.
+2. **Escoge una tarea por aplicación**: un hilo largo en Outlook, una reunión semanal en Teams y un informe en Excel.
+3. **Prueba el flujo completo**, de la reunión al correo y a la tabla, con una reunión real.
+4. **Repasa las plantillas** que usaban la función =COPILOT y pásalas al panel de Copilot.
+5. **Si vais a dar licencia a más gente**, forma antes al equipo. Y si quieres valorarlo con nosotros, pide el [diagnóstico gratuito de 30 minutos](/diagnostico) o echa un vistazo al resto del [catálogo de formaciones](/formaciones).
 
 </Steps>
 
-Si todavía estás decidiendo entre asistentes, la [comparativa de ChatGPT, Gemini, Claude y Copilot](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini) te ayuda a ver si Copilot es la opción adecuada para tu empresa.
+Y si aún andas eligiendo entre asistentes, la [comparativa de ChatGPT, Gemini, Claude y Copilot](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini) te ayuda a ver si Copilot es la opción que le conviene a tu empresa.
 
 <FormacionCard slug="copilot-microsoft-365" />
 

@@ -3,57 +3,57 @@ title: "Qué es un LLM y cómo funciona, explicado para empresas"
 description: "Un LLM es un modelo de IA entrenado con enormes cantidades de texto para predecir la siguiente palabra. Cómo funciona, qué no es y qué implica para tu empresa."
 date: "2026-10-18"
 category: "conceptos"
-tldr: "Un LLM (large language model, modelo de lenguaje de gran tamaño) es un modelo de IA entrenado con enormes cantidades de texto para predecir el siguiente fragmento de texto. Es el motor de ChatGPT, Claude, Gemini y Copilot. No es una base de datos ni un buscador: genera texto probable, y por eso puede equivocarse con total seguridad."
+tldr: "Un LLM (large language model, modelo de lenguaje de gran tamaño) es un modelo de IA entrenado con enormes cantidades de texto para predecir el siguiente fragmento de texto. Mueve por dentro a ChatGPT, Claude, Gemini y Copilot. No es una base de datos ni un buscador: produce texto probable, y de ahí que a veces se equivoque con total aplomo."
 faqs:
   - q: "¿Qué significan las siglas LLM?"
-    a: "LLM son las siglas en inglés de large language model, que en español se traduce como modelo de lenguaje de gran tamaño o modelo extenso de lenguaje. «Grande» se refiere a dos cosas: al enorme volumen de texto con el que se entrena y al número de parámetros, los valores internos que el modelo ajusta durante el entrenamiento para hacer sus predicciones."
-  - q: "¿ChatGPT es un LLM?"
-    a: "No exactamente: ChatGPT es un producto, una aplicación de chat, que funciona con LLM de OpenAI de la familia GPT. Lo mismo pasa con Claude (Anthropic), Gemini (Google) o Copilot (Microsoft). El producto añade cosas que el modelo solo no tiene: interfaz, historial, búsqueda web, conectores con tus documentos, controles de administración y condiciones de privacidad según el plan."
+    a: "LLM son las siglas inglesas de large language model, que en español equivale a modelo de lenguaje de gran tamaño o modelo extenso de lenguaje. Lo de «grande» apunta a dos cosas: al enorme volumen de texto con el que se entrena y al número de parámetros, esos valores internos que el modelo afina durante el entrenamiento para hacer sus predicciones."
+  - q: "¿Es ChatGPT un LLM?"
+    a: "No del todo: ChatGPT es un producto, una aplicación de chat que funciona con LLM de OpenAI de la familia GPT. Igual ocurre con Claude (Anthropic), Gemini (Google) o Copilot (Microsoft). El producto suma lo que el modelo por sí solo no tiene: interfaz, historial, búsqueda web, conectores con tus documentos, controles de administración y condiciones de privacidad según el plan."
   - q: "¿Un LLM aprende de lo que le escribo?"
-    a: "No en tiempo real: el modelo no cambia sus parámetros mientras hablas con él. Lo que sí puede pasar es que el proveedor use tus conversaciones para entrenar versiones futuras. En los planes de empresa de ChatGPT, Claude, Copilot y Gemini eso no ocurre por defecto, y en los planes personales depende de la configuración. Por eso importa qué cuenta usa tu equipo."
+    a: "En tiempo real, no: el modelo no toca sus parámetros mientras charlas con él. Otra cosa es que el proveedor aproveche tus conversaciones para entrenar versiones futuras. En los planes de empresa de ChatGPT, Claude, Copilot y Gemini eso no pasa por defecto; en los personales depende de la configuración. De ahí que importe con qué cuenta trabaja tu equipo."
   - q: "¿Qué diferencia hay entre un LLM y la IA generativa?"
-    a: "La IA generativa es la categoría amplia: cualquier IA que crea contenido nuevo, ya sea texto, imagen, audio o vídeo. Un LLM es un tipo concreto de IA generativa especializado en lenguaje. Muchos modelos actuales son multimodales, es decir, además de texto aceptan imágenes o documentos, pero el núcleo sigue siendo un modelo de lenguaje."
+    a: "La IA generativa es la categoría grande: cualquier IA que crea contenido nuevo, sea texto, imagen, audio o vídeo. El LLM es una especie concreta de IA generativa, especializada en lenguaje. Muchos modelos de hoy son multimodales, o sea, admiten también imágenes o documentos además de texto, pero su núcleo sigue siendo un modelo de lenguaje."
   - q: "¿Necesito saber programar para usar un LLM en mi empresa?"
-    a: "No. La mayoría de empresas usa los LLM a través de asistentes como ChatGPT Business, Claude Team, Microsoft 365 Copilot o Gemini en Google Workspace, sin escribir código. Programar solo hace falta si quieres integrar un modelo en tus propias aplicaciones mediante su API o construir agentes a medida, y en ese caso suele encargarse un equipo técnico."
+    a: "No. La mayoría de empresas recurre a los LLM a través de asistentes como ChatGPT Business, Claude Team, Microsoft 365 Copilot o Gemini en Google Workspace, sin tocar código. Solo hace falta programar si quieres integrar un modelo en tus propias aplicaciones mediante su API o montar agentes a medida, y entonces suele ocuparse un equipo técnico."
 ---
 
-Un LLM, siglas de large language model o modelo de lenguaje de gran tamaño, es un modelo de inteligencia artificial entrenado con enormes cantidades de texto para predecir qué fragmento de texto viene a continuación. Repitiendo esa predicción miles de veces, redacta, resume, traduce y responde preguntas. Es el motor de ChatGPT, Claude, Gemini y Copilot. Aquí te explicamos cómo funciona sin tecnicismos, qué no es y qué significa para el día a día de tu empresa.
+Un LLM, siglas de large language model o modelo de lenguaje de gran tamaño, es un modelo de inteligencia artificial entrenado con enormes cantidades de texto para predecir qué fragmento de texto viene después. Al repetir esa predicción miles de veces, redacta, resume, traduce y responde preguntas. Es el motor de ChatGPT, Claude, Gemini y Copilot. Te contamos cómo funciona sin tecnicismos, qué no es y qué supone para el día a día de tu empresa.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- Un LLM **predice texto probable**, no consulta una base de datos de hechos. Por eso escribe con fluidez y a veces se inventa cosas.
-- Lo que hace útil a un asistente no es solo el modelo: es el modelo más tus instrucciones, tus documentos y la herramienta que lo rodea.
-- En octubre de 2026, los modelos punteros de OpenAI, Anthropic y Google admiten en torno a **1 millón de tokens** por petición, pero más contexto no garantiza mejores respuestas.
+- Un LLM **predice texto probable**, no consulta una base de datos de hechos. Por eso redacta con fluidez y, a ratos, se inventa cosas.
+- Lo que vuelve útil a un asistente no es solo el modelo: es el modelo sumado a tus instrucciones, tus documentos y la herramienta que lo envuelve.
+- En octubre de 2026, los modelos punteros de OpenAI, Anthropic y Google aceptan alrededor de **1 millón de tokens** por petición, aunque más contexto no asegura mejores respuestas.
 
 </Callout>
 
 ## Qué significa LLM
 
-LLM significa large language model, modelo de lenguaje de gran tamaño. Es un modelo de IA con muchísimos parámetros, entrenado con grandes cantidades de texto, capaz de generar texto parecido al humano, responder preguntas y resumir información. La palabra clave es «modelo de lenguaje»: un sistema que calcula qué texto es probable.
+LLM significa large language model, modelo de lenguaje de gran tamaño. Es un modelo de IA con muchísimos parámetros, entrenado con grandes cantidades de texto, capaz de generar texto parecido al humano, responder preguntas y resumir información. La expresión que lo define es «modelo de lenguaje»: un sistema que calcula qué texto es probable.
 
-Google lo define en su curso de aprendizaje automático: un modelo de lenguaje estima la probabilidad de que un token o secuencia de tokens aparezca dentro de una secuencia más larga ([Google for Developers, 2026](https://developers.google.com/machine-learning/crash-course/llm)). Un **token** es la unidad en la que el modelo trocea el texto: puede ser una palabra, un trozo de palabra o un carácter. Lo explicamos con ejemplos en [qué son los tokens y la ventana de contexto](/blog/tokens-ventana-contexto).
+Google lo define así en su curso de aprendizaje automático: un modelo de lenguaje estima la probabilidad de que un token o una secuencia de tokens aparezca dentro de una secuencia más larga ([Google for Developers, 2026](https://developers.google.com/machine-learning/crash-course/llm)). Un **token** es la unidad en la que el modelo parte el texto: una palabra, un trozo de palabra o un carácter. Lo explicamos con ejemplos en [qué son los tokens y la ventana de contexto](/blog/tokens-ventana-contexto).
 
-Anthropic, en su [glosario oficial](https://platform.claude.com/docs/en/about-claude/glossary), describe los LLM como modelos de lenguaje con muchos parámetros, entrenados con grandes volúmenes de texto, que pueden generar texto de apariencia humana, responder preguntas y resumir información. Los **parámetros** son los valores internos que el modelo ajusta al entrenarse: no son datos guardados, sino algo más parecido a la «intuición» estadística que ha extraído de todo lo que ha leído.
+Anthropic, en su [glosario oficial](https://platform.claude.com/docs/en/about-claude/glossary), describe los LLM como modelos de lenguaje con muchos parámetros, entrenados con grandes volúmenes de texto, capaces de generar texto de apariencia humana, responder preguntas y resumir información. Los **parámetros** son los valores internos que el modelo ajusta al entrenarse: no son datos guardados, sino algo más cercano a la «intuición» estadística que ha destilado de todo lo que ha leído.
 
 ## Cómo funciona un LLM, paso a paso
 
-Un LLM funciona como un autocompletado muy avanzado: trocea tu texto en tokens, calcula cuál es el siguiente token más probable, lo añade y repite el proceso hasta completar la respuesta. Google lo resume así: los LLM son, en esencia, mecanismos de autocompletado capaces de predecir miles de tokens seguidos.
+Un LLM se comporta como un autocompletado muy avanzado: parte tu texto en tokens, calcula cuál es el siguiente token más probable, lo añade y vuelve a empezar hasta terminar la respuesta. Google lo resume así: los LLM son, en el fondo, mecanismos de autocompletado capaces de predecir miles de tokens seguidos.
 
 <Flujo titulo="Lo que pasa cuando escribes una pregunta" pasos="Tu texto se divide en tokens|El modelo relaciona cada token con el resto|Calcula el siguiente token más probable|Lo añade y vuelve a calcular|Se detiene y te muestra la respuesta" />
 
-La pieza que hizo posible este salto es el **Transformer**, una arquitectura presentada por investigadores de Google en 2017 en el artículo [«Attention Is All You Need»](https://arxiv.org/abs/1706.03762). Su idea central es la «atención»: el modelo pondera qué palabras del texto son relevantes para interpretar cada una de las demás. Por eso entiende que en «el banco cerró la cuenta» se habla de una entidad financiera y no de un asiento.
+La pieza que destrabó este salto es el **Transformer**, una arquitectura que investigadores de Google presentaron en 2017 en el artículo [«Attention Is All You Need»](https://arxiv.org/abs/1706.03762). Su idea central es la «atención»: el modelo pondera qué palabras del texto importan para interpretar cada una de las demás. Por eso capta que en «el banco cerró la cuenta» se habla de una entidad financiera y no de un asiento.
 
 ### Cómo se entrena: tres fases
 
 <Steps>
 
-1. **Preentrenamiento.** El modelo lee una cantidad enorme de texto sin etiquetar y aprende a predecir la siguiente palabra. Según [Anthropic](https://platform.claude.com/docs/en/about-claude/glossary), un modelo recién preentrenado no es bueno respondiendo preguntas ni siguiendo instrucciones.
-2. **Ajuste fino (fine-tuning).** Se le sigue entrenando con ejemplos de conversaciones y tareas bien resueltas para que se comporte como un asistente.
-3. **Aprendizaje por refuerzo con valoraciones humanas (RLHF).** Personas ordenan varias respuestas de mejor a peor, y el modelo aprende a preferir las mejor valoradas.
+1. **Preentrenamiento.** El modelo devora una cantidad enorme de texto sin etiquetar y aprende a predecir la siguiente palabra. Según [Anthropic](https://platform.claude.com/docs/en/about-claude/glossary), a un modelo recién preentrenado no se le da bien responder preguntas ni seguir instrucciones.
+2. **Ajuste fino (fine-tuning).** Se le entrena un poco más con ejemplos de conversaciones y tareas bien resueltas para que actúe como un asistente.
+3. **Aprendizaje por refuerzo con valoraciones humanas (RLHF).** Hay personas que ordenan varias respuestas de mejor a peor, y el modelo aprende a decantarse por las mejor valoradas.
 
 </Steps>
 
-Esta última fase importa más de lo que parece. En el estudio de OpenAI que popularizó la técnica, los evaluadores preferían las respuestas de un modelo ajustado de 1.300 millones de parámetros a las de GPT-3, con 175.000 millones: cien veces más pequeño y aun así más útil ([Ouyang et al., 2022](https://arxiv.org/abs/2203.02155)). Los autores lo resumen en una frase: hacer los modelos más grandes no los hace, por sí solo, mejores para seguir la intención del usuario.
+Esta última fase pesa más de lo que parece. En el estudio de OpenAI que popularizó la técnica, los evaluadores preferían las respuestas de un modelo ajustado de 1.300 millones de parámetros a las de GPT-3, con 175.000 millones: cien veces más pequeño y, aun así, más útil ([Ouyang et al., 2022](https://arxiv.org/abs/2203.02155)). Los autores lo condensan en una idea: agrandar los modelos no los vuelve, por sí solo, mejores para seguir la intención del usuario.
 
 <Stats>
   <Stat valor="100 veces" etiqueta="Menos parámetros tenía el modelo ajustado con RLHF que los evaluadores preferían a GPT-3" fuente="Ouyang et al., 2022" href="https://arxiv.org/abs/2203.02155" />
@@ -62,9 +62,9 @@ Esta última fase importa más de lo que parece. En el estudio de OpenAI que pop
 
 ## Qué no es un LLM: ni una base de datos ni un buscador
 
-Un LLM no es una base de datos ni un buscador: no guarda documentos para consultarlos, sino patrones estadísticos del lenguaje. Cuando no sabe algo, no responde «no lo encuentro», sino que genera el texto más plausible. Ese es el origen de las alucinaciones, el error más caro de malinterpretar.
+Un LLM no es una base de datos ni un buscador: no almacena documentos para consultarlos, sino patrones estadísticos del lenguaje. Cuando no sabe algo, no contesta «no lo encuentro»; genera el texto que le parece más plausible. Ahí nacen las alucinaciones, el error que sale más caro malinterpretar.
 
-El propio curso de Google lo reconoce: los LLM alucinan, es decir, sus predicciones a menudo contienen errores ([Google for Developers](https://developers.google.com/machine-learning/crash-course/llm/transformers)). El caso más citado es el de un abogado de Nueva York que presentó sentencias inventadas por ChatGPT y declaró ante el juez que había supuesto que era como un «súper buscador» ([Mata v. Avianca, 22 de junio de 2023](https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0.pdf)). Lo desarrollamos en [alucinaciones de la IA: por qué ocurren y cómo evitarlas](/blog/alucinaciones-ia).
+El propio curso de Google lo admite: los LLM alucinan, es decir, sus predicciones contienen errores a menudo ([Google for Developers](https://developers.google.com/machine-learning/crash-course/llm/transformers)). El caso más citado es el de un abogado de Nueva York que presentó sentencias inventadas por ChatGPT y le dijo al juez que había dado por sentado que era una especie de «súper buscador» ([Mata v. Avianca, 22 de junio de 2023](https://storage.courtlistener.com/recap/gov.uscourts.nysd.575368/gov.uscourts.nysd.575368.54.0.pdf)). Lo desarrollamos en [alucinaciones de la IA: por qué ocurren y cómo evitarlas](/blog/alucinaciones-ia).
 
 | Lo que parece | Lo que es en realidad | Qué implica para tu empresa |
 |---|---|---|
@@ -74,13 +74,13 @@ El propio curso de Google lo reconoce: los LLM alucinan, es decir, sus prediccio
 | Que siempre responde igual | Hay un componente aleatorio: la misma pregunta puede dar respuestas distintas | No lo uses como calculadora ni como fuente única |
 | Que conoce tu empresa | Solo sabe lo que le das en el momento o lo que conecta la herramienta | Dale contexto y documentos, o usa un sistema con RAG |
 
-Sobre la aleatoriedad, el glosario de Anthropic precisa que, incluso con la temperatura a cero (el ajuste que reduce la creatividad), los resultados no son del todo deterministas y la misma entrada puede producir salidas distintas.
+Sobre la aleatoriedad, el glosario de Anthropic puntualiza que, aun con la temperatura a cero (el ajuste que recorta la creatividad), los resultados no son del todo deterministas y una misma entrada puede dar salidas distintas.
 
 <CtaInline />
 
 ## LLM, chatbot, agente y RAG: en qué se diferencian
 
-El LLM es el motor; el chatbot o asistente es el coche completo. ChatGPT, Claude o Copilot son productos que combinan uno o varios LLM con una interfaz, historial, conectores y controles. Un agente va un paso más allá: usa el LLM para decidir qué pasos dar y ejecutarlos con herramientas. RAG es la técnica para que responda con tus documentos.
+El LLM es el motor; el chatbot o asistente es el coche entero. ChatGPT, Claude o Copilot son productos que mezclan uno o varios LLM con una interfaz, historial, conectores y controles. El agente da un paso más: se sirve del LLM para decidir qué pasos dar y ejecutarlos con herramientas. Y RAG es la técnica para que responda con tus documentos.
 
 | Término | Qué es | Ejemplo |
 |---|---|---|
@@ -89,35 +89,35 @@ El LLM es el motor; el chatbot o asistente es el coche completo. ChatGPT, Claude
 | RAG | Técnica que busca en tus documentos y se los pasa al modelo antes de responder | Un asistente que contesta con el manual interno |
 | Agente | Sistema en el que el LLM decide los pasos y usa herramientas | Un agente que lee correos, actualiza el CRM y propone respuestas |
 
-Cada uno tiene su artículo: [qué es un agente de IA](/blog/que-es-un-agente-de-ia), [RAG: un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa) y el [glosario de IA para empresas](/blog/glosario-ia-empresas) con el resto de términos.
+Cada uno tiene su propio artículo: [qué es un agente de IA](/blog/que-es-un-agente-de-ia), [RAG: un chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa) y el [glosario de IA para empresas](/blog/glosario-ia-empresas) con los demás términos.
 
 ## Qué modelos hay en octubre de 2026 y cómo elegir
 
-En octubre de 2026, los tres grandes proveedores ofrecen familias de modelos de varios tamaños: OpenAI (GPT-6 Astra, GPT-6.1 Sol y GPT-6 Luna), Anthropic (Claude Fable 5.1, Opus 5.5, Sonnet 5.5 y Haiku 5.5) y Google (Gemini 4 Argon, Gemini 3.8 Flash y Gemini 3.5 Flash-Lite). Los grandes razonan mejor; los pequeños son más rápidos y baratos.
+En octubre de 2026, los tres grandes proveedores ofrecen familias de modelos de varios tamaños: OpenAI (GPT-6 Astra, GPT-6.1 Sol y GPT-6 Luna), Anthropic (Claude Fable 5.1, Opus 5.5, Sonnet 5.5 y Haiku 5.5) y Google (Gemini 4 Argon, Gemini 3.8 Flash y Gemini 3.5 Flash-Lite). Los grandes razonan mejor; los pequeños corren más y cuestan menos.
 
-La diferencia de precio entre tamaños es grande. En la API de Anthropic, procesar un millón de tokens de entrada cuesta 10 dólares con Claude Fable 5.1 y 0,10 dólares con Claude Haiku 5.5 (en peticiones de hasta 100.000 tokens; por encima, 0,50 dólares) ([precios oficiales de Anthropic](https://platform.claude.com/docs/en/about-claude/pricing), en USD, sin impuestos, consultados el 18 de octubre de 2026). En cuanto a capacidad, los modelos actuales de Claude admiten 1 millón de tokens por petición ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows)), y los de GPT-6, 1,05 millones ([OpenAI](https://developers.openai.com/api/docs/models)).
+La brecha de precio entre tamaños es enorme. En la API de Anthropic, procesar un millón de tokens de entrada cuesta 10 dólares con Claude Fable 5.1 y 0,10 dólares con Claude Haiku 5.5 (en peticiones de hasta 100.000 tokens; por encima, 0,50 dólares) ([precios oficiales de Anthropic](https://platform.claude.com/docs/en/about-claude/pricing), en USD, sin impuestos, consultados el 18 de octubre de 2026). En capacidad, los modelos actuales de Claude admiten 1 millón de tokens por petición ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/context-windows)), y los de GPT-6, 1,05 millones ([OpenAI](https://developers.openai.com/api/docs/models)).
 
-También ha cambiado la transparencia. El [AI Index 2026 de Stanford](https://hai.stanford.edu/ai-index/2026-ai-index-report) señala que la industria produjo más del 90 % de los modelos notables de 2025 y que los más capaces son ahora los menos transparentes: OpenAI, Anthropic y Google ya no publican el número de parámetros ni el tamaño de los datos de entrenamiento de varios de ellos.
+La transparencia también ha dado un giro. El [AI Index 2026 de Stanford](https://hai.stanford.edu/ai-index/2026-ai-index-report) apunta que la industria sacó más del 90 % de los modelos notables de 2025 y que los más capaces son hoy los menos transparentes: OpenAI, Anthropic y Google ya no publican el número de parámetros ni el tamaño de los datos de entrenamiento de varios de ellos.
 
 <Barras titulo="Modelos de IA notables producidos en 2025, por país" datos="Estados Unidos|59;China|35" unidad="" fuente="Stanford AI Index, 2026" href="https://hai.stanford.edu/ai-index/2026-ai-index-report" />
 
-Para una empresa, la elección rara vez es «qué modelo es mejor» en abstracto. Pesan más el plan corporativo y sus condiciones de privacidad, la integración con las herramientas que ya usáis (Microsoft 365 o Google Workspace) y que el equipo sepa usarlo. Lo comparamos en [ChatGPT vs Copilot vs Claude vs Gemini para empresas](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini).
+Para una empresa, la decisión casi nunca es «qué modelo es mejor» en abstracto. Pesan más el plan corporativo y sus condiciones de privacidad, el encaje con las herramientas que ya usáis (Microsoft 365 o Google Workspace) y que el equipo sepa manejarlo. Lo comparamos en [ChatGPT vs Copilot vs Claude vs Gemini para empresas](/blog/chatgpt-vs-copilot-vs-claude-vs-gemini).
 
 ## Qué significa para tu empresa y qué hacer ahora
 
-Entender qué es un LLM cambia cómo se usa: como un colaborador rápido que redacta y resume bien, pero que necesita contexto y revisión, no como una fuente de verdad. Si tu equipo ya lo usa con criterio, no necesitas formación externa; si cada persona lo usa a su manera, conviene una base común.
+Entender qué es un LLM cambia la forma de usarlo: como un colaborador veloz que redacta y resume bien, pero que necesita contexto y revisión, no como una fuente de verdad. Si tu equipo ya lo maneja con criterio, no te hace falta formación externa; si cada cual lo usa a su aire, conviene una base común.
 
 <Checklist titulo="Cinco hábitos que se derivan de cómo funciona un LLM">
 
-- Dar contexto: quién eres, para qué es el texto y qué formato quieres.
-- Verificar cifras, citas, nombres y normas antes de usarlos fuera.
-- Usar cuentas de empresa, no personales, para cualquier dato de trabajo.
-- No pegar datos personales ni confidenciales si la herramienta no está aprobada.
-- Abrir una conversación nueva cuando cambias de tema o el hilo es muy largo.
+- Da contexto: quién eres, para qué es el texto y en qué formato lo quieres.
+- Comprueba cifras, citas, nombres y normas antes de usarlos fuera.
+- Usa cuentas de empresa, nunca personales, para cualquier dato de trabajo.
+- No pegues datos personales ni confidenciales si la herramienta no está aprobada.
+- Abre una conversación nueva cuando cambies de tema o el hilo se alargue demasiado.
 
 </Checklist>
 
-Si en tu empresa hay perfiles que no saben qué pasa por dentro de la herramienta, ese es el punto de partida de nuestra [formación de alfabetización en IA](/formaciones/alfabetizacion-ia), que empieza justo por cómo «piensa» un modelo de lenguaje y por qué se equivoca, y sigue con qué datos no compartir. Si quieres saber qué te pide el AI Act en este terreno, el [test del AI Act](/test-ai-act) te lo dice en tres minutos.
+Si en tu empresa hay perfiles que no saben qué ocurre dentro de la herramienta, ese es el arranque de nuestra [formación de alfabetización en IA](/formaciones/alfabetizacion-ia), que empieza precisamente por cómo «piensa» un modelo de lenguaje y por qué se equivoca, y continúa con qué datos no compartir. Y si quieres saber qué te exige el AI Act en este terreno, el [test del AI Act](/test-ai-act) te lo dice en tres minutos.
 
 <FormacionCard slug="alfabetizacion-ia" />
 

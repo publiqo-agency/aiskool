@@ -3,34 +3,34 @@ title: "Cuánto cuesta un agente de IA: precios y escenarios"
 description: "Cuánto cuesta un agente de IA: tokens con precios oficiales de 2026, plataforma, horas de desarrollo y mantenimiento, con un ejemplo calculado y sus supuestos."
 date: "2026-10-18"
 category: "agentes"
-tldr: "No hay un precio de mercado publicado para un agente de IA: el coste es la suma de los tokens del modelo (de 0,10 a 10 USD por millón de tokens de entrada en octubre de 2026), la plataforma, las horas de desarrollo y el mantenimiento. Casi siempre, las horas de trabajo pesan mucho más que el modelo."
+tldr: "Ningún precio de mercado está publicado para un agente de IA: su coste suma los tokens del modelo (de 0,10 a 10 USD por millón de tokens de entrada en octubre de 2026), la plataforma, las horas de desarrollo y el mantenimiento. Y casi siempre las horas de trabajo pesan mucho más que el modelo."
 faqs:
   - q: "¿Cuánto cuesta un chatbot para la web de mi empresa?"
-    a: "Depende de si es un chatbot de respuestas fijas o uno con IA que consulta tus documentos. En el segundo caso pagas el modelo por tokens, que con volúmenes de pyme suele ser poco, la herramienta donde vive el chatbot y, sobre todo, el tiempo de preparar los contenidos, configurarlo, probarlo y revisar sus respuestas. No hay una tarifa estándar: pide que te desglosen esas partidas."
+    a: "Según sea un chatbot de respuestas fijas o uno con IA que consulta tus documentos. En el segundo, pagas el modelo por tokens —con volúmenes de pyme suele salir barato—, la herramienta donde vive el chatbot y, sobre todo, el tiempo de preparar los contenidos, configurarlo, probarlo y revisar sus respuestas. No existe una tarifa estándar: pide que te desglosen esas partidas."
   - q: "¿Es más barato usar ChatGPT o Claude por API que pagar licencias?"
-    a: "Depende del uso. Una licencia por usuario, como ChatGPT Business o Claude Team, tiene sentido cuando muchas personas trabajan a diario con el asistente. La API se paga por tokens consumidos y encaja mejor en procesos automáticos con un volumen conocido. Muchas empresas combinan las dos: licencias para el trabajo diario y API para los flujos automatizados."
+    a: "Según el uso. Una licencia por usuario, como ChatGPT Business o Claude Team, cobra sentido cuando mucha gente trabaja a diario con el asistente. La API se paga por tokens consumidos y encaja mejor en procesos automáticos de volumen conocido. Muchas empresas tiran de ambas: licencias para el día a día y API para los flujos automatizados."
   - q: "¿Cómo puedo reducir el coste de tokens de un agente?"
-    a: "Elige el modelo más pequeño que haga bien la tarea y reserva los grandes para los pasos difíciles. Acorta las instrucciones y el contexto que envías en cada llamada. Usa la caché de entrada cuando repitas el mismo contexto y el procesamiento por lotes cuando no necesites respuesta inmediata: Anthropic, OpenAI y Google descuentan un 50 % en sus APIs de lotes."
+    a: "Quédate con el modelo más pequeño que resuelva bien la tarea y deja los grandes para los pasos difíciles. Recorta las instrucciones y el contexto que mandas en cada llamada. Tira de la caché de entrada cuando repitas el mismo contexto y del procesamiento por lotes cuando no te urja la respuesta: Anthropic, OpenAI y Google descuentan un 50 % en sus APIs de lotes."
   - q: "¿Hay que pagar IVA sobre los precios de las APIs?"
-    a: "Los precios que publican OpenAI, Anthropic y Google para sus APIs están en dólares y ninguno publica el IVA español. Cómo se aplica el IVA en tu factura depende de la entidad que te factura y de tu situación fiscal, así que conviene revisarlo con tu gestoría. Para comparar proveedores, usa siempre precios sin IVA y en la misma moneda."
+    a: "Los precios que OpenAI, Anthropic y Google publican para sus APIs van en dólares, y ninguno incluye el IVA español. Cómo se aplica el IVA en tu factura depende de quién te factura y de tu situación fiscal, así que conviene mirarlo con tu gestoría. Para comparar proveedores, usa siempre precios sin IVA y en la misma moneda."
   - q: "¿Quién responde si el agente se equivoca?"
-    a: "Depende del caso y de los contratos con tus proveedores, así que conviene revisarlo con tu asesoría antes de poner el agente en producción. Lo que sí está en tu mano es reducir el riesgo: limitar sus permisos, registrar lo que hace y exigir aprobación humana en acciones sensibles, como pagos, devoluciones o envíos a clientes. OpenAI recomienda esa supervisión hasta que la fiabilidad del agente esté demostrada."
+    a: "Según el caso y los contratos con tus proveedores, de modo que conviene revisarlo con tu asesoría antes de poner el agente en producción. Lo que sí controlas es el riesgo: acotar sus permisos, registrar lo que hace y exigir aprobación humana en las acciones sensibles, como pagos, devoluciones o envíos a clientes. OpenAI aconseja mantener esa supervisión hasta que la fiabilidad del agente quede demostrada."
 ---
 
-Un agente de IA no tiene un precio de catálogo. Lo que pagas es la suma de cuatro partidas: el **modelo** (por tokens o por licencia), la **plataforma** donde vive el agente, las **horas de diseño y desarrollo** y el **mantenimiento**. Los tokens tienen precios oficiales que puedes calcular al céntimo; las horas no, y son casi siempre la partida más grande. Aquí tienes cada componente con precios consultados el 18 de octubre de 2026, un ejemplo calculado con sus supuestos y qué preguntar antes de aceptar un presupuesto.
+Un agente de IA no viene con precio de catálogo. Pagas la suma de cuatro partidas: el **modelo** (por tokens o por licencia), la **plataforma** donde vive el agente, las **horas de diseño y desarrollo** y el **mantenimiento**. Los tokens llevan precios oficiales que calculas al céntimo; las horas no, y suelen ser la partida más abultada. Abajo desglosamos cada componente con precios consultados el 18 de octubre de 2026, un ejemplo calculado con sus supuestos y qué preguntar antes de aceptar un presupuesto.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- **No existe una cifra de mercado fiable** para el coste de un agente: cualquier horquilla que veas sin desglose es la tarifa de un proveedor.
-- El modelo suele ser lo barato: un agente con 1.000 consultas al mes puede gastar entre 1 y 20 USD en tokens, según el modelo.
+- **No hay una cifra de mercado fiable** para el coste de un agente: cualquier horquilla sin desglose es la tarifa de un proveedor concreto.
+- El modelo suele ser lo barato: un agente con 1.000 consultas al mes puede gastar entre 1 y 20 USD en tokens, según cuál uses.
 - Lo caro son las **horas**: entender el proceso, integrar sistemas, probar y mantener.
-- Antes de presupuestar un agente, comprueba si una automatización sencilla o la licencia que ya pagas resuelven el problema.
+- Antes de presupuestar un agente, mira si una automatización sencilla o la licencia que ya pagas te resuelven el problema.
 
 </Callout>
 
 ## De qué se compone el coste de un agente de IA
 
-El coste de un agente de IA se reparte en cuatro componentes: el consumo del modelo de lenguaje, la plataforma o infraestructura donde se ejecuta, el trabajo de diseñarlo e integrarlo con tus sistemas y el mantenimiento posterior. Solo los dos primeros tienen precios públicos; los otros dos dependen del alcance y de quién haga el trabajo.
+El coste de un agente de IA se reparte en cuatro componentes: el consumo del modelo de lenguaje, la plataforma o infraestructura donde se ejecuta, el trabajo de diseñarlo e integrarlo con tus sistemas y el mantenimiento posterior. Los dos primeros tienen precio público; los otros dos dependen del alcance y de quién haga el trabajo.
 
 | Componente | Cómo se paga | Precio público | Qué lo encarece |
 |---|---|---|---|
@@ -40,11 +40,11 @@ El coste de un agente de IA se reparte en cuatro componentes: el consumo del mod
 | Mantenimiento | Horas al mes o cuota de soporte | No | Cambios en las aplicaciones, nuevas reglas, revisión de calidad |
 | Formación del equipo | Por grupo o por persona | Depende del proveedor | Número de perfiles que lo usarán o mantendrán |
 
-Los agentes, además, suelen hacer varias llamadas al modelo por cada tarea (planificar, consultar una herramienta, revisar el resultado), así que el consumo de tokens por tarea es mayor que el de un chatbot que contesta una vez. Si quieres repasar qué hace exactamente un agente, lo contamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia).
+Y un agente suele lanzar varias llamadas al modelo por cada tarea (planificar, consultar una herramienta, revisar el resultado), de modo que gasta más tokens por tarea que un chatbot que responde de una. Si quieres repasar qué hace exactamente un agente, lo contamos en [qué es un agente de IA](/blog/que-es-un-agente-de-ia).
 
 ## Cuánto cuestan los tokens: precios oficiales por modelo
 
-El precio del modelo se cobra por millón de tokens, con tarifas distintas para lo que envías (entrada) y lo que el modelo genera (salida). En octubre de 2026, los precios de entrada van de 0,10 USD a 10 USD por millón de tokens según el modelo. Todos están en dólares y sin IVA.
+El modelo se cobra por millón de tokens, con tarifas distintas para lo que envías (entrada) y lo que genera (salida). En octubre de 2026, la entrada va de 0,10 USD a 10 USD por millón de tokens según el modelo. Todos los precios están en dólares y sin IVA.
 
 | Proveedor | Modelo | Entrada (USD por millón) | Salida (USD por millón) |
 |---|---|---|---|
@@ -59,19 +59,19 @@ El precio del modelo se cobra por millón de tokens, con tarifas distintas para 
 | Google | Gemini 3.8 Flash | 0,75 | 3,75 |
 | Google | Gemini 3.5 Flash-Lite | 0,30 | 2,50 |
 
-Precios consultados el 18/10/2026 en las páginas oficiales de [OpenAI](https://developers.openai.com/api/docs/pricing), [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) y [Google](https://ai.google.dev/gemini-api/docs/pricing). En OpenAI, la tabla corresponde a contexto corto (hasta 272.000 tokens de entrada); en Claude Haiku 5.5, a peticiones de hasta 100.000 tokens.
+Precios consultados el 18/10/2026 en las páginas oficiales de [OpenAI](https://developers.openai.com/api/docs/pricing), [Anthropic](https://platform.claude.com/docs/en/about-claude/pricing) y [Google](https://ai.google.dev/gemini-api/docs/pricing). En OpenAI, la tabla es de contexto corto (hasta 272.000 tokens de entrada); en Claude Haiku 5.5, de peticiones de hasta 100.000 tokens.
 
 <Callout tipo="aviso" titulo="Precios que cambian pronto">
 
-Google publica en su página que los precios de Gemini ya tienen fecha de subida: Gemini 4 Argon pasa a 4 USD de entrada y 20 USD de salida el 1 de diciembre de 2026, y Gemini 3.8 Flash a 1,50 y 7,50 USD el 1 de enero de 2027. Si presupuestas a un año, usa el precio que regirá a partir de esas fechas.
+Google avisa en su página de que los precios de Gemini ya tienen fecha de subida: Gemini 4 Argon sube a 4 USD de entrada y 20 USD de salida el 1 de diciembre de 2026, y Gemini 3.8 Flash a 1,50 y 7,50 USD el 1 de enero de 2027. Si presupuestas a un año, aplica el precio que regirá a partir de esas fechas.
 
 </Callout>
 
-Hay tres ajustes que mueven bastante la factura. Las APIs de procesamiento por lotes de los tres proveedores cuestan la mitad cuando no necesitas respuesta inmediata. La entrada en caché abarata el contexto que se repite: en OpenAI baja a 1,00 USD en GPT-6 Astra y a 0,01 USD en GPT-6 Luna. Y pedir que los datos se queden en una región concreta tiene recargo: OpenAI cobra un 10 % más con residencia de datos y Anthropic aplica un multiplicador de 1,1 a la inferencia solo en EE. UU.
+Tres ajustes mueven bastante la factura. Las APIs de procesamiento por lotes de los tres proveedores valen la mitad cuando no te urge la respuesta. La entrada en caché abarata el contexto que se repite: en OpenAI cae a 1,00 USD en GPT-6 Astra y a 0,01 USD en GPT-6 Luna. Y exigir que los datos se queden en una región concreta tiene recargo: OpenAI cobra un 10 % más con residencia de datos y Anthropic aplica un multiplicador de 1,1 a la inferencia solo en EE. UU.
 
 ## Cuánto cuesta la plataforma donde vive el agente
 
-La plataforma es donde se construye y ejecuta el agente: una herramienta de automatización como n8n, Make o Zapier, un entorno del fabricante como Copilot Studio o una infraestructura propia si se desarrolla a medida. Sus precios son públicos y, para una pyme, suelen quedar en decenas o pocos cientos de euros al mes.
+La plataforma es donde se monta y se ejecuta el agente: una herramienta de automatización como n8n, Make o Zapier, un entorno del fabricante como Copilot Studio o una infraestructura propia si va a medida. Sus precios son públicos y, para una pyme, suelen moverse en decenas o pocos cientos de euros al mes.
 
 <Stats>
   <Stat valor="50 €/mes" etiqueta="n8n Pro, pago anual, 10.000 ejecuciones del flujo completo" fuente="n8n, octubre de 2026" href="https://n8n.io/pricing/" />
@@ -79,11 +79,11 @@ La plataforma es donde se construye y ejecuta el agente: una herramienta de auto
   <Stat valor="20 USD" etiqueta="Por puesto y mes en Claude Enterprise, más el uso a tarifa de API" fuente="Anthropic, octubre de 2026" href="https://claude.com/pricing" />
 </Stats>
 
-Cada plataforma mide el consumo de forma distinta. En Copilot Studio, una respuesta generativa gasta 2 créditos, una acción del agente 5 y una respuesta basada en datos de tu inquilino 10 ([Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management)), así que un paquete de 25.000 créditos da para muchas más preguntas sencillas que acciones complejas. En n8n pagas por ejecución completa, en Make por credit y en Zapier por task: lo comparamos con un caso calculado en [n8n vs Make vs Zapier](/blog/n8n-vs-make-vs-zapier).
+Cada plataforma cuenta el consumo a su manera. En Copilot Studio, una respuesta generativa gasta 2 créditos, una acción del agente 5 y una respuesta basada en datos de tu inquilino 10 ([Microsoft Learn](https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management)), con lo que un paquete de 25.000 créditos cunde para muchas más preguntas sencillas que acciones complejas. En n8n pagas por ejecución completa, en Make por credit y en Zapier por task: lo comparamos con un caso calculado en [n8n vs Make vs Zapier](/blog/n8n-vs-make-vs-zapier).
 
 ## Ejemplo ilustrativo: un agente de 1.000 consultas al mes
 
-Este ejemplo es un cálculo nuestro con supuestos explícitos, no un precio de mercado. Sirve para ver qué pesa en el total. Un agente que responde 1.000 consultas internas al mes, con unos 5.000 tokens de entrada y 1.000 de salida por consulta, consume 5 millones de tokens de entrada y 1 millón de salida al mes.
+Este ejemplo es un cálculo nuestro, con supuestos explícitos, no un precio de mercado. Vale para ver qué pesa en el total. Un agente que atiende 1.000 consultas internas al mes, con unos 5.000 tokens de entrada y 1.000 de salida por consulta, consume 5 millones de tokens de entrada y 1 millón de salida al mes.
 
 | Partida | Supuesto | Coste mensual | Coste del primer año |
 |---|---|---|---|
@@ -93,13 +93,13 @@ Este ejemplo es un cálculo nuestro con supuestos explícitos, no un precio de m
 | Diseño y desarrollo | 60 horas, una sola vez (supuesto) | — | 60 × tu coste por hora |
 | Mantenimiento | 4 horas al mes (supuesto) | 4 × tu coste por hora | 48 × tu coste por hora |
 
-Las horas son supuestos para el ejemplo, no una media del sector, y el coste por hora lo pones tú: el de tu equipo interno o el que te presupueste un proveedor. Aun así, la conclusión se mantiene con casi cualquier tarifa: el modelo y la plataforma suman menos de 1.000 € al año, mientras que 108 horas de trabajo multiplican esa cifra varias veces. Por eso, cuando compares presupuestos, fíjate en cuántas horas incluye cada uno y para qué.
+Las horas son supuestos del ejemplo, no una media del sector, y el coste por hora lo pones tú: el de tu equipo interno o el que te presupueste un proveedor. Aun así, la conclusión aguanta con casi cualquier tarifa: el modelo y la plataforma suman menos de 1.000 € al año, mientras que 108 horas de trabajo multiplican esa cifra varias veces. Por eso, al comparar presupuestos, mira cuántas horas incluye cada uno y para qué.
 
 <CtaInline />
 
 ## Tres escenarios: licencia, sin código o a medida
 
-Hay tres formas de tener un agente, con costes muy distintos. Usar los agentes incluidos en una licencia que ya pagas, construirlo con una plataforma sin código conectada a un modelo por API, o desarrollarlo a medida. Cuanto más a medida, más control y más horas.
+Tener un agente admite tres caminos, con costes muy distintos. Aprovechar los agentes que vienen en una licencia que ya pagas, montarlo con una plataforma sin código conectada a un modelo por API, o desarrollarlo a medida. Cuanto más a medida, más control y más horas.
 
 | | Agente o asistente dentro de tu licencia | Plataforma sin código + API | Desarrollo a medida |
 |---|---|---|---|
@@ -111,27 +111,27 @@ Hay tres formas de tener un agente, con costes muy distintos. Usar los agentes i
 
 ## Cuándo no necesitas pagar por un agente
 
-No necesitas un agente cuando el proceso sigue reglas fijas, ocurre pocas veces o lo resuelve una función de la herramienta que ya tienes. OpenAI lo dice en su guía: antes de construir un agente, comprueba que tu caso exige decisiones complejas, reglas difíciles de mantener o mucho texto no estructurado; si no, «a deterministic solution may suffice» ([OpenAI, A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)).
+No hace falta un agente cuando el proceso sigue reglas fijas, pasa pocas veces o lo resuelve una función de la herramienta que ya usas. OpenAI lo dice en su guía: antes de construir un agente, confirma que tu caso pide decisiones complejas, reglas difíciles de mantener o mucho texto no estructurado; si no, «a deterministic solution may suffice» ([OpenAI, A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf)).
 
-En muchas pymes, el primer paso con más retorno es más barato: formar al equipo para usar bien la licencia de IA que ya paga, o montar una automatización sencilla con una plataforma sin código. Te explicamos cómo elegir y resolver ese primer proceso en [cómo automatizar un proceso con IA paso a paso](/blog/automatizar-procesos-con-ia), y tienes ideas por área en [agentes de IA para empresas: ejemplos reales](/blog/agentes-ia-ejemplos-empresas). Si el agente va a tener acceso a correo, documentos o sistemas internos, suma también el coste de controlarlo: lo vemos en [prompt injection y otros riesgos de los agentes](/blog/prompt-injection-riesgos-agentes).
+En muchas pymes, el primer paso con más retorno también es el más barato: formar al equipo para exprimir la licencia de IA que ya paga, o montar una automatización sencilla con una plataforma sin código. Cómo elegir y sacar adelante ese primer proceso lo explicamos en [cómo automatizar un proceso con IA paso a paso](/blog/automatizar-procesos-con-ia), y tienes ideas por área en [agentes de IA para empresas: ejemplos reales](/blog/agentes-ia-ejemplos-empresas). Si el agente va a acceder a correo, documentos o sistemas internos, añade el coste de controlarlo: lo vemos en [prompt injection y otros riesgos de los agentes](/blog/prompt-injection-riesgos-agentes).
 
 ## Qué preguntar antes de aceptar un presupuesto
 
-Un presupuesto de implantación de un agente de IA debería separar las cuatro partidas, decir quién paga los tokens y la plataforma, y detallar cuántas horas incluye y qué pasa después de la entrega. Si solo da una cifra cerrada sin desglose, no podrás compararlo con otro ni saber qué te costará el segundo año.
+Un presupuesto para implantar un agente de IA debería separar las cuatro partidas, aclarar quién paga los tokens y la plataforma, y detallar cuántas horas incluye y qué ocurre tras la entrega. Si se queda en una cifra cerrada sin desglose, no podrás compararlo con otro ni saber qué te costará el segundo año.
 
 <Checklist titulo="Pide que el presupuesto responda a esto">
 
-- Qué modelo se usa, cuántos tokens se estiman por tarea y quién paga la factura de la API.
-- Qué plataforma, con qué plan, y si la cuenta queda a nombre de tu empresa.
-- Cuántas horas de diseño, desarrollo, integración y pruebas incluye.
-- Qué métrica define que el piloto ha funcionado, medida contra la situación actual.
-- Quién mantiene el agente después de la entrega, con cuántas horas al mes y a qué coste.
-- Qué controles tiene: permisos, registro de acciones y aprobación humana en lo sensible.
-- Qué formación recibe el equipo que lo usará o lo mantendrá.
+- Qué modelo usa, cuántos tokens se estiman por tarea y quién paga la factura de la API.
+- Qué plataforma y con qué plan, y si la cuenta queda a nombre de tu empresa.
+- Cuántas horas de diseño, desarrollo, integración y pruebas cubre.
+- Qué métrica marca que el piloto ha funcionado, medida contra la situación de partida.
+- Quién mantiene el agente tras la entrega, con cuántas horas al mes y a qué coste.
+- Qué controles trae: permisos, registro de acciones y aprobación humana en lo sensible.
+- Qué formación se da al equipo que lo usará o lo mantendrá.
 
 </Checklist>
 
-En nuestra [consultoría de agentes y automatización](/consultoria) presupuestamos así: un piloto acotado con una métrica definida desde el principio, un prototipo con datos reales o anonimizados en 2 a 4 semanas y, después, puesta en producción y traspaso al equipo o mantenimiento por nuestra parte. Si tu equipo quiere aprender a construir y mantener sus propios agentes, esta es la formación relacionada:
+En nuestra [consultoría de agentes y automatización](/consultoria) presupuestamos así: un piloto acotado con una métrica fijada desde el principio, un prototipo con datos reales o anonimizados en 2 a 4 semanas y, luego, la puesta en producción y el traspaso al equipo o el mantenimiento por nuestra parte. Y si tu equipo quiere aprender a construir y mantener sus propios agentes, esta es la formación relacionada:
 
 <FormacionCard slug="agentes-ia-automatizacion" />
 
@@ -139,11 +139,11 @@ En nuestra [consultoría de agentes y automatización](/consultoria) presupuesta
 
 1. **Define el proceso** y cuántas veces al mes se repite.
 2. **Calcula los tokens** con la tabla de precios: tokens por tarea × tareas al mes × precio del modelo.
-3. **Elige el escenario**: licencia que ya pagas, sin código o a medida.
+3. **Escoge el escenario**: licencia que ya pagas, sin código o a medida.
 4. **Estima las horas** o pide dos presupuestos desglosados con la lista de arriba.
-5. Si quieres contrastar tu caso, pide un [diagnóstico gratuito de 30 minutos](/diagnostico) y te decimos qué escenario tiene sentido y qué partidas vigilar.
+5. Si quieres contrastar tu caso, reserva un [diagnóstico gratuito de 30 minutos](/diagnostico) y te decimos qué escenario encaja y qué partidas vigilar.
 
-<Callout tipo="legal">Este artículo es informativo y no es asesoramiento jurídico ni fiscal. Para la responsabilidad por las acciones de un agente o el tratamiento del IVA de servicios extranjeros, consulta con tu asesoría.</Callout>
+<Callout tipo="legal">Este artículo tiene carácter informativo y no es asesoramiento jurídico ni fiscal. Para la responsabilidad por las acciones de un agente o el tratamiento del IVA de servicios extranjeros, consulta con tu asesoría.</Callout>
 
 <Fuentes>
 

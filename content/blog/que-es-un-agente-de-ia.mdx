@@ -3,33 +3,33 @@ title: "Qué es un agente de IA, explicado sin tecnicismos"
 description: "Un agente de IA es un sistema que decide qué pasos dar y usa herramientas para cumplir un objetivo. Qué lo diferencia de un chatbot, con ejemplos reales."
 date: "2026-10-18"
 category: "agentes"
-tldr: "Un agente de IA es un sistema que recibe un objetivo, decide qué pasos dar y usa herramientas como el correo, el CRM o un buscador para cumplirlo con poca intervención humana. A diferencia de un chatbot, no se queda en responder: actúa. Anthropic y OpenAI coinciden en que solo compensa cuando una solución más simple no basta."
+tldr: "Un agente de IA es un sistema que recibe un objetivo, decide por sí mismo qué pasos dar y echa mano de herramientas como el correo, el CRM o un buscador para cumplirlo con poca intervención humana. No se limita a responder, como un chatbot: actúa. Anthropic y OpenAI coinciden en que solo vale la pena cuando una solución más simple se queda corta."
 faqs:
-  - q: "¿ChatGPT es un agente de IA?"
-    a: "Depende de cómo lo uses. Cuando solo respondes preguntas en el chat, funciona como un asistente conversacional. Cuando le pides una tarea y decide por su cuenta buscar en la web, leer archivos, usar aplicaciones conectadas o ejecutar código hasta terminarla, se comporta como un agente. OpenAI distingue precisamente así: un chatbot sencillo de una sola respuesta no es un agente."
+  - q: "¿Es ChatGPT un agente de IA?"
+    a: "Según cómo lo uses. Si te limitas a lanzarle preguntas en el chat, actúa como un asistente conversacional. Si le encargas una tarea y él decide por su cuenta buscar en la web, leer archivos, usar aplicaciones conectadas o ejecutar código hasta acabarla, se comporta como un agente. OpenAI lo separa justo así: un chatbot sencillo, de una sola respuesta, no es un agente."
   - q: "¿Qué es un agente de IA en Microsoft 365 Copilot?"
-    a: "En Microsoft 365, un agente es un asistente que sigue las instrucciones que le das, consulta las fuentes de conocimiento que conectas, como SharePoint, y usa herramientas para actuar. Se crean con Agent Builder, para casos sencillos, o con Copilot Studio, para los más complejos. Lo que puedes construir depende de las licencias de tu empresa."
-  - q: "¿Un agente de IA puede sustituir a un empleado?"
-    a: "Hoy, lo habitual es que un agente asuma tareas concretas dentro de un puesto, no el puesto entero. Los casos publicados hablan de horas ahorradas en tareas repetitivas, como el análisis inicial de expedientes o la preparación de facturas, con una persona que revisa y decide. OpenAI recomienda mantener supervisión humana en las acciones sensibles o irreversibles."
+    a: "En Microsoft 365, un agente es un asistente que obedece las instrucciones que le das, consulta las fuentes de conocimiento que conectes, como SharePoint, y recurre a herramientas para actuar. Se montan con Agent Builder, en los casos sencillos, o con Copilot Studio, en los más complejos. Lo que puedes construir depende de las licencias de tu empresa."
+  - q: "¿Puede un agente de IA sustituir a un empleado?"
+    a: "Hoy por hoy, lo normal es que un agente se ocupe de tareas concretas dentro de un puesto, no del puesto completo. Los casos publicados hablan de horas ahorradas en tareas repetitivas, como el análisis inicial de expedientes o la preparación de facturas, siempre con una persona que revisa y decide. OpenAI aconseja conservar la supervisión humana en las acciones sensibles o irreversibles."
   - q: "¿Qué es un sistema multiagente?"
-    a: "Es un sistema en el que varios agentes colaboran: por ejemplo, uno investiga, otro redacta y otro revisa, o un agente coordinador reparte el trabajo entre especialistas. La guía de OpenAI aconseja sacar el máximo partido a un solo agente primero y dividir en varios cuando no consigue seguir instrucciones complicadas o elige mal las herramientas de forma reiterada."
+    a: "Es un sistema donde varios agentes trabajan juntos: uno investiga, otro redacta y otro revisa, pongamos, o un agente coordinador reparte el trabajo entre especialistas. La guía de OpenAI recomienda exprimir primero un único agente y pasar a varios solo cuando no logra seguir instrucciones complicadas o se equivoca una y otra vez al escoger herramientas."
   - q: "¿Necesito saber programar para crear un agente de IA?"
-    a: "No para los casos sencillos. Microsoft Agent Builder, los plugins de ChatGPT, las skills de Claude o plataformas como n8n, Make y Zapier permiten crear agentes sin escribir código. Hace falta programar, o alguien que lo haga, cuando el agente tiene que conectarse con sistemas propios sin conector disponible o cuando la seguridad exige controles a medida."
+    a: "Para los casos sencillos, no. Microsoft Agent Builder, los plugins de ChatGPT, las skills de Claude o plataformas como n8n, Make y Zapier dejan crear agentes sin escribir código. Hace falta programar, o alguien que lo haga, cuando el agente debe conectarse a sistemas propios que no tienen conector o cuando la seguridad pide controles a medida."
 ---
 
-Un agente de IA es un sistema que **recibe un objetivo, decide qué pasos dar y usa herramientas** (el correo, el CRM, un buscador, una hoja de cálculo) para cumplirlo con poca intervención humana. La diferencia con un chatbot es que no se limita a contestar: actúa. Aquí tienes la definición de los propios fabricantes, en qué se diferencia de un chatbot, una automatización o un copiloto, ejemplos reales en empresas, sus riesgos y cuándo no merece la pena.
+Un agente de IA es un sistema que **recibe un objetivo, decide qué pasos dar y usa herramientas** (el correo, el CRM, un buscador, una hoja de cálculo) para cumplirlo con poca intervención humana. Lo que lo separa de un chatbot es que no se queda en contestar: actúa. A continuación verás la definición de los propios fabricantes, en qué se distingue de un chatbot, una automatización o un copiloto, ejemplos reales en empresas, sus riesgos y cuándo no sale a cuenta.
 
 <Callout tipo="clave" titulo="Lo esencial">
 
-- Un agente combina tres piezas: un **modelo** que razona, **herramientas** para actuar e **instrucciones** que marcan los límites.
-- La clave es quién decide los pasos: en una automatización los fija una persona; en un agente, el propio modelo.
-- Más autonomía significa más riesgo: las acciones sensibles necesitan una persona que las apruebe.
+- Un agente junta tres piezas: un **modelo** que razona, **herramientas** para actuar e **instrucciones** que ponen los límites.
+- Lo decisivo es quién elige los pasos: en una automatización los fija una persona; en un agente, el propio modelo.
+- A más autonomía, más riesgo: las acciones sensibles piden una persona que las apruebe.
 
 </Callout>
 
 ## Qué es un agente de IA según quienes los fabrican
 
-Un agente de IA es un sistema en el que un modelo de lenguaje dirige por sí mismo sus pasos y el uso de herramientas para completar una tarea en tu nombre. Las definiciones de Anthropic, OpenAI, Google, IBM y Microsoft usan palabras distintas, pero coinciden en ese núcleo: objetivo, decisión propia y herramientas.
+Un agente de IA es un sistema en el que un modelo de lenguaje gobierna por su cuenta sus pasos y el uso de herramientas para rematar una tarea en tu nombre. Anthropic, OpenAI, Google, IBM y Microsoft lo definen con palabras distintas, pero coinciden en el núcleo: objetivo, decisión propia y herramientas.
 
 | Organización | Cómo lo define |
 |---|---|
@@ -41,15 +41,15 @@ Un agente de IA es un sistema en el que un modelo de lenguaje dirige por sí mis
 
 ### Las tres piezas de un agente
 
-La guía práctica de OpenAI lo descompone en tres componentes: el **modelo**, «the LLM powering the agent's reasoning and decision-making»; las **herramientas**, «external functions or APIs the agent can use to take action»; y las **instrucciones**, «explicit guidelines and guardrails defining how the agent behaves». Con esas piezas, el agente trabaja en bucle hasta terminar:
+La guía práctica de OpenAI lo divide en tres componentes: el **modelo**, «the LLM powering the agent's reasoning and decision-making»; las **herramientas**, «external functions or APIs the agent can use to take action»; y las **instrucciones**, «explicit guidelines and guardrails defining how the agent behaves». Con esas piezas, el agente funciona en bucle hasta terminar:
 
 <Flujo titulo="Cómo trabaja un agente de IA" pasos="Recibe un objetivo|Decide el siguiente paso|Usa una herramienta|Revisa el resultado|Repite o entrega" />
 
-Un ejemplo de oficina: le pides «prepara la reunión del jueves con el cliente X». El agente busca en tu correo los últimos mensajes con ese cliente, consulta el CRM para ver el estado de la oportunidad, mira su web por si hay novedades y te deja un resumen con tres preguntas para la reunión. Nadie le ha dicho en qué orden hacer cada cosa: lo decide él.
+Un ejemplo de oficina: le dices «prepara la reunión del jueves con el cliente X». El agente rastrea en tu correo los últimos mensajes con ese cliente, consulta el CRM para ver cómo va la oportunidad, revisa su web por si hay novedades y te deja un resumen con tres preguntas para la reunión. Nadie le ha indicado en qué orden hacer cada cosa: eso lo decide él.
 
 ## Agente, chatbot, automatización y copiloto: en qué se diferencian
 
-La diferencia entre un agente y las demás formas de usar IA está en quién decide los pasos y si el sistema actúa o solo responde. Anthropic lo resume separando los «workflows», en los que el modelo y las herramientas siguen «predefined code paths», de los agentes, que deciden su propio camino. OpenAI añade que los chatbots sencillos no son agentes.
+Lo que separa a un agente del resto de formas de usar IA es quién decide los pasos y si el sistema actúa o solo responde. Anthropic lo resume distinguiendo los «workflows», donde el modelo y las herramientas siguen «predefined code paths», de los agentes, que trazan su propio camino. OpenAI matiza que los chatbots sencillos no son agentes.
 
 | | Qué hace | Quién decide los pasos | Ejemplo |
 |---|---|---|---|
@@ -58,17 +58,17 @@ La diferencia entre un agente y las demás formas de usar IA está en quién dec
 | Automatización (workflow) | Ejecuta una secuencia fija, con o sin IA en algún paso | Una persona que lo diseñó de antemano | Cada factura recibida se lee, se extraen los datos y se guardan en una hoja |
 | Agente | Persigue un objetivo usando herramientas | El modelo, dentro de los límites que le pones | Revisar las facturas, detectar las que no cuadran, pedir la aclaración al proveedor y avisarte |
 
-En la práctica, la frontera es gradual. Muchas soluciones que se venden como «agentes» son automatizaciones con un paso de IA, y no pasa nada: suelen ser más fiables y baratas. Si te interesa esa vía, la explicamos en [cómo automatizar un proceso con IA](/blog/automatizar-procesos-con-ia) y comparamos las herramientas en [n8n vs Make vs Zapier](/blog/n8n-vs-make-vs-zapier).
+En la práctica, la frontera es difusa. Muchas soluciones que se venden como «agentes» son automatizaciones con un paso de IA, y no pasa nada: suelen salir más fiables y baratas. Si te interesa ese camino, lo contamos en [cómo automatizar un proceso con IA](/blog/automatizar-procesos-con-ia) y comparamos las herramientas en [n8n vs Make vs Zapier](/blog/n8n-vs-make-vs-zapier).
 
 ## Qué es la IA agéntica
 
-IA agéntica es el nombre que se da al conjunto de sistemas que funcionan como agentes: modelos que planifican, usan herramientas y encadenan acciones con cierta autonomía. Es el mismo concepto visto desde el lado de la tecnología. Google Cloud subraya los rasgos que la definen: razonamiento, planificación, memoria y «un nivel de autonomía para tomar decisiones, aprender y adaptarse».
+IA agéntica es como se llama al conjunto de sistemas que funcionan como agentes: modelos que planifican, usan herramientas y encadenan acciones con cierta autonomía. Es el mismo concepto, pero mirado desde la tecnología. Google Cloud resalta los rasgos que la definen: razonamiento, planificación, memoria y «un nivel de autonomía para tomar decisiones, aprender y adaptarse».
 
-El término se ha popularizado porque las herramientas de oficina ya incluyen funciones agénticas: los agentes de Microsoft 365 Copilot, los plugins de ChatGPT que pueden programar tareas o reaccionar a eventos, o Claude trabajando con conectores. La Agencia Española de Protección de Datos le ha dedicado unas [orientaciones sobre IA agéntica](https://www.aepd.es/guias/orientaciones-ia-agentica.pdf) en febrero de 2026, centradas en cómo tratar los datos personales cuando un sistema actúa por su cuenta.
+El término ha cuajado porque las herramientas de oficina ya traen funciones agénticas: los agentes de Microsoft 365 Copilot, los plugins de ChatGPT capaces de programar tareas o reaccionar a eventos, o Claude trabajando con conectores. La Agencia Española de Protección de Datos le dedicó unas [orientaciones sobre IA agéntica](https://www.aepd.es/guias/orientaciones-ia-agentica.pdf) en febrero de 2026, centradas en cómo tratar los datos personales cuando un sistema actúa por su cuenta.
 
 ## Ejemplos reales de agentes de IA en empresas
 
-Los casos públicos con cifras tienen algo en común: el agente se ocupa de una tarea acotada y repetitiva, y una persona revisa o confirma el resultado. Estos son algunos publicados por los fabricantes con sus clientes, varios de ellos en España.
+Los casos públicos con cifras comparten un rasgo: el agente se encarga de una tarea acotada y repetitiva, y una persona revisa o confirma el resultado. Estos son algunos que los fabricantes han publicado con sus clientes, varios en España.
 
 <Stats>
   <Stat valor="+7.000 h" etiqueta="ahorradas al año por la asesoría jurídica de ILUNION con un agente de Copilot" fuente="Microsoft, jul 2025" href="https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/" />
@@ -76,70 +76,70 @@ Los casos públicos con cifras tienen algo en común: el agente se ocupa de una 
   <Stat valor="3 veces" etiqueta="menos tiempo para crear facturas en Qonto, con confirmación del cliente" fuente="Anthropic" href="https://claude.com/customers/qonto" />
 </Stats>
 
-- **ILUNION (España).** Su agente «Litigator» hace el análisis inicial de expedientes jurídicos: según [Microsoft](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/), «el tiempo que se dedica al análisis inicial de cada expediente se ha reducido a unos 40 segundos».
-- **Serveo (España).** Ha creado 733 agentes con Microsoft 365 Copilot Agent Builder, Copilot Studio y el entorno Microsoft 365, y [Microsoft](https://news.microsoft.com/source/emea/features/serveo-impulsa-la-eficiencia-de-sus-procesos-con-la-ia-agentica-de-microsoft-y-reduce-tiempos-hasta-un-80/?lang=es) cifra en hasta un 80 % la reducción del tiempo dedicado a determinados procesos críticos, dentro de su programa de adopción de Copilot.
-- **Qonto (Europa).** Sus agentes preparan borradores de facturas y el cliente las confirma antes de enviarlas: «3X less time to create client invoices», según [Anthropic](https://claude.com/customers/qonto).
-- **Klarna.** Su asistente de atención al cliente llegó a gestionar dos tercios de los chats de servicio y redujo el tiempo medio de resolución de 11 a 2 minutos, según la guía [AI in the Enterprise de OpenAI](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf).
+- **ILUNION (España).** Su agente «Litigator» se ocupa del análisis inicial de los expedientes jurídicos: según [Microsoft](https://news.microsoft.com/es-es/2025/07/01/ilunion-ahorra-mas-de-7-000-horas-de-trabajo-anuales-a-su-asesoria-juridica-con-los-agentes-de-ia-de-microsoft-365-copilot/), «el tiempo que se dedica al análisis inicial de cada expediente se ha reducido a unos 40 segundos».
+- **Serveo (España).** Ha construido 733 agentes con Microsoft 365 Copilot Agent Builder, Copilot Studio y el entorno Microsoft 365, y [Microsoft](https://news.microsoft.com/source/emea/features/serveo-impulsa-la-eficiencia-de-sus-procesos-con-la-ia-agentica-de-microsoft-y-reduce-tiempos-hasta-un-80/?lang=es) cifra en hasta un 80 % el recorte del tiempo dedicado a ciertos procesos críticos, dentro de su programa de adopción de Copilot.
+- **Qonto (Europa).** Sus agentes dejan listos los borradores de facturas y el cliente las confirma antes de enviarlas: «3X less time to create client invoices», según [Anthropic](https://claude.com/customers/qonto).
+- **Klarna.** Su asistente de atención al cliente llegó a atender dos tercios de los chats de servicio y bajó el tiempo medio de resolución de 11 a 2 minutos, según la guía [AI in the Enterprise de OpenAI](https://cdn.openai.com/business-guides-and-resources/ai-in-the-enterprise.pdf).
 
-Tienes más casos ordenados por departamento en [agentes de IA para empresas: ejemplos reales](/blog/agentes-ia-ejemplos-empresas). Si tu caso es un asistente que responde con la documentación interna, el punto de partida es otro: un [chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
+Tienes más casos ordenados por departamento en [agentes de IA para empresas: ejemplos reales](/blog/agentes-ia-ejemplos-empresas). Y si lo tuyo es un asistente que responde con la documentación interna, el punto de partida cambia: un [chatbot con los documentos de tu empresa](/blog/rag-chatbot-documentos-empresa).
 
 <CtaInline />
 
 ## Riesgos de los agentes: permisos, errores y supervisión humana
 
-Un agente puede equivocarse igual que un chatbot, pero sus errores no se quedan en un texto: se convierten en un correo enviado, un pedido cancelado o un registro modificado. Por eso los riesgos de un agente se gestionan limitando lo que puede hacer, no solo revisando lo que dice.
+Un agente se equivoca igual que un chatbot, pero sus fallos no se quedan en un texto: acaban en un correo enviado, un pedido cancelado o un registro modificado. Por eso sus riesgos se gestionan acotando lo que puede hacer, no solo revisando lo que dice.
 
 <Callout tipo="aviso" titulo="Lo que dicen las guías">
 
-- **Supervisión humana en lo sensible.** OpenAI recomienda que las acciones «sensitive, irreversible, or have high stakes» pasen por una persona hasta que el agente demuestre su fiabilidad, como cancelar pedidos, autorizar reembolsos grandes o hacer pagos.
-- **Mínimos permisos.** Si el agente solo necesita leer el CRM, que no pueda escribir en él.
-- **Instrucciones ocultas.** Un agente que lee correos, webs o documentos de terceros puede recibir órdenes escondidas en ellos (inyección de prompts). Es el riesgo número 1 de la [lista OWASP de 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/), y el [NCSC británico](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection) advierte de que quizá nunca se pueda mitigar del todo.
+- **Supervisión humana en lo sensible.** OpenAI aconseja que las acciones «sensitive, irreversible, or have high stakes» pasen por una persona hasta que el agente demuestre que es fiable: cancelar pedidos, autorizar reembolsos grandes o hacer pagos, por ejemplo.
+- **Mínimos permisos.** Si al agente le basta con leer el CRM, que no pueda escribir en él.
+- **Instrucciones ocultas.** Un agente que lee correos, webs o documentos de terceros puede toparse con órdenes escondidas en ellos (inyección de prompts). Es el riesgo número 1 de la [lista OWASP de 2026](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/), y el [NCSC británico](https://www.ncsc.gov.uk/blog-post/prompt-injection-is-not-sql-injection) avisa de que quizá nunca llegue a mitigarse del todo.
 
 </Callout>
 
-La consecuencia práctica es diseñar con salvaguardas que no dependan del propio modelo: aprobaciones humanas, límites de importe, listas de acciones permitidas y registro de todo lo que hace. Lo desarrollamos en el artículo sobre [prompt injection y otros riesgos de los agentes](/blog/prompt-injection-riesgos-agentes).
+La consecuencia práctica es diseñar con salvaguardas ajenas al propio modelo: aprobaciones humanas, topes de importe, listas de acciones permitidas y registro de todo lo que hace. Lo desarrollamos en el artículo sobre [prompt injection y otros riesgos de los agentes](/blog/prompt-injection-riesgos-agentes).
 
 ## Cuándo no compensa un agente de IA
 
-Un agente no compensa cuando la tarea sigue siempre los mismos pasos: ahí una automatización clásica es más barata, más rápida y más predecible. Tanto Anthropic como OpenAI lo dicen expresamente. Anthropic recomienda «finding the simplest solution possible, and only increasing complexity when needed. This might mean not building agentic systems at all».
+Un agente no sale a cuenta cuando la tarea repite siempre los mismos pasos: ahí una automatización clásica resulta más barata, más rápida y más predecible. Lo dicen sin rodeos Anthropic y OpenAI. Anthropic aconseja «finding the simplest solution possible, and only increasing complexity when needed. This might mean not building agentic systems at all».
 
-OpenAI propone tres criterios para saber si un caso merece un agente: decisiones complejas que dependen del contexto, reglas difíciles de mantener y mucha información no estructurada (correos, documentos, conversaciones). Y añade: «Before committing to building an agent, validate that your use case can meet these criteria clearly. Otherwise, a deterministic solution may suffice».
+OpenAI ofrece tres criterios para saber si un caso pide un agente: decisiones complejas que dependen del contexto, reglas difíciles de mantener y mucha información sin estructurar (correos, documentos, conversaciones). Y remata: «Before committing to building an agent, validate that your use case can meet these criteria clearly. Otherwise, a deterministic solution may suffice».
 
 <Columnas>
 <Pros titulo="Un agente tiene sentido si">
 
-- Cada caso es distinto y hay que decidir qué hacer según el contexto.
-- Las reglas son tantas o cambian tanto que nadie las puede mantener.
-- La información llega en correos, PDF o conversaciones, no en campos fijos.
-- Puedes poner una persona a revisar las acciones importantes.
+- Cada caso es diferente y toca decidir qué hacer según el contexto.
+- Las reglas son tantas, o cambian tanto, que nadie puede mantenerlas.
+- La información entra por correos, PDF o conversaciones, no en campos fijos.
+- Puedes asignar a una persona para que revise las acciones importantes.
 
 </Pros>
 <Contras titulo="Mejor otra solución si">
 
-- Los pasos son siempre los mismos: usa una automatización.
-- Solo necesitas respuestas sobre documentos: usa un asistente con RAG.
-- Un error sería grave y no puedes revisar cada acción.
-- Nadie en la empresa va a mantenerlo cuando cambien los procesos.
+- Los pasos no cambian nunca: tira de una automatización.
+- Solo buscas respuestas sobre documentos: usa un asistente con RAG.
+- Un fallo sería grave y no puedes revisar cada acción.
+- Nadie en la empresa lo mantendrá cuando cambien los procesos.
 
 </Contras>
 </Columnas>
 
 ## Qué hacer ahora si quieres probar un agente
 
-La forma más segura de empezar con agentes es elegir una tarea pequeña, repetitiva y fácil de revisar, y probarla primero con las herramientas que ya tienes. Muchas veces el resultado del piloto es que basta con una automatización, y eso también es un buen resultado.
+La manera más segura de empezar con agentes es escoger una tarea pequeña, repetitiva y fácil de revisar, y ensayarla primero con las herramientas que ya tienes. Muchas veces el piloto acaba demostrando que basta con una automatización, y eso también es un buen resultado.
 
 <Steps>
 
-1. **Elige una tarea** que se repita cada semana, que hoy haga una persona y cuyo resultado se pueda comprobar.
-2. **Escribe el proceso actual** paso a paso: qué información usa, qué decide y qué sistemas toca.
-3. **Marca qué acciones necesitan aprobación** humana y qué permisos mínimos necesita el agente.
-4. **Prueba con lo que ya tienes**: un agente de Copilot, un plugin de ChatGPT, Claude con conectores o un flujo en n8n o Make.
-5. **Mide**: tiempo ahorrado, errores y casos que el agente no supo resolver.
-6. **Decide** si lo amplías, lo dejas como automatización o lo descartas.
+1. **Elige una tarea** que se repita cada semana, que hoy recaiga en una persona y cuyo resultado se pueda comprobar.
+2. **Anota el proceso actual** paso a paso: qué información usa, qué decide y qué sistemas toca.
+3. **Señala qué acciones requieren aprobación** humana y qué permisos mínimos le hacen falta al agente.
+4. **Experimenta con lo que ya tienes**: un agente de Copilot, un plugin de ChatGPT, Claude con conectores o un flujo en n8n o Make.
+5. **Mide**: tiempo ahorrado, errores y casos que el agente no logró resolver.
+6. **Decide** si lo amplías, lo mantienes como automatización o lo descartas.
 
 </Steps>
 
-Si tu equipo tiene a alguien con tiempo y curiosidad técnica, estos pasos se pueden recorrer sin ayuda externa. Si prefieres que tu equipo aprenda a distinguir automatización, asistente y agente y construya el primero durante la formación, tienes nuestra formación de agentes. Y si buscas que te lo implantemos, en la [consultoría de agentes y automatización](/consultoria) empezamos por un caso piloto con métrica y un prototipo en 2 a 4 semanas; antes, puedes pedir un [diagnóstico gratuito de 30 minutos](/diagnostico). Para entender el coste antes de decidir, lee [cuánto cuesta implantar un agente de IA](/blog/cuanto-cuesta-agente-ia).
+Si en tu equipo hay alguien con tiempo y curiosidad técnica, estos pasos se recorren sin ayuda externa. Si prefieres que tu equipo aprenda a diferenciar automatización, asistente y agente y levante el primero durante la formación, cuentas con nuestra formación de agentes. Y si quieres que te lo implantemos, en la [consultoría de agentes y automatización](/consultoria) arrancamos por un caso piloto con métrica y un prototipo en 2 a 4 semanas; antes, puedes pedir un [diagnóstico gratuito de 30 minutos](/diagnostico). Para hacerte una idea del coste antes de decidir, lee [cuánto cuesta implantar un agente de IA](/blog/cuanto-cuesta-agente-ia).
 
 <FormacionCard slug="agentes-ia-automatizacion" />
 
